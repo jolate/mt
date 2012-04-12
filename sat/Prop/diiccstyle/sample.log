@@ -1,0 +1,221 @@
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=latex 2012.4.10)  11 APR 2012 19:34
+entering extended mode
+ %&-line parsing enabled.
+**sample
+(./sample.tex
+LaTeX2e <2009/09/24>
+Babel <v3.8l> and hyphenation patterns for english, usenglishmax, dumylang, noh
+yphenation, loaded.
+(./diicc.cls (/usr/share/texmf-texlive/tex/latex/graphics/graphicx.sty
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texmf-texlive/tex/latex/graphics/keyval.sty
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks14
+)
+(/usr/share/texmf-texlive/tex/latex/graphics/graphics.sty
+Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texmf-texlive/tex/latex/graphics/trig.sty
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+(/etc/texmf/tex/latex/config/graphics.cfg
+File: graphics.cfg 2009/08/28 v1.8 graphics configuration of TeX Live
+)
+Package graphics Info: Driver file: dvips.def on input line 91.
+
+(/usr/share/texmf-texlive/tex/latex/graphics/dvips.def
+File: dvips.def 1999/02/16 v3.0i Driver-dependant file (DPC,SPQR)
+))
+\Gin@req@height=\dimen102
+\Gin@req@width=\dimen103
+)
+Document Class: diicc 
+(/usr/share/texmf-texlive/tex/latex/base/report.cls
+Document Class: report 2007/10/19 v1.4h Standard LaTeX document class
+(/usr/share/texmf-texlive/tex/latex/base/size12.clo
+File: size12.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@chapter=\count80
+\c@section=\count81
+\c@subsection=\count82
+\c@subsubsection=\count83
+\c@paragraph=\count84
+\c@subparagraph=\count85
+\c@figure=\count86
+\c@table=\count87
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen104
+)
+(/usr/share/texmf-texlive/tex/latex/tools/afterpage.sty
+Package: afterpage 1995/10/27 v1.08 After-Page Package (DPC)
+\AP@output=\toks15
+\AP@partial=\box26
+\AP@footins=\box27
+)
+\dal@textheight@default=\skip43
+\dal@textheight@footer=\skip44
+\dal@tempdima=\dimen105
+\dal@tempdimb=\dimen106
+)
+(/usr/share/texmf-texlive/tex/latex/setspace/setspace.sty
+Package: setspace 2000/12/01 6.7 Contributed and Supported LaTeX2e package
+
+Package: `setspace' 6.7 <2000/12/01>
+) (/usr/share/texmf-texlive/tex/latex/algorithm2e/algorithm2e.sty
+Package: algorithm2e 2005/10/04 v3.9 algorithms environments
+\c@AlgoLine=\count88
+
+(/usr/share/texmf-texlive/tex/latex/base/ifthen.sty
+Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
+)
+(/usr/share/texmf-texlive/tex/latex/tools/xspace.sty
+Package: xspace 2006/05/08 v1.12 Space after command names (DPC,MH)
+)
+********************************************************
+Package `algorithm2e' Release 3.9 -- october 04 2005 --
+- algorithm2e-announce@lirmm.fr mailing list for announcement about releases
+- algorithm2e-discussion@lirmm.fr mailing list for discussion about package
+subscribe by emailing sympa@lirmm.fr with 'subscribe <list> <firstname name>'
+- Author: Christophe Fiorio (fiorio@lirmm.fr)
+********************************************************
+\skiptotal=\skip45
+\skiprule=\skip46
+\skiphlne=\skip47
+\skiptext=\skip48
+\skiplength=\skip49
+\algomargin=\skip50
+\skipalgocfslide=\skip51
+\algowidth=\dimen107
+\inoutsize=\dimen108
+\inoutline=\dimen109
+\algocf@inoutbox=\box28
+\algocf@inputbox=\box29
+\AlCapSkip=\skip52
+\AlCapHSkip=\skip53
+\algocf@capbox=\box30
+\c@algocfline=\count89
+\c@algocf=\count90
+\algocf@algoframe=\box31
+\algocf@algobox=\box32
+) (/usr/share/texmf-texlive/tex/latex/ltxmisc/url.sty
+\Urlmuskip=\muskip10
+Package: url 2006/04/12  ver 3.3  Verb mode for urls, etc.
+) (./sample.aux)
+\openout1 = `sample.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 69.
+LaTeX Font Info:    ... okay on input line 69.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 69.
+LaTeX Font Info:    ... okay on input line 69.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 69.
+LaTeX Font Info:    ... okay on input line 69.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 69.
+LaTeX Font Info:    ... okay on input line 69.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 69.
+LaTeX Font Info:    ... okay on input line 69.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 69.
+LaTeX Font Info:    ... okay on input line 69.
+
+Unavoidable over/underfulls may occur in the first
+few pages of dalthesis. These can usually be ignored.
+However, if uncorrectable errors occur, notify staff.
+LaTeX Info: Redefining \\ on input line 70.
+LaTeX Info: Redefining \\ on input line 70.
+LaTeX Info: Redefining \\ on input line 70.
+File: udeclogobw.eps Graphic file (type eps)
+<udeclogobw.eps> [1
+
+] (./sample.toc
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <12> on input line 5.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 5.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 5.
+)
+\tf@toc=\write3
+\openout3 = `sample.toc'.
+
+ [2
+
+
+]
+Dalthesis preface pages completed.
+Chapter 1.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 100.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 100.
+[1
+
+
+] [2]
+Chapter 2.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 109.
+
+(/usr/share/texmf-texlive/tex/latex/base/omscmr.fd
+File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 109.
+ [3
+
+]
+Chapter 3.
+[4
+
+]
+Chapter 4.
+
+LaTeX Font Warning: Font shape `OT1/cmr/bx/sc' undefined
+(Font)              using `OT1/cmr/bx/n' instead on input line 164.
+
+
+Underfull \hbox (badness 10000) detected at line 166
+[][]
+ []
+
+[5
+
+] [6]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [7]
+[8]
+Chapter 5.
+File: plan.eps Graphic file (type eps)
+<plan.eps>
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+(./sample.bbl [9
+
+]
+
+LaTeX Warning: Text page 10 contains only floats.
+
+
+Overfull \vbox (1.72931pt too high) has occurred while \output is active []
+
+
+[10]) [11
+
+
+] (./sample.aux)
+
+LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 1890 strings out of 495062
+ 23426 string characters out of 1182644
+ 100134 words of memory out of 3000000
+ 5083 multiletter control sequences out of 15000+50000
+ 9066 words of font info for 32 fonts, out of 3000000 for 9000
+ 28 hyphenation exceptions out of 8191
+ 32i,18n,23p,2109b,409s stack positions out of 5000i,500n,10000p,200000b,50000s
+
+Output written on sample.dvi (13 pages, 26084 bytes).

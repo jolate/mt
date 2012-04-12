@@ -1,0 +1,19 @@
+\begin{thebibliography}{1}
+
+\bibitem{cook1971}
+S.~A. Cook.
+\newblock The complexity of theorem-proving procedures.
+\newblock {\em proc. 3rd ann. ACM symp. on theory of computing}, pages
+  151--158, 1971.
+
+\bibitem{karp1972}
+Richard~M. Karp.
+\newblock Reducibility among combinatorial problems.
+\newblock {\em Complexity of Computer Computations}, pages 85--103, 1972.
+
+\bibitem{DP1960}
+Davis Putnam and Martin Hillary.
+\newblock A computing procedure for quantification theory.
+\newblock {\em Journal of the ACM}, 7(3):201--215, 1960.
+
+\end{thebibliography}

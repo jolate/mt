@@ -1,0 +1,12 @@
+\contentsline {chapter}{Abstract}{ii}
+\contentsline {chapter}{List of Tables}{iv}
+\contentsline {chapter}{List of Figures}{v}
+\contentsline {chapter}{\numberline {Chapter 1}Introduction}{1}
+\contentsline {chapter}{\numberline {Chapter 2}Background and Related Work}{3}
+\contentsline {section}{\numberline {2.1}SAT solvers}{3}
+\contentsline {subsection}{\numberline {2.1.1}The SAT problem}{3}
+\contentsline {subsection}{\numberline {2.1.2}The DPLL algorithm}{3}
+\contentsline {subsubsection}{\numberline {2.1.2.1}Search trees}{4}
+\contentsline {chapter}{\numberline {Chapter 3}Important stuff...}{5}
+\contentsline {chapter}{\numberline {Chapter 4}Conclusions}{6}
+\contentsline {chapter}{Bibliography}{7}
