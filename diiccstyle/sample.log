@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=latex 2011.11.30)  29 MAR 2012 11:34
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=latex 2012.2.6)  12 APR 2012 14:59
 entering extended mode
  %&-line parsing enabled.
 **sample
@@ -170,11 +170,11 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 
 ] [2]
 Chapter 2.
+[3
+
+] [4]
 File: searchtree.eps Graphic file (type eps)
-<searchtree.eps>
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
+ <searchtree.eps>
 Missing character: There is no â in font cmr12!
 Missing character: There is no € in font cmr12!
 Missing character: There is no “ in font cmr12!
@@ -184,31 +184,25 @@ Missing character: There is no “ in font cmr12!
 Missing character: There is no â in font cmr12!
 Missing character: There is no € in font cmr12!
 Missing character: There is no “ in font cmr12!
-
-Underfull \vbox (badness 2027) has occurred while \output is active []
-
- [3
-
-]
-[4]
+ [5]
 Chapter 3.
-[5
+[6
 
 ]
 Chapter 4.
-(./sample.bbl [6
+(./sample.bbl [7
 
-]) [7
+]) [8
 
 
 ] (./sample.aux) ) 
 Here is how much of TeX's memory you used:
- 1785 strings out of 495062
- 22107 string characters out of 1182643
+ 1787 strings out of 495062
+ 22121 string characters out of 1182645
  95880 words of memory out of 3000000
- 4982 multiletter control sequences out of 15000+50000
+ 4984 multiletter control sequences out of 15000+50000
  8287 words of font info for 29 fonts, out of 3000000 for 9000
  28 hyphenation exceptions out of 8191
- 32i,8n,21p,1605b,262s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 32i,8n,21p,1606b,262s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on sample.dvi (12 pages, 12520 bytes).
+Output written on sample.dvi (13 pages, 17628 bytes).

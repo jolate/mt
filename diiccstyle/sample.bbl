@@ -16,4 +16,15 @@ Davis Putnam and Martin Hillary.
 \newblock A computing procedure for quantification theory.
 \newblock {\em Journal of the ACM}, 7(3):201--215, 1960.
 
+\bibitem{Rob65}
+John~Alan Robinson.
+\newblock A machine-oriented logic based on the resolution principle.
+\newblock {\em J. ACM}, 12(1):23--41, 1965.
+
+\bibitem{SLB09}
+Tobias Schubert, Matthew Lewis, and Bernd Becker.
+\newblock Pamiraxt: Parallel sat solving with threads and message passing.
+\newblock {\em Journal on Satisfiability, Boolean Modeling and Computation},
+  6:203--222, 2009.
+
 \end{thebibliography}
