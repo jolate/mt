@@ -167,7 +167,7 @@ One way to picture the search for a possible assignment of variables that satisf
 \caption{Depth-first-search algorithm\label{dpll}}
 \end{algorithm}    
 
-The Davis-Putnam-Logemann-Loveland (DPLL) algorithm is the base of all modern SAT solvers. Many refinements have been made to this algorithm over the last decade, which have been significant enough to change the behaviour of the algorithm, but it is still important to know it for understanding modern solvers. Figure ~\ref{fig:searchtree} shows a search tree with three variables. We can observe that the leaves of this tree and in one-to-one correspondence with all the possible true assignments of variables involved, so testing satisfiability can be viewed as searching for a leaf node that satisfies the CNF. Another important observation is that the depth of the tree is $n$, where $n$ is the number of boolean variables, so performing a depth-first-search would be best to explore the tree. Algorithm ~\ref{dpll} performs a depth-first-search, which is the base of the DPLL algorithm, using the conditioning operator on CNFs to remove clauses or reduce their size.
+The Davis-Putnam-Logemann-Loveland (DPLL) \cite{dpll} algorithm is the base of all modern SAT solvers. Many refinements have been made to this algorithm over the last decade, which have been significant enough to change the behaviour of the algorithm, but it is still important to know it for understanding modern solvers. Figure ~\ref{fig:searchtree} shows a search tree with three variables. We can observe that the leaves of this tree and in one-to-one correspondence with all the possible true assignments of variables involved, so testing satisfiability can be viewed as searching for a leaf node that satisfies the CNF. Another important observation is that the depth of the tree is $n$, where $n$ is the number of boolean variables, so performing a depth-first-search would be best to explore the tree. Algorithm ~\ref{dpll} performs a depth-first-search, which is the base of the DPLL algorithm, using the conditioning operator on CNFs to remove clauses or reduce their size.
 
 Consider the CNF:
 \[\Delta=\{\{\neg A,B\},\{\neg B,C\}\},\]
@@ -231,11 +231,6 @@ $(\textbf{I},\Gamma)=\textsc{unit-resolution}(\Delta)$\\
 The DPLL algorithm (Algorithm \ref{dpllplus} is a refinement of the depth-first-search algorithm. The first change made is that it adds unit resolution in line 1. Also, we no longer assume that variables are examined in the same order as we go down the search tree and we no longer assume that a variable is set to \textbf{true} and then to \textbf{false}. The choice of a literal $L$ on line 7 can have a dramatic impact on the running time of DPLL. This is where inference comes into play when solving a SAT instance with a DPLL based algorithm, heuristics and random factors are commonly used at this point. 
 
 
-
-
-
-
-
 \subsection{PaMiraXT}
 
 PaMiraXT \cite{SLB09} is one of the first attempts to use a shared clause database in a parallel SAT solver.
@@ -247,6 +242,27 @@ PaMiraXT \cite{SLB09} is one of the first attempts to use a shared clause databa
 % 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{Important stuff...}\label{chap:contributions}
+
+\section{Cache performance in simple parallel-shared-memory programs}
+The main motivation behind this work is our experimental evidence that when threads in different cores share memory, the cache performance improves compared to having threads with its own memory. Our first experiment will be a program that performs simple arithmetic operations on a big matrix. We will have two instances for this experiment. The first will be different threads performing the same arithmetic operations over the same matrix (hence yielding the same result), but every thread will hold its own copy of the big matrix. The second instance will be the same experiment, but this time the different threads will perform the arithmetic operations over the same matrix (regarding physical memory location). For this experience, we will only use read-only operations over the matrix, to keep concurrency problems out of the equation.
+
+To measure cache performance we will use the linux tool \textit{perf}. Table \ref{matrix} shows...
+
+\section{Cache performance of parallel SAT solvers}
+
+\subsection{Barcelogic}
+
+\subsection{Plingeling}
+
+\section{A parallel portfolio approach SAT solver with physicaly shared clause database: AzuDICI}
+
+\subsection{General outline}
+
+\subsection{Data structures involved}
+
+\subsection{Propagation}
+
+\subsection{Experimental results} 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Step 13: Add a conclusions chapter
