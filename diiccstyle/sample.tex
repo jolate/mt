@@ -228,12 +228,24 @@ $(\textbf{I},\Gamma)=\textsc{unit-resolution}(\Delta)$\\
 \caption{DPLL(CNF $\Delta$): returns a set of literals or \textsc{unsatisfiable}\label{dpllplus}}
 \end{algorithm}    
 
-The DPLL algorithm (Algorithm \ref{dpllplus} is a refinement of the depth-first-search algorithm. The first change made is that it adds unit resolution in line 1. Also, we no longer assume that variables are examined in the same order as we go down the search tree and we no longer assume that a variable is set to \textbf{true} and then to \textbf{false}. The choice of a literal $L$ on line 7 can have a dramatic impact on the running time of DPLL. This is where inference comes into play when solving a SAT instance with a DPLL based algorithm, heuristics and random factors are commonly used at this point. 
+The DPLL algorithm (Algorithm \ref{dpllplus}) is a refinement of the depth-first-search algorithm. The first change made is that it adds unit resolution in line 1. Also, we no longer assume that variables are examined in the same order as we go down the search tree and we no longer assume that a variable is set to \textbf{true} and then to \textbf{false}. The choice of a literal $L$ on line 7 can have a dramatic impact on the running time of DPLL. This is where inference comes into play when solving a SAT instance with a DPLL based algorithm, heuristics and random factors are commonly used at this point. 
+
+\subsubsection{Chronological backtracking}
+
+When we detect a conflict at level $l$ of the search tree, we have to rewind back to level $l-1$, undoing all assignments done in the process. Then we try another value at level $l-1$, if none remains  to be tried, we then go back further to level $l-3$, and so on. If we ever reach level $0$ and each value there leads to a contradiction, we will know that the CNF is inconsistent. This type of backtracking is called \textit{chronological backtracking}, because the we move back in the same order we got there; one level at a time. 
+
+\subsubsection{Non-Chronological backtracking}
+
+The problem with this type of backtracking, which is the one used in the DPLL algorithm, is that contradictions (when an assignment we have done does not satisfy the CNF) that trigger the backtrack often have valuable information. Such information could lead us to learn new clauses and backtrack more levels than just one, thus saving time in the search. For example, let's say that we have a CNF $\Delta$ with variables $A,B,C,D$. Let's us also say that, because of the clauses in $\Delta$, the CNF will always be inconsistent when $A$ is set to \textbf{true}. Unfortunately, the DPLL algorithm might not realise this beforehand, because it uses unit resolution which is not refutation complete. So the algorithm might only conclude that $A$ set to \textbf{true} will not satisfy $\Delta$ after assigning all possible values to $B,C,D$. If we could detect that $A$ is not part of any solution, we could avoid going any further in that branch of the search tree and learn that information as a clause. This is the reason why conflict driven clauses \cite{cdcl} were introduced to SAT solving algorithms.
 
 
 \subsection{PaMiraXT}
 
 PaMiraXT \cite{SLB09} is one of the first attempts to use a shared clause database in a parallel SAT solver.
+
+\subsection{Plingeling}
+
+\subsection{
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

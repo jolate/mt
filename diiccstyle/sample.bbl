@@ -6,6 +6,11 @@ S.~A. Cook.
 \newblock {\em proc. 3rd ann. ACM symp. on theory of computing}, pages
   151--158, 1971.
 
+\bibitem{dpll}
+Martin Davis, George Logemann, and Donald~W. Loveland.
+\newblock A machine program for theorem-proving.
+\newblock {\em Commun. ACM}, 5(7):394--397, 1962.
+
 \bibitem{karp1972}
 Richard~M. Karp.
 \newblock Reducibility among combinatorial problems.

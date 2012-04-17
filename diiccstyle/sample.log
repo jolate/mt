@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=latex 2012.2.6)  16 APR 2012 14:46
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=latex 2012.2.6)  17 APR 2012 12:47
 entering extended mode
  %&-line parsing enabled.
 **sample
@@ -144,23 +144,23 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <8> on input line 6.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <6> on input line 6.
-)
+ [3
+
+])
 \tf@toc=\write3
 \openout3 = `sample.toc'.
 
- [3
-
-] (./sample.lot)
+ [4] (./sample.lot)
 \tf@lot=\write4
 \openout4 = `sample.lot'.
 
- [4
+ [5
 
 
-] (./sample.lof
+]
+(./sample.lof
 LaTeX Font Info:    Try loading font information for OMS+cmr on input line 4.
-
-(/usr/share/texmf-texlive/tex/latex/base/omscmr.fd
+ (/usr/share/texmf-texlive/tex/latex/base/omscmr.fd
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
@@ -169,7 +169,7 @@ LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
 \tf@lof=\write5
 \openout5 = `sample.lof'.
 
- [5
+ [6
 
 
 ]
@@ -220,15 +220,22 @@ Underfull \hbox (badness 10000) detected at line 229
 [][]
  []
 
-[8]
+[8] [9]
 Chapter 3.
-[9
+
+LaTeX Warning: Reference `matrix' on page 10 undefined on input line 249.
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [10
 
 ]
+[11]
 Chapter 4.
-(./sample.bbl [10
+(./sample.bbl [12
 
-]) [11
+]) [13
 
 
 ] (./sample.aux)
@@ -236,16 +243,19 @@ Chapter 4.
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 
+LaTeX Warning: There were undefined references.
+
+
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 1896 strings out of 495062
- 23520 string characters out of 1182645
- 98232 words of memory out of 3000000
- 5081 multiletter control sequences out of 15000+50000
+ 1898 strings out of 495062
+ 23534 string characters out of 1182645
+ 99232 words of memory out of 3000000
+ 5083 multiletter control sequences out of 15000+50000
  9511 words of font info for 33 fonts, out of 3000000 for 9000
  28 hyphenation exceptions out of 8191
  32i,15n,23p,1606b,358s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on sample.dvi (16 pages, 24560 bytes).
+Output written on sample.dvi (19 pages, 30140 bytes).

@@ -1,6 +1,6 @@
 \contentsline {chapter}{Abstract}{ii}
-\contentsline {chapter}{List of Tables}{iv}
-\contentsline {chapter}{List of Figures}{v}
+\contentsline {chapter}{List of Tables}{v}
+\contentsline {chapter}{List of Figures}{vi}
 \contentsline {chapter}{\numberline {Chapter 1}Introduction}{1}
 \contentsline {chapter}{\numberline {Chapter 2}Background and Related Work}{3}
 \contentsline {section}{\numberline {2.1}SAT solvers}{3}
@@ -12,7 +12,16 @@
 \contentsline {subsubsection}{\numberline {2.1.4.2}Depth-search-first algorithm}{5}
 \contentsline {subsubsection}{\numberline {2.1.4.3}Unit Resolution}{6}
 \contentsline {subsubsection}{\numberline {2.1.4.4}DPLL algorithm}{8}
-\contentsline {subsection}{\numberline {2.1.5}PaMiraXT}{8}
-\contentsline {chapter}{\numberline {Chapter 3}Important stuff...}{9}
-\contentsline {chapter}{\numberline {Chapter 4}Conclusions}{10}
-\contentsline {chapter}{Bibliography}{11}
+\contentsline {subsection}{\numberline {2.1.5}PaMiraXT}{9}
+\contentsline {chapter}{\numberline {Chapter 3}Important stuff...}{10}
+\contentsline {section}{\numberline {3.1}Cache performance in simple parallel-shared-memory programs}{10}
+\contentsline {section}{\numberline {3.2}Cache performance of parallel SAT solvers}{11}
+\contentsline {subsection}{\numberline {3.2.1}Barcelogic}{11}
+\contentsline {subsection}{\numberline {3.2.2}Plingeling}{11}
+\contentsline {section}{\numberline {3.3}A parallel portfolio approach SAT solver with physicaly shared clause database: AzuDICI}{11}
+\contentsline {subsection}{\numberline {3.3.1}General outline}{11}
+\contentsline {subsection}{\numberline {3.3.2}Data structures involved}{11}
+\contentsline {subsection}{\numberline {3.3.3}Propagation}{11}
+\contentsline {subsection}{\numberline {3.3.4}Experimental results}{11}
+\contentsline {chapter}{\numberline {Chapter 4}Conclusions}{12}
+\contentsline {chapter}{Bibliography}{13}
