@@ -20,8 +20,10 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{setspace}
 \usepackage{graphicx}
-\usepackage{algorithm2e}
 \setcounter{secnumdepth}{3}
+\usepackage[linesnumbered,ruled,vlined]{algorithm2e}
+\usepackage{url}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Step 2: Un-comment these commands if this is a draft
@@ -133,11 +135,10 @@ The definition of conditioning can be extended to multiple literals. For example
 \[\Delta=\{\{A,B,\neg C\},\{\neg A,D\},\{B,C,D\}\}\]
 can be conditioned as $\Delta |CA\neg D=\{\emptyset \}$ (an inconsistent CNF). Moreover, $\Delta |\neg CD=\emptyset$ (a valid CNF).
 
+\subsection{Satisfiability by search: The DPLL algorithm.}
 
-\subsection{Search trees}
+\subsubsection{Search trees}
 One way to picture the search for a possible assignment of variables that satisfies the CNF formula is to use a tree. For example, given $\Sigma =\{A,B,C\}$ and $\Delta =\{\{\neg A,B\},\{\neg B,C\}\}$, figure ~\ref{fig:searchtree} shows the search tree for this CNF. Each node of the tree represents a variable, for each level we have a different variable. The branches are the different truth values the variable can be assigned. Each $w_{i}$ represents a possible truth assignment of the variables in $\Sigma$. Note that $w_{1}$, $w_{5}$, $w_{7}$ and $w_{8}$ are all assignments that satisfy the CNF, while $w_{2}$, $w_{3}$, $w_{4}$ and $w_{6}$ do not.
-
-\subsection{The DPLL algorithm}
 
 \begin{figure}[h!]
 	\centering
@@ -146,7 +147,93 @@ One way to picture the search for a possible assignment of variables that satisf
 	\label{fig:searchtree}
 \end{figure}
 
-The Davis–Putnam–Logemann–Lovel (DPLL) algorithm is the base of all modern SAT solvers. Many refinements have made to this algorithm over the last decade, which have been significant enough to change the behaviour of the algorithm, but it is still important to know it for understanding modern solvers.
+\subsubsection{Depth-search-first algorithm}
+
+\begin{algorithm}
+\textsc{Depth-first-search}(CNF $\Delta$,depth $d$):\\
+\uIf{$\Delta=\{\}$}{
+	\bf{return \{\}}.
+}
+\uElseIf{$\{\}\in \Delta$}{
+	\textbf{return} \textsc{unsatisfiable}
+}
+\uElseIf{\textsc{\textbf{L}}$=$\textsc{Depth-first-search}$(\Delta |P_{d+1},d+1)\neq$\textsc{unsatisfiable}}{
+	\textbf{return} \textbf{L} $\cup$ $\{P_{d+1}\}$
+}
+\uElseIf{\textsc{\textbf{L}}$=$\textsc{Depth-first-search}$(\neg \Delta |P_{d+1},d+1)\neq$\textsc{unsatisfiable}}{
+	\textbf{return} \textbf{L} $\cup$ $\{\neg P_{d+1}\}$
+}
+\Else{\textbf{return} \textsc{unsatisfiable}}
+\caption{Depth-first-search algorithm\label{dpll}}
+\end{algorithm}    
+
+The Davis-Putnam-Logemann-Loveland (DPLL) algorithm is the base of all modern SAT solvers. Many refinements have been made to this algorithm over the last decade, which have been significant enough to change the behaviour of the algorithm, but it is still important to know it for understanding modern solvers. Figure ~\ref{fig:searchtree} shows a search tree with three variables. We can observe that the leaves of this tree and in one-to-one correspondence with all the possible true assignments of variables involved, so testing satisfiability can be viewed as searching for a leaf node that satisfies the CNF. Another important observation is that the depth of the tree is $n$, where $n$ is the number of boolean variables, so performing a depth-first-search would be best to explore the tree. Algorithm ~\ref{dpll} performs a depth-first-search, which is the base of the DPLL algorithm, using the conditioning operator on CNFs to remove clauses or reduce their size.
+
+Consider the CNF:
+\[\Delta=\{\{\neg A,B\},\{\neg B,C\}\},\]
+and the search node labelled with \textbf{F} in Figure ~\ref{fig:searchtree}. At this node, Algorithm ~\ref{dpll} will condition $\Delta$ on literals $A,\neg B$, leading to:
+\[\Delta |A,\neg B=\{ \{\textbf{false},\textbf{false}\},\{\textbf{true},C\}\}=\{\{\}\}.\]
+The algorithm will detect that at this internal node that there is a contradiction, hence concluding that neither $w3$ or $w4$ are models of $\Delta$, without having to visit them explicitly. The algorithm can also detect success at internal nodes, implying that all assignments from that particular node are models of the CNF.
+
+\subsubsection{Unit Resolution}
+
+\begin{figure}[h!]
+	\centering
+		\includegraphics[width=0.5\textwidth]{termination_tree}
+	\caption{A termination tree, where each node is labelled by the corresponding CNF. The last node visited during the search is labelled with \{\}. The label X indicates the detection of a contradiction at that node.}
+	\label{fig:searchtree}
+\end{figure}
+
+Consider the tree of Figure ~\ref{fig:searchtree} and the CNF:
+\[\Delta=\{\{\neg A,B\},\{\neg B,\neg C\},\{C,\neg D\}\}.\]
+Consider also the node at Level 1, which results from setting variable A to \textbf{true}, and its corresponding CNF:
+\[\Delta |A=\{\{B\},\{\neg B,\neg C\},\{C,\neg D\}\}.\]
+Algorithm ~\ref{dpll} cannot declare early success or early failure, because the CNF is neither empty, nor contains the empty clause, reason why it keeps searching below Level 1 as shown in Figure \ref{fig:searchtree}. However, we will now show that by using unit resolution, we can declare success success and end the search at Level 1.
+
+The \textit{unit resolution technique} (also called \textit{unit propagation}) is very simple: Before we check tests for success or contradictions, we first collect all unit clauses. Then we assume that the variables which make these clauses unit are set to satisfy the unit clauses. Finally we simplify the CNF and check for success or failure.
+
+To incorporate unit resolution into Algorithm \ref{dpll}, we will introduce a function \textsc{unit-resolution}, which applies to a CNF $\Delta$ and returns two results:
+\begin{itemize}
+	\item \textbf{I}: a set of literals that are either present as unit clauses in $\Delta$, or were derived from $\Delta$ by unit resolution.
+	\item $\Gamma$: a new CNF which results from conditioning $\Delta$ on literals \textbf{I}.
+\end{itemize}
+For example, if the CNF
+\[\Delta=\{\{\neg A,\neg B\},\{B,C\},\{\neg C,D\},\{A\}\},\]
+then $\textbf{I}=\{A,\neg B,C,D\}$ and $\Gamma=\{\}$. Moreover, if
+\[\Delta=\{\{\neg A,\neg B\},\{B,C\},\{\neg C,D\},\{C\}\},\]
+then $\textbf{I}=\{C,D\}$ and $\Gamma=\{\{\neg A,\neg B\}\}$.
+
+\subsubsection{DPLL algorithm}
+
+\begin{algorithm}
+$(\textbf{I},\Gamma)=\textsc{unit-resolution}(\Delta)$\\
+\uIf{$\Gamma=\{\}$}{
+	\bf{return \textbf{I}}.
+}
+\uElseIf{$\{\}\in \Gamma$}{
+	\textbf{return} \textsc{unsatisfiable}
+}
+\Else{
+	choose a literal $L$ in $\Gamma$\\
+	\uIf{$\textbf{\textsc{L}}=\textsc{dpll}(\Gamma |L) \neq \textsc{unsatisfiable}$}{
+		\textbf{return} \textbf{L} $\cup$ \textbf{I} $\cup$ $\{L\}$	
+	}
+	\uElseIf{$\textbf{\textsc{L}}=\textsc{dpll}(\Gamma |\neg L) \neq \textsc{unsatisfiable}$}{
+		\textbf{return} \textbf{L} $\cup$ \textbf{I} $\cup$ $\{\neg L\}$	
+	}
+	\Else{
+		\textbf{return} \textsc{unsatisfiable}
+	}
+}
+\caption{DPLL(CNF $\Delta$): returns a set of literals or \textsc{unsatisfiable}\label{dpllplus}}
+\end{algorithm}    
+
+The DPLL algorithm (Algorithm \ref{dpllplus} is a refinement of the depth-first-search algorithm. The first change made is that it adds unit resolution in line 1. Also, we no longer assume that variables are examined in the same order as we go down the search tree and we no longer assume that a variable is set to \textbf{true} and then to \textbf{false}. The choice of a literal $L$ on line 7 can have a dramatic impact on the running time of DPLL. This is where inference comes into play when solving a SAT instance with a DPLL based algorithm, heuristics and random factors are commonly used at this point. 
+
+
+
+
+
 
 
 \subsection{PaMiraXT}

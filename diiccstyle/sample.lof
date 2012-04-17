@@ -1,5 +1,6 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {Figure 2.1}{\ignorespaces A search tree for the CNF $\Delta =\{\{\neg A,B\},\{\neg B,C\}\}$.}}{5}
+\contentsline {figure}{\numberline {Figure 2.2}{\ignorespaces A termination tree, where each node is labelled by the corresponding CNF. The last node visited during the search is labelled with \{\}. The label X indicates the detection of a contradiction at that node.}}{7}
 \addvspace {10\p@ }
 \addvspace {10\p@ }

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=latex 2012.2.6)  12 APR 2012 14:59
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=latex 2012.2.6)  16 APR 2012 14:46
 entering extended mode
  %&-line parsing enabled.
 **sample
@@ -100,28 +100,35 @@ subscribe by emailing sympa@lirmm.fr with 'subscribe <list> <firstname name>'
 \c@algocf=\count90
 \algocf@algoframe=\box31
 \algocf@algobox=\box32
-) (./sample.aux)
+) (/usr/share/texmf-texlive/tex/latex/ltxmisc/url.sty
+\Urlmuskip=\muskip10
+Package: url 2006/04/12  ver 3.3  Verb mode for urls, etc.
+) (./sample.aux
+
+LaTeX Warning: Label `fig:searchtree' multiply defined.
+
+)
 \openout1 = `sample.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 68.
-LaTeX Font Info:    ... okay on input line 68.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 68.
-LaTeX Font Info:    ... okay on input line 68.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 68.
-LaTeX Font Info:    ... okay on input line 68.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 68.
-LaTeX Font Info:    ... okay on input line 68.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 68.
-LaTeX Font Info:    ... okay on input line 68.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 68.
-LaTeX Font Info:    ... okay on input line 68.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 70.
+LaTeX Font Info:    ... okay on input line 70.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 70.
+LaTeX Font Info:    ... okay on input line 70.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 70.
+LaTeX Font Info:    ... okay on input line 70.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 70.
+LaTeX Font Info:    ... okay on input line 70.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 70.
+LaTeX Font Info:    ... okay on input line 70.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 70.
+LaTeX Font Info:    ... okay on input line 70.
 
 Unavoidable over/underfulls may occur in the first
 few pages of dalthesis. These can usually be ignored.
 However, if uncorrectable errors occur, notify staff.
-LaTeX Info: Redefining \\ on input line 69.
-LaTeX Info: Redefining \\ on input line 69.
-LaTeX Info: Redefining \\ on input line 69.
+LaTeX Info: Redefining \\ on input line 71.
+LaTeX Info: Redefining \\ on input line 71.
+LaTeX Info: Redefining \\ on input line 71.
 File: udeclogobw.eps Graphic file (type eps)
 <udeclogobw.eps> [1
 
@@ -150,21 +157,28 @@ LaTeX Font Info:    External font `cmex10' loaded for size
  [4
 
 
-] (./sample.lof)
+] (./sample.lof
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 4.
+
+(/usr/share/texmf-texlive/tex/latex/base/omscmr.fd
+File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 4.
+)
 \tf@lof=\write5
 \openout5 = `sample.lof'.
 
-
-[5
+ [5
 
 
 ]
 Dalthesis preface pages completed.
 Chapter 1.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 101.
+(Font)              <7> on input line 103.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 101.
+(Font)              <5> on input line 103.
 [1
 
 
@@ -172,37 +186,66 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 Chapter 2.
 [3
 
-] [4]
+]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [4]
 File: searchtree.eps Graphic file (type eps)
- <searchtree.eps>
-Missing character: There is no â in font cmr12!
-Missing character: There is no € in font cmr12!
-Missing character: There is no “ in font cmr12!
-Missing character: There is no â in font cmr12!
-Missing character: There is no € in font cmr12!
-Missing character: There is no “ in font cmr12!
-Missing character: There is no â in font cmr12!
-Missing character: There is no € in font cmr12!
-Missing character: There is no “ in font cmr12!
- [5]
+
+<searchtree.eps>
+LaTeX Font Info:    Font shape `OMS/cmr/bx/n' in size <12> not available
+(Font)              Font shape `OMS/cmsy/b/n' tried instead on input line 156.
+
+
+LaTeX Font Warning: Font shape `OT1/cmr/bx/sc' undefined
+(Font)              using `OT1/cmr/bx/n' instead on input line 162.
+
+
+Underfull \hbox (badness 10000) detected at line 168
+[][]
+ []
+
+[5]
+File: termination_tree.eps Graphic file (type eps)
+ <termination_tree.eps>
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+Underfull \vbox (badness 4673) has occurred while \output is active []
+
+ [6]
+[7]
+Underfull \hbox (badness 10000) detected at line 229
+[][]
+ []
+
+[8]
 Chapter 3.
-[6
+[9
 
 ]
 Chapter 4.
-(./sample.bbl [7
+(./sample.bbl [10
 
-]) [8
+]) [11
 
 
-] (./sample.aux) ) 
+] (./sample.aux)
+
+LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+
+
+LaTeX Warning: There were multiply-defined labels.
+
+ ) 
 Here is how much of TeX's memory you used:
- 1787 strings out of 495062
- 22121 string characters out of 1182645
- 95880 words of memory out of 3000000
- 4984 multiletter control sequences out of 15000+50000
- 8287 words of font info for 29 fonts, out of 3000000 for 9000
+ 1896 strings out of 495062
+ 23520 string characters out of 1182645
+ 98232 words of memory out of 3000000
+ 5081 multiletter control sequences out of 15000+50000
+ 9511 words of font info for 33 fonts, out of 3000000 for 9000
  28 hyphenation exceptions out of 8191
- 32i,8n,21p,1606b,262s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 32i,15n,23p,1606b,358s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on sample.dvi (13 pages, 17628 bytes).
+Output written on sample.dvi (16 pages, 24560 bytes).

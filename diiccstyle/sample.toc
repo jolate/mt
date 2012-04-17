@@ -7,9 +7,12 @@
 \contentsline {subsection}{\numberline {2.1.1}The SAT problem}{3}
 \contentsline {subsection}{\numberline {2.1.2}Resolution}{3}
 \contentsline {subsection}{\numberline {2.1.3}Conditioning}{4}
-\contentsline {subsection}{\numberline {2.1.4}Search trees}{4}
-\contentsline {subsection}{\numberline {2.1.5}The DPLL algorithm}{5}
-\contentsline {subsection}{\numberline {2.1.6}PaMiraXT}{5}
-\contentsline {chapter}{\numberline {Chapter 3}Important stuff...}{6}
-\contentsline {chapter}{\numberline {Chapter 4}Conclusions}{7}
-\contentsline {chapter}{Bibliography}{8}
+\contentsline {subsection}{\numberline {2.1.4}Satisfiability by search: The DPLL algorithm.}{5}
+\contentsline {subsubsection}{\numberline {2.1.4.1}Search trees}{5}
+\contentsline {subsubsection}{\numberline {2.1.4.2}Depth-search-first algorithm}{5}
+\contentsline {subsubsection}{\numberline {2.1.4.3}Unit Resolution}{6}
+\contentsline {subsubsection}{\numberline {2.1.4.4}DPLL algorithm}{8}
+\contentsline {subsection}{\numberline {2.1.5}PaMiraXT}{8}
+\contentsline {chapter}{\numberline {Chapter 3}Important stuff...}{9}
+\contentsline {chapter}{\numberline {Chapter 4}Conclusions}{10}
+\contentsline {chapter}{Bibliography}{11}
