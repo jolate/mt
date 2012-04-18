@@ -15,18 +15,18 @@
 \contentsline {subsubsection}{\numberline {2.1.4.5}Chronological backtracking}{9}
 \contentsline {subsubsection}{\numberline {2.1.4.6}Non-Chronological backtracking}{9}
 \contentsline {subsection}{\numberline {2.1.5}Modern CDCL solvers}{10}
-\contentsline {subsection}{\numberline {2.1.6}PaMiraXT}{11}
-\contentsline {subsection}{\numberline {2.1.7}Plingeling}{11}
-\contentsline {subsection}{\numberline {2.1.8}Barcelogic}{11}
-\contentsline {chapter}{\numberline {Chapter 3}Important stuff...}{12}
-\contentsline {section}{\numberline {3.1}Cache performance in simple parallel-shared-memory programs}{12}
-\contentsline {section}{\numberline {3.2}Cache performance of parallel SAT solvers}{13}
-\contentsline {subsection}{\numberline {3.2.1}Barcelogic}{13}
-\contentsline {subsection}{\numberline {3.2.2}Plingeling}{13}
-\contentsline {section}{\numberline {3.3}A parallel portfolio approach SAT solver with physicaly shared clause database: AzuDICI}{13}
-\contentsline {subsection}{\numberline {3.3.1}General outline}{13}
-\contentsline {subsection}{\numberline {3.3.2}Data structures involved}{13}
-\contentsline {subsection}{\numberline {3.3.3}Propagation}{13}
-\contentsline {subsection}{\numberline {3.3.4}Experimental results}{13}
-\contentsline {chapter}{\numberline {Chapter 4}Conclusions}{14}
-\contentsline {chapter}{Bibliography}{15}
+\contentsline {subsection}{\numberline {2.1.6}CDCL SAT solver data structures}{11}
+\contentsline {subsubsection}{\numberline {2.1.6.1}The two watched literals lazy data structure}{11}
+\contentsline {subsection}{\numberline {2.1.7}Parallel SAT solvers}{12}
+\contentsline {chapter}{\numberline {Chapter 3}Important stuff...}{15}
+\contentsline {section}{\numberline {3.1}Cache performance in simple parallel-shared-memory programs}{15}
+\contentsline {section}{\numberline {3.2}Cache performance of parallel SAT solvers}{16}
+\contentsline {subsection}{\numberline {3.2.1}Barcelogic}{16}
+\contentsline {subsection}{\numberline {3.2.2}Plingeling}{16}
+\contentsline {section}{\numberline {3.3}A parallel portfolio approach SAT solver with physicaly shared clause database: AzuDICI}{16}
+\contentsline {subsection}{\numberline {3.3.1}General outline}{16}
+\contentsline {subsection}{\numberline {3.3.2}Data structures involved}{16}
+\contentsline {subsection}{\numberline {3.3.3}Propagation}{16}
+\contentsline {subsection}{\numberline {3.3.4}Experimental results}{16}
+\contentsline {chapter}{\numberline {Chapter 4}Conclusions}{17}
+\contentsline {chapter}{Bibliography}{18}

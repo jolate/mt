@@ -1,4 +1,12 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
+
+\bibitem{plingeling}
+Armin Biere.
+\newblock {Lingeling, Plingeling, PicoSAT and PrecoSAT at SAT Race 2010}.
+\newblock
+  \url{http://baldur.iti.uka.de/sat-race-2010/descriptions/solver_1%2B2%2B3%2B%
+6.pdf}, 2010.
+\newblock [Online; accessed 01-April-2012].
 
 \bibitem{cook1971}
 S.~A. Cook.
@@ -11,10 +19,27 @@ Martin Davis, George Logemann, and Donald~W. Loveland.
 \newblock A machine program for theorem-proving.
 \newblock {\em Commun. ACM}, 5(7):394--397, 1962.
 
+\bibitem{manysat}
+Youssef Hamadi, Said Jabbour, and Lakhdar Sais.
+\newblock Manysat: a parallel sat solver.
+\newblock {\em Journal on Satisfiability, Boolean Modeling and Computation},
+  6:245--262, 2009.
+
 \bibitem{karp1972}
 Richard~M. Karp.
 \newblock Reducibility among combinatorial problems.
 \newblock {\em Complexity of Computer Computations}, pages 85--103, 1972.
+
+\bibitem{sartagnan}
+Stephan Kottler and Michael Kaufmann.
+\newblock {SA}r{T}agnan - {A} parallel portfolio {SAT} solver with lockless
+  physical clause sharing.
+\newblock In {\em Pragmatics of SAT}, 2011.
+
+\bibitem{cdcl2}
+Joao~P. Marques-Silva, Ines Lynce, and Sharad Malik.
+\newblock {\em Conflict-Driven Clause Learning SAT Solvers}, chapter~4, pages
+  131--153.
 
 \bibitem{DP1960}
 Davis Putnam and Martin Hillary.
@@ -26,13 +51,31 @@ John~Alan Robinson.
 \newblock A machine-oriented logic based on the resolution principle.
 \newblock {\em J. ACM}, 12(1):23--41, 1965.
 
+\bibitem{ppfolio}
+O.~Rousell.
+\newblock {Description of ppfolio}.
+\newblock \url{http://www.cril.univ-artois.fr/~roussel/ppfolio/solver1.pdf},
+  2010.
+\newblock [Online; accessed 01-April-2012].
+
+\bibitem{miraxt}
+Tobias Schubert, Matthew Lewis, and Bernd Becker.
+\newblock Pamiraxt: parallel sat solving with threads and message passing.
+\newblock {\em Journal of Satisfiability, Boolean Modeling and Computation},
+  6(4):203--222, 2009.
+
 \bibitem{SLB09}
 Tobias Schubert, Matthew Lewis, and Bernd Becker.
 \newblock Pamiraxt: Parallel sat solving with threads and message passing.
 \newblock {\em Journal on Satisfiability, Boolean Modeling and Computation},
   6:203--222, 2009.
 
-\bibitem{cdcl}
+\bibitem{vsids}
+Jaeheon Yi.
+\newblock The effect of vsids on sat solver performance.
+\newblock 2009.
+
+\bibitem{cdcl1}
 Lintao Zhang, Conor~F. Madigan, Matthew~W. Moskewicz, and Sharad Malik.
 \newblock Efficient conflict driven learning in boolean satisfiability solver.
 \newblock In {\em ICCAD}, pages 279--285, 2001.

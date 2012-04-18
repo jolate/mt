@@ -87,7 +87,7 @@
   bibsource = {DBLP, http://dblp.uni-trier.de}
 }
 
-@inproceedings{cdcl,
+@inproceedings{cdcl1,
   author    = {Lintao Zhang and
                Conor F. Madigan and
                Matthew W. Moskewicz and
@@ -99,4 +99,64 @@
   pages     = {279-285},
   ee        = {http://www.sigda.org/Archives/ProceedingArchives/Iccad/Iccad2001/papers/2001/iccad01/htmfiles/sun_sgi/iccadabs.htm\#06a_1},
   bibsource = {DBLP, http://dblp.uni-trier.de}
+}
+
+@misc{ ppfolio,
+  author = {O. Rousell},
+  title = {{Description of ppfolio}},
+  howpublished = "\url{http://www.cril.univ-artois.fr/~roussel/ppfolio/solver1.pdf}",
+  year = {2010}, 
+  note = "[Online; accessed 01-April-2012]"
+}
+
+@Article{ manysat,
+	title = "ManySAT: a Parallel SAT Solver",
+	author = "Youssef Hamadi and Said Jabbour and Lakhdar Sais",
+	journal = "Journal on Satisfiability, Boolean Modeling and Computation",
+	pages = "245--262",
+	volume = "6",
+	year = "2009"
+}
+
+@Article{ vsids,
+	title = "The Effect of VSIDS on SAT Solver Performance",
+	author = "Jaeheon Yi",
+	year = "2009"
+}
+
+@misc{ plingeling,
+  author = {Armin Biere},
+  title = {{Lingeling, Plingeling, PicoSAT and PrecoSAT at SAT Race 2010}},
+  howpublished = "\url{http://baldur.iti.uka.de/sat-race-2010/descriptions/solver_1%2B2%2B3%2B6.pdf}",
+  year = {2010}, 
+  note = "[Online; accessed 01-April-2012]"
+}
+
+@conference{ sartagnan,
+author = "Stephan Kottler and Michael Kaufmann",
+booktitle = "Pragmatics of SAT",
+keywords = "multi-core, SAT, parallel",
+title = " {SA}r{T}agnan - {A} parallel portfolio {SAT} solver with lockless physical clause sharing",
+year = "2011",
+}
+
+@article { miraxt,
+    author       = {Schubert, Tobias and Lewis, Matthew and Becker, Bernd},
+    title        = {PaMiraXT: parallel SAT solving with threads and message passing.},
+    year         = {2009},
+    journal      = {Journal of Satisfiability, Boolean Modeling and Computation},
+    volume       = {6},
+    number       = {4},
+    issn         = {1574-0617},
+    pages        = {203-222},
+    publisher    = {Delft University of Technology, Delft; IOS Press, Amsterdam},
+    abstract     = {Summary: This article describes PaMiraXT, a powerful parallel SAT algorithm. PaMiraXT follows a master/client model based on message passing, making it suitable for any kind of workstation cluster. For the clients, MiraXT is used, which itself is thread-based parallel solver designed to take advantage of current and future shared memory multiprocessor systems. We highlight design and implementation details that allow the threads/clients to run and cooperate efficiently. Experimental results show that MiraXT compares well to other state-of-the-art SAT algorithms. In single-threaded mode, it outperforms MiniSat2, PicoSAT 535, and RSat 2.01, while in multi-threaded mode, MiraXT provides cutting edge performance, as it solves significantly more instances within the given time limit. A case study, using three copies of MiraXT with a total of 8 threads as clients, underlines the potential of PaMiraXT, resulting in a speedup of 5.62 on the industrial benchmarks of the 2007 SAT competition.},
+    identifier   = {05620835},
+}
+
+@inbook{ cdcl2,
+   Author = {Marques-Silva, Joao P. and Lynce, Ines and Malik, Sharad},
+   Title = {Conflict-Driven Clause Learning SAT Solvers},
+   Chapter = {4},
+   Pages = {131-153},
 }
