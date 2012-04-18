@@ -236,7 +236,47 @@ When we detect a conflict at level $l$ of the search tree, we have to rewind bac
 
 \subsubsection{Non-Chronological backtracking}
 
-The problem with this type of backtracking, which is the one used in the DPLL algorithm, is that contradictions (when an assignment we have done does not satisfy the CNF) that trigger the backtrack often have valuable information. Such information could lead us to learn new clauses and backtrack more levels than just one, thus saving time in the search. For example, let's say that we have a CNF $\Delta$ with variables $A,B,C,D$. Let's us also say that, because of the clauses in $\Delta$, the CNF will always be inconsistent when $A$ is set to \textbf{true}. Unfortunately, the DPLL algorithm might not realise this beforehand, because it uses unit resolution which is not refutation complete. So the algorithm might only conclude that $A$ set to \textbf{true} will not satisfy $\Delta$ after assigning all possible values to $B,C,D$. If we could detect that $A$ is not part of any solution, we could avoid going any further in that branch of the search tree and learn that information as a clause. This is the reason why conflict driven clauses \cite{cdcl} were introduced to SAT solving algorithms.
+The problem with chronological backtracking, which is the one used in the DPLL algorithm, is that contradictions (when an assignment we have done does not satisfy the CNF) that trigger the backtrack often have valuable information. Such information could lead us to learn new clauses and backtrack more levels than just one, thus saving time in the search. For example, let's say that we have a CNF $\Delta$ with variables $A,B,C,D$. Let's us also say that, because of the clauses in $\Delta$, the CNF will always be inconsistent when $A$ is set to \textbf{true}. Unfortunately, the DPLL algorithm might not realise this beforehand, because it uses unit resolution which is not refutation complete. So the algorithm might only conclude that $A$ set to \textbf{true} will not satisfy $\Delta$ after assigning all possible values to $B,C,D$. If we could detect that $A$ is not part of any solution, we could avoid going any further in that branch of the search tree and learn that information as a new clause (in our example we would learn the clause $\{\neg A\}$ to enforce $A$ to be \textbf{false}). Learning such clauses is called \textit{conflict-driven clause learning} (CDCL) \cite{cdcl}.
+
+We will not discuss in detail how such new clauses are decided or how can we decide which level to backtrack to after a contradiction is found. It suffices to know that after a contradiction is detected, we can decide a new clause to be learnt and which level to backtrack to. Also note that adding CDCL features to the DPLL algorithm will not affect its soundness or completeness.
+
+\subsection{Modern CDCL solvers}
+
+All modern solvers today are CDCL SAT solvers. Given a CNF $\varphi$, a partial assignment of variables $\nu$, Algorithm \ref{cdcl} outlines the general structure of a CDCL SAT solver, where $x$ is a variable, $v$ a truth value and $\beta$ a number. We will shortly explain the main functions of this algorithm.
+
+\begin{algorithm}
+\KwIn{A CNF $\varphi$ and a variable assignment $\nu$}
+\If{\textsc{(UnitPropagation($\varphi$,$\nu$)}=={\bf CONFLICT}\textsc{)}}{
+	\bf{return UNSAT}.
+}
+$dl \leftarrow 0$\\
+\While{\textsc{(}{\bf not} \textsc{AllVariablesAssigned($\varphi$,$\nu$))}}{
+	\textsc{($x$,$v$)=PickBranchingVariable($\varphi$,$\nu$)}\\
+	$dl \leftarrow dl+1$\\
+	$\nu \leftarrow \nu$ $\cup$ \{($x$,$v$)\}\\
+	\If{\textsc{(UnitPropagation($\varphi$,$\nu$)}=={\bf CONFLICT}\textsc{)}}{
+		\textsc{$\beta$=ConflictAnalysis($\varphi$,$\nu$)}\\
+		\uIf{\textsc{($\beta < 0$)}}{
+			\Return{{\bf UNSAT}}
+		}
+		\Else{
+			\textsc{Backtrack($\varphi$,$\nu$,$\beta$)}\\
+			$dl \leftarrow \beta$
+		}
+	}
+}
+\Return{\textsc{\textbf{SAT}}}
+\caption{Typical CDCL algorithm\label{cdcl}}
+\end{algorithm}
+
+\begin{itemize}
+	\item \textsc{UnitPropagation} consists of iteratively deducting the truth value of variables. The values are deduced by logical reasoning on $\varphi$ and $\nu$. We already discussed this function in the previous sections.
+	\item \textsc{PickBranchingVariable} consists of selecting a variable to assign, and the respective value. Heavily relies in heuristics/random factors to pick variables.
+	\item \textsc{ConflictAnalysis} consists of analyzing the most recent contradiction and learning a new clause from it.
+	\item \textsc{Backtrack} undoes variable assignments and backtracks to a previous decision level as computed by \textsc{ConflictAnalysis}.
+	\item \textsc{AllVariablesAssigned} tests whether all variables have been assigned a truth value.
+\end{itemize}
+
 
 
 \subsection{PaMiraXT}
@@ -245,7 +285,7 @@ PaMiraXT \cite{SLB09} is one of the first attempts to use a shared clause databa
 
 \subsection{Plingeling}
 
-\subsection{
+\subsection{Barcelogic}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

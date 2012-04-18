@@ -32,4 +32,9 @@ Tobias Schubert, Matthew Lewis, and Bernd Becker.
 \newblock {\em Journal on Satisfiability, Boolean Modeling and Computation},
   6:203--222, 2009.
 
+\bibitem{cdcl}
+Lintao Zhang, Conor~F. Madigan, Matthew~W. Moskewicz, and Sharad Malik.
+\newblock Efficient conflict driven learning in boolean satisfiability solver.
+\newblock In {\em ICCAD}, pages 279--285, 2001.
+
 \end{thebibliography}
