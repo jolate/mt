@@ -41,6 +41,12 @@ Joao~P. Marques-Silva, Ines Lynce, and Sharad Malik.
 \newblock {\em Conflict-Driven Clause Learning SAT Solvers}, chapter~4, pages
   131--153.
 
+\bibitem{chaff}
+Matthew~W. Moskewicz, Conor~F. Madigan, Ying Zhao, Lintao Zhang, and Sharad
+  Malik.
+\newblock Chaff: Engineering an efficient sat solver.
+\newblock In {\em DAC}, pages 530--535. ACM, 2001.
+
 \bibitem{DP1960}
 Davis Putnam and Martin Hillary.
 \newblock A computing procedure for quantification theory.
@@ -64,16 +70,16 @@ Tobias Schubert, Matthew Lewis, and Bernd Becker.
 \newblock {\em Journal of Satisfiability, Boolean Modeling and Computation},
   6(4):203--222, 2009.
 
-\bibitem{SLB09}
-Tobias Schubert, Matthew Lewis, and Bernd Becker.
-\newblock Pamiraxt: Parallel sat solving with threads and message passing.
-\newblock {\em Journal on Satisfiability, Boolean Modeling and Computation},
-  6:203--222, 2009.
-
 \bibitem{vsids}
 Jaeheon Yi.
 \newblock The effect of vsids on sat solver performance.
 \newblock 2009.
+
+\bibitem{sato}
+Hantao Zhang.
+\newblock Sato: An efficient propositional prover.
+\newblock In William McCune, editor, {\em CADE}, volume 1249 of {\em Lecture
+  Notes in Computer Science}, pages 272--275. Springer, 1997.
 
 \bibitem{cdcl1}
 Lintao Zhang, Conor~F. Madigan, Matthew~W. Moskewicz, and Sharad Malik.

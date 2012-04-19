@@ -2,48 +2,49 @@ This is BibTeX, Version 0.99c (TeX Live 2009/Debian)
 The top-level auxiliary file: sample.aux
 The style file: plain.bst
 Database file #1: biblio.bib
+Warning--I didn't find a database entry for "NEEDED"
 Warning--empty publisher in cdcl2
 Warning--empty year in cdcl2
 Warning--empty journal in vsids
-You've used 14 entries,
+You've used 15 entries,
             2118 wiz_defined-function locations,
-            579 strings with 5923 characters,
-and the built_in function-call counts, 4689 in all, are:
-= -- 464
-> -- 181
-< -- 5
-+ -- 77
-- -- 58
-* -- 301
-:= -- 754
-add.period$ -- 43
-call.type$ -- 14
-change.case$ -- 70
+            592 strings with 6091 characters,
+and the built_in function-call counts, 5339 in all, are:
+= -- 529
+> -- 202
+< -- 8
++ -- 85
+- -- 65
+* -- 340
+:= -- 839
+add.period$ -- 48
+call.type$ -- 15
+change.case$ -- 76
 chr.to.int$ -- 0
-cite$ -- 17
-duplicate$ -- 188
-empty$ -- 391
-format.name$ -- 58
-if$ -- 1007
+cite$ -- 18
+duplicate$ -- 224
+empty$ -- 449
+format.name$ -- 65
+if$ -- 1171
 int.to.chr$ -- 0
-int.to.str$ -- 14
-missing$ -- 13
-newline$ -- 74
-num.names$ -- 28
-pop$ -- 84
+int.to.str$ -- 15
+missing$ -- 14
+newline$ -- 79
+num.names$ -- 32
+pop$ -- 95
 preamble$ -- 1
-purify$ -- 57
+purify$ -- 62
 quote$ -- 0
-skip$ -- 141
+skip$ -- 172
 stack$ -- 0
-substring$ -- 322
-swap$ -- 50
-text.length$ -- 5
+substring$ -- 358
+swap$ -- 73
+text.length$ -- 8
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 54
+type$ -- 58
 warning$ -- 3
-while$ -- 47
-width$ -- 16
-write$ -- 152
-(There were 3 warnings)
+while$ -- 52
+width$ -- 17
+write$ -- 166
+(There were 4 warnings)
