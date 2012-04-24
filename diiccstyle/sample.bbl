@@ -19,6 +19,10 @@ Martin Davis, George Logemann, and Donald~W. Loveland.
 \newblock A machine program for theorem-proving.
 \newblock {\em Commun. ACM}, 5(7):394--397, 1962.
 
+\bibitem{drepper2007}
+Ulrich Drepper.
+\newblock What every programmer should know about memory, 2007.
+
 \bibitem{manysat}
 Youssef Hamadi, Said Jabbour, and Lakhdar Sais.
 \newblock Manysat: a parallel sat solver.

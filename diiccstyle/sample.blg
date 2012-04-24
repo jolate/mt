@@ -6,45 +6,45 @@ Warning--I didn't find a database entry for "NEEDED"
 Warning--empty publisher in cdcl2
 Warning--empty year in cdcl2
 Warning--empty journal in vsids
-You've used 15 entries,
+You've used 16 entries,
             2118 wiz_defined-function locations,
-            592 strings with 6091 characters,
-and the built_in function-call counts, 5339 in all, are:
-= -- 529
-> -- 202
+            596 strings with 6166 characters,
+and the built_in function-call counts, 5536 in all, are:
+= -- 546
+> -- 209
 < -- 8
-+ -- 85
-- -- 65
-* -- 340
-:= -- 839
-add.period$ -- 48
-call.type$ -- 15
-change.case$ -- 76
++ -- 88
+- -- 67
+* -- 346
+:= -- 871
+add.period$ -- 50
+call.type$ -- 16
+change.case$ -- 80
 chr.to.int$ -- 0
-cite$ -- 18
-duplicate$ -- 224
-empty$ -- 449
-format.name$ -- 65
-if$ -- 1171
+cite$ -- 19
+duplicate$ -- 231
+empty$ -- 471
+format.name$ -- 67
+if$ -- 1214
 int.to.chr$ -- 0
-int.to.str$ -- 15
+int.to.str$ -- 16
 missing$ -- 14
-newline$ -- 79
-num.names$ -- 32
-pop$ -- 95
+newline$ -- 83
+num.names$ -- 34
+pop$ -- 104
 preamble$ -- 1
-purify$ -- 62
+purify$ -- 65
 quote$ -- 0
-skip$ -- 172
+skip$ -- 180
 stack$ -- 0
-substring$ -- 358
-swap$ -- 73
+substring$ -- 363
+swap$ -- 74
 text.length$ -- 8
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 58
+type$ -- 62
 warning$ -- 3
-while$ -- 52
-width$ -- 17
-write$ -- 166
+while$ -- 54
+width$ -- 18
+write$ -- 174
 (There were 4 warnings)
