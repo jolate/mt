@@ -19,15 +19,15 @@
 \contentsline {subsection}{\numberline {2.1.6}Parallel SAT solvers}{13}
 \contentsline {subsubsection}{\numberline {2.1.6.1}MiraXT}{15}
 \contentsline {section}{\numberline {2.2}Modern computers memory hierarchy}{15}
-\contentsline {chapter}{\numberline {Chapter 3}Important stuff...}{19}
-\contentsline {section}{\numberline {3.1}Cache performance in simple parallel-shared-memory programs}{19}
-\contentsline {section}{\numberline {3.2}Cache performance of parallel SAT solvers}{20}
-\contentsline {subsection}{\numberline {3.2.1}Barcelogic}{20}
-\contentsline {subsection}{\numberline {3.2.2}Plingeling}{20}
-\contentsline {section}{\numberline {3.3}A parallel portfolio approach SAT solver with physicaly shared clause database: AzuDICI}{20}
-\contentsline {subsection}{\numberline {3.3.1}General outline}{20}
-\contentsline {subsection}{\numberline {3.3.2}Data structures involved}{20}
-\contentsline {subsection}{\numberline {3.3.3}Propagation}{20}
-\contentsline {subsection}{\numberline {3.3.4}Experimental results}{20}
-\contentsline {chapter}{\numberline {Chapter 4}Conclusions}{21}
-\contentsline {chapter}{Bibliography}{22}
+\contentsline {chapter}{\numberline {Chapter 3}Important stuff...}{20}
+\contentsline {section}{\numberline {3.1}Cache performance in simple parallel-shared-memory programs}{20}
+\contentsline {section}{\numberline {3.2}Cache performance of parallel SAT solvers}{21}
+\contentsline {subsection}{\numberline {3.2.1}Barcelogic}{21}
+\contentsline {subsection}{\numberline {3.2.2}Plingeling}{21}
+\contentsline {section}{\numberline {3.3}A parallel portfolio approach SAT solver with physicaly shared clause database: AzuDICI}{21}
+\contentsline {subsection}{\numberline {3.3.1}General outline}{21}
+\contentsline {subsection}{\numberline {3.3.2}Data structures involved}{21}
+\contentsline {subsection}{\numberline {3.3.3}Propagation}{21}
+\contentsline {subsection}{\numberline {3.3.4}Experimental results}{21}
+\contentsline {chapter}{\numberline {Chapter 4}Conclusions}{22}
+\contentsline {chapter}{Bibliography}{23}

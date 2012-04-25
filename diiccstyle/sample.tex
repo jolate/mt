@@ -334,7 +334,7 @@ Computers today usually have three levels of memory cache and the main memory. T
 \end{figure}
  
 Another important topic to discuss is how these memory caches operate. When data is requested and it's not found in any of the three caches, it has to be loaded from main memory. Data is not transferred individually, instead, a fixed amount of bytes containing the data (or part of it if it's large) is fetched. This fixed amount of bytes is called a \textit{word} or \textit{cache line}. Intel uses an \textit{inclusive} memory cache protocol, which loads a requested word from main memory into all cache levels. 
-Because transferring data from main memory is so costly (compared to any cache level), we would like to transfer the highest amount of useful data from main memory to cache every time. Since the access times to any cache are so little compared to main memory, we will assume the bottleneck of data-fetching performance is only to main memory. 
+Because transferring data from main memory is so costly (compared to any cache level), we would like to transfer the highest amount of useful data from main memory to cache every time. Since the access times to any cache are so little compared to main memory, we will assume the bottleneck of data-fetching performance is main memory. 
 
 Data-fetching performance is not only an issue that concerns hardware designers, but also programmers. Depending on how the program is written, the same task (input-output wise) might take much longer if one is not aware about how memory behaves. Since we want the highest amount of useful data in each word transferred, the data structures in which the programmer decides to store data will have a dramatic impact in cache performance. Consider, for example, the following problem: Write a program that sums all elements in a matrix size $m \times n$ of integers. Algorithm \ref{matrix row} and \ref{matrix column} both solve the problem, and apparently with the same level of efficiency, from an algorithmic point of view at least. However, the actual results of both algorithms in practice have a vast difference in total solving time. The following table shows the results for both algorithms implemented in C, for a matrix of size $17000 \times 17000$:
 \begin{center}
@@ -368,7 +368,15 @@ $sum \leftarrow 0$ \\
 \Return{sum}
 \caption{Column sum of elements\label{matrix column}}
 \end{algorithm}
-    
+
+\begin{center}
+\begin{figure}[h!]
+	\centering
+		\includegraphics[width=1.5\textwidth]{matrixmemory}
+	\caption{Typical memory hierarchy of modern computers.}
+	\label{fig:cache}
+\end{figure}
+\end{center}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
