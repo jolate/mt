@@ -23,6 +23,7 @@
 \setcounter{secnumdepth}{3}
 \usepackage[linesnumbered,ruled,vlined]{algorithm2e}
 \usepackage{url}
+\usepackage{amsmath, amsthm, amssymb}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -336,15 +337,6 @@ Computers today usually have three levels of memory cache and the main memory. T
 Another important topic to discuss is how these memory caches operate. When data is requested and it's not found in any of the three caches, it has to be loaded from main memory. Data is not transferred individually, instead, a fixed amount of bytes containing the data (or part of it if it's large) is fetched. This fixed amount of bytes is called a \textit{word} or \textit{cache line}. Intel uses an \textit{inclusive} memory cache protocol, which loads a requested word from main memory into all cache levels. 
 Because transferring data from main memory is so costly (compared to any cache level), we would like to transfer the highest amount of useful data from main memory to cache every time. Since the access times to any cache are so little compared to main memory, we will assume the bottleneck of data-fetching performance is main memory. 
 
-Data-fetching performance is not only an issue that concerns hardware designers, but also programmers. Depending on how the program is written, the same task (input-output wise) might take much longer if one is not aware about how memory behaves. Since we want the highest amount of useful data in each word transferred, the data structures in which the programmer decides to store data will have a dramatic impact in cache performance. Consider, for example, the following problem: Write a program that sums all elements in a matrix size $m \times n$ of integers. Algorithm \ref{matrix row} and \ref{matrix column} both solve the problem, and apparently with the same level of efficiency, from an algorithmic point of view at least. However, the actual results of both algorithms in practice have a vast difference in total solving time. The following table shows the results for both algorithms implemented in C, for a matrix of size $17000 \times 17000$:
-\begin{center}
-\begin{tabular}{ c | c }
-  Algorithm & Elapsed time (seconds) \\ \hline
-  Row sum & 2.5 \\
-  Column sum & 37.5 \\ 
-\end{tabular}
-\end{center}
-
 \begin{algorithm}
 \KwIn{A matrix $M$ of size $m \times n$, which elements are integers}
 $sum \leftarrow 0$ \\
@@ -369,15 +361,39 @@ $sum \leftarrow 0$ \\
 \caption{Column sum of elements\label{matrix column}}
 \end{algorithm}
 
+Data-fetching performance is not only an issue that concerns hardware designers, but also programmers. Depending on how the program is written, the same task (input-output wise) might take much longer if one is not aware about how memory behaves. Since we want the highest amount of useful data in each word transferred, the data structures in which the programmer decides to store data will have a dramatic impact in cache performance. Consider, for example, the following problem: Write a program that sums all elements in a matrix size $m \times n$ of integers. Algorithm \ref{matrix row} and \ref{matrix column} both solve the problem, and apparently with the same level of efficiency, from an algorithmic point of view at least. However, the actual results of both algorithms in practice have a vast difference in total solving time. The following table shows the results for both algorithms implemented in C, for a matrix of size $17000 \times 17000$:
 \begin{center}
-\begin{figure}[h!]
-	\centering
-		\includegraphics[width=1.5\textwidth]{matrixmemory}
-	\caption{Typical memory hierarchy of modern computers.}
-	\label{fig:cache}
-\end{figure}
+\begin{tabular}{ c | c }
+  Algorithm & Elapsed time (seconds) \\ \hline
+  Row sum & 2.5 \\
+  Column sum & 37.5 \\ 
+\end{tabular}
 \end{center}
 
+Figure \ref{fig:matrixmemory} shows a representation of how matrix $M$ could be stored in main memory. As you can see, elements that are in the same row are stored in contiguous memory locations, while elements that in different columns might be far away from each other. As we mentioned earlier, when an instruction requests data, it will bring a whole word, that contains the data, of main memory to the cache. If we assume that the word size for our example is five integers, then when we fetch element $a$ of the matrix, we will also be fetching the whole row together. If Algorithm \ref{matrix row} is being executed, then after using element $a$, we will need element $b$, but since we already loaded the whole row into cache, there is no need to fetch $b$ from main memory! Same would happen with values $b$, $c$, $d$ and $e$. If, on the other hand, we were executing Algorithm \ref{matrix column}, after using element $a$ we would need to fetch element $f$, but element $f$ was not loaded in cache, so we will need to fetch another word from main memory that contains the $f$ element. Let's suppose now that we only have one level cache and that it can only hold one word at a time (remember cache is much smaller than main memory). Since the cache is full with the word that contains element $a$, we will need to \textit{evict} this word. Evicting a word means pushing it back to main memory and marking the cache line as usable. Once the word containing element $a$ is evicted from cache, we can then proceed to fetch the other cache line containing element $f$. After we have used element $f$, we will then need element $b$ (because we are performing a column sum) and hence produce another eviction and access to main memory. In this simple example, the final count of main memory accesses for Algorithm \ref{matrix row} is two, while for Algorithm \ref{matrix column} is ten. 
+
+\begin{figure}[h!]
+	\centering
+		\includegraphics[width=0.7\textwidth]{matrixmemory}
+	\caption{A representation of matrix $M$ in main memory.}
+	\label{fig:matrixmemory}
+\end{figure}
+
+If we generalize our previous example to any matrix size, any word size and any cache size, we will have following formula to calculate the maximum amount of main memory accesses in Algorithm \ref{matrix row}:
+
+\begin{equation}\label{row sum}
+\left (\frac{n}{word\_size} + 1 \right) \cdot m
+\end{equation}
+
+Equation \eqref{row sum} does not take into account the cache size since it will always need to transfer each word containing the rows at least once. For Algorithm \ref{matrix column}, the formula could be:
+
+\begin{equation}\label{column sum}
+(n \cdot m) - \left(\left(\frac{cache\_size}{word\_size}-1\right)\cdot \left(word\_size-1\right)\cdot n\right)
+\end{equation}
+
+Equation \eqref{column sum} depends on other factors too though, such as cache eviction policy. For that formula we are assuming a \textit{FIFO} policy, which means that the newest cache line fetched will be evicted when it's necessary.
+
+\subsection{Perf: A cache performance tool}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Step 12: Here's the main part of your research project. We can't tell

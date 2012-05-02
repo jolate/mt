@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=latex 2012.4.10)  25 APR 2012 18:20
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=latex 2012.4.10)  26 APR 2012 15:51
 entering extended mode
  %&-line parsing enabled.
 **sample
@@ -103,51 +103,131 @@ subscribe by emailing sympa@lirmm.fr with 'subscribe <list> <firstname name>'
 ) (/usr/share/texmf-texlive/tex/latex/ltxmisc/url.sty
 \Urlmuskip=\muskip10
 Package: url 2006/04/12  ver 3.3  Verb mode for urls, etc.
-) (./sample.aux
+)
+(/usr/share/texmf-texlive/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2000/07/18 v2.13 AMS math features
+\@mathmargin=\skip54
+
+For additional information on amsmath, use the `?' option.
+(/usr/share/texmf-texlive/tex/latex/amsmath/amstext.sty
+Package: amstext 2000/06/29 v2.01
+
+(/usr/share/texmf-texlive/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0
+\@emptytoks=\toks16
+\ex@=\dimen110
+))
+(/usr/share/texmf-texlive/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d
+\pmbraise@=\dimen111
+)
+(/usr/share/texmf-texlive/tex/latex/amsmath/amsopn.sty
+Package: amsopn 1999/12/14 v2.01 operator names
+)
+\inf@bad=\count91
+LaTeX Info: Redefining \frac on input line 211.
+\uproot@=\count92
+\leftroot@=\count93
+LaTeX Info: Redefining \overline on input line 307.
+\classnum@=\count94
+\DOTSCASE@=\count95
+LaTeX Info: Redefining \ldots on input line 379.
+LaTeX Info: Redefining \dots on input line 382.
+LaTeX Info: Redefining \cdots on input line 467.
+\Mathstrutbox@=\box33
+\strutbox@=\box34
+\big@size=\dimen112
+LaTeX Font Info:    Redeclaring font encoding OML on input line 567.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 568.
+\macc@depth=\count96
+\c@MaxMatrixCols=\count97
+\dotsspace@=\muskip11
+\c@parentequation=\count98
+\dspbrk@lvl=\count99
+\tag@help=\toks17
+\row@=\count100
+\column@=\count101
+\maxfields@=\count102
+\andhelp@=\toks18
+\eqnshift@=\dimen113
+\alignsep@=\dimen114
+\tagshift@=\dimen115
+\tagwidth@=\dimen116
+\totwidth@=\dimen117
+\lineht@=\dimen118
+\@envbody=\toks19
+\multlinegap=\skip55
+\multlinetaggap=\skip56
+\mathdisplay@stack=\toks20
+LaTeX Info: Redefining \[ on input line 2666.
+LaTeX Info: Redefining \] on input line 2667.
+)
+(/usr/share/texmf-texlive/tex/latex/amscls/amsthm.sty
+Package: amsthm 2004/08/06 v2.20
+\thm@style=\toks21
+\thm@bodyfont=\toks22
+\thm@headfont=\toks23
+\thm@notefont=\toks24
+\thm@headpunct=\toks25
+\thm@preskip=\skip57
+\thm@postskip=\skip58
+\thm@headsep=\skip59
+\dth@everypar=\toks26
+)
+(/usr/share/texmf-texlive/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2009/06/22 v3.00
+
+(/usr/share/texmf-texlive/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2009/06/22 v3.00 Basic AMSFonts support
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 96.
+)) (./sample.aux
 
 LaTeX Warning: Label `fig:searchtree' multiply defined.
-
-
-LaTeX Warning: Label `fig:cache' multiply defined.
 
 )
 \openout1 = `sample.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 70.
-LaTeX Font Info:    ... okay on input line 70.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 70.
-LaTeX Font Info:    ... okay on input line 70.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 70.
-LaTeX Font Info:    ... okay on input line 70.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 70.
-LaTeX Font Info:    ... okay on input line 70.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 70.
-LaTeX Font Info:    ... okay on input line 70.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 70.
-LaTeX Font Info:    ... okay on input line 70.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 71.
+LaTeX Font Info:    ... okay on input line 71.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 71.
+LaTeX Font Info:    ... okay on input line 71.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 71.
+LaTeX Font Info:    ... okay on input line 71.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 71.
+LaTeX Font Info:    ... okay on input line 71.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 71.
+LaTeX Font Info:    ... okay on input line 71.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 71.
+LaTeX Font Info:    ... okay on input line 71.
 
 Unavoidable over/underfulls may occur in the first
 few pages of dalthesis. These can usually be ignored.
 However, if uncorrectable errors occur, notify staff.
-LaTeX Info: Redefining \\ on input line 71.
-LaTeX Info: Redefining \\ on input line 71.
-LaTeX Info: Redefining \\ on input line 71.
+LaTeX Info: Redefining \\ on input line 72.
+LaTeX Info: Redefining \\ on input line 72.
+LaTeX Info: Redefining \\ on input line 72.
 File: udeclogobw.eps Graphic file (type eps)
 <udeclogobw.eps> [1
 
 ]
-\ab@page=\count91
+\ab@page=\count103
  [2
 
 
 ] (./sample.toc
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 6.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 6.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 6.
- [3
+LaTeX Font Info:    Try loading font information for U+msa on input line 6.
+
+(/usr/share/texmf-texlive/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2009/06/22 v3.00 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 6.
+
+(/usr/share/texmf-texlive/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2009/06/22 v3.00 AMS symbols B
+) [3
 
 ])
 \tf@toc=\write3
@@ -157,11 +237,11 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 \tf@lot=\write4
 \openout4 = `sample.lot'.
 
- [5
+
+[5
 
 
-]
-(./sample.lof
+] (./sample.lof
 LaTeX Font Info:    Try loading font information for OMS+cmr on input line 4.
  (/usr/share/texmf-texlive/tex/latex/base/omscmr.fd
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
@@ -178,10 +258,6 @@ LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
 ]
 Dalthesis preface pages completed.
 Chapter 1.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 103.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 103.
 [1
 
 
@@ -197,14 +273,14 @@ File: searchtree.eps Graphic file (type eps)
 
 <searchtree.eps>
 LaTeX Font Info:    Font shape `OMS/cmr/bx/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/b/n' tried instead on input line 156.
+(Font)              Font shape `OMS/cmsy/b/n' tried instead on input line 157.
 
 
 LaTeX Font Warning: Font shape `OT1/cmr/bx/sc' undefined
-(Font)              using `OT1/cmr/bx/n' instead on input line 162.
+(Font)              using `OT1/cmr/bx/n' instead on input line 163.
 
 
-Underfull \hbox (badness 10000) detected at line 168
+Underfull \hbox (badness 10000) detected at line 169
 [][]
  []
 
@@ -219,18 +295,18 @@ Underfull \vbox (badness 4673) has occurred while \output is active []
 
  [6]
 [7]
-Underfull \hbox (badness 10000) detected at line 229
+Underfull \hbox (badness 10000) detected at line 230
 [][]
  []
 
 [8] [9]
-Underfull \hbox (badness 10000) detected at line 270
+Underfull \hbox (badness 10000) detected at line 271
 [][]
  []
 
 [10]
 
-LaTeX Warning: Citation `NEEDED' on page 11 undefined on input line 283.
+LaTeX Warning: Citation `NEEDED' on page 11 undefined on input line 284.
 
 File: watchedliterals.eps Graphic file (type eps)
 <watchedliterals.eps>
@@ -247,29 +323,26 @@ File: cache.eps Graphic file (type eps)
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
+
+Underfull \hbox (badness 10000) detected at line 350
+[][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 362
+[][]
+ []
+
 [16]
-Underfull \hbox (badness 10000) detected at line 358
-[][]
- []
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-
-Underfull \hbox (badness 10000) detected at line 370
-[][]
- []
-
+ [17]
 File: matrixmemory.eps Graphic file (type eps)
-<matrixmemory.eps>
-Overfull \hbox (216.81pt too wide) in paragraph at lines 375--376
- [][] 
- []
 
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[17] [18] [19]
+<matrixmemory.eps> [18] [19]
 Chapter 3.
 
-LaTeX Warning: Reference `matrix' on page 20 undefined on input line 392.
+LaTeX Warning: Reference `matrix' on page 20 undefined on input line 405.
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -296,12 +369,12 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 1922 strings out of 495062
- 23806 string characters out of 1182644
- 100232 words of memory out of 3000000
- 5103 multiletter control sequences out of 15000+50000
- 9680 words of font info for 34 fonts, out of 3000000 for 9000
+ 2893 strings out of 495062
+ 34610 string characters out of 1182644
+ 114092 words of memory out of 3000000
+ 6030 multiletter control sequences out of 15000+50000
+ 15621 words of font info for 58 fonts, out of 3000000 for 9000
  28 hyphenation exceptions out of 8191
- 32i,18n,23p,2798b,407s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 32i,18n,24p,2798b,409s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on sample.dvi (30 pages, 58592 bytes).
+Output written on sample.dvi (30 pages, 62116 bytes).
