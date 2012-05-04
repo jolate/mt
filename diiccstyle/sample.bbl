@@ -19,6 +19,12 @@ Martin Davis, George Logemann, and Donald~W. Loveland.
 \newblock A machine program for theorem-proving.
 \newblock {\em Commun. ACM}, 5(7):394--397, 1962.
 
+\bibitem{perf}
+Arnaldo~Carvalho de~Melo.
+\newblock {Description of ppfolio}.
+\newblock \url{http://vger.kernel.org/~acme/perf/lk2010-perf-paper.pdf}, 2010.
+\newblock [Online; accessed 03-May-2012].
+
 \bibitem{drepper2007}
 Ulrich Drepper.
 \newblock What every programmer should know about memory, 2007.
@@ -50,6 +56,11 @@ Matthew~W. Moskewicz, Conor~F. Madigan, Ying Zhao, Lintao Zhang, and Sharad
   Malik.
 \newblock Chaff: Engineering an efficient sat solver.
 \newblock In {\em DAC}, pages 530--535. ACM, 2001.
+
+\bibitem{valgrind}
+Nicholas Nethercote and Julian Seward.
+\newblock Valgrind: a framework for heavyweight dynamic binary instrumentation.
+\newblock {\em SIGPLAN Not.}, 42(6):89--100, June 2007.
 
 \bibitem{DP1960}
 Davis Putnam and Martin Hillary.

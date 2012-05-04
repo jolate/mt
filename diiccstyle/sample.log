@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=latex 2012.4.10)  26 APR 2012 15:51
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=latex 2012.4.10)  3 MAY 2012 11:35
 entering extended mode
  %&-line parsing enabled.
 **sample
@@ -339,25 +339,29 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
  [17]
 File: matrixmemory.eps Graphic file (type eps)
 
-<matrixmemory.eps> [18] [19]
+<matrixmemory.eps> [18]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [19]
+[20]
 Chapter 3.
 
-LaTeX Warning: Reference `matrix' on page 20 undefined on input line 405.
+LaTeX Warning: Reference `matrix' on page 21 undefined on input line 419.
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [20
+ [21
 
 ]
-[21]
+[22]
 Chapter 4.
-(./sample.bbl [22
+(./sample.bbl [23
 
-] [23
+] [24
 
 
-]) [24] (./sample.aux)
+]) [25] (./sample.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
@@ -369,12 +373,12 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 2893 strings out of 495062
- 34610 string characters out of 1182644
+ 2895 strings out of 495062
+ 34626 string characters out of 1182644
  114092 words of memory out of 3000000
- 6030 multiletter control sequences out of 15000+50000
+ 6032 multiletter control sequences out of 15000+50000
  15621 words of font info for 58 fonts, out of 3000000 for 9000
  28 hyphenation exceptions out of 8191
  32i,18n,24p,2798b,409s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on sample.dvi (30 pages, 62116 bytes).
+Output written on sample.dvi (31 pages, 65156 bytes).

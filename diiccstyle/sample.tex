@@ -314,6 +314,10 @@ The work will mainly consist of building a parallel portfolio approach solver, w
 
 \subsubsection{MiraXT}
 
+Figure \ref{fig:miraxt overview} shows the general structure of the MiraXT solver. We are not interested in the \textit{Preprocessing Unit} as it will not be implemented in our solver. The \textit{SAT Solving Unit} is of interest for our work though. The key structure in this design is the \textit{Shared Clause Database}, which is a database of clauses shared among all SAT solving threads. We will also be using this design in our solver, so all threads will be using a common pool of clauses called the Shared Clause Database. The main difference with our design is that we will not have a \textit{Master Control Object} structure, which in MiraXT is responsible for the coordination of different threads. The reason for this is that, as we mentioned earlier, MiraXT is a divide-and-conquer solver, so different threads will contribute to one solution and hence will need to be coordinated between each other in this task. On the other hand, our solver will be a portfolio approach one, so different threads will not need to interact with each other directly and no coordination between them is needed.
+
+Regarding the shared clause database, Figure \ref{fig:miraxt database} is a representation of it. 
+
 \section{Modern computers memory hierarchy}
 
 Computers today usually have three levels of memory cache and the main memory. The processor can have multiple cores in it and cores can run multiple threads in them. The difference between a core and a thread is that cores have separate copies of almost all the hardware resources. The cores can run independently unless they are using the same resource (for example the connection to the outside) at the same time. Threads, on the other hand, share almost all of the processor resources. When a thread, which is running on a core, needs to fetch data, it first tries to look for it in the first level cache (the L1 cache\footnote{There is L1 data cache and also L1 instruction cache, we will be referring to L1 data cache}), if the data is not there, then it tries to find it in the level 2 cache (L2 cache). If the data is still not there, it then tries to fetch it from the level 3 cache (L3 cache) and if that fails too, it goes up to main memory to get the data. If it still isn't in main memory, then it has to retrieve it from the hard disk. We should notice that this hierarchy involves increasing fetch times as we go up. Getting data from the L1 cache is much faster than getting it from L2, and getting data from L2 is much faster than getting it from main memory. The problem with lower level memory is that, because of the technology and costs involved, they are much smaller. So the big picture is that at lower levels we have faster and smaller memories, and at higher levels we have massive and slower memory storages. Figure \ref{fig:cache} is a schematic of today's computer memory hierarchy. To get an idea of the times involved in accessing data from different memory storages, we present the following table of costs associated with hits and misses, for an Intel Pentium M:
@@ -370,7 +374,7 @@ Data-fetching performance is not only an issue that concerns hardware designers,
 \end{tabular}
 \end{center}
 
-Figure \ref{fig:matrixmemory} shows a representation of how matrix $M$ could be stored in main memory. As you can see, elements that are in the same row are stored in contiguous memory locations, while elements that in different columns might be far away from each other. As we mentioned earlier, when an instruction requests data, it will bring a whole word, that contains the data, of main memory to the cache. If we assume that the word size for our example is five integers, then when we fetch element $a$ of the matrix, we will also be fetching the whole row together. If Algorithm \ref{matrix row} is being executed, then after using element $a$, we will need element $b$, but since we already loaded the whole row into cache, there is no need to fetch $b$ from main memory! Same would happen with values $b$, $c$, $d$ and $e$. If, on the other hand, we were executing Algorithm \ref{matrix column}, after using element $a$ we would need to fetch element $f$, but element $f$ was not loaded in cache, so we will need to fetch another word from main memory that contains the $f$ element. Let's suppose now that we only have one level cache and that it can only hold one word at a time (remember cache is much smaller than main memory). Since the cache is full with the word that contains element $a$, we will need to \textit{evict} this word. Evicting a word means pushing it back to main memory and marking the cache line as usable. Once the word containing element $a$ is evicted from cache, we can then proceed to fetch the other cache line containing element $f$. After we have used element $f$, we will then need element $b$ (because we are performing a column sum) and hence produce another eviction and access to main memory. In this simple example, the final count of main memory accesses for Algorithm \ref{matrix row} is two, while for Algorithm \ref{matrix column} is ten. 
+Figure \ref{fig:matrixmemory} shows a representation of how matrix $M$ could be stored in main memory. As you can see, elements that are in the same row are stored in contiguous memory locations, while elements that are in different columns might be far away from each other. As we mentioned earlier, when an instruction requests data, it will bring a whole word that contains all or some of the data, from main memory to the cache. If we assume that the word size for our example is five integers, then when we fetch element $a$ of the matrix, we will also be fetching the whole row together. If Algorithm \ref{matrix row} is being executed, then after using element $a$, we will need element $b$, but since we already loaded the whole row into cache, there is no need to fetch $b$ from main memory! Same would happen with values $b$, $c$, $d$ and $e$. If, on the other hand, we were executing Algorithm \ref{matrix column}, after using element $a$ we would need to fetch element $f$, but element $f$ was not loaded in cache, so we will need to fetch another word from main memory that contains the $f$ element. Let's suppose now that we only have one level cache and that it can only hold one word at a time (remember cache is much smaller than main memory). Since the cache is full with the word that contains element $a$, we will need to \textit{evict} this word. Evicting a word means pushing it back to main memory and marking the cache line as usable. Once the word containing element $a$ is evicted from cache, we can then proceed to fetch the other cache line containing element $f$. After we have used element $f$, we will then need element $b$ (because we are performing a column sum) and hence produce another eviction and access to main memory. In this simple example, the final count of main memory accesses for Algorithm \ref{matrix row} is two, while for Algorithm \ref{matrix column} is ten. 
 
 \begin{figure}[h!]
 	\centering
@@ -385,15 +389,34 @@ If we generalize our previous example to any matrix size, any word size and any 
 \left (\frac{n}{word\_size} + 1 \right) \cdot m
 \end{equation}
 
-Equation \eqref{row sum} does not take into account the cache size since it will always need to transfer each word containing the rows at least once. For Algorithm \ref{matrix column}, the formula could be:
+Equation \eqref{row sum} does not take into account the cache size since it will always need to transfer each word containing the rows once. If $t$ were the amount of main memory transfers, $n$ and $m$ the rows and  columns of the matrix respectively, and $s$ the size of a word, we would have that:
+
+\[ O(t)=\frac{n \cdot m}{s} \]
+
+For Algorithm \ref{matrix column}, the formula to calculate the amount of transfers could be:
 
 \begin{equation}\label{column sum}
 (n \cdot m) - \left(\left(\frac{cache\_size}{word\_size}-1\right)\cdot \left(word\_size-1\right)\cdot n\right)
 \end{equation}
 
-Equation \eqref{column sum} depends on other factors too though, such as cache eviction policy. For that formula we are assuming a \textit{FIFO} policy, which means that the newest cache line fetched will be evicted when it's necessary.
+Equation \eqref{column sum} also depends on other factors though, such as cache eviction policy. For that formula we are assuming a \textit{FIFO} policy, which means that the newest cache line fetched will be evicted when it's necessary. For this case we would have that:
+
+\[ O(t)=n \cdot m \]
+
+So Algorithm \ref{matrix row} will always perform better for that problem.
 
 \subsection{Perf: A cache performance tool}
+
+Perf \cite{perf} is a linux tool specialized in collecting and analyzing performance data. The advantage of perf over other performance tools is that it uses special hardware registers dedicated to counting events associated with performance. Other popular tools, such as Valgrind \cite{valgrind}, are software based and emulate the program being monitored to get performance statistics, process that could change the behaviour of the program being studied. The following hardware cache events can be viewed with perf and will be used throughout this work:
+
+\begin{itemize}
+\item \textbf{L1-dcache-loads}: The amount of loads done from the L1 data cache to the CPU.
+\item \textbf{L1-dcache-load-misses}: The amount of \textit{load misses} from the L1 data cache. A load miss is produced when data is requested from a particular memory level and is not found there, so a load from a higher level in the memory hierarchy is requested.
+\item \textbf{LLC-loads}: The amount of loads done from the last level cache (LLC) to the lower level cache (L1 or L2). On modern computers the LLC is usually the L3 cache, which is shared among different cores.
+\item \textbf{LLC-load-misses}: The amount of load misses from the LLC.
+\end{itemize}
+
+With all the previous information we can draw important results of the cache performance of any program. As an example of the use of perf, we will make a small cache performance analysis of our C program of Algorithm \ref{matrix row} and Algorithm \ref{matrix column}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Step 12: Here's the main part of your research project. We can't tell
