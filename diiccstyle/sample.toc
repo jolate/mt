@@ -18,17 +18,17 @@
 \contentsline {subsubsection}{\numberline {2.1.5.1}The two watched literals lazy data structure}{11}
 \contentsline {subsection}{\numberline {2.1.6}Parallel SAT solvers}{13}
 \contentsline {subsubsection}{\numberline {2.1.6.1}MiraXT}{15}
-\contentsline {section}{\numberline {2.2}Modern computers memory hierarchy}{15}
+\contentsline {section}{\numberline {2.2}Modern computers memory hierarchy}{16}
 \contentsline {subsection}{\numberline {2.2.1}Perf: A cache performance tool}{20}
-\contentsline {chapter}{\numberline {Chapter 3}Important stuff...}{21}
-\contentsline {section}{\numberline {3.1}Cache performance in simple parallel-shared-memory programs}{21}
-\contentsline {section}{\numberline {3.2}Cache performance of parallel SAT solvers}{22}
-\contentsline {subsection}{\numberline {3.2.1}Barcelogic}{22}
-\contentsline {subsection}{\numberline {3.2.2}Plingeling}{22}
-\contentsline {section}{\numberline {3.3}A parallel portfolio approach SAT solver with physicaly shared clause database: AzuDICI}{22}
-\contentsline {subsection}{\numberline {3.3.1}General outline}{22}
-\contentsline {subsection}{\numberline {3.3.2}Data structures involved}{22}
-\contentsline {subsection}{\numberline {3.3.3}Propagation}{22}
-\contentsline {subsection}{\numberline {3.3.4}Experimental results}{22}
-\contentsline {chapter}{\numberline {Chapter 4}Conclusions}{23}
-\contentsline {chapter}{Bibliography}{24}
+\contentsline {chapter}{\numberline {Chapter 3}Important stuff...}{22}
+\contentsline {section}{\numberline {3.1}Cache performance in simple parallel-shared-memory programs}{22}
+\contentsline {section}{\numberline {3.2}Cache performance of parallel SAT solvers}{23}
+\contentsline {subsection}{\numberline {3.2.1}Barcelogic}{23}
+\contentsline {subsection}{\numberline {3.2.2}Plingeling}{23}
+\contentsline {section}{\numberline {3.3}A parallel portfolio approach SAT solver with physicaly shared clause database: AzuDICI}{23}
+\contentsline {subsection}{\numberline {3.3.1}General outline}{23}
+\contentsline {subsection}{\numberline {3.3.2}Data structures involved}{23}
+\contentsline {subsection}{\numberline {3.3.3}Propagation}{23}
+\contentsline {subsection}{\numberline {3.3.4}Experimental results}{23}
+\contentsline {chapter}{\numberline {Chapter 4}Conclusions}{24}
+\contentsline {chapter}{Bibliography}{25}

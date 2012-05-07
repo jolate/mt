@@ -396,7 +396,10 @@ Equation \eqref{row sum} does not take into account the cache size since it will
 For Algorithm \ref{matrix column}, the formula to calculate the amount of transfers could be:
 
 \begin{equation}\label{column sum}
-(n \cdot m) - \left(\left(\frac{cache\_size}{word\_size}-1\right)\cdot \left(word\_size-1\right)\cdot n\right)
+\begin{split}
+\mbox{if  }n\leq \frac{cache\_size}{word\_size} \mbox{  then  } \left (\frac{n}{word\_size} + 1 \right) \cdot m \\
+\mbox{else  }(n \cdot m) - \left(\left(\frac{cache\_size}{word\_size}-1\right)\cdot \left(word\_size-1\right)\cdot n\right)
+\end{split}
 \end{equation}
 
 Equation \eqref{column sum} also depends on other factors though, such as cache eviction policy. For that formula we are assuming a \textit{FIFO} policy, which means that the newest cache line fetched will be evicted when it's necessary. For this case we would have that:
