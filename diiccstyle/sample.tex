@@ -386,10 +386,10 @@ Figure \ref{fig:matrixmemory} shows a representation of how matrix $M$ could be 
 If we generalize our previous example to any matrix size, any word size and any cache size, we will have following formula to calculate the maximum amount of main memory accesses in Algorithm \ref{matrix row}:
 
 \begin{equation}\label{row sum}
-\left (\frac{n}{word\_size} + 1 \right) \cdot m
+t=\left (\frac{n}{w} + 1 \right) \cdot m
 \end{equation}
 
-Equation \eqref{row sum} does not take into account the cache size since it will always need to transfer each word containing the rows once. If $t$ were the amount of main memory transfers, $n$ and $m$ the rows and  columns of the matrix respectively, and $s$ the size of a word, we would have that:
+Where $t$ is the number of accesses to main memory, $w$ the word size, $n$ the number of rows of the matrix and $m$ the number of columns. Equation \eqref{row sum} does not take into account the cache size since it will always need to transfer each word containing the rows once. In the big-oh notation, we would have that:
 
 \[ O(t)=\frac{n \cdot m}{s} \]
 
@@ -402,7 +402,7 @@ For Algorithm \ref{matrix column}, the formula to calculate the amount of transf
 \end{split}
 \end{equation}
 
-Equation \eqref{column sum} also depends on other factors though, such as cache eviction policy. For that formula we are assuming a \textit{FIFO} policy, which means that the newest cache line fetched will be evicted when it's necessary. For this case we would have that:
+Equation \eqref{column sum} also depends on other factors though, such as cache eviction policy. For that formula we are assuming a \textit{FIFO} policy, which means that the newest cache line fetched will be evicted when it's necessary. For this case, in big-oh notation, we would have that:
 
 \[ O(t)=n \cdot m \]
 
