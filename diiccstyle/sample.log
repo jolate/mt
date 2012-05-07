@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=latex 2012.4.10)  4 MAY 2012 10:21
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=latex 2012.2.6)  7 MAY 2012 13:25
 entering extended mode
  %&-line parsing enabled.
 **sample
@@ -329,28 +329,31 @@ ne 319.
 Underfull \vbox (badness 2846) has occurred while \output is active []
 
  [15]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [16]
 File: cache.eps Graphic file (type eps)
 
-<cache.eps>
+<cache.eps> [17]
+Underfull \hbox (badness 10000) detected at line 360
+[][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 372
+[][]
+ []
+
+[18]
+File: matrixmemory.eps Graphic file (type eps)
+ <matrixmemory.eps>
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[16]
-Underfull \hbox (badness 10000) detected at line 354
-[][]
- []
-
-
-Underfull \hbox (badness 10000) detected at line 366
-[][]
- []
-
-[17] [18]
-File: matrixmemory.eps Graphic file (type eps)
- <matrixmemory.eps> [19] [20] [21]
+[19] [20] [21]
 Chapter 3.
 
-LaTeX Warning: Reference `matrix' on page 22 undefined on input line 434.
+LaTeX Warning: Reference `matrix' on page 22 undefined on input line 441.
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -377,12 +380,12 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 2897 strings out of 495062
- 34668 string characters out of 1182644
+ 2896 strings out of 495062
+ 34650 string characters out of 1182645
  114092 words of memory out of 3000000
- 6034 multiletter control sequences out of 15000+50000
+ 6033 multiletter control sequences out of 15000+50000
  15621 words of font info for 58 fonts, out of 3000000 for 9000
  28 hyphenation exceptions out of 8191
- 32i,21n,24p,2798b,409s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 32i,18n,24p,2798b,409s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on sample.dvi (32 pages, 67656 bytes).
+Output written on sample.dvi (32 pages, 67776 bytes).

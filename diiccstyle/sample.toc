@@ -18,8 +18,11 @@
 \contentsline {subsubsection}{\numberline {2.1.5.1}The two watched literals lazy data structure}{11}
 \contentsline {subsection}{\numberline {2.1.6}Parallel SAT solvers}{13}
 \contentsline {subsubsection}{\numberline {2.1.6.1}MiraXT}{15}
-\contentsline {section}{\numberline {2.2}Modern computers memory hierarchy}{16}
-\contentsline {subsection}{\numberline {2.2.1}Perf: A cache performance tool}{20}
+\contentsline {section}{\numberline {2.2}Cache}{16}
+\contentsline {subsection}{\numberline {2.2.1}Modern computers memory hierarchy}{16}
+\contentsline {subsection}{\numberline {2.2.2}Cache and algorithms}{17}
+\contentsline {subsection}{\numberline {2.2.3}Perf: A cache performance tool}{21}
+\contentsline {subsection}{\numberline {2.2.4}Cache and parallelism}{21}
 \contentsline {chapter}{\numberline {Chapter 3}Important stuff...}{22}
 \contentsline {section}{\numberline {3.1}Cache performance in simple parallel-shared-memory programs}{22}
 \contentsline {section}{\numberline {3.2}Cache performance of parallel SAT solvers}{23}
