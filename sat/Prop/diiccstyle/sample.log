@@ -1,7 +1,7 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=latex 2012.2.6)  15 MAY 2012 09:33
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=latex 2012.2.6)  15 MAY 2012 10:16
 entering extended mode
  %&-line parsing enabled.
-**sample
+**sample.tex
 (./sample.tex
 LaTeX2e <2009/09/24>
 Babel <v3.8l> and hyphenation patterns for english, usenglishmax, dumylang, noh
@@ -128,14 +128,7 @@ LaTeX Info: Redefining \\ on input line 70.
 File: udeclogobw.eps Graphic file (type eps)
 <udeclogobw.eps> [1
 
-] (./sample.toc
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 5.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 5.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 5.
-)
+] (./sample.toc)
 \tf@toc=\write3
 \openout3 = `sample.toc'.
 
@@ -145,10 +138,25 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 ]
 Dalthesis preface pages completed.
 Chapter 1.
+
+LaTeX Warning: Citation `cook1971' on page 1 undefined on input line 100.
+
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <12> on input line 100.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 100.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 100.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <7> on input line 100.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <5> on input line 100.
+
+LaTeX Warning: Citation `karp1972' on page 1 undefined on input line 100.
+
+
+LaTeX Warning: Citation `DP1960' on page 1 undefined on input line 100.
+
 [1
 
 
@@ -170,6 +178,9 @@ Chapter 3.
 ]
 Chapter 4.
 
+LaTeX Warning: Citation `cdcl' on page 5 undefined on input line 141.
+
+
 LaTeX Font Warning: Font shape `OT1/cmr/bx/sc' undefined
 (Font)              using `OT1/cmr/bx/n' instead on input line 164.
 
@@ -181,41 +192,78 @@ Underfull \hbox (badness 10000) detected at line 166
 [5
 
 ] [6]
+
+LaTeX Warning: Citation `ppfolio' on page 7 undefined on input line 183.
+
+
+LaTeX Warning: Citation `manysat' on page 7 undefined on input line 185.
+
+
+LaTeX Warning: Citation `vsids' on page 7 undefined on input line 185.
+
+
+LaTeX Warning: Citation `plingeling' on page 7 undefined on input line 185.
+
+
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [7]
+
+LaTeX Warning: Citation `sartagnan' on page 8 undefined on input line 187.
+
+
+LaTeX Warning: Citation `miraxt' on page 8 undefined on input line 189.
+
+
+LaTeX Warning: Reference `fig:cache' on page 8 undefined on input line 195.
+
 [8]
+File: cache.eps Graphic file (type eps)
+ <cache.eps>
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[9] [10]
 Chapter 5.
+
+LaTeX Warning: Reference `fig:plan' on page 11 undefined on input line 220.
+
 File: plan.eps Graphic file (type eps)
 <plan.eps>
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-(./sample.bbl [9
+(./sample.bbl [11
 
 ]
 
-LaTeX Warning: Text page 10 contains only floats.
+LaTeX Warning: Text page 12 contains only floats.
 
 
 Overfull \vbox (1.72931pt too high) has occurred while \output is active []
 
 
-[10]) [11
+[12]) [13
 
 
 ] (./sample.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
  ) 
 Here is how much of TeX's memory you used:
- 1890 strings out of 495062
- 23426 string characters out of 1182645
+ 1893 strings out of 495062
+ 23455 string characters out of 1182645
  100134 words of memory out of 3000000
- 5083 multiletter control sequences out of 15000+50000
+ 5085 multiletter control sequences out of 15000+50000
  9066 words of font info for 32 fonts, out of 3000000 for 9000
  28 hyphenation exceptions out of 8191
- 32i,18n,23p,2252b,409s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 32i,18n,23p,2256b,409s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on sample.dvi (13 pages, 26024 bytes).
+Output written on sample.dvi (15 pages, 27752 bytes).

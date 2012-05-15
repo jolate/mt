@@ -192,6 +192,23 @@ The work will mainly consist of building a parallel portfolio approach solver, w
 
 \section{Memory cache}
 
+Computers today usually have three levels of memory cache and a main memory. The processor can have multiple cores in it and cores can run multiple threads in them. The difference between a core and a thread is that cores have separate copies of almost all the hardware resources. The cores can run independently unless they are using the same resource (for example the connection to the outside) at the same time. Threads, on the other hand, share almost all of the processor resources. When a thread, which is running on a core, needs to fetch data, it first tries to look for it in the first level cache (the L1 cache\footnote{There is L1 data cache and also L1 instruction cache, we will be referring to L1 data cache}), if the data is not there, then it tries to find it in the level 2 cache (L2 cache). If the data is still not there, it then tries to fetch it from the level 3 cache (L3 cache) and if that fails too, it goes up to main memory to get the data. If it still isn't in main memory, then it has to retrieve it from the hard disk. We should notice that this hierarchy involves increasing fetch times as we go up. Getting data from the L1 cache is much faster than getting it from L2, and getting data from L2 is much faster than getting it from main memory. The problem with lower level memory is that, because of the technology and costs involved, they are much smaller. So the big picture is that at lower levels we have faster and smaller memories, and at higher levels we have massive and slower memory storages. Figure \ref{fig:cache} is a schematic of today's computer memory hierarchy. To get an idea of the times involved in accessing data from different memory storages, we present the following table of costs associated with hits and misses, for an Intel Pentium M:
+\begin{center}
+\begin{tabular}{ c | c }
+  To where & Cycles \\ \hline
+  Register & $\leq 1$ \\
+  L1 & ~3 \\ 
+  L2 & ~14 \\
+  Main Memory & ~240 \\
+\end{tabular}
+\end{center}
+
+\begin{figure}[h!]
+	\centering
+		\includegraphics[width=1.0\textwidth]{cache}
+	\caption{Typical memory hierarchy of modern computers.}
+	\label{fig:cache}
+\end{figure}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Step 12: Here's the main part of your research project. We can't tell
