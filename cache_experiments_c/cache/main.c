@@ -16,15 +16,14 @@
  * Global variables
  */
 int number_of_workers; /*Number of threads*/
-int matrix_size = 14000; /*Size of the matrix*/
+int matrix_size = 1400; /*Size of the matrix*/
 int **matrix; /*The original matrix*/
 int *random_numbers; /*An array of random numbers*/
-unsigned int random_numbers_size = 100000000;
 int ***matrixes; /*To hold the original matrix and copies of it*/
-int seed = 1; /*The seed used for random numbers*/
+unsigned int seed = 0; /*The seed used for random numbers*/
 pthread_t *threads; /*The threads*/
 bool share_matrix; /*Whether the matrix is shared or not */
-int cycles = 10; /*Number of times to sum all matrix elements, for longer executions*/
+int cycles = 1; /*Number of times to sum all matrix elements, for longer executions*/
 
 /*
  *  Argument of a thread.
@@ -37,21 +36,6 @@ struct thread_data {
 };
 
 /*
- * To get a random element from the matrix using the random number array
- */
-int get_next_element(struct thread_data *data){
-    data->state = data->thread_seed%(random_numbers_size);
-    int n =1;
-    if(data->state>random_numbers_size-1){
-        data->state=0;
-        n++;
-    }
-    int x = random_numbers[data->state];
-    int y = random_numbers[(data->state+1)*n];
-    return data->thread_matrix[x][y];
-}
-
-/*
  * Sum the elements of matrix
  */
 void *sum_elements(void *data) {
@@ -60,9 +44,12 @@ void *sum_elements(void *data) {
     unsigned int sum = 0;
     for (int z = 0; z < cycles; z++) {
         sum = 0;
-        for (int i = 0; i < matrix_size; i++) {
-            for (int j = 0; j < matrix_size; j++) {
-                sum = sum + get_next_element(this_thread_data);
+        for (int i = 0; i < 20000; i++) {
+            for (int j = 0; j < 20000; j++) {
+                int x = (rand_r(&seed)%(matrix_size));
+                int y = (rand_r(&seed)%(matrix_size));
+                //printf("%i,%i\n",x,y);
+                sum = sum + this_thread_data->thread_matrix[x][y];
             }
         }
     }
@@ -78,19 +65,12 @@ int main(int argc, char** argv) {
     } else {
         share_matrix = true;
     }
-    /*Seed for random numbers*/
-    srand(seed);
-    /*Create the random_numbers matrix*/
-    random_numbers = malloc(random_numbers_size *sizeof(int));
-    for(unsigned int i=0; i<random_numbers_size;i++){
-        random_numbers[i] = rand()%(matrix_size-1);
-    }
     /*Create the matrix with random numbers*/
     matrix = malloc(matrix_size * sizeof (int*));
     for (int i = 0; i < matrix_size; i++) {
         matrix[i] = malloc(matrix_size * sizeof (int));
         for (int j = 0; j < matrix_size; j++) {
-            matrix[i][j] = rand();
+            matrix[i][j] = rand_r(&seed);
         }
     }
     /*If we don't want to share memory, make copies of the matrix*/
