@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=latex 2012.2.6)  25 APR 2012 19:57
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=latex 2012.2.6)  15 MAY 2012 09:33
 entering extended mode
  %&-line parsing enabled.
 **sample
@@ -128,7 +128,14 @@ LaTeX Info: Redefining \\ on input line 70.
 File: udeclogobw.eps Graphic file (type eps)
 <udeclogobw.eps> [1
 
-] (./sample.toc)
+] (./sample.toc
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <12> on input line 5.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 5.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 5.
+)
 \tf@toc=\write3
 \openout3 = `sample.toc'.
 
@@ -138,25 +145,10 @@ File: udeclogobw.eps Graphic file (type eps)
 ]
 Dalthesis preface pages completed.
 Chapter 1.
-
-LaTeX Warning: Citation `cook1971' on page 1 undefined on input line 100.
-
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 100.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 100.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 100.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <7> on input line 100.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <5> on input line 100.
-
-LaTeX Warning: Citation `karp1972' on page 1 undefined on input line 100.
-
-
-LaTeX Warning: Citation `DP1960' on page 1 undefined on input line 100.
-
 [1
 
 
@@ -178,12 +170,6 @@ Chapter 3.
 ]
 Chapter 4.
 
-LaTeX Warning: Citation `cdcl' on page 5 undefined on input line 141.
-
-
-LaTeX Warning: Reference `cdcl' on page 5 undefined on input line 141.
-
-
 LaTeX Font Warning: Font shape `OT1/cmr/bx/sc' undefined
 (Font)              using `OT1/cmr/bx/n' instead on input line 164.
 
@@ -195,33 +181,11 @@ Underfull \hbox (badness 10000) detected at line 166
 [5
 
 ] [6]
-
-LaTeX Warning: Citation `ppfolio' on page 7 undefined on input line 183.
-
-
-LaTeX Warning: Citation `manysat' on page 7 undefined on input line 185.
-
-
-LaTeX Warning: Citation `vsids' on page 7 undefined on input line 185.
-
-
-LaTeX Warning: Citation `plingeling' on page 7 undefined on input line 185.
-
-
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [7]
-
-LaTeX Warning: Citation `sartagnan' on page 8 undefined on input line 187.
-
-
-LaTeX Warning: Citation `miraxt' on page 8 undefined on input line 189.
-
 [8]
 Chapter 5.
-
-LaTeX Warning: Reference `fig:plan' on page 9 undefined on input line 201.
-
 File: plan.eps Graphic file (type eps)
 <plan.eps>
 
@@ -244,12 +208,6 @@ Overfull \vbox (1.72931pt too high) has occurred while \output is active []
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-
-LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
  ) 
 Here is how much of TeX's memory you used:
  1890 strings out of 495062
@@ -260,4 +218,4 @@ Here is how much of TeX's memory you used:
  28 hyphenation exceptions out of 8191
  32i,18n,23p,2252b,409s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on sample.dvi (13 pages, 24728 bytes).
+Output written on sample.dvi (13 pages, 26024 bytes).
