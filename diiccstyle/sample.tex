@@ -333,7 +333,7 @@ Computers today usually have three levels of memory cache and a main memory. The
 
 \begin{figure}[h!]
 	\centering
-		\includegraphics[width=1.0\textwidth]{cache}
+		\includegraphics[scale=1]{cache}
 	\caption{Typical memory hierarchy of modern computers.}
 	\label{fig:cache}
 \end{figure}
@@ -367,12 +367,12 @@ $sum \leftarrow 0$ \\
 \caption{Column sum of elements\label{matrix column}}
 \end{algorithm}
 
-Data-fetching performance is not only an issue that concerns hardware designers, but also programmers. Depending on how the program is written, the same task (input-output wise) might take much longer if one is not aware about how memory behaves. Since we want the highest amount of useful data in each word transferred, the data structures in which the programmer decides to store data will have a dramatic impact in cache performance. Consider, for example, the following problem: Write a program that sums all elements in a matrix size $m \times n$ of integers. Algorithm \ref{matrix row} and \ref{matrix column} both solve the problem, and apparently with the same level of efficiency, from an algorithmic point of view at least. However, the actual results of both algorithms in practice have a vast difference in total solving time. The following table shows the results for both algorithms implemented in C, for a matrix of size $17000 \times 17000$:
+Data-fetching performance is not only an issue that concerns hardware designers, but also programmers. Depending on how the program is written, the same task (input-output wise) might take much longer if one is not aware about how memory behaves. Since we want the highest amount of useful data in each word transferred, the data structures in which the programmer decides to store data will have a dramatic impact in cache performance. Consider, for example, the following problem: Write a program that sums all elements in a matrix size $m \times n$ of integers. Algorithm \ref{matrix row} and \ref{matrix column} both solve the problem, and apparently with the same level of efficiency, from an algorithmic point of view at least. However, the actual results of both algorithms in practice have a vast difference in total solving time. The following table shows the results for both algorithms implemented in C, for a matrix of size $31000 \times 31000$:
 \begin{center}
 \begin{tabular}{ c | c }
   Algorithm & Elapsed time (seconds) \\ \hline
-  Row sum & 2.5 \\
-  Column sum & 37.5 \\ 
+  Row sum & 2.8 \\
+  Column sum & 28.3 \\ 
 \end{tabular}
 \end{center}
 
@@ -420,9 +420,50 @@ Perf \cite{perf} is a linux tool specialized in collecting and analyzing perform
 \item \textbf{LLC-load-misses}: The amount of load misses from the LLC.
 \end{itemize}
 
-With all the previous information we can draw important results of the cache performance of any program. As an example of the use of perf, we will make a small cache performance analysis of our C program of Algorithm \ref{matrix row} and Algorithm \ref{matrix column}.
+With all the previous information we can draw important results of the cache performance of any program. As an example of the use of perf, we will make a small cache performance analysis of our C program of Algorithm \ref{matrix row} and Algorithm \ref{matrix column}. The perf stats of cache events for Algorithm \ref{matrix row} will yield the following output:
 
-\subsection{Cache and parallelism}
+\begin{verbatim}
+Performance counter stats for './row_sum':
+
+1,682,744,050 L1-dcache-loads                                     
+  132,425,239 L1-dcache-load-misses  #  7.87% of all L1-dcache hits
+    4,010,868 LLC-loads              
+    3,607,332 LLC-load-misses        # 89.94% of all LL-cache hits
+
+  2.787773717 seconds time elapsed
+\end{verbatim}
+
+It should come to our attention that there is a low percentage of L1 cache misses and a high percentage of LL cache misses. The reason why L1 cache misses are so low is because Algorithm \ref{matrix row} sums elements by row, so almost all data that is loaded in L1 is used by the CPU, making the hit percentage very high, as shown in the results. On the contrary, we can also observe that the miss percentage of the LL cache is really high. The reason for this is because when summing elements by rows, we will never need to load the same cache line from the LL cache to L1 (when we load the cache line into L1 we will use all of its elements), hence every time we request data from the LL cache, it will not be there since it's the first time we are requesting that line.
+
+The next output corresponds to the perf stats of the cache performance of Algorithm \ref{matrix column}:
+
+\begin{verbatim}
+ Performance counter stats for './column_sum':                                                                                                              
+                                                                                                                                                              
+ 2,652,844,624 L1-dcache-loads                                                                                                        
+ 2,127,243,131 L1-dcache-load-misses  # 80.19% of all L1-dcache hits                                                                 
+ 2,037,794,644 LLC-loads                                                                                                              
+   506,598,124 LLC-load-misses        # 24.86% of all LL-cache hits                                                                  
+                                                                                                                                                              
+  27.936225613 seconds time elapsed
+\end{verbatim} 
+
+This time the percentage of L1 load misses is very high, this is because we only use one element of the cache line loaded into L1, the next element will be in a different cache line (different columns are not contiguous in memory) so L1 cache hit percentage will be low. On the other hand, the percentage of LL cache misses is much lower than for the row sum algorithm, since we need to load the same cache line more than once, there is a good chance that a line requested will already be in the LL cache. It is important to note that we are mostly interested on what happens in the LL cache, when analyzing cache performance, because every load miss from the LL cache means a load from main memory, which are much more expensive than any other cache load. Under this criteria, one could argue that column sum is better than row sum, because it has a much lower load-miss percentage, but that's why it is also important to take into account the total number of loads and not only percentages. Row sum, despite having a much higher percentage of load-misses, has only a small fraction of the total load-misses on the LL cache that column sum has, hence a much lower number of total loads from main memory.
+
+\subsection{Size does matter}
+
+Aside from the code itself, the amount of data a program handles is also an important factor in cache performance. Let's say we have a square matrix $M$ of size $n$ and that we will perform a fixed number of sums of random elements in the matrix. From an algorithmic point of view, the size of $M$ makes no difference, because the number of sums we will perform is fixed. But again, if we take cache performance into account, the size of matrix $M$ will have a big impact in the time of a program performing this task.
+
+\begin{center}
+\begin{tabular}{ c | c }
+  To where & Cycles \\ \hline
+  Register & $\leq 1$ \\
+  L1 & ~3 \\ 
+  L2 & ~14 \\
+  Main Memory & ~240 \\
+\end{tabular}
+\end{center}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Step 12: Here's the main part of your research project. We can't tell
