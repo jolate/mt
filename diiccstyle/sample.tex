@@ -326,7 +326,7 @@ Computers today usually have three levels of memory cache and a main memory. The
   To where & Cycles \\ \hline
   Register & $\leq 1$ \\
   L1 & ~3 \\ 
-  L2 & ~14 \\
+  LL & ~14 \\
   Main Memory & ~240 \\
 \end{tabular}
 \end{center}
@@ -452,17 +452,20 @@ This time the percentage of L1 load misses is very high, this is because we only
 
 \subsection{Size does matter}
 
-Aside from the code itself, the amount of data a program handles is also an important factor in cache performance. Let's say we have a square matrix $M$ of size $n$ and that we will perform a fixed number of sums of random elements in the matrix. From an algorithmic point of view, the size of $M$ makes no difference, because the number of sums we will perform is fixed. But again, if we take cache performance into account, the size of matrix $M$ will have a big impact in the time of a program performing this task.
+Aside from the code itself, the amount of data a program handles is also an important factor in cache performance. Let's say we have a square matrix $M$ of size $n$ and that we will perform a fixed number of sums of random elements in the matrix. From an algorithmic point of view, the size of $M$ makes no difference, because the number of sums we will perform is fixed. But again, if we take cache performance into account, the size of matrix $M$ will have a big impact in the time of a program performing this task. Table \ref{tab:matrix_size} shows the different times and cache loads to perform a fixed amount of sums of random elements of different sized matrices. As expected, the number of loads from L1 is kept constant (the small variations are due to other system process running), because we are performing the same amount of operations in all tests. We can also observe that as we increase the size of the matrix, the number of loads from higher level memories also starts increasing. The reason for this is because as the matrix gets bigger, the lower level caches are not big enough to hold all of it, so it uses higher level cache/memory. Only when we start making loads from main memory is when we start noticing differences in time, these results can give us an insight on how expensive loads from main memory are compared to cache ones. The matrix sizes were chosen so that they would only occupy half of each kind of memory level. So the machine has a 32 kB L1 cache, a 262 kB L2 cache, a 8 MB LL cache and 6 GB of main memory.
 
+\begin{table}
 \begin{center}
-\begin{tabular}{ c | c }
-  To where & Cycles \\ \hline
-  Register & $\leq 1$ \\
-  L1 & ~3 \\ 
-  L2 & ~14 \\
-  Main Memory & ~240 \\
+\begin{tabular}{ c | c | c | c | c | c }
+  Matrix size & Time (s) & L1 loads & L2 loads & LLC loads & MM Loads \\ \hline
+  16 kB 	& 20.8 	& 32673  	& 8  		& $<1$  		& $<1$ 	 \\
+  130 kB 	& 20.5 	& 32675  	& 745  		& 8			& $<1$  	 \\ 
+  4 MB 		& 27.6	& 32653 	& 1227 		& 910		& 15 	\\
+  3000 MB 	& 126.5	& 33278		& 3379		& 2570		& 1446   
 \end{tabular}
+\caption{Different times and number of memory loads for different size of matrices. The number of loads are in millions of loads.\label{tab:matrix_size}}
 \end{center}
+\end{table}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

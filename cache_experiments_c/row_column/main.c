@@ -15,10 +15,10 @@
 int main(int argc, char** argv) {
     int **matrix;
     int seed = 0;
-    //int matrix_size = 86; /*L1*/
-    int matrix_size = 255; /*L2*/
-    //int matrix_size = 1322; /*L3*/
-    //int matrix_size = 31000; /*MM*/
+    //int matrix_size = 63; /*L1*/
+    //int matrix_size = 180; /*L2*/
+    //int matrix_size = 1000; /*L3*/
+    int matrix_size = 27386; /*MM*/
     int sum_number = 31000;
     unsigned int total_sum =0;
     int order; /* 0 = row, 1 = column, 2 = random sum */
