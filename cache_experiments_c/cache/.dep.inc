@@ -1,5 +1,3 @@
 # This code depends on make tool being used
-DEPFILES=$(wildcard $(addsuffix .d, ${OBJECTFILES}))
-ifneq (${DEPFILES},)
-include ${DEPFILES}
-endif
+.KEEP_STATE:
+.KEEP_STATE_FILE:.make.state.${CONF}

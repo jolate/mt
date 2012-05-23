@@ -16,9 +16,8 @@
  * Global variables
  */
 int number_of_workers; /*Number of threads*/
-int matrix_size = 1400; /*Size of the matrix*/
+int matrix_size = 15811; /*Size of the matrix*/
 int **matrix; /*The original matrix*/
-int *random_numbers; /*An array of random numbers*/
 int ***matrixes; /*To hold the original matrix and copies of it*/
 unsigned int seed = 0; /*The seed used for random numbers*/
 pthread_t *threads; /*The threads*/
@@ -46,10 +45,7 @@ void *sum_elements(void *data) {
         sum = 0;
         for (int i = 0; i < 20000; i++) {
             for (int j = 0; j < 20000; j++) {
-                int x = (rand_r(&seed)%(matrix_size));
-                int y = (rand_r(&seed)%(matrix_size));
-                //printf("%i,%i\n",x,y);
-                sum = sum + this_thread_data->thread_matrix[x][y];
+                sum = sum + this_thread_data->thread_matrix[rand()%(matrix_size)][rand()%(matrix_size)];
             }
         }
     }
@@ -70,7 +66,7 @@ int main(int argc, char** argv) {
     for (int i = 0; i < matrix_size; i++) {
         matrix[i] = malloc(matrix_size * sizeof (int));
         for (int j = 0; j < matrix_size; j++) {
-            matrix[i][j] = rand_r(&seed);
+            matrix[i][j] = 1;
         }
     }
     /*If we don't want to share memory, make copies of the matrix*/

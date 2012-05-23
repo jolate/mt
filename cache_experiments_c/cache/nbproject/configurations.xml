@@ -42,7 +42,7 @@
     <conf name="Release" type="1">
       <toolsSet>
         <remote-sources-mode>LOCAL_SOURCES</remote-sources-mode>
-        <compilerSet>default</compilerSet>
+        <compilerSet>OracleSolarisStudio_12.3|OracleSolarisStudio_12.3</compilerSet>
       </toolsSet>
       <compileType>
         <cTool>

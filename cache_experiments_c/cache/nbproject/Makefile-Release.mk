@@ -14,14 +14,14 @@ GREP=grep
 NM=nm
 CCADMIN=CCadmin
 RANLIB=ranlib
-CC=gcc
-CCC=g++
-CXX=g++
-FC=gfortran
+CC=cc
+CCC=CC
+CXX=CC
+FC=f95
 AS=as
 
 # Macros
-CND_PLATFORM=GNU-Linux-x86
+CND_PLATFORM=OracleSolarisStudio_12.3-Linux-x86
 CND_CONF=Release
 CND_DISTDIR=dist
 CND_BUILDDIR=build
@@ -63,8 +63,7 @@ ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/cache: ${OBJECTFILES}
 
 ${OBJECTDIR}/main.o: main.c 
 	${MKDIR} -p ${OBJECTDIR}
-	${RM} $@.d
-	$(COMPILE.c) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/main.o main.c
+	$(COMPILE.c) -fast -g -o ${OBJECTDIR}/main.o main.c
 
 # Subprojects
 .build-subprojects:
