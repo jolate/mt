@@ -296,6 +296,17 @@ and the variable assignment
 \[A=\textbf{true}, B=\textbf{false}, C=\textbf{false}, E=\textbf{false},\]
 we would need to identify somehow that this clause is unit on variable $D$. The two watched literal data structure addresses this problem and makes backtracking very efficient. Instead of trying to keep precise information on the complete state of the clause, the two watched literal strategy only keeps track of two literals in each clause. Such two literals are the watched literals of a clause. Let's take as an example the previous clause, as shown on Figure \ref{fig:watched literals}. This time we will assume that no variable assignments have been done yet and that the two watched literals are $\neg A$ and $B$. Suppose that on the next decision level variable $A$ is assigned as \textbf{true}. We would check the watched literals and realize that this clause might be unit, because now there is only one watched literal which is unassigned and the other doesn't satisfy the clause. Remember that we are only aware of the watched literals and not the rest of them. To check if the clause is really unit, we will attempt to change the first watched literal to an unassigned variable in the clause. We could search to the right and find that literal $B$ is already being watched (the two watched literals must be different), so we keep searching to the right and find that literal $C$ is unassigned, concluding that the clause is not yet unit. Now our two watched literals for this clause are $B$ and $C$. Let's suppose now that propagation gives the value \textbf{false} to variable $C$, then we would again wonder if the clause is unit or not. Searching to the right for another unassigned literal to watch will find literal $\neg D$, so now our two watched literals will be $B$ and $\neg D$. If the next assigned variable is $B=\textbf{false}$, then one watched literal would have to search the clause and find that literal $E$ as available. Finally, if variable $D$ is assigned to \textbf{true}, then we would search the clause for an available literal, but won't find any (after checking all literals). Only now we can declare that this clause is unit, because there is only one unassigned watched literal and the other can't find any unassigned position. Propagation would assign \textbf{true} to variable $E$, because it's the only way to satisfy that clause. If a conflict is found, while propagating across the different variables, we have to undo all variable assignments after the backtracking point, but the key advantage of the two watched literal structure is that no backtracking has to be done to any watched literal reference of any clause. The clear drawback to this advantage is that, as we saw in the previous example, we have to check all literals in the clause before declaring it unit, since we only keep track of two literals at a time.  
 
+\subsubsection{Binary implication lists}
+
+\begin{figure}[h!]
+	\centering
+		\includegraphics[scale=1]{binary_list}
+	\caption{A group of binary clauses and their corresponding binary list.}
+	\label{fig:binary list}
+\end{figure}
+
+To speed up the propagation of SAT solvers, \textit{Binary clauses}, clauses with two literals, are sometimes stored in special data structures called \textit{binary implication lists}. Binary clauses are frequently used in propagation because they can imply other variable values in just one step. There is also no point on distinguishing two watched literals in these clauses for the simple reason that there are only two literals in them, so knowing when a binary clause is unit becomes trivial. Figure \ref{fig:binary list} represents a set of binary clauses stored in a binary implication list. We have a literal index vector to identify each literal (a variable and its negation), each position of this vector points to a list of literals which are implied by the literal corresponding to the origin of the pointer. Hence, if the $\neg x_{1}$ position in the index vector points to $\neg x_{2}$ and $x_{4}$, this means that if $x_{1}$ were to be \textbf{false}, it would imply that $x_{2}$ must be \textbf{false} and $x_{4}$ \textbf{true}.
+
 \subsection{Parallel SAT solvers}
 
 As mentioned before, some parallel SAT solvers have performed at the top of the last SAT competitions, but even though they all fall into the parallel solvers category, their parallel strategies and implementations vastly differ from each other. We mainly classify parallel SAT solvers into two categories: Portfolio approach solvers and divide-and-conquer solvers.
@@ -308,17 +319,40 @@ On the other hand, we have more elaborated portfolio approach solvers, which can
 
 Portfolio approach solvers that share clauses physically have the same strategy as mentioned before, but they share clauses by allowing threads to access the same memory locations, instead of message passing. One solver in this category is SArTagnan \cite{sartagnan}, which shares clauses logically and physically. 
 
-Divide-and-conquer solvers do not try to run different solvers in parallel, they run one solving instance, but try to parallelize the search and divide it between the different threads. A common strategy to divide the search space is to use guiding paths. A guiding path is a partial assignment of variables, which restricts the search space of the SAT problem. A solver that divides its search space with guiding paths will assign threads to solve the CNF with the given partial assignment from the guiding path the thread was assigned with. Once a thread finishes searching a guiding path with no success, it can request another to keep searching. MiraXT \cite{miraxt} is a divide-and-conquer SAT solver which uses guiding paths. Moreover, different threads solving different guiding paths also share a common clause database, in which they store their learned lemmas. This is another example of physical clause sharing. 
+Divide-and-conquer solvers do not try to run different solvers in parallel, they run one solving instance, but try to parallelize the search and divide it between the different threads. A common strategy to divide the search space is to use \textit{guiding paths}. A guiding path is a partial assignment of variables, which restricts the search space of the SAT problem. A solver that divides its search space with guiding paths will assign threads to solve the CNF with the given partial assignment from the guiding path the thread was assigned with. Once a thread finishes searching a guiding path with no success, it can request another to keep searching. MiraXT \cite{miraxt} is a divide-and-conquer SAT solver which uses guiding paths. Moreover, different threads solving different guiding paths also share a common clause database, in which they store their learned lemmas. This is another example of physical clause sharing. 
 
 The work will mainly consist of building a parallel portfolio approach solver, which uses a similar shared clause database system as proposed by MiraXT. The main difference of our work with MiraXT is that we are interested in portfolio approach solving, so we will use the clause database model of MiraXT, but not its divide-and-conquer guiding path strategy. 
 
 \subsubsection{MiraXT}
 
-Figure \ref{fig:miraxt overview} shows the general structure of the MiraXT solver. We are not interested in the \textit{Preprocessing Unit} as it will not be implemented in our solver. The \textit{SAT Solving Unit} is of interest for our work though. The key structure in this design is the \textit{Shared Clause Database}, which is a database of clauses shared among all SAT solving threads. We will also be using this design in our solver, so all threads will be using a common pool of clauses called the Shared Clause Database. The main difference with our design is that we will not have a \textit{Master Control Object} structure, which in MiraXT is responsible for the coordination of different threads. The reason for this is that, as we mentioned earlier, MiraXT is a divide-and-conquer solver, so different threads will contribute to one solution and hence will need to be coordinated between each other in this task. On the other hand, our solver will be a portfolio approach one, so different threads will not need to interact with each other directly and no coordination between them is needed.
+\begin{figure}[h!]
+	\centering
+		\includegraphics[scale=0.7]{miraxt}
+	\caption{Overview of MiraXT design.}
+	\label{fig:miraxt overview}
+\end{figure}
 
-Regarding the shared clause database, Figure \ref{fig:miraxt database} is a representation of it. 
+Figure \ref{fig:miraxt overview} shows the general structure of the MiraXT solver. We are not interested in the \textit{Preprocessing Unit} as it will not be implemented in our solver. The \textit{SAT Solving Unit} is of interest for our work though. The key structure in this design is the \textit{Shared Clause Database}, which is a database of clauses shared among all SAT solving threads. We will also be using this design in our solver, so all threads will be using a common pool of clauses called the Shared Clause Database. The main difference with our design is that we will not have a \textit{Master Control Object} (MCO) structure, which in MiraXT is responsible for the coordination of different threads. The reason for this is that, as we mentioned earlier, MiraXT is a divide-and-conquer solver, so different threads will contribute to one solution and hence will need to be coordinated between each other in this task. On the other hand, our solver will be a portfolio approach one, so different threads will not need to interact with each other directly and no coordination between them is needed.
+
+\begin{figure}[h!]
+	\centering
+		\includegraphics[scale=0.6]{miraxtdatabase}
+	\caption{MiraXT shared clause database.}
+	\label{fig:miraxt database}
+\end{figure}
+
+Regarding the shared clause database, Figure \ref{fig:miraxt database} is a representation of it. Each thread keeps tracks of the two-watched-literals of the clauses it is using, and they also keep two \textit{Cache Literals}, which are used to replace any of the watched literals that need to be updated. If none of the Cache Literals would serve, then they would need to be updated too from the original clauses in the Shared Clause Database. Each clause in each thread has a pointer to the original clause in the Shared Clause Database, so that it knows where to update the Cache Literals from. The Shared Clause Database is read only, so locks are only used when a new clause is inserted, authors mention that lock contention only account for less than $1\%$ of total solving time.
+
+To solve a problem MiraXT will start an initial thread solving the entire problem and depending on whether or not there are idle threads waiting, it will divide the problem into subproblems, with the guiding path technique, and share it with any idle thread. All communication and coordination between threads is done through the MCO with message passing, as shown in Figure \ref{fig:miraxt overview}. 
 
 \section{Cache}
+
+\begin{figure}[h!]
+	\centering
+		\includegraphics[scale=1]{cache}
+	\caption{Typical memory hierarchy of modern computers.}
+	\label{fig:cache}
+\end{figure}
 
 Computers today usually have three levels of memory cache and a main memory. The processor can have multiple cores in it and cores can run multiple threads in them. The difference between a core and a thread is that cores have separate copies of almost all the hardware resources. The cores can run independently unless they are using the same resource (for example the connection to the outside) at the same time. Threads, on the other hand, share almost all of the processor resources. When a thread, which is running on a core, needs to fetch data, it first tries to look for it in the first level cache (the L1 cache\footnote{There is L1 data cache and also L1 instruction cache, we will be referring to L1 data cache}), if the data is not there, then it tries to find it in the level 2 cache (L2 cache). If the data is still not there, it then tries to fetch it from the level 3 cache (L3 cache) and if that fails too, it goes up to main memory to get the data. If it still isn't in main memory, then it has to retrieve it from the hard disk. We should notice that this hierarchy involves increasing fetch times as we go up. Getting data from the L1 cache is much faster than getting it from L2, and getting data from L2 is much faster than getting it from main memory. The problem with lower level memory is that, because of the technology and costs involved, they are much smaller. So the big picture is that at lower levels we have faster and smaller memories, and at higher levels we have massive and slower memory storages. Figure \ref{fig:cache} is a schematic of today's computer memory hierarchy. To get an idea of the times involved in accessing data from different memory storages, we present the following table of costs associated with hits and misses, for an Intel Pentium M:
 \begin{center}
@@ -330,13 +364,6 @@ Computers today usually have three levels of memory cache and a main memory. The
   Main Memory & ~240 \\
 \end{tabular}
 \end{center}
-
-\begin{figure}[h!]
-	\centering
-		\includegraphics[scale=1]{cache}
-	\caption{Typical memory hierarchy of modern computers.}
-	\label{fig:cache}
-\end{figure}
  
 \subsection{Cache and algorithms} 
  
@@ -485,7 +512,7 @@ To measure cache performance we will use the linux tool \textit{perf}. Table \re
 
 \subsection{Plingeling}
 
-\section{A parallel portfolio approach SAT solver with physicaly shared clause database: AzuDICI}
+\section{A parallel portfolio approach SAT solver with physically shared clause database: AzuDICI}
 
 \subsection{General outline}
 
