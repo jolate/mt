@@ -24,6 +24,7 @@
 \usepackage[linesnumbered,ruled,vlined]{algorithm2e}
 \usepackage{url}
 \usepackage{amsmath, amsthm, amssymb}
+\usepackage{mathtools}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -239,7 +240,34 @@ When we detect a conflict at level $l$ of the search tree, we have to rewind bac
 
 The problem with chronological backtracking, which is the one used in the DPLL algorithm, is that contradictions (when an assignment we have done does not satisfy the CNF) that trigger the backtrack often have valuable information. Such information could lead us to learn new clauses and backtrack more levels than just one, thus saving time in the search. For example, let's say that we have a CNF $\Delta$ with variables $A,B,C,D$. Let's us also say that, because of the clauses in $\Delta$, the CNF will always be inconsistent when $A$ is set to \textbf{true}. Unfortunately, the DPLL algorithm might not realise this beforehand, because it uses unit resolution which is not refutation complete. So the algorithm might only conclude that $A$ set to \textbf{true} will not satisfy $\Delta$ after assigning all possible values to $B,C,D$. If we could detect that $A$ is not part of any solution, we could avoid going any further in that branch of the search tree and learn that information as a new clause (in our example we would learn the clause $\{\neg A\}$ to enforce $A$ to be \textbf{false}). Learning such clauses is called \textit{conflict-driven clause learning} (CDCL) \cite{cdcl1,cdcl2}.
 
-We will not discuss in detail how such new clauses are decided or how can we decide which level to backtrack to after a contradiction is found. It suffices to know that after a contradiction is detected, we can decide a new clause to be learnt and which level to backtrack to. Also note that adding CDCL features to the DPLL algorithm will not affect its soundness or completeness.
+In the next section we will discuss in detail how such new clauses are decided or how can we decide which level to backtrack to after a contradiction is found. Note that adding CDCL features to the DPLL algorithm will not affect its soundness or completeness.
+
+\subsubsection{Clause learning}
+
+When a conflict is detected, the conflict-analysis procedure is used. Such procedure consists of analyzing the conflict structure through \textit{implication graphs} and then learning a clause from it. Let's consider the following CNF:
+
+\begin{equation}\label{row sum}
+\Delta = \begin{matrix*}[l]
+			1.\{A,B\}\\
+		 	2.\{B,C\}\\
+		 	3.\{\neg A,\neg X,Y\}\\
+		 	4.\{\neg A,X,Z\}\\
+		 	5.\{\neg A,\neg Y,Z\}\\
+		 	6.\{\neg A,X,\neg Z\}\\
+		 	7.\{\neg A,\neg Y,\neg Z\}
+		 \end{matrix*}
+\end{equation}
+
+The implication graph on Figure \ref{fig:uip} shows a possible search path of a CDCL solver. The nodes of this graph are variable assignments made, with the notation $l/V=v$, where $l$ is a decision level, $V$ a variable and $v$ a truth value. Remember that a variable might be assigned a value in two cases: by a branching decision or by an implication as a result of the propagation process. The directed edges in the graph indicate which assignments implicated other assignments, so an edge from node $\alpha$ to node $\beta$ would mean that the variable assignment in node $\alpha$ implied the assignment shown in node $\beta$. Nodes that do not have any incident edge are decision assignments, because they weren't implied by other assignments. The numeric label on the arcs correspond to the number of the clause that was used for implying that assignment. 
+
+A \textit{cut} in an implication graph (dashed lines in Figure \ref{fig:uip}) is a set of edges that separate the decision assignments (root nodes) from the contradiction (the leaf node containing $\{\}$). A \textit{conflict set} is a set of variable assignments such that each has an outgoing edge belonging to a cut. Figure \ref{fig:uip} shows three possible cuts for that implication graph, in other words, a conflict set contains enough variable assignments to cause the conflict.
+
+\begin{figure}[h!]
+	\centering
+		\includegraphics[width=0.7\textwidth]{uip}
+	\caption{An implication graph of a conflict}
+	\label{fig:uip}
+\end{figure}
 
 \subsection{Modern CDCL solvers}
 
