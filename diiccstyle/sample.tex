@@ -260,14 +260,16 @@ When a conflict is detected, the conflict-analysis procedure is used. Such proce
 
 The implication graph on Figure \ref{fig:uip} shows a possible search path of a CDCL solver. The nodes of this graph are variable assignments made, with the notation $l/V=v$, where $l$ is a decision level, $V$ a variable and $v$ a truth value. Remember that a variable might be assigned a value in two cases: by a branching decision or by an implication as a result of the propagation process. The directed edges in the graph indicate which assignments implicated other assignments, so an edge from node $\alpha$ to node $\beta$ would mean that the variable assignment in node $\alpha$ implied the assignment shown in node $\beta$. Nodes that do not have any incident edge are decision assignments, because they weren't implied by other assignments. The numeric label on the arcs correspond to the number of the clause that was used for implying that assignment. 
 
-A \textit{cut} in an implication graph (dashed lines in Figure \ref{fig:uip}) is a set of edges that separate the decision assignments (root nodes) from the contradiction (the leaf node containing $\{\}$). A \textit{conflict set} is a set of variable assignments such that each has an outgoing edge belonging to a cut. Figure \ref{fig:uip} shows three possible cuts for that implication graph, in other words, a conflict set contains enough variable assignments to cause the conflict.
-
 \begin{figure}[h!]
 	\centering
 		\includegraphics[width=0.7\textwidth]{uip}
 	\caption{An implication graph of a conflict}
 	\label{fig:uip}
 \end{figure}
+
+A \textit{cut} in an implication graph (dashed lines in Figure \ref{fig:uip}) is a set of edges that separate the decision assignments (root nodes) from the contradiction (the leaf node containing $\{\}$). A \textit{conflict set} is a set of variable assignments such that each has an outgoing edge belonging to the same cut, in other words, a conflict set contains enough variable assignments to cause the conflict. Figure \ref{fig:uip} shows three possible cuts for that implication graph, they lead to the conflict sets $\{A=\textbf{true},X=\textbf{true}\}$, $\{A=\textbf{true},Y=\textbf{true}\}$ and $\{A=\textbf{true},Y=\textbf{true},Z=\textbf{true}\}$.
+
+Since there are many possible cuts, and thus conflict sets, we are only interested in choosing the most useful ones. An \textit{asserting} clause \cite{cdcl1} is a clause which contains exactly one variable assigned at the level of the conflict.
 
 \subsection{Modern CDCL solvers}
 
