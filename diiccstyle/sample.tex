@@ -536,7 +536,7 @@ Aside from the code itself, the amount of data a program handles is also an impo
 \section{Cache performance in simple parallel-shared-memory programs}
 The main motivation behind this work is our experimental evidence that when threads in different cores share memory, the cache performance improves compared to having threads with its own memory. Our first experiment will be a program that performs simple arithmetic operations on a big matrix. We will have two instances for this experiment. The first will be different threads performing the same arithmetic operations over the same matrix (hence yielding the same result), but every thread will hold its own copy of the big matrix. The second instance will be the same experiment, but this time the different threads will perform the arithmetic operations over the same matrix (regarding physical memory location). For this experience, we will only use read-only operations over the matrix, to keep concurrency problems out of the equation.
 
-To measure cache performance we will use \texttt{perf}. Table \ref{matrix} shows...
+To measure cache performance we will use \texttt{perf}. Table \ref{matrix} shows the results of the experiment. Notice that when we share the matrix among threads the cache performance increases significatively. This is because all threads share the same LL cache, which has a limited size, 
 
 \section{Cache performance of parallel SAT solvers}
 
