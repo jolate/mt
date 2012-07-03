@@ -67,9 +67,9 @@
 % Notice that these are not typeset. But they do serve a purpose for
 % future references.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\submitdate{September, 2011} % date you submitted to the committee
-\defensedate{Octubre, 2011}  % date the defense was set
-\copyrightyear{2011}         % document for final archiving
+\submitdate{July, 2012} % date you submitted to the committee
+\defensedate{August, 2011}  % date the defense was set
+\copyrightyear{2012}         % document for final archiving
 
 \begin{document}
 \frontmatter
@@ -93,7 +93,7 @@
 % http://research.berkeley.edu/ucday/abstract.html
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{abstract}
-Your abstract goes here...
+There is a wide range of portfolio approach SAT solvers, the most successful ones share clauses among their solving threads, but they differ in the strategy used to share them. In this work we attempt to perform a detailed study on how sharing clauses between threads impacts the cache performance of the parallel SAT solver and give insight on this matter to portfolio-approach SAT solver designers. 
 \end{abstract}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -600,7 +600,11 @@ To allow a better understanding of clause sharing in these kind of SAT solvers, 
 	\label{fig:azu sharednone}
 \end{figure}
 
-This solver is a pure portfolio approach CDCL SAT solver implementation that doesn't share any kind of clause. Each thread has its own AzuDICI sequential solver and its own clause database, Figure \ref{fig:azu sharednone} is a schematization of the solver's internal structure. No locks or special data structures are required for this version, since we do not share any clauses (logically or physically),there are only completely independent solvers working on each thread.
+This solver is a pure portfolio approach CDCL SAT solver implementation that doesn't share any kind of clause. Each thread has its own AzuDICI sequential solver and its own clause database, Figure \ref{fig:azu sharednone} is a schematization of the solver's internal structure. No locks or special data structures are required for this version, since we do not share any clauses (logically or physically),there are only completely independent solvers working on each thread. [TALK ABOUT THE DIFFERENCES BETWEEN THREADS THAT MAKES THE SEARCH DIFFERENT IN THIS VERSION].
+
+\subsection{AzuDICI-SharedBinaries}
+
+
 
 \section{Experimental results} 
 

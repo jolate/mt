@@ -36,6 +36,11 @@ Joao~P. Marques-Silva, Ines Lynce, and Sharad Malik.
 \newblock {\em Conflict-Driven Clause Learning SAT Solvers}, chapter~4, pages
   131--153.
 
+\bibitem{psat}
+Ruben Martins, Vasco~M. Manquinho, and In{\^e}s Lynce.
+\newblock An overview of parallel sat solving.
+\newblock {\em Constraints}, 17(3):304--347, 2012.
+
 \bibitem{DP1960}
 Davis Putnam and Martin Hillary.
 \newblock A computing procedure for quantification theory.

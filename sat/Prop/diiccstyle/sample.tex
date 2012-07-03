@@ -101,15 +101,15 @@ One of the most well-known problems in computer science is the satisfiability (S
 
 In the last decade parallel computing has become increasingly popular. As CPU manufacturers have found difficult and expensive to keep increasing the clock speed of processors, they have instead turn to increase the number of cores each chip has. Unfortunately, if the algorithms are not thought to be run in parallel, more cores will bring small improvements. This is the reason why there is a growing concern to parallelize algorithms so that they can take advantage of many-cores architectures of today's computers. In SAT solving it is no different. The annual SAT competition \footnote[1]{www.satcompetition.org}, an event to determine which is the fastest SAT solver, has two main categories; sequential SAT solvers and parallel SAT solvers. In the last years parallel SAT solvers have outperformed sequential solvers in total wall clock time, so the interest in parallel solvers has grown with new designs and approaches explored for this kind of solvers. One of the most successful approaches to implement a parallel SAT solver is the \textit{portfolio approach} with no \textit{physical sharing} of information among cores. This approach basically runs different solvers in parallel, with each core keeping its own copy of the whole problem in memory, and wait for one of them to solve it up. No physical sharing refers to the fact that each core keeps its own copy of the problem's information, they do not access the same memory locations. This is a very simple and straight forward approach of parallelization, but we have also encountered one drawback to it: as we add more solvers to different cores of a single chip, the overall performance of the parallel solver decreases in around 20-40\%. Preliminary experiments strongly suggest that this decrease in performance is caused by memory cache. Because all cores in a single chip share the same last level cache, and because each thread holds a copy of the original problem in memory, the more threads we add, the bigger the amount of data we have to handle. Since there is only one last level cache shared among all cores, the amount of total accesses from the last level cache to main memory will increase, since now there is a bigger volume of data to handle. 
 
-We plan to research a parallel portfolio approach SAT solver, but implementing a shared clause database among all solvers in the different threads. By doing this we expect to lower the amount of data all threads have to handle, since all threads will be using a common pool of clauses, instead of copies of it. This would mean a lower amount of accesses from the last level cache to main memory, and thus improve performance.
+We plan to research the impact on cache performance of physically sharing clauses. Physical sharing obviously involves a more complex implementation, because you need to ensure data integrity when modifying the same memory locations from different threads, and also ensure that the correctness of algorithms is kept. The mechanisms to accomplish these requirements add an overhead to the solver which is not present when threads do not share information. On the other hand, as we will demonstrate in our future work, it is known that sharing information physically between threads usually increases cache performance, so there is a trade-off between both kind of approaches. The outcome of this trade-off is yet not clear and there are no serious studies about the cache performance of different parallel SAT solver implementations. So the goal of our work will be to study the impact of physically sharing clauses in cache performance of portfolio approach SAT solvers. We also need to stress out that it is already agreed that sharing clauses improves the overall performance of a parallel SAT solver\cite{psat}, but it is not clear which sharing strategy is best for a better cache performance.
 
 \chapter{Objectives}\label{chap:objectives}
 The objectives for this work are the following:
 \begin{itemize}
-\item Empirically quantify the decrease in peformance, as you add threads, of portfolio parallel SAT solvers that do not share information physically.
+\item Empirically quantify the decrease in performance, as you add threads, of portfolio parallel SAT solvers that do not share information physically.
 \item Prove with experimental results that this decrease is due to memory cache.
-\item Propose and implement a CDCL (Conflict Driven Clause Learning, a modern type of SAT solver) parallel SAT solver, with portfolio approach and a physically shared clause database that could lower the decrease in performance when adding threads.
-\item Test the new SAT solver, discuss the results and draw conclusions that could help future parallel SAT solver designers.
+\item Propose and implement different versions of a same CDCL (Conflict Driven Clause Learning, a modern type of SAT solver) parallel SAT solver to test the cache performance of different strategies of clause-sharing.
+\item Run standard benchmarks with the different versions of parallel SAT solvers, discuss the results and draw conclusions that could help future parallel SAT solver designers.
 \end{itemize}
 
 \chapter{Methodology}\label{chap:methodology}
@@ -118,8 +118,8 @@ The following activities will be done to complete the work:
 \item \textit{Bibliographic research}: In this step we will gather and read articles and books of related SAT solving work. We are aiming to find the best performing parallel SAT solvers and get to know their internal designs.
 \item \textit{Testing of existing parallel solvers}: This work is based on experimental evidence that the best performing parallel SAT solvers suffer from considerable decrease in performance when adding more threads. We will perform various tests on some parallel SAT solvers to quantify and confirm the initial evidence.
 \item \textit{Cache tests}: After proving that there is a significant decrease in performance when adding threads to a typical portfolio approach SAT solver, we will prove through experimental results on existing solvers that the problem is memory cache.
-\item \textit{Propose a new solver}: We will propose a new design of a parallel SAT solver with a shared clause database that should scale better when adding threads.
-\item \textit{Result analysis}: With the new proposed solver, we will run experiments on it, analyze results and compare with other SAT solvers.
+\item \textit{Propose a new solver}: We will implement different versions of a CDCL portfolio approach SAT solver to study the impact of different strategies of clause-sharing in cache performance.
+\item \textit{Result analysis}: We will run experiments on the different portfolio approach solver versions, analyze results and draw conclusions regarding cache performance.
 \item \textit{Report writting}: All the previous work will be written as a report to present as a graduation project.
 \end{enumerate}
 
@@ -138,7 +138,7 @@ Given a CNF $\Delta$, the SAT problem is answering the question: Is there an ass
 
 \section{SAT solvers}
 
-All modern solvers today are CDCL (Conflict Driven Clause Learning) \cite{cdcl} SAT solvers. Given a CNF $\varphi$, a partial assignment of variables $\nu$, \ref{cdcl} outlines the general structure of a CDCL SAT solver, where $x$ is a variable, $v$ a truth value and $\beta$ a number. We will shortly explain the main functions of this algorithm, but the details will be covered in the final work.
+All modern solvers today are CDCL (Conflict Driven Clause Learning) \cite{cdcl} SAT solvers. Given a CNF $\varphi$, a partial assignment of variables $\nu$, Algorithm \ref{cdcl} outlines the general structure of a CDCL SAT solver, where $x$ is a variable, $v$ a truth value and $\beta$ a \textit{decision level}. We will shortly explain the main functions of this algorithm, but the details will be covered in the final work.
 
 \begin{algorithm}
 \KwIn{A CNF $\varphi$ and a variable assignment $\nu$}
@@ -168,7 +168,7 @@ $dl \leftarrow 0$\\
 \begin{itemize}
 	\item \textsc{UnitPropagation} consists of iteratively deducting the truth value of variables. The values are deduced by logical reasoning on $\varphi$ and $\nu$.
 	\item \textsc{PickBranchingVariable} consists of selecting a variable to assign, and the respective value. Heavily relies in heuristics to pick variables.
-	\item \textsc{ConflictAnalysis} consists of analyzing the most recent conflict (a conflict occurs when no variable assignment with the current $\nu$ can satisfy $\varphi$) and learning a new clause from the conflict.
+	\item \textsc{ConflictAnalysis} consists of analyzing the most recent conflict (a conflict occurs when no variable assignment with the current $\nu$ can satisfy $\varphi$) and learning a new clause from the conflict. It returns the decision level to backtrack to.
 	\item \textsc{Backtrack} undoes variable assignments as computed by \textsc{ConflictAnalysis}.
 	\item \textsc{AllVariablesAssigned} tests whether all variables have been assigned a truth value.
 \end{itemize}
@@ -188,11 +188,17 @@ Portfolio approach solvers that share clauses physically have the same strategy 
 
 Divide-and-conquer solvers do not try to run different solvers in parallel, they run one solving instance, but try to parallelize the search and divide it between the different threads. A common strategy to divide the search space is to use guiding paths. A guiding path is a partial assignment of variables in $\Sigma$, which restricts the search space of the SAT problem. A solver that divides its search space with guiding paths will assign threads to solve the CNF with the given partial assignment from the guiding path the thread was assigned with. Once a thread finishes searching a guiding path with no success, it can request another to keep searching. MiraXT \cite{miraxt} is a divide-and-conquer SAT solver which uses guiding paths. Moreover, different threads solving different guiding paths also share a common clause database, in which they store their learned lemmas. This is another example of physical clause sharing. 
 
-The work will mainly consist of building a parallel portfolio approach solver, which uses a similar shared clause database system as proposed by MiraXT. 
-
 \section{Memory cache}
 
+\begin{figure}[h!]
+	\centering
+		\includegraphics[width=0.5\textwidth]{cache}
+	\caption{Typical memory hierarchy of modern computers.}
+	\label{fig:cache}
+\end{figure}
+
 Computers today usually have three levels of memory cache and a main memory. The processor can have multiple cores in it and cores can run multiple threads in them. The difference between a core and a thread is that cores have separate copies of almost all the hardware resources. The cores can run independently unless they are using the same resource (for example the connection to the outside) at the same time. Threads, on the other hand, share almost all of the processor resources. When a thread, which is running on a core, needs to fetch data, it first tries to look for it in the first level cache (the L1 cache\footnote{There is L1 data cache and also L1 instruction cache, we will be referring to L1 data cache}), if the data is not there, then it tries to find it in the level 2 cache (L2 cache). If the data is still not there, it then tries to fetch it from the level 3 cache (L3 cache) and if that fails too, it goes up to main memory to get the data. If it still isn't in main memory, then it has to retrieve it from the hard disk. We should notice that this hierarchy involves increasing fetch times as we go up. Getting data from the L1 cache is much faster than getting it from L2, and getting data from L2 is much faster than getting it from main memory. The problem with lower level memory is that, because of the technology and costs involved, they are much smaller. So the big picture is that at lower levels we have faster and smaller memories, and at higher levels we have massive and slower memory storages. Figure \ref{fig:cache} is a schematic of today's computer memory hierarchy. To get an idea of the times involved in accessing data from different memory storages, we present the following table of costs associated with hits and misses, for an Intel Pentium M:
+
 \begin{center}
 \begin{tabular}{ c | c }
   To where & Cycles \\ \hline
@@ -203,12 +209,8 @@ Computers today usually have three levels of memory cache and a main memory. The
 \end{tabular}
 \end{center}
 
-\begin{figure}[h!]
-	\centering
-		\includegraphics[width=0.5\textwidth]{cache}
-	\caption{Typical memory hierarchy of modern computers.}
-	\label{fig:cache}
-\end{figure}
+So we would like our programs to have a low number of accesses to main memory, since they are so expensive, and make a better use of the last level cache. This can usually be achieved in two ways: handling a lower amount of total data and improving our algorithms. The first one can be accomplished by sharing information between different threads of a parallel program, because if threads share information, then you do not need to duplicate it between threads and thus have a lower amount of total data to handle.
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Step 12: Here's the main part of your research project. We can't tell
