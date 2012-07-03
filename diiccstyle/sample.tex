@@ -25,6 +25,8 @@
 \usepackage{url}
 \usepackage{amsmath, amsthm, amssymb}
 \usepackage{mathtools}
+\usepackage{caption}
+\usepackage[subrefformat=parens,labelformat=parens]{subfig}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -337,7 +339,7 @@ we would need to identify somehow that this clause is unit on variable $D$. The 
 	\label{fig:binary list}
 \end{figure}
 
-To speed up the propagation of SAT solvers, \textit{Binary clauses}, clauses with two literals, are sometimes stored in special data structures called \textit{binary implication lists}. Binary clauses are frequently used in propagation because they can imply other variable values in just one step. There is also no point on distinguishing two watched literals in these clauses for the simple reason that there are only two literals in them, so knowing when a binary clause is unit becomes trivial. Figure \ref{fig:binary list} represents a set of binary clauses stored in a binary implication list. We have a literal index vector to identify each literal (a variable and its negation), each position of this vector points to a list of literals which are implied by the literal corresponding to the origin of the pointer. Hence, if the $\neg x_{1}$ position in the index vector points to $\neg x_{2}$ and $x_{4}$, this means that if $x_{1}$ were to be \textbf{false}, it would imply that $x_{2}$ must be \textbf{false} and $x_{4}$ \textbf{true}.
+To speed up the propagation of SAT solvers, \textit{binary clauses}, clauses with two literals, are sometimes stored in special data structures called \textit{binary implication lists}. Binary clauses are frequently used in propagation because they can imply other variable values in just one step. There is also no point on distinguishing two watched literals in these clauses for the simple reason that there are only two literals in them, so knowing when a binary clause is unit becomes trivial. Figure \ref{fig:binary list} represents a set of binary clauses stored in a binary implication list. We have a literal index vector to identify each literal (a variable and its negation), each position of this vector points to a list of literals which are implied by the literal corresponding to the origin of the pointer. Hence, if the $\neg x_{1}$ position in the index vector points to $\neg x_{2}$ and $x_{4}$, this means that if $x_{1}$ were to be \textbf{false}, it would imply that $x_{2}$ must be \textbf{false} and $x_{4}$ \textbf{true}.
 
 \subsection{Parallel SAT solvers}
 
@@ -545,9 +547,26 @@ The relation of this experiment to our work is that SAT solvers have a clause da
 
 Our first step will be to measure and identify the performance problems that afflict portfolio parallel SAT solvers. The state-of-the-art portfolio approach parallel SAT solver \texttt{plingeling} is one of the best performing parallel solvers to this day. As we mentioned earlier, this solver does not share clauses in any way\footnote{It does share unary clauses through message-passing, but we have deactivated this feature for our experiments.}, so we will measure the performance behaviour as we add more solving threads.
 
-Because portfolio approach SAT solvers implement different search strategies among their solving threads, it is hard to measure the real impact in performance of adding an extra thread. The new thread might implement a successful search strategy, which will make the total solving time improve drastically and hide the negative impact a new thread has in the performance of other threads. This is why we have modified plingeling to make the exact same search in all of its threads. In theory, we would expect the solver to finish at the same time with one thread than with $n$ threads, because all threads are performing the exact same search and thus should finish at the same time. But we know that each solver thread also keeps its own clause database, so basing our reasoning on the previous experiment, we should expect that adding threads will hinder the overall solver performance. So this modified plingeling solver with $n$ threads should perform worse as $n$ grows, assuming that we have enough cores to run $n$ threads and that all cores belong to a same chip. Figure \ref{fig: plingeling performance} shows how the plingeling solver decreases its performance as we add more threads. The decrease in performance is very noticeable and it can even reach 40\%. Our first hypothesis is that this decrease in performance is mostly due to cache issues.
+\begin{figure}[h!]
+	\centering
+		\includegraphics[width=0.7\textwidth]{plingeling_decay}
+	\caption{Decay of plingeling solver performance when adding threads.}
+	\label{fig:plingeling decay}
+\end{figure}
 
-To prove that the problem in scalability lies in cache, we will also perform the experiment on a four chip machine, running each different thread in a different chip. As chips have their own last level cache, we expect the performance decrease to be minimal as we add threads, because different threads will not be sharing cache. Figure \ref{fig:plingeling intel} shows the decrease in performance as we add threads in separate chips. We can observe that the performance decrease in this case is minimal, contrary to the situation where threads are in different cores of a same chip. 
+Because portfolio approach SAT solvers implement different search strategies among their solving threads, it is hard to measure the real impact in performance of adding an extra thread. The new thread might implement a successful search strategy, which will make the total solving time improve drastically and hide the negative impact a new thread has in the performance of other threads. This is why we have modified plingeling to make the exact same search in all of its threads. In theory, we would expect the solver to finish at the same time with one thread than with $n$ threads, because all threads are performing the exact same search and thus should finish at the same time. But we know that each solver thread also keeps its own clause database, so basing our reasoning on the previous experiment, we should expect that adding threads will hinder the overall solver performance. So this modified plingeling solver with $n$ threads should perform worse as $n$ grows, assuming that we have enough cores to run $n$ threads and that all cores belong to a same chip. Figure \ref{fig:plingeling decay} shows how the plingeling solver decreases its performance as we add more threads. The decrease in performance is very noticeable and it can even reach close to 30\%. Our first hypothesis is that this decrease in performance is mostly due to cache issues.
+
+\begin{figure}[h!]
+\begin{center}
+	\subfloat[Same Chip]{\label{fig:same chip}\includegraphics[bb=59 90 294 325,clip,width=0.5\textwidth]{plingeling_same_chip}}
+	\subfloat[Different Chips]{\label{fig:different chip}\includegraphics[bb=59 90 294 325,clip,width=0.5\textwidth]{plingeling_different_chip}}
+	\caption{Plingeling performance on different machine set ups.}
+	\label{fig:plingeling chips}
+\end{center}
+\end{figure}
+
+To prove that the problem in scalability lies in cache, we will also perform the experiment on a four chip machine, running each different thread in a different chip. As chips have their own last level cache, we expect the performance decrease to be minimal as we add threads, because different threads will not be sharing cache. Figure ~\subref*{fig:different chip} shows the decrease in performance as we add threads in separate chips. We can observe that the performance decrease in this case is minimal for most problems (only around -1-2\%), contrary to the situation where threads are in different cores of a same chip (where many problems exceed -4\% decrease), as shown in Figure ~\subref*{fig:same chip}. The fundamental difference between the two set ups used is that cores in the same chip share the LLC, while cores in different ships have their own LLC and only share main memory. Each solver has its own database of clauses, so the more LLC memory it has at its disposal, the better it will perform individually. The two problems for which the performance decay is noticeable in Figure \ref{fig:plingeling chips} (the two bottom lines in both graphs), are files which contain an unusual large amount of clauses, so a considerable amount of time is spent parsing the input file and generating the clause database. Because plingeling parses a file and then generates a new clause database for each thread, this operation takes even more time when we have multiple threads, and this is why we see that considerable performance decay on different chips for those two particular files. We have to note that big input files with lots of clauses are usually a sign that it is an easy problem, because we will have more clauses to help us in the search. This particular kind of performance decay is different to the one being studied in this report, we are mostly interested in the decay related to cache behaviour in the propagation process, rather than clause database initialization.
+
 
 Table \ref{tab:plingeling cache} shows the cache miss percentages as we add more threads to a solver that runs on a single chip. As suggested by our hypothesis, the LLC miss percentage increases dramatically as we add threads, results that explain the decrease in performance of the solver.
 
@@ -557,11 +576,33 @@ It is now clear that as we add more data to a SAT solver, we make its performanc
 
 \subsection{General outline}
 
-\subsection{Data structures involved}
+AzuDICI\footnote{You can find the latest implementation of AzuDICI at
+  \url{https://github.com/leoferres/AzuDICI}} is a standard CDCL
+solver based on {\tt plingeling}, {\tt barcelogic} and {\tt miraXT}. In particular, AzuDICI implements binary implication lists for the
+propagation with binary clauses, and the two-watched literals scheme
+for unit propagation with clauses of more than two
+literals. AzuDICI also implements the 1-UIP algorithm for conflict
+analysis, the lemma simplification algorithm used in {\tt
+  PicoSAT}, Luby restarts, a policy for lemma cleaning that
+keeps only binary and ternary lemmas, and more than four-literal
+lemmas that have participated in a conflict since the last
+cleanup. Finally, AzuDICI also incorporates the EVSIDS heuristic for
+branching literal decisions.
 
-\subsection{Propagation}
+To allow a better understanding of clause sharing in these kind of SAT solvers, AzuDICI comes in three flavours: AzuDICI-SharedAll, AzuDICI-SharedBinaries and AzuDICI-SharedNone.
 
-\subsection{Experimental results} 
+\subsection{AzuDICI-SharedNone}
+
+\begin{figure}[h!]
+	\centering
+		\includegraphics[width=0.7\textwidth]{sharednone}
+	\caption{Three threads in an AzuDICI-SharedNone solver.}
+	\label{fig:azu sharednone}
+\end{figure}
+
+This solver is a pure portfolio approach CDCL SAT solver implementation that doesn't share any kind of clause. Each thread has its own AzuDICI sequential solver and its own clause database, Figure \ref{fig:azu sharednone} is a schematization of the solver's internal structure. No locks or special data structures are required for this version, since we do not share any clauses (logically or physically),there are only completely independent solvers working on each thread.
+
+\section{Experimental results} 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Step 13: Add a conclusions chapter
