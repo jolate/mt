@@ -611,9 +611,49 @@ This solver is a pure portfolio approach CDCL SAT solver implementation that doe
 	\label{fig:azu sharedbinaries}
 \end{figure}
 
-This solver shares binary clauses between its threads physically. All threads have access to the same binary implication list and they can read and add binary clauses when necessary. Locks are only used when a thread wants to add a new binary clause, but since this event doesn't occur too often, the contention is minimal. Figure \ref{fig:azu sharedbinaries} shows the structure of this solver. Each thread has its own n-clause database, but they all share the same source of binary clauses. The advantage of this approach over sharing everything, is that a shared implication list of binary clauses is simple to implement and does not add significant overhead to the overall performance of the solver. This is because we do not need to keep additional information for each thread and propagation works the same way as it would without sharing the binary clause database.
+This solver shares binary clauses between its threads physically. All threads have access to the same binary implication list and they can read and add binary clauses when necessary. Figure \ref{fig:azu sharedbinaries} shows the structure of this solver. Each thread has its own n-clause database, but they all share the same source of binary clauses. The advantage of this approach over sharing everything, is that a shared implication list of binary clauses is simple to implement and does not add significant overhead to the overall performance of the solver. This is because we do not need to keep additional information for each thread and propagation works the same way as it would without sharing the binary clause database.
 
-Another feature that sharing binary clauses brings in is that it adds another random factor to the search. Since threads are not synchronized within each other, they can add new binary clauses to the database at any given time, action that would affect the search of other threads (because they now have an extra clause to propagate with). If we were to try and replicate the exact same search as used in a particular instance of an AzuDICI-SharedNone solver, we would fail, because sharing binary clauses among threads also affects the search path of each individual thread.
+\begin{figure}[tp]
+  \centering
+  \includegraphics[scale=1.0]{implication_list}
+  \caption{Binary clause database}
+  \label{fig:shared bins}
+\end{figure}
+
+The implication list used in AzuDICI differs in its implementation to the 
+one studied in the literature. Figure \ref{fig:shared bins} is a schematization of our 
+binary implication lists structure. We have an array of \textit{binary 
+lists}, one for each literal. A binary list is basically two pointers, 
+one to a first \textit{binary node} and another to the last binary node 
+associated with that list. A 
+binary node is an array of literals that also has a pointer to another 
+binary node. The amount of literals a binary node can hold will depend 
+on the size of the cache line we are working with; it will have as many 
+literals as a cache line can hold. The literals implied by the literal 
+associated to a binary list will be the ones in the binary node 
+referenced by that binary list pointer and the subsequently referenced 
+binary nodes. 
+
+When a thread wants to add the clause $\{l_i,l_j\}$, it must look for 
+the binary list associated with $\neg l_i$ and go to the last node linked 
+to that binary list. If there is enough space in that node to add 
+another literal, then it adds $l_j$. If the node is full, then it must 
+create a new node with the $l_j$ literal, insert it at the end of the 
+linked list of nodes, 
+updating the binary list last node pointer. It does the same for the 
+binary list of $\neg l_j$.
+
+To ensure consistency of 
+data when multiple threads are inserting, each binary list has a lock. 
+If a thread is inserting a new implicated literal, it first locks the 
+binary list where it's inserting and then proceeds to insert. If by 
+chance another thread wants to insert in the same binary list, it must 
+wait till the lock is freed. Since adding binary clauses is not a 
+frequent event, and even less frequent the event that it would happen 
+in the same binary list, the contention that these locks generate is 
+unnoticeable in our experimental results.
+
+Another feature that sharing binary clauses brings in is that it adds another random factor to the search. Since threads are not synchronized with each other, they can add new binary clauses to the database at any given time, action that would affect the search of other threads (because they now have an extra clause to propagate with). If we were to try and replicate the exact same search as used in a particular instance of an AzuDICI-SharedNone solver, we would fail, because sharing binary clauses among threads also affects the search path of each individual thread.
 
 \subsection{AzuDICI-SharedAll}
 
@@ -642,7 +682,9 @@ pointers to another thread clause (NW0 and NW1) and a pointer to
 an actual n-ary clause in the n-ary clause database. W0 and W1 keep
 track of the literals being watched by the thread for a given n-ary
 clause. NW0 and NW1 point to the next thread clauses that are also 
-watching WL0 and WL1 respectively.
+watching WL0 and WL1 respectively. The n-clause also has a flag for 
+each worker thread to identify which ones are using that clause 
+for propagation.
 
 \begin{figure}[tp]
   \centering
@@ -651,15 +693,34 @@ watching WL0 and WL1 respectively.
   \label{fig:azu design}
 \end{figure}
 
+To insert a new n-ary clause, we first make sure that the clause 
+doesn't exist in the database. If it 
+doesn't exist, we create the n-clause, set the current thread 
+flag to true and add it to the database. 
+On the other hand, if it does exist, we just toggle the 
+corresponding thread flag of the n-clause to true. The inserting 
+procedure is locked so that two different threads can't insert
+at the same time. In our experiments we haven't noticed any 
+considerable overhead caused by this lock.
+
 
 \section{Experimental results} 
 
-Since we are more interested in studying the cache performance of parallel SAT solvers, we will use a benchmark set of SAT problems (all used in previous SAT competitions) which we know that any of the AzuDICI versions can't solve in a defined time frame limit. Said limit will be of five minutes for our experiments. We would not want to use problems that can be solved in our time limit frame mostly because the results would be strongly influenced by the different search paths each version takes. A version that solves a problem faster due to finding a better search path will probably have a better cache performance, not because it is more cache-friendly, but because it finished before the amount of data to handle was too big.
+Since we are interested in studying the cache performance of parallel SAT solvers, we will use a benchmark set of SAT problems (all used in previous SAT competitions) which we know that any of the AzuDICI versions can't solve in a defined time frame limit. Said limit will be of five minutes for our experiments. We would not want to use problems that can be solved in our time limit frame mostly because the results would be strongly influenced by the different search paths each version takes. A version that solves a problem faster due to finding a better search path will probably have a better cache performance, not because it is more cache-friendly, but because it finished before the amount of data to handle was too big.
 
-The experiment will consist of measuring the cache performance of a solver before the timeout of five minutes. For each problem, we will run an instance of the solver with one to up to $n$ threads, and see how well it scales for that particular problem.
+The experiment will consist of measuring the cache performance of a solver before the timeout of five minutes. For each problem, we will run an instance of the solver with one to up to $n$ threads, and see how well cache behaves for that particular problem.
 
 \subsection{AzuDICI-SharedNone results}
 
+In this experiment we ran the SharedNone version with our set of benchmark problems. Figure \ref{fig:xxx} shows the results for this experiment. As we expected, the cache performance decreases as we add more threads, decrease of about XX\% to XX\%. 
+
+\subsection{AzuDICI-SharedBinaries results}
+
+Figure \ref{fig:xxx} shows the results in this experiment and we can observe they are similar to the SharedNone results. This can be expected as we are only sharing a small amount of clauses physically and not making any significant change to the solver. The propagation scheme is still the same for both versions. Only a small improvement in cache performance can be noticed throughout the different benchmark files.
+
+\subsection{AzuDICI-SharedAll}
+
+The results for this last version are shown in Figure \ref{fig:xxx}. 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
