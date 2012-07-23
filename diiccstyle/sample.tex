@@ -712,15 +712,56 @@ The experiment will consist of measuring the cache performance of a solver befor
 
 \subsection{AzuDICI-SharedNone results}
 
-In this experiment we ran the SharedNone version with our set of benchmark problems. Figure \ref{fig:xxx} shows the results for this experiment. As we expected, the cache performance decreases as we add more threads, decrease of about XX\% to XX\%. 
+\begin{figure}[h!]
+	\centering
+		\includegraphics[width=0.7\textwidth]{shared-none}
+	\caption{SharedNone experiment}
+	\label{fig:shared-none}
+\end{figure}
+
+In this experiment we ran the SharedNone version with our set of benchmark problems. Figure \ref{fig:shared-none} shows the results for this experiment. As we expected, the cache performance decreases as we add more threads, the LLC miss percentage jumps from around 5-10\%, for one thread, to about 35-50\% when running on six threads.
 
 \subsection{AzuDICI-SharedBinaries results}
 
-Figure \ref{fig:xxx} shows the results in this experiment and we can observe they are similar to the SharedNone results. This can be expected as we are only sharing a small amount of clauses physically and not making any significant change to the solver. The propagation scheme is still the same for both versions. Only a small improvement in cache performance can be noticed throughout the different benchmark files.
+\begin{figure}[h!]
+	\centering
+		\includegraphics[width=0.7\textwidth]{shared-binaries}
+	\caption{SharedBinaries experiment}
+	\label{fig:shared-binaries}
+\end{figure}
+
+Figure \ref{fig:shared-binaries} shows the results in this experiment and we can observe they are similar to the SharedNone results. This can be expected as we are only sharing a small amount of clauses physically and not making any significant change to the solver. The propagation scheme is still the same for both versions. Only a small improvement in cache performance can be noticed throughout the different benchmark files.
 
 \subsection{AzuDICI-SharedAll}
 
-The results for this last version are shown in Figure \ref{fig:xxx}. 
+\begin{figure}[h!]
+	\centering
+		\includegraphics[width=0.7\textwidth]{shared-all}
+	\caption{SharedAll experiment}
+	\label{fig:shared-all}
+\end{figure}
+
+The results for this last version are shown in Figure \ref{fig:shared-all}. 
+
+\begin{figure}[h!]
+	\centering
+		\includegraphics[width=0.7\textwidth]{shared-all-start}
+	\caption{SharedAllLimited experiment}
+	\label{fig:shared-all-start}
+\end{figure}
+
+Other results on Figure \ref{fig:shared-all-start}.
+
+\subsection{Summing it up}
+
+\begin{figure}[h!]
+	\centering
+		\includegraphics[width=0.7\textwidth]{average}
+	\caption{Average graph}
+	\label{fig:average}
+\end{figure}
+
+Here is the average on Figure \ref{fig:average}.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

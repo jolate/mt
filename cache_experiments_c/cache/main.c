@@ -18,7 +18,7 @@
  * Global variables
  */
 int number_of_workers; /*Number of threads*/
-int matrix_size = 15810; /*Size of the matrix*/
+int matrix_size = 1581; /*Size of the matrix*/
 int **matrix; /*The original matrix*/
 int ***matrixes; /*To hold the original matrix and copies of it*/
 unsigned int seed = 0; /*The seed used for random numbers*/
@@ -31,20 +31,23 @@ int cycles = 1; /*Number of times to sum all matrix elements, for longer executi
  */
 struct thread_data {
     int thread_id; /*The number that identifies the thread*/
-    int thread_seed; /*A thread seed for random numbers*/
+    unsigned thread_seeda; /*A thread seed for random numbers*/
+    unsigned thread_seedb; /*A thread seed for random numbers*/
     int** thread_matrix; /*A pointer to the matrix this thread should use*/
     long state; /*A thread state*/
 };
+
 /*
  * Random Number Generator
  */
 
-int get_rand(int lim, long *a)
-{
-        //printf("%ld -> ",a[0]);
-        a[0] = (a[0] * 32719 + 3) % 32749;
-        //printf("%ld\n",a[0]);
-        return ((a[0] % lim));
+unsigned get_rand(int lim, unsigned *a, unsigned *b) {
+  unsigned res;
+  b[0] = 36969 * (b[0] & 65535) + (b[0] >> 16);
+  a[0] = 18000 * (a[0] & 65535) + (a[0] >> 16);
+  res = (b[0] << 16) + a[0];
+  res = res%lim;
+  return res;
 }
 
 /*
@@ -56,15 +59,14 @@ void *sum_elements(void *data) {
     unsigned int sum = 0;
     for (int z = 0; z < cycles; z++) {
         sum = 0;
-        for (int i = 0; i < matrix_size; i++) {
-            for (int j = 0; j < matrix_size; j++) {
-                sum = sum + this_thread_data->thread_matrix[j][i];
+        for (int i = 0; i < 20000; i++) {
+            for (int j = 0; j < 20000; j++) {
+                sum = sum + this_thread_data->thread_matrix[get_rand(matrix_size,&this_thread_data->thread_seeda,&this_thread_data->thread_seedb)][get_rand(matrix_size,&this_thread_data->thread_seeda,&this_thread_data->thread_seedb)];
             }
         }
     }
     printf("Thread %i returned %u \n", this_thread_data->thread_id, sum);
 }
-
 
 int main(int argc, char** argv) {
     /*Get the number of workers as program input*/
@@ -106,22 +108,30 @@ int main(int argc, char** argv) {
         for (int i = 0; i < number_of_workers; i++) {
             data[i].thread_id = i;
             data[i].thread_matrix = matrix;
-            data[i].thread_seed = rand();
-            srand(5);
-            data[i].state = rand();
+            data[i].thread_seeda = (unsigned) rand();
+            data[i].thread_seedb = ~data[i].thread_seeda;
+            data[i].thread_seeda <<= 1;
+            data[i].thread_seedb <<= 1;
+            data[i].thread_seeda += 1;
+            data[i].thread_seedb += 1;
+            data[i].thread_seeda *= 2019164533u, data[i].thread_seedb *= 1000632769u;
             pthread_create(&threads[i], NULL, sum_elements, (void *) &data[i]);
         }
         for (int i = 0; i < number_of_workers; i++) {
             pthread_join(threads[i], NULL);
         }
-    }        /*If we are not sharing the matrix give a copy to each thread!*/
+    }/*If we are not sharing the matrix give a copy to each thread!*/
     else {
         for (int i = 0; i < number_of_workers; i++) {
             data[i].thread_id = i;
             data[i].thread_matrix = matrixes[i];
-            data[i].thread_seed = rand();
-            srand(5);
-            data[i].state = rand();
+            data[i].thread_seeda = (unsigned) rand();
+            data[i].thread_seedb = ~data[i].thread_seeda;
+            data[i].thread_seeda <<= 1;
+            data[i].thread_seedb <<= 1;
+            data[i].thread_seeda += 1;
+            data[i].thread_seedb += 1;
+            data[i].thread_seeda *= 2019164533u, data[i].thread_seedb *= 1000632769u;
             pthread_create(&threads[i], NULL, sum_elements, (void *) &data[i]);
         }
         for (int i = 0; i < number_of_workers; i++) {
