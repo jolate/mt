@@ -719,7 +719,7 @@ The experiment will consist of measuring the cache performance of a solver befor
 	\label{fig:shared-none}
 \end{figure}
 
-In this experiment we ran the SharedNone version with our set of benchmark problems. Figure \ref{fig:shared-none} shows the results for this experiment. As we expected, the cache performance decreases as we add more threads, the LLC miss percentage jumps from around 5-10\%, for one thread, to about 35-50\% when running on six threads.
+In this experiment we ran the SharedNone version with our set of benchmark problems. Figure \ref{fig:shared-none} shows the results for this experiment. As we expected, the cache performance decreases as we add more threads, the LLC miss percentage jumps from around 5-10\%, for one thread, to about 35-50\% when running on six threads. The overall scaling for all problems is poor and the continuous increment in LLC misses suggests that the propagation of clauses is much more slower when working with multiple threads. We could infer from this graph that if we continue adding threads (assuming we had enough cores), the cache performance would be so low that it would not be beneficial to add any more threads, as the propagation of clauses would be too slow to add any improvement. Unfortunately, finding this point, where adding more threads becomes counter productive, should be very difficult, because each problem may show a very different behaviour and each new thread might also behave very differently, yielding different optimal number of threads. We could perform a statistical study over a very large sample of benchmark problems to find said number of optimal threads for a typical SAT problem, but we will leave such experiment for future work. For now, we are only interested in knowing that when we don't share clauses physically, the scaling of cache performance is poor.
 
 \subsection{AzuDICI-SharedBinaries results}
 
@@ -730,7 +730,7 @@ In this experiment we ran the SharedNone version with our set of benchmark probl
 	\label{fig:shared-binaries}
 \end{figure}
 
-Figure \ref{fig:shared-binaries} shows the results in this experiment and we can observe they are similar to the SharedNone results. This can be expected as we are only sharing a small amount of clauses physically and not making any significant change to the solver. The propagation scheme is still the same for both versions. Only a small improvement in cache performance can be noticed throughout the different benchmark files.
+Figure \ref{fig:shared-binaries} shows the results in this experiment and we can observe they are similar to the SharedNone results. This can be expected as we are only sharing a small amount of clauses physically and not making any significant change to the solver. The propagation scheme is still the same for both versions. Only a small improvement, not more than a mere 2\% in most cases, in cache performance can be noticed throughout the different benchmark files. This experiment is an intermediate example of clause sharing as we only share binary ones. Some problems present an odd behaviour in some cases, showing big performance differences when just adding an extra thread. This could be caused by multiple factors, including the different search paths that adding an extra thread might lead to, since, as we mentioned before, sharing clauses affects the search. Once again, we see that the overall scaling as we add threads is poor and that there should be a point when adding more threads is counter productive, just as in the previous version.
 
 \subsection{AzuDICI-SharedAll}
 
@@ -741,7 +741,7 @@ Figure \ref{fig:shared-binaries} shows the results in this experiment and we can
 	\label{fig:shared-all}
 \end{figure}
 
-The results for this last version are shown in Figure \ref{fig:shared-all}. 
+The results for this last version are shown in Figure \ref{fig:shared-all}. We expected the scaling of this solver to be much better than the previous versions, because sharing all clauses between threads lowers the amount of total data to handle and should keep the cache misses under control, but our results show otherwise. Not only did this SharedAll version not achieve the desired improved scalability, it also makes the amount of cache misses higher for all number of threads. Our explanation for this behaviour is that this solver keeps more information and has to perform additional tasks when propagating. Unlike the SharedNone version, this one needs extra structures for each thread, which keep track of the watched literals of each thread and which clauses are being used. We suspect that this additional data, plus the fact that we have to be constantly checking it during propagation, makes the cache perform even worse and totally opaque the benefits of sharing information. Also, as we described in an earlier section of this work, the amount of information to handle might be so big that it won't even matter if we share it, the size of it could still be too big to have a better chance of finding data in the LLC.
 
 \begin{figure}[h!]
 	\centering
@@ -750,9 +750,9 @@ The results for this last version are shown in Figure \ref{fig:shared-all}.
 	\label{fig:shared-all-start}
 \end{figure}
 
-Other results on Figure \ref{fig:shared-all-start}.
+We also did an extra experiment with a new solver version, which only shares the initial clauses read from the input file, and then keeps separate clause databases for the new learnt clauses. We called this new version SharedAllLimited and Figure \ref{fig:shared-all-start} shows the results of such experiment. We can observe that the results improve compared to SharedAll and we end up getting lower LLC miss percentage, but similar numbers to the SharedNone and SharedBinaries versions.
 
-\subsection{Summing it up}
+\subsection{Summing it all up}
 
 \begin{figure}[h!]
 	\centering
@@ -761,7 +761,7 @@ Other results on Figure \ref{fig:shared-all-start}.
 	\label{fig:average}
 \end{figure}
 
-Here is the average on Figure \ref{fig:average}.
+To get a clearer picture of our results, we have plotted the average LLC miss percentages of all problems for all versions. Figure \ref{fig:average} compares all versions averages in a single graph. We can clearly see that SharedAllLimited and SharedBinaries perform very similar and slightly better than SharedNone. This is because sharing some information, as little as it might be, does help with LLC miss percentages and does not modify the propagation scheme in any way. On the other hand, SharedAll has the worst performance, because, as we mentioned earlier, the gains of sharing clauses physically do not surpass the harms of modifying the propagation scheme and keep additional information for it.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -770,6 +770,8 @@ Here is the average on Figure \ref{fig:average}.
 % 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{Conclusions}\label{chap:conclusion}
+
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Step 14: Work out the bibliography
