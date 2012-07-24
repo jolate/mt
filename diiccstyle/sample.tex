@@ -533,7 +533,7 @@ Aside from the code itself, the amount of data a program handles is also an impo
 % you what to write here... that's your job.
 %  
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\chapter{Important stuff...}\label{chap:contributions}
+\chapter{Cache performance of portfolio-approach SAT solvers}\label{chap:contributions}
 
 \section{Cache performance in simple parallel-shared-memory programs}
 
@@ -771,7 +771,13 @@ To get a clearer picture of our results, we have plotted the average LLC miss pe
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{Conclusions}\label{chap:conclusion}
 
+Throughout this work we have shown that algorithm design might not always be oblivious to modern computer architecture. Memory hierarchy plays an important role in the performance of both single and multi threaded applications. From our small experiments that deal with common cache problems we can conclude that we must know how modern memory architecture works to get the best performance out of our programs. This is no different in the SAT solving world, where it is already known that cache plays an essential role in the efficiency of state-of-the-art solvers. Although cache performance has been widely studied for sequential SAT solvers (mainly studies about the two-watched-literal scheme \cite{chaff}), it is yet not clear how it affects the design of parallel SAT solvers, which was the main focus of this work. We were able to prove that it is not possible to just keep adding threads to state-of-the-art parallel SAT solvers and expect to keep performing better. As we add more threads there is a considerable performance degradation of all threads, degradation that might get so high as to prove fruitless to keep adding threads.
 
+It is also clear by now that sharing information between threads in a parallel program does help with cache performance, because of the higher chance to find data in the cache, but it is also equally important that the modifications introduced to share information do not overwhelm the benefits. For instance, sharing information between threads will usually lead to the implementation of some type of lock, specially if the information is being modified, and locks can have a noticeable negative impact in overall performance. In our work this was not the case, but when sharing all clauses we stumbled upon the problem of having to modify the usual scheme of some of the processes involved in SAT solving. This is the reason why making multi-threaded applications is so difficult when the application is complex. There is no general rule of thumb or recipe that will work for all domains, each program has its own complexities and specific constrains that will require detailed study and experimentation in order to achieve a parallel version. 
+
+In the domain of parallel SAT solving, it was clear that sharing clauses among threads was a good idea and improved the search across all threads, but it is not clear which is the best way to do so. Some solvers, as we mentioned, share them through message passing and others would rather share them physically, but no real analysis of performance has been done. In this work we have used the approach used by \texttt{MiraXT} to share clauses physically, but our experiments and cache studies show that this is not a good idea. It is much more simple, straight forward and better to just let each thread manage its own separate clause database and avoid all the difficulties of physical sharing, which at the end only show to harm the overall cache performance of the solver. The only exception would be the unary and binary clauses, because these kind of clauses can easily be shared with no complications and significant overhead, while improving cache performance by a small margin. 
+
+For future work we would like to perform a statistical analysis with state-of-the-art solvers, to measure the optimal number of threads that these solvers should run, so that degradation in cache performance will not overshadow the benefits of having an extra thread. We would also like to implement versions of AzuDICI which share data through message passing, not physically, and compare them to the versions from this work. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Step 14: Work out the bibliography
