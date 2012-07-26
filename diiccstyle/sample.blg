@@ -2,49 +2,54 @@ This is BibTeX, Version 0.99c (TeX Live 2009/Debian)
 The top-level auxiliary file: sample.aux
 The style file: plain.bst
 Database file #1: biblio.bib
+A bad cross reference---entry "minisat"
+refers to entry "conf/sat/2003", which doesn't exist
+Warning--I didn't find a database entry for "psat"
 Warning--I didn't find a database entry for "NEEDED"
+Warning--I didn't find a database entry for "conf/sat/2003"
+Warning--empty institution in heavytail
 Warning--empty publisher in cdcl2
 Warning--empty year in cdcl2
 Warning--empty journal in vsids
-You've used 18 entries,
+You've used 22 entries,
             2118 wiz_defined-function locations,
-            607 strings with 6438 characters,
-and the built_in function-call counts, 6079 in all, are:
-= -- 602
-> -- 229
-< -- 8
-+ -- 96
-- -- 73
-* -- 379
-:= -- 962
-add.period$ -- 57
-call.type$ -- 18
-change.case$ -- 89
+            629 strings with 6809 characters,
+and the built_in function-call counts, 7634 in all, are:
+= -- 759
+> -- 293
+< -- 11
++ -- 121
+- -- 93
+* -- 480
+:= -- 1203
+add.period$ -- 70
+call.type$ -- 22
+change.case$ -- 111
 chr.to.int$ -- 0
-cite$ -- 21
-duplicate$ -- 249
-empty$ -- 519
-format.name$ -- 73
-if$ -- 1328
+cite$ -- 26
+duplicate$ -- 315
+empty$ -- 644
+format.name$ -- 93
+if$ -- 1670
 int.to.chr$ -- 0
-int.to.str$ -- 18
-missing$ -- 15
-newline$ -- 94
-num.names$ -- 38
-pop$ -- 115
+int.to.str$ -- 22
+missing$ -- 18
+newline$ -- 114
+num.names$ -- 48
+pop$ -- 138
 preamble$ -- 1
-purify$ -- 72
+purify$ -- 89
 quote$ -- 0
-skip$ -- 194
+skip$ -- 248
 stack$ -- 0
-substring$ -- 395
-swap$ -- 76
-text.length$ -- 8
+substring$ -- 501
+swap$ -- 101
+text.length$ -- 11
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 70
-warning$ -- 3
-while$ -- 60
-width$ -- 20
-write$ -- 197
-(There were 4 warnings)
+type$ -- 86
+warning$ -- 4
+while$ -- 76
+width$ -- 24
+write$ -- 242
+(There was 1 error message)

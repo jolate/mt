@@ -25,15 +25,24 @@ Arnaldo~Carvalho de~Melo.
 \newblock \url{http://vger.kernel.org/~acme/perf/lk2010-perf-paper.pdf}, 2010.
 \newblock [Online; accessed 03-May-2012].
 
-\bibitem{drepper2007}
-Ulrich Drepper.
-\newblock What every programmer should know about memory, 2007.
+\bibitem{minisat}
+Niklas Eén and Niklas Sörensson.
+\newblock An extensible sat-solver.
+\newblock In Enrico Giunchiglia and Armando Tacchella, editors, {\em SAT},
+  volume 2919 of {\em Lecture Notes in Computer Science}, pages 502--518.
+  Springer, 2003.
 
 \bibitem{manysat}
 Youssef Hamadi, Said Jabbour, and Lakhdar Sais.
 \newblock Manysat: a parallel sat solver.
 \newblock {\em Journal on Satisfiability, Boolean Modeling and Computation},
   6:245--262, 2009.
+
+\bibitem{heavytail}
+Holger~H. Hoos.
+\newblock Heavy-tailed behaviour in randomised systematic search algorithms for
+  sat?
+\newblock Technical report, 1999.
 
 \bibitem{karp1972}
 Richard~M. Karp.
@@ -50,6 +59,11 @@ Stephan Kottler and Michael Kaufmann.
 Joao~P. Marques-Silva, Ines Lynce, and Sharad Malik.
 \newblock {\em Conflict-Driven Clause Learning SAT Solvers}, chapter~4, pages
   131--153.
+
+\bibitem{grasp}
+Joaäo~P. Marques-silva and Karem~A. Sakallah.
+\newblock Grasp: A search algorithm for propositional satisfiability.
+\newblock {\em IEEE Transactions on Computers}, 48:506--521, 1999.
 
 \bibitem{chaff}
 Matthew~W. Moskewicz, Conor~F. Madigan, Ying Zhao, Lintao Zhang, and Sharad
@@ -79,6 +93,10 @@ O.~Rousell.
   2010.
 \newblock [Online; accessed 01-April-2012].
 
+\bibitem{ig}
+Lawrence Ryan.
+\newblock Efficient algorithms for clause-learning sat solvers, 2004.
+
 \bibitem{miraxt}
 Tobias Schubert, Matthew Lewis, and Bernd Becker.
 \newblock Pamiraxt: parallel sat solving with threads and message passing.
@@ -97,6 +115,11 @@ Hantao Zhang.
   Notes in Computer Science}, pages 272--275. Springer, 1997.
 
 \bibitem{cdcl1}
+Lintao Zhang, Conor~F. Madigan, Matthew~W. Moskewicz, and Sharad Malik.
+\newblock Efficient conflict driven learning in boolean satisfiability solver.
+\newblock In {\em ICCAD}, pages 279--285, 2001.
+
+\bibitem{DBLP}
 Lintao Zhang, Conor~F. Madigan, Matthew~W. Moskewicz, and Sharad Malik.
 \newblock Efficient conflict driven learning in boolean satisfiability solver.
 \newblock In {\em ICCAD}, pages 279--285, 2001.
