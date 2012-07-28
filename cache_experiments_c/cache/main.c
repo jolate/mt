@@ -18,7 +18,7 @@
  * Global variables
  */
 int number_of_workers; /*Number of threads*/
-int matrix_size = 1581; /*Size of the matrix*/
+int matrix_size = 12247; /*Size of the matrix 179,358,1000,12247,16770*/
 int **matrix; /*The original matrix*/
 int ***matrixes; /*To hold the original matrix and copies of it*/
 unsigned int seed = 0; /*The seed used for random numbers*/
