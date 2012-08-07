@@ -46,6 +46,7 @@ set border 3 lw 0.5
 set xtics nomirror
 set ytics nomirror
 set ytics 2,-2,-18
+set xtics 0,1,4
 set yrange [-18:2]
 plot "plingeling_same_chip.dat" using 1:2 lt 2 lw 0.5 with lines, \
 "" using 1:3 lt 2 lw 0.5 with lines, \

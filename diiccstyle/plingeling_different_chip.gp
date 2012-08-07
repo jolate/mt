@@ -45,6 +45,7 @@ unset key
 set border 3 lw 0.5
 set xtics nomirror
 set ytics nomirror
+set xtics 0,1,4
 plot "plingeling_different_chip.dat" using 1:2 lt 2 lw 0.5 with lines, \
 "" using 1:3 lt 2 lw 0.5 with lines, \
 "" using 1:4 lt 2 lw 0.5 with lines, \

@@ -5,51 +5,51 @@ Database file #1: biblio.bib
 A bad cross reference---entry "minisat"
 refers to entry "conf/sat/2003", which doesn't exist
 Warning--I didn't find a database entry for "psat"
-Warning--I didn't find a database entry for "NEEDED"
 Warning--I didn't find a database entry for "conf/sat/2003"
+Warning--empty booktitle in bs97
 Warning--empty institution in heavytail
 Warning--empty publisher in cdcl2
 Warning--empty year in cdcl2
 Warning--empty journal in vsids
-You've used 22 entries,
+You've used 26 entries,
             2118 wiz_defined-function locations,
-            629 strings with 6809 characters,
-and the built_in function-call counts, 7634 in all, are:
-= -- 759
-> -- 293
-< -- 11
-+ -- 121
-- -- 93
-* -- 480
-:= -- 1203
-add.period$ -- 70
-call.type$ -- 22
-change.case$ -- 111
+            661 strings with 7619 characters,
+and the built_in function-call counts, 9016 in all, are:
+= -- 913
+> -- 328
+< -- 12
++ -- 136
+- -- 103
+* -- 576
+:= -- 1419
+add.period$ -- 84
+call.type$ -- 26
+change.case$ -- 128
 chr.to.int$ -- 0
-cite$ -- 26
-duplicate$ -- 315
-empty$ -- 644
-format.name$ -- 93
-if$ -- 1670
+cite$ -- 31
+duplicate$ -- 370
+empty$ -- 764
+format.name$ -- 103
+if$ -- 1972
 int.to.chr$ -- 0
-int.to.str$ -- 22
-missing$ -- 18
-newline$ -- 114
-num.names$ -- 48
-pop$ -- 138
+int.to.str$ -- 26
+missing$ -- 22
+newline$ -- 134
+num.names$ -- 56
+pop$ -- 149
 preamble$ -- 1
-purify$ -- 89
+purify$ -- 102
 quote$ -- 0
-skip$ -- 248
+skip$ -- 289
 stack$ -- 0
-substring$ -- 501
-swap$ -- 101
-text.length$ -- 11
+substring$ -- 631
+swap$ -- 113
+text.length$ -- 12
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 86
-warning$ -- 4
-while$ -- 76
-width$ -- 24
-write$ -- 242
+type$ -- 102
+warning$ -- 5
+while$ -- 92
+width$ -- 28
+write$ -- 289
 (There was 1 error message)

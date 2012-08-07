@@ -25,7 +25,6 @@ set terminal postscript enhanced
 set output "shared-all.eps"
 set border
 set size square 0.5,0.5 # percent of original (50% of its size here)
-unset time # unset for no time
 set style line 1 lt 1 lw 0.5
 set style line 2 lt 2 lw 0.5 
 set style line 3 lt 3 lw 0.5 
@@ -51,5 +50,3 @@ plot "shared-all.dat" using 1:2 ls 1 ps 0.5 title '{/Times=6  goldb-heqc-alu4mul
 "shared-all.dat" using 1:12 ls 6 ps 0.5 title '{/Times=6 post-c32s-gcdm16-22}' with linespoints, \
 "shared-all.dat" using 1:14 ls 7 ps 0.5 title '{/Times=6 schup-l2s-motst-2-k315}' with linespoints, \
 "shared-all.dat" using 1:16 ls 8 ps 0.5 title '{/Times=6 simon-s02-f2clk-50}' with linespoints
-
-#plot "data.txt" using 2:xticlabels(1) title '' with linespoints #labels in 1
