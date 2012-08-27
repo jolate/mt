@@ -7,7 +7,7 @@ Warning--empty year in cdcl
 Warning--empty journal in vsids
 You've used 11 entries,
             2118 wiz_defined-function locations,
-            560 strings with 5524 characters,
+            560 strings with 5529 characters,
 and the built_in function-call counts, 3556 in all, are:
 = -- 352
 > -- 133
