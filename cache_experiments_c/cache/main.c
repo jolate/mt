@@ -51,7 +51,7 @@ unsigned get_rand(int lim, unsigned *a, unsigned *b) {
 }
 
 /*
- * Sum the elements of matrix
+ * Function to sum the elements of a matrix
  */
 void *sum_elements(void *data) {
     struct thread_data *this_thread_data;
@@ -77,7 +77,8 @@ int main(int argc, char** argv) {
     } else {
         share_matrix = true;
     }
-    /*Create the matrix with random numbers*/
+    /*Create the matrix with numbers
+     We are just using the number 1 for all values.*/
     matrix = malloc(matrix_size * sizeof (int*));
     for (int i = 0; i < matrix_size; i++) {
         matrix[i] = malloc(matrix_size * sizeof (int));
