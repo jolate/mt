@@ -1,5 +1,17 @@
 \begin{thebibliography}{10}
 
+\bibitem{gluclose}
+Gilles Audemard and Laurent Simon.
+\newblock Predicting learnt clauses quality in modern sat solvers.
+\newblock In {\em Proceedings of the 21st international jont conference on
+  Artifical intelligence}, IJCAI'09, pages 399--404, San Francisco, CA, USA,
+  2009. Morgan Kaufmann Publishers Inc.
+
+\bibitem{bs97}
+Roberto~J. Bayardo.
+\newblock Using csp look-back techniques to solve real-world sat instances.
+\newblock pages 203--208. AAAI Press, 1997.
+
 \bibitem{plingeling}
 Armin Biere.
 \newblock {Lingeling, Plingeling, PicoSAT and PrecoSAT at SAT Race 2010}.
@@ -24,6 +36,12 @@ Arnaldo~Carvalho de~Melo.
 \newblock {Description of ppfolio}.
 \newblock \url{http://vger.kernel.org/~acme/perf/lk2010-perf-paper.pdf}, 2010.
 \newblock [Online; accessed 03-May-2012].
+
+\bibitem{dec90}
+Rina Dechter.
+\newblock Enhancement schemes for constraint processing: Backjumping, learning,
+  and cutset decomposition.
+\newblock {\em Artif. Intell.}, 41(3):273--312, 1990.
 
 \bibitem{minisat}
 Niklas Eén and Niklas Sörensson.
@@ -55,6 +73,17 @@ Stephan Kottler and Michael Kaufmann.
   physical clause sharing.
 \newblock In {\em Pragmatics of SAT}, 2011.
 
+\bibitem{Luby}
+Michael Luby, Alistair Sinclair, and David Zuckerman.
+\newblock Optimal speedup of las vegas algorithms.
+\newblock {\em Information Processing Letters}, 47:173--180, 1993.
+
+\bibitem{LMS07}
+I.~Lynce and J.~Marques-Silva.
+\newblock Random backtracking in backtrack search algorithms for
+  satisfiability.
+\newblock {\em Discrete Appl. Math.}, 155(12):1604--1612, June 2007.
+
 \bibitem{cdcl2}
 Joao~P. Marques-Silva, Ines Lynce, and Sharad Malik.
 \newblock {\em Conflict-Driven Clause Learning SAT Solvers}, chapter~4, pages
@@ -64,6 +93,11 @@ Joao~P. Marques-Silva, Ines Lynce, and Sharad Malik.
 Joaäo~P. Marques-silva and Karem~A. Sakallah.
 \newblock Grasp: A search algorithm for propositional satisfiability.
 \newblock {\em IEEE Transactions on Computers}, 48:506--521, 1999.
+
+\bibitem{overview}
+Ruben Martins, Vasco~M. Manquinho, and Inês Lynce.
+\newblock An overview of parallel sat solving.
+\newblock {\em Constraints}, 17(3):304--347, 2012.
 
 \bibitem{chaff}
 Matthew~W. Moskewicz, Conor~F. Madigan, Ying Zhao, Lintao Zhang, and Sharad
@@ -118,5 +152,11 @@ Hantao Zhang.
 Lintao Zhang, Conor~F. Madigan, Matthew~W. Moskewicz, and Sharad Malik.
 \newblock Efficient conflict driven learning in boolean satisfiability solver.
 \newblock In {\em ICCAD}, pages 279--285, 2001.
+
+\bibitem{DBLP}
+Lintao Zhang and Sharad Malik.
+\newblock Validating sat solvers using an independent resolution-based checker:
+  Practical implementations and other applications.
+\newblock In {\em DATE}, pages 10880--10885, 2003.
 
 \end{thebibliography}

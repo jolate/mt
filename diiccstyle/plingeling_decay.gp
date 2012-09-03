@@ -35,7 +35,7 @@ set tmargin 1
 #set key left # legend to the left (bottom is also an option)
 unset logscale y  #set for logarithmic scale y (add x for log x)
 set xlabel "# of threads" # XAxis title
-set ylabel "Speedup" # YAxis title
+set ylabel "Performance" # YAxis title
 #set key at -0.0,-10.85
 #set key top
 set key outside bot center

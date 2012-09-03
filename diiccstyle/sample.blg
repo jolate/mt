@@ -2,55 +2,56 @@ This is BibTeX, Version 0.99c (TeX Live 2009/Debian)
 The top-level auxiliary file: sample.aux
 The style file: plain.bst
 Database file #1: biblio.bib
+A bad cross reference---entry "DBLP"
+refers to entry "DBLP:conf/date/2003", which doesn't exist
 A bad cross reference---entry "minisat"
 refers to entry "conf/sat/2003", which doesn't exist
-Warning--I didn't find a database entry for "psat"
-Warning--I didn't find a database entry for "DBLP"
-Warning--I didn't find a database entry for "NEEDED"
 Warning--I didn't find a database entry for "conf/sat/2003"
+Warning--I didn't find a database entry for "DBLP:conf/date/2003"
+Warning--empty booktitle in bs97
 Warning--empty institution in heavytail
 Warning--empty publisher in cdcl2
 Warning--empty year in cdcl2
 Warning--empty journal in vsids
-You've used 21 entries,
+You've used 28 entries,
             2118 wiz_defined-function locations,
-            629 strings with 6809 characters,
-and the built_in function-call counts, 7131 in all, are:
-= -- 711
-> -- 270
-< -- 10
-+ -- 112
-- -- 85
-* -- 448
-:= -- 1131
-add.period$ -- 67
-call.type$ -- 21
-change.case$ -- 104
+            675 strings with 7938 characters,
+and the built_in function-call counts, 9892 in all, are:
+= -- 1004
+> -- 359
+< -- 13
++ -- 148
+- -- 113
+* -- 631
+:= -- 1546
+add.period$ -- 90
+call.type$ -- 28
+change.case$ -- 139
 chr.to.int$ -- 0
-cite$ -- 25
-duplicate$ -- 292
-empty$ -- 603
-format.name$ -- 85
-if$ -- 1554
+cite$ -- 33
+duplicate$ -- 408
+empty$ -- 837
+format.name$ -- 113
+if$ -- 2170
 int.to.chr$ -- 0
-int.to.str$ -- 21
-missing$ -- 17
-newline$ -- 109
-num.names$ -- 46
-pop$ -- 128
+int.to.str$ -- 28
+missing$ -- 24
+newline$ -- 144
+num.names$ -- 60
+pop$ -- 161
 preamble$ -- 1
-purify$ -- 83
+purify$ -- 111
 quote$ -- 0
-skip$ -- 228
+skip$ -- 323
 stack$ -- 0
-substring$ -- 468
-swap$ -- 90
-text.length$ -- 10
+substring$ -- 710
+swap$ -- 129
+text.length$ -- 13
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 82
-warning$ -- 4
-while$ -- 72
-width$ -- 23
-write$ -- 231
-(There was 1 error message)
+type$ -- 110
+warning$ -- 5
+while$ -- 100
+width$ -- 30
+write$ -- 311
+(There were 2 error messages)
