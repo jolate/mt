@@ -342,12 +342,12 @@ we would need to identify somehow that this clause is unit on variable $D$. The 
 
 \begin{figure}[h!]
 	\centering
-		\includegraphics[scale=1]{binary_list}
+		\includegraphics[scale=1]{binary_lists}
 	\caption{A group of binary clauses and their corresponding binary list.}
 	\label{fig:binary list}
 \end{figure}
 
-To speed up the propagation of SAT solvers, \textit{binary clauses}, clauses with two literals, are sometimes stored in special data structures called \textit{binary implication lists}. Binary clauses are frequently used in propagation because they can imply other variable values in just one step. There is also no point on distinguishing two watched literals in these clauses for the simple reason that there are only two literals in them, so knowing when a binary clause is unit becomes trivial. Figure \ref{fig:binary list} represents a set of binary clauses stored in a binary implication list. We have a literal index vector to identify each literal (a variable and its negation), each position of this vector points to a list of literals which are implied by the literal corresponding to the origin of the pointer. Hence, if the $\neg x_{1}$ position in the index vector points to $\neg x_{2}$ and $x_{4}$, this means that if $x_{1}$ were to be \textbf{false}, it would imply that $x_{2}$ must be \textbf{false} and $x_{4}$ \textbf{true}.
+To speed up the propagation of SAT solvers, \textit{binary clauses}, clauses with two literals, are sometimes stored in special data structures called \textit{binary implication lists}. Binary clauses are frequently used in propagation because they can imply other variable values in just one step. There is also no point on distinguishing two watched literals in these clauses for the simple reason that there are only two literals in them, so knowing when a binary clause is unit becomes trivial. Figure \ref{fig:binary list} represents a set of binary clauses stored in a binary implication list. We have a literal index vector to identify each literal (a variable and its negation), each position of this vector points to a list of literals which are implied by the literal corresponding to the origin of the pointer. Hence, if the $\neg A$ position in the index vector points to $\neg B$ and $D$, this means that if $A$ were to be \textbf{false}, it would imply that $B$ must be \textbf{false} and $D$ \textbf{true}.
 
 \subsubsection{Search restarts}
 
