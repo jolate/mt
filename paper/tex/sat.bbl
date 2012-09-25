@@ -1,0 +1,151 @@
+\begin{thebibliography}{10}
+
+\bibitem{FreeLunchIsOver}
+Sutter, H.:
+\newblock The free lunch is over: A fundamental turn toward concurrency in
+  software.
+\newblock Dr. Dobb’s Journal \textbf{30} (2005)  202--210
+
+\bibitem{lingeling}
+Biere, A.:
+\newblock Lingeling and friends at the {SAT Competition} 2011.
+\newblock Technical Report 11-1, FMV Reports Series, Institute for Formal
+  Models and Verification, Johannes Kepler University, Linz, Austria (2011)
+
+\bibitem{Tseitin1968}
+Tseitin, G.S.:
+\newblock {On the Complexity of Derivation in the Propositional Calculus}.
+\newblock Zapiski nauchnykh seminarov LOMI \textbf{8} (1968)  234--259
+
+\bibitem{gluclose}
+Audemard, G., Simon, L.:
+\newblock Predicting learnt clauses quality in modern sat solvers.
+\newblock In Boutilier, C., ed.: IJCAI. (2009)  399--404
+
+\bibitem{plingeling}
+Biere, A.:
+\newblock Lingeling, {P}lingeling, {P}ico{SAT} and {P}reco{SAT} at {SAT} {R}ace
+  2010.
+\newblock Technical report, Institute for Formal Models and Verification,
+  Johannes Kepler University (2010)
+
+\bibitem{cryptominisat}
+Soos, M., Nohl, K., Castelluccia, C.:
+\newblock Extending sat solvers to cryptographic problems.
+\newblock In Kullmann, O., ed.: SAT. Volume 5584 of Lecture Notes in Computer
+  Science., Springer (2009)  244--257
+
+\bibitem{Davisetal1962CACM}
+Davis, M., Logemann, G., Loveland, D.:
+\newblock {A Machine Program for Theorem-Proving}.
+\newblock Communications of the ACM, CACM \textbf{5} (1962)  394--397
+
+\bibitem{relsat}
+Jr., R.J.B., Schrag, R.:
+\newblock Using csp look-back techniques to solve real-world sat instances.
+\newblock In: AAAI/IAAI. (1997)  203--208
+
+\bibitem{Chaff2001}
+Moskewicz, M.W., Madigan, C.F., Zhao, Y., Zhang, L., Malik, S.:
+\newblock {Chaff: Engineering an Efficient {SAT} Solver}.
+\newblock In: 38th Design Automation Conference, DAC'01, ACM Press (2001)
+  530--535
+
+\bibitem{GRASP1999IEEE}
+Marques-Silva, J., Sakallah, K.A.:
+\newblock Grasp: A search algorithm for propositional satisfiability.
+\newblock IEEE Trans. Comput. \textbf{48} (1999)  506--521
+
+\bibitem{ZhangStickel1996AIMATH}
+Zhang, H., Stickel, M.E.:
+\newblock An efficient algorithm for unit propagation.
+\newblock In: Proceedings of the Fourth International Symposium on Artificial
+  Intelligence and Mathematics (AI-MATH'96), Fort Lauderdale (Florida USA)
+  (1996)
+
+\bibitem{EenSorensson2003SAT}
+E{\'e}n, N., S{\"o}rensson, N.:
+\newblock {An Extensible SAT-solver.}
+\newblock In Giunchiglia, E., Tacchella, A., eds.: 6th International Conference
+  on Theory and Applications of Satisfiability Testing, SAT'03. Volume 2919 of
+  Lecture Notes in Computer Science., Springer (2004)  502--518
+
+\bibitem{picosat2008}
+Biere, A.:
+\newblock Picosat essentials.
+\newblock JSAT \textbf{4} (2008)  75--97
+
+\bibitem{MiniSat}
+E{\'e}n, N., S{\"o}rensson, N.:
+\newblock {An Extensible SAT-solver.}
+\newblock In Giunchiglia, E., Tacchella, A., eds.: 6th International Conference
+  on Theory and Applications of Satisfiability Testing, SAT'03. Volume 2919 of
+  Lecture Notes in Computer Science., Springer (2004)  502--518
+
+\bibitem{rsat}
+Pipatsrisawat, K., Darwiche, A.:
+\newblock Rsat 2.0: Sat solver description.
+\newblock Technical Report D--153, Automated Reasoning Group, Computer Science
+  Department, UCLA (2007)
+
+\bibitem{ZhangMalik2003SAT}
+Zhang, L., Malik, S.:
+\newblock {Cache Performance of {SAT} Solvers: A Case Study for Efficient
+  Implementation of Algorithms}.
+\newblock In Giunchiglia, E., Tacchella, A., eds.: 6th International Conference
+  on Theory and Applications of Satisfiability Testing, SAT'03. Volume 2919 of
+  Lecture Notes in Computer Science., Springer (2004)  287--298
+
+\bibitem{Zhang2001}
+Zhang, L., Madigan, C.F., Moskewicz, M.W., Malik, S.:
+\newblock Efficient conflict driven learning in a {B}oolean satisfiability
+  solver.
+\newblock In: Int. Conf. on Computer-Aided Design (ICCAD'01). (2001)  279--285
+
+\bibitem{Relsat97}
+Bayardo, R.J.J., Schrag, R.C.:
+\newblock Using {CSP} look-back techniques to solve real-world {SAT} instances.
+\newblock In: Proceedings of the Fourteenth National Conference on Artificial
+  Intelligence ({AAAI}'97), Providence, Rhode Island (1997)  203--208
+
+\bibitem{Goldberg2002DATE}
+Goldberg, E., Novikov, Y.:
+\newblock {BerkMin}: A fast and robust {SAT}-solver.
+\newblock In: Design, Automation, and Test in Europe (DATE '02). (2002)
+  142--149
+
+\bibitem{Nieuwenhuisetal2006JACM}
+Nieuwenhuis, R., Oliveras, A., Tinelli, C.:
+\newblock {Solving SAT and SAT Modulo Theories: From an abstract
+  Davis--Putnam--Logemann--Loveland procedure to DPLL(T)}.
+\newblock Journal of the ACM, JACM \textbf{53} (2006)  937--977
+
+\bibitem{Sartagnan}
+Kottler, S., Kaufmann, M.:
+\newblock Sartagnan - a parallel portfolio sat solver with lockless physical
+  clause sharing.
+\newblock In: Pragmatics of SAT. (2011)
+
+\bibitem{ManySAT}
+Hamadi, Y., Jabbour, S., Sais, L.:
+\newblock Manysat: a parallel sat solver.
+\newblock JSAT \textbf{6} (2009)  245--262
+
+\bibitem{ppfolio}
+Roussel, O.:
+\newblock Description of ppfolio.
+\newblock Technical report, CRIL, Centre de Recherche en Informatique de Lens
+  (2011)
+
+\bibitem{psato}
+Zhang, H., Bonacina, M.P., Hsiang, J.:
+\newblock Psato: a distributed propositional prover and its application to
+  quasigroup problems.
+\newblock J. Symb. Comput. \textbf{21} (1996)  543--560
+
+\bibitem{paMiraXT}
+Schubert, T., Lewis, M.D.T., Becker, B.:
+\newblock Pamiraxt: Parallel sat solving with threads and message passing.
+\newblock JSAT \textbf{6} (2009)  203--222
+
+\end{thebibliography}

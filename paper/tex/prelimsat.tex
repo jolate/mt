@@ -1,0 +1,178 @@
+
+\subsection{SAT and SAT solvers}
+
+Let $v \in V $ be a \emph{propositional variable} and $V$
+ a fixed finite set of propositional symbols.  If $v \in V$,
+then $v$ and $\lnot v$ are \emph{literals} of $V$.  
+The \emph{negation} of a literal $l$, written $\lnot l$, denotes 
+$\lnot v$ if $l$ is $v$, and $v$ if $l$ is $\lnot v$.
+A \emph{clause} is a disjunction of literals $l_1 \lor\ldots\lor l_n$.
+A (CNF) \emph{formula} is a conjunction of one or
+more clauses $C_1 \land\ldots\land C_n$. 
+ A (partial truth) \emph{assignment} $M$ is a
+set of literals such that $\{ v, \lnot v \} \subseteq M$ for no $v$. A
+literal $l$ is \emph{true} in $M$ if $l \in M$, is \emph{false} in $M$
+if $\lnot l \in M$, and is \emph{undefined} in $M$ otherwise. 
+A clause $C$ is true in $M$ if at least one of its
+literals is true in $M$.  It is false in $M$ if all its literals are
+false in $M$, and it is undefined in $M$ otherwise. 
+A formula $F$ is true in $M$, or
+\emph{satisfied} by $M$, denoted $M\models F$, if all its clauses are
+true in $M$.  In that case, $M$ is a \emph{model} of $F$.  If $F$ has
+no models then it is \emph{unsatisfiable}.  
+
+The problem we are interested in is the \emph{SAT problem}: given a
+formula $F$, decide whether there exists a model of $F$ or not.
+Since there exists a polynomial transformation
+(see~\cite{Tseitin1968}) for any arbitrary formula to an
+equisatisfiable CNF one, we will assume w.l.o.g. that $F$ is in CNF.
+
+A software program that solves this problem is called a \emph{SAT solver}
+The Conflict-Driven-Clause-Learning (CDCL) algorithm, is nowadays at the 
+basis of most state-of-ther-art SAT-solvers\cite{gluclose,plingeling,cryptominisat}. 
+This algorithm has, at its roots, the very 
+simple DPLL algorithm~\cite{Davisetal1962CACM}. Thanks to the work done, mainly,
+ in \cite{relsat,Chaff2001,GRASP1999IEEE,ZhangStickel1996AIMATH,EenSorensson2003SAT,picosat2008} it has evolved
+ to an algorithm that incorpores several conceptual and implementation 
+improvements, making modern SAT-solvers able to handle formulas of millons 
+of variables and clauses. Algorithm \ref{alg:cdcl} sketches the CDCL algorithm.
+
+\begin{algorithm}[h]
+\SetLine
+\SetKwData{Conflict}{conflict}
+\SetKwData{Dl}{dl}
+\SetKwData{Lemma}{lemma}
+\SetKwData{Dec}{dec}
+\SetKwData{Status}{status}
+\SetKwData{Model}{model}
+\SetKwData{Result}{res}\SetKwData{BV}{BV}
+\SetKwInOut{Input}{Input}\SetKwInOut{Output}{Output}
+\Input{formula $F=\{C_1,\ldots,C_m\}$}
+\Output{SAT OR UNSAT}
+ \BlankLine
+ \Status \assign UNDEF\;
+ \Model \assign \{\}\;
+ \Dl \assign $0$\;
+ \While{\Status == UNDEF}{
+   (\Conflict, \Model) \assign UNIT\_PROPAGATE(\Model, $F$)\;
+   \While{ \Conflict $\neq$ NULL}{
+     \If{\Dl == 0}{
+       \Return UNSAT\;
+     }
+     \Lemma \assign CONFLICT\_ANALYSIS(\Conflict, \Model, $F$)\;
+%     \Lemma \assign LEMMA\_SHORTENING(\Lemma,\Model,$F$)\;
+     $F$ \assign F $\land$ \Lemma\;
+     \Dl \assign LARGEST\_DL(\Lemma, \Model)\;
+     \Model \assign BACKJUMP\_TO\_DL(\Dl, \Model)\;
+     (\Conflict, \Model) \assign UNIT\_PROPAGATE(\Model, $F$)\;
+   }
+
+   \If{\Status == UNDEF }{
+     \Dec \assign DECIDE(\Model, $F$)\;
+     \lIf{ \Dec = $0$ }{\Status \assign SAT\;}
+     \Model \assign \Model $\cup$ \{ \Dec\}\;
+   }
+
+ }
+ \Return \Status
+ \caption{CDCL algorithm}
+ \label{alg:cdcl}
+\end{algorithm}
+
+Basically, the CDCL algorithm is a backumping search algorithm that
+incrementally builds a partial assignment $M$ over iterations of the
+\emph{DECIDE} and \emph{UNIT\_PROPAGATE} procedures, returning SAT if
+$M$ becomes a model of $F$ or UNSAT if no such model exists.
+
+The DECIDE procedure correspond to a branching step of the search and
+applies when the unit propagation procedure can not set true any
+further literal (see below).  When no inference can be done about
+which literals should be true in $M$, a literal $l^{dl}$ is chosen
+(guessed) and added to $M$ in order to continue the search.  Each time
+a new decision literal $l^{dl}$ is added to $M$ the \emph{ decision
+  level} $dl$ of the search is increased and we say that all the
+literals in $M$ after $l^{dl}$ and before $l^{dl+1}$ belong to
+decision level $dl$.  For further reading about the DECIDE procedure,
+we refer to \cite{Chaff2001,MiniSat,rsat}.
+
+The UNIT\_PROPAGATE (UP) procedure applies when certain assignment $M$
+falsifies all literals but one, of a clause $C$.  If $l$ is the
+undefined literal in $C$, in order for $M$ to become a model of $F$,
+$l$ must be added to $M$ so as to satisfy $C$. This procedure ends
+when there is no literal left to add to $M$ or when it finds that all
+literals of certain clause $C$ are false.  If it happens the first
+case, UP returns an updated model containing all such propagations and
+the search continues.  In the second case it returns the falsified
+clause which we call a \emph{conflicting clause}.  For details on how
+modern SAT Solvers implement this procedure and literature regarding
+Cache performance (mainly related) with UP, we refer to
+\cite{Chaff2001,ZhangMalik2003SAT}
+ 
+If unit propagation finds a conflicting clause, then two possibilities
+apply. If the decision level at which such conflict is found is zero
+(i.e. no decisions have been made) then the CDCL procedure returns
+UNSAT. If this is not the case, a \emph{CONFLICT ANALISIS} procedure
+is called. This procedure analizes the cause of such conflict
+(i.e. determines which decisions have driven to this conflict) and
+returns a new clause (which we call a \emph{lemma}) that is entailed
+by the original formula. Then, the algorithm backjumps to an earlier
+decision level $dl'$ that corresponds to the highest $dl'<dl$ in the
+lemma, and propagates with it.  CONFLICT ANALISIS works in such a way
+that, when backjumping and propagating with the lemma, the original
+conflict is avoided. The lemmas learned at CONFLICT ANALISIS time are
+usually added to the formula in order to avoid similar conflicts and
+can also be deleted (when the formula is too big and they are no
+longer needed). For details of this procedure, we refer to
+\cite{GRASP1999IEEE,Zhang2001} and for lemma deletion heuristics to
+\cite{Relsat97,Goldberg2002DATE,gluclose}.
+
+For a complete review of this algorithm as well as proofs over its
+termination and soundness we refer to \cite{Nieuwenhuisetal2006JACM}
+
+
+\subsection{Parallel SAT solvers}
+
+Parallel SAT solvers are not as mature as sequential ones and it is
+still not clear which path to follow when designing and implementing
+such new solvers.  We mainly classify parallel SAT solvers into two
+categories: Portfolio approach solvers and divide-and-conquer ones.
+
+The main idea behind portfolio approach solvers is the fact that
+different strategies/parameters of CDCL sequential solvers will
+perform better for different families of SAT problems.  In sequential
+CDCL SAT-solving, there exist several parameters/strategies related
+with the algorithm's heuristics in, for example, restarting, deciding
+or cleaning the clause database. Taking this into consideration, the
+portfolio approach is very straightforward: Run a group of sequential
+solvers in different threads, each with different parameters and/or
+different strategies. The time the portfolio-approach based solver
+will take to solve the problem will be the time of the fastest thread
+in the group of solvers running in parallel.  Differences between this
+kind of solvers lie in whether the clause database should be
+shared~\cite{Sartagnan}, or otherwise if each thread should have its
+own database. If so, it is possible to implement the threads in order
+to interchange lemmas both: aggressively~\cite{ManySAT} or
+selectively~\cite{plingeling} or not have communications between
+threads at all~\cite{ppfolio}.
+
+Divide-and-conquer solvers do not try to run different solvers in
+parallel, they run one solving instance, but try to parallelize the
+search and divide it between the different threads. A common strategy
+to divide the search space is to use guiding paths~\cite{psato}. A
+guiding path is a partial assignment $M$ in $F$, which restricts the
+search space of the SAT problem. A solver that divides its search
+space with guiding paths will assign threads to solve $F$ with the
+given $M$ from the guiding path the thread was assigned to. Once a
+thread finishes searching a guiding path with no success, it can
+request another to keep searching (we refer to \cite{paMiraXT} for
+further explanations).
+
+Both parallelization strategies (portfolio approach and
+divide-and-conquer approach) were and are currently being applied to
+shared memory parallel computers (e.g. \cite{plingeling}) as well as
+distributed memory ones~(e.g. \cite{paMiraXT}).
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "sat"
+%%% End: 

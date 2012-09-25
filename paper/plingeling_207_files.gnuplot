@@ -1,0 +1,51 @@
+# Gnuplot Script
+# To generate: C-x p
+################################################################################
+# This program by L A Ferres is in the public domain and freely copyable.
+# (or, if there were problems, in the errata  --- see
+#    http://www.udec.cl/~leo/programs.html)
+# If you find any bugs, please report them immediately to: leo@inf.udec.cl
+################################################################################
+#
+# FILE NAME: plingeling_6cores.gnuplot
+#
+# PURPOSE:
+#
+# FILE(S) GENERATING THIS DATA:
+#
+# CREATION DATE: 2012-02-02-13:36; MODIFIED:
+#
+################################################################################
+#
+# General options for Azu graphs
+# They are inserted in Latex files in a picture environment
+#
+set terminal postscript portrait "Times-Roman" 10
+set terminal postscript enhanced
+set output "plingeling_207_files.eps"
+set border
+set size square 0.5,0.5 # percent of original (50% of its size here)
+unset time # unset for no time
+set lmargin 10
+set bmargin -1
+set rmargin 2
+set tmargin 1
+
+# Details for this particular plot
+#set key left # legend to the left (bottom is also an option)
+set label "On 4 chips" at graph 0.8, graph 0.1 font "Times-Roman,8"
+unset logscale y  #set for logarithmic scale y (add x for log x)
+set xlabel "# of threads" # XAxis title
+set ylabel "Performance decay" # YAxis title
+unset key
+set border 3 lw 0.5
+set xtics nomirror
+set ytics nomirror
+f(x)=85224
+plot "plingeling_207_files.dat" using 1:2 lt 1 pt 7 lw 0.5 ps 0.5 with linespoints, \
+f(x) lt 3 lw 0.5 with lines, \
+'-' w p lt 1 pt 7 ps 0.5
+10 85224
+e
+
+#plot "data.txt" using 2:xticlabels(1) title '' with linespoints #labels in 1

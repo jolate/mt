@@ -1,0 +1,47 @@
+This is BibTeX, Version 0.99c (TeX Live 2009/Debian)
+The top-level auxiliary file: sat.aux
+The style file: splncs.bst
+Database file #1: bibfile.bib
+Warning--I didn't find a database entry for ""
+You've used 25 entries,
+            2043 wiz_defined-function locations,
+            652 strings with 7979 characters,
+and the built_in function-call counts, 8221 in all, are:
+= -- 889
+> -- 241
+< -- 25
++ -- 88
+- -- 63
+* -- 528
+:= -- 1064
+add.period$ -- 38
+call.type$ -- 25
+change.case$ -- 27
+chr.to.int$ -- 0
+cite$ -- 25
+duplicate$ -- 449
+empty$ -- 781
+format.name$ -- 63
+if$ -- 2060
+int.to.chr$ -- 0
+int.to.str$ -- 25
+missing$ -- 21
+newline$ -- 128
+num.names$ -- 35
+pop$ -- 81
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 330
+stack$ -- 0
+substring$ -- 564
+swap$ -- 244
+text.length$ -- 25
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 0
+while$ -- 78
+width$ -- 27
+write$ -- 296
+(There was 1 warning)

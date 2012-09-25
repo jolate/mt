@@ -1,0 +1,66 @@
+
+To find out whether sharing the clause database was beneficial to the
+same-chip portfolio-approach solver, we ran AzuDICI in three different
+versions (sharing all the clauses, sharing none of the clauses and
+sharing only binaru clauses) on eight representative problems
+(XXXNAMESXXX) using one to six threads. Each run was repeated five
+times to clean up potential system noise. XXXKeiraXXX
+
+\subsection{Same search experiments}
+\label{sec:samesearch}
+
+For this experiment, AzuDICI was modified to carry out the {\em same}
+search in each thread (i.e., there is no lemma sharing among
+threads). For each AzuDICI version, we measured the time needed to
+solve each benchmark, and the percentage of LLC misses. The results
+for this are shown in Table \ref{tbl:table} below.
+
+[[[[TABLE WITH RESULTS]]]]
+
+[[[[GRAPH AGGREGATING EXEC TIME PER THREAD]]]]
+
+[[[[GRAPH PERCENNTAGE LLC MISSES PER THREAD]]]]
+
+[[[[ANALYSIS]]]]
+
+As is evident, our implementation shows that physically sharing the
+clause database is beneficial to avoid cache contention.
+
+\subsection{Different search experiments}
+\label{sec:diffsearch}
+
+Our previous experiment validates our implementation of the
+solver. Nonetheless, the results are not generalizable to a
+full-featured SAT solver. It may be the case that while threads are
+carrying out the same search, it is more likely that they will access
+the same data. Whereas different search threads are clearly not
+necessarily accessing the same data at the same time.
+
+To find out how a real portfolio-approach SAT solver implementing
+different levels of physical clause sharing behave, we ran AzuDICI in
+the same three different versions as before (sharing-all, share-none
+and share-bin) on eight different (harder) problems (XXXNAMESXXX)
+using one to six threads and with a 5-minute timout. Each run was
+repeated five times to clean up potential system noise. XXXKeiraXXX
+
+[[[[TABLE WITH RESULTS]]]]
+
+[[[[GRAPH PERCENNTAGE LLC MISSES PER THREAD]]]]
+
+[[[[ANALYSIS]]]]
+
+From these data, we may conclude that physically sharing the whole
+clause database does not improve the cache performance of the
+portfolio-approach-based SAT solvers
+
+% Shared-all performs well wrt to cache misses, but that is not
+% necessarily true for time. In general, the number of cache loads is
+% larger when we are sharing the clause DB. Still, we think this is an
+% implementation issue. That is, even if we may be saving on cache
+% misses while sharing data, the more complex nature of the
+% implementation can negatively influence overall time.
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "sat"
+%%% End: 

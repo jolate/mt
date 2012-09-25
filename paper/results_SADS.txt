@@ -1,0 +1,781 @@
+
+
+ Performance counter stats for './timeout -t 300 ./shared-all-different-search -f /home/keira/sat/satold/experimentos-plingeling-finales/benchmarks_plingeling/aaai10-planning-ipc5-pathways-13-step17.cnf -t 1' (5 runs):
+
+   317,740,312,684 L1-dcache-loads                                               ( +-  0.09% ) [71.44%]
+    12,358,048,425 L1-dcache-load-misses     #    3.89% of all L1-dcache hits    ( +-  0.10% ) [71.43%]
+     4,999,120,377 LLC-loads                                                     ( +-  0.18% ) [57.15%]
+       138,762,181 LLC-load-misses           #    2.78% of all LL-cache hits     ( +-  0.89% ) [14.30%]
+ 1,089,949,231,211 instructions              #    0.00  insns per cycle          ( +-  0.08% ) [28.59%]
+     5,526,140,878 cache-references                                              ( +-  0.21% ) [42.88%]
+       150,784,540 cache-misses              #    2.729 % of all cache refs      ( +-  0.70% ) [57.16%]
+
+     300.320892152 seconds time elapsed                                          ( +-  0.00% )
+
+
+ Performance counter stats for './timeout -t 300 ./shared-all-different-search -f /home/keira/sat/satold/experimentos-plingeling-finales/benchmarks_plingeling/aaai10-planning-ipc5-pathways-13-step17.cnf -t 2' (5 runs):
+
+   568,815,561,055 L1-dcache-loads                                               ( +-  0.53% ) [71.43%]
+    23,261,195,601 L1-dcache-load-misses     #    4.09% of all L1-dcache hits    ( +-  0.61% ) [71.43%]
+    11,182,987,394 LLC-loads                                                     ( +-  1.31% ) [57.15%]
+       649,541,499 LLC-load-misses           #  [33m  5.81%[m of all LL-cache hits     ( +-  1.96% ) [14.29%]
+ 1,954,205,875,804 instructions              #    0.00  insns per cycle          ( +-  0.52% ) [28.58%]
+    12,670,053,764 cache-references                                              ( +-  1.20% ) [42.86%]
+       710,798,289 cache-misses              #    5.610 % of all cache refs      ( +-  1.85% ) [57.15%]
+
+     300.345107299 seconds time elapsed                                          ( +-  0.00% )
+
+
+ Performance counter stats for './timeout -t 300 ./shared-all-different-search -f /home/keira/sat/satold/experimentos-plingeling-finales/benchmarks_plingeling/aaai10-planning-ipc5-pathways-13-step17.cnf -t 3' (5 runs):
+
+   779,557,729,370 L1-dcache-loads                                               ( +-  0.72% ) [71.43%]
+    32,678,913,811 L1-dcache-load-misses     #    4.19% of all L1-dcache hits    ( +-  0.49% ) [71.43%]
+    16,093,048,917 LLC-loads                                                     ( +-  1.25% ) [57.15%]
+     1,978,761,489 LLC-load-misses           #  [35m 12.30%[m of all LL-cache hits     ( +-  1.85% ) [14.29%]
+ 2,673,466,909,306 instructions              #    0.00  insns per cycle          ( +-  0.71% ) [28.58%]
+    18,289,485,817 cache-references                                              ( +-  1.17% ) [42.86%]
+     2,151,838,608 cache-misses              #   11.765 % of all cache refs      ( +-  1.87% ) [57.14%]
+
+     300.401966315 seconds time elapsed                                          ( +-  0.00% )
+
+
+ Performance counter stats for './timeout -t 300 ./shared-all-different-search -f /home/keira/sat/satold/experimentos-plingeling-finales/benchmarks_plingeling/aaai10-planning-ipc5-pathways-13-step17.cnf -t 4' (5 runs):
+
+   980,410,353,288 L1-dcache-loads                                               ( +-  0.97% ) [71.43%]
+    41,688,608,002 L1-dcache-load-misses     #    4.25% of all L1-dcache hits    ( +-  0.25% ) [71.43%]
+    21,313,803,302 LLC-loads                                                     ( +-  1.23% ) [57.14%]
+     3,517,882,849 LLC-load-misses           #  [35m 16.51%[m of all LL-cache hits     ( +-  1.39% ) [14.29%]
+ 3,365,562,394,137 instructions              #    0.00  insns per cycle          ( +-  0.93% ) [28.58%]
+    24,452,021,513 cache-references                                              ( +-  1.23% ) [42.87%]
+     3,874,282,518 cache-misses              #   15.844 % of all cache refs      ( +-  1.47% ) [57.15%]
+
+     300.381771697 seconds time elapsed                                          ( +-  0.00% )
+
+
+ Performance counter stats for './timeout -t 300 ./shared-all-different-search -f /home/keira/sat/satold/experimentos-plingeling-finales/benchmarks_plingeling/aaai10-planning-ipc5-pathways-13-step17.cnf -t 5' (5 runs):
+
+ 1,133,101,583,195 L1-dcache-loads                                               ( +-  0.39% ) [71.43%]
+    48,493,149,185 L1-dcache-load-misses     #    4.28% of all L1-dcache hits    ( +-  0.56% ) [71.43%]
+    24,810,477,905 LLC-loads                                                     ( +-  0.53% ) [57.15%]
+     5,601,331,237 LLC-load-misses           #  [31m 22.58%[m of all LL-cache hits     ( +-  0.17% ) [14.29%]
+ 3,891,365,331,216 instructions              #    0.00  insns per cycle          ( +-  0.36% ) [28.57%]
+    28,426,334,866 cache-references                                              ( +-  0.57% ) [42.86%]
+     6,192,116,778 cache-misses              #   21.783 % of all cache refs      ( +-  0.17% ) [57.15%]
+
+     300.346222232 seconds time elapsed                                          ( +-  0.00% )
+
+
+ Performance counter stats for './timeout -t 300 ./shared-all-different-search -f /home/keira/sat/satold/experimentos-plingeling-finales/benchmarks_plingeling/aaai10-planning-ipc5-pathways-13-step17.cnf -t 6' (5 runs):
+
+ 1,309,754,007,726 L1-dcache-loads                                               ( +-  0.80% ) [71.44%]
+    56,655,896,518 L1-dcache-load-misses     #    4.33% of all L1-dcache hits    ( +-  0.56% ) [71.43%]
+    29,153,478,967 LLC-loads                                                     ( +-  0.89% ) [57.15%]
+     8,456,326,600 LLC-load-misses           #  [31m 29.01%[m of all LL-cache hits     ( +-  1.34% ) [14.29%]
+ 4,493,857,209,281 instructions              #    0.00  insns per cycle          ( +-  0.80% ) [28.60%]
+    33,338,588,047 cache-references                                              ( +-  0.85% ) [42.89%]
+     9,348,943,104 cache-misses              #   28.042 % of all cache refs      ( +-  1.31% ) [57.16%]
+
+     302.940515889 seconds time elapsed                                          ( +-  0.01% )
+
+
+ Performance counter stats for './timeout -t 300 ./shared-all-different-search -f /home/keira/sat/satold/experimentos-plingeling-finales/benchmarks_plingeling/E02F22.cnf -t 1' (5 runs):
+
+   190,519,523,118 L1-dcache-loads                                               ( +-  0.04% ) [71.44%]
+    10,510,917,047 L1-dcache-load-misses     #  [33m  5.52%[m of all L1-dcache hits    ( +-  0.03% ) [71.43%]
+     7,954,794,579 LLC-loads                                                     ( +-  0.05% ) [57.15%]
+     2,460,370,868 LLC-load-misses           #  [31m 30.93%[m of all LL-cache hits     ( +-  0.14% ) [14.29%]
+   637,223,934,554 instructions              #    0.00  insns per cycle          ( +-  0.08% ) [28.59%]
+     8,289,453,851 cache-references                                              ( +-  0.03% ) [42.87%]
+     2,502,324,292 cache-misses              #   30.187 % of all cache refs      ( +-  0.05% ) [57.16%]
+
+     300.335784927 seconds time elapsed                                          ( +-  0.00% )
+
+
+ Performance counter stats for './timeout -t 300 ./shared-all-different-search -f /home/keira/sat/satold/experimentos-plingeling-finales/benchmarks_plingeling/E02F22.cnf -t 2' (5 runs):
+
+   355,123,940,801 L1-dcache-loads                                               ( +-  1.75% ) [71.43%]
+    19,563,405,216 L1-dcache-load-misses     #  [33m  5.51%[m of all L1-dcache hits    ( +-  0.12% ) [71.43%]
+    14,582,605,833 LLC-loads                                                     ( +-  0.37% ) [57.15%]
+     5,856,100,019 LLC-load-misses           #  [31m 40.16%[m of all LL-cache hits     ( +-  2.72% ) [14.29%]
+ 1,178,952,755,836 instructions              #    0.00  insns per cycle          ( +-  1.74% ) [28.58%]
+    15,309,623,929 cache-references                                              ( +-  0.27% ) [42.86%]
+     5,990,979,076 cache-misses              #   39.132 % of all cache refs      ( +-  2.72% ) [57.15%]
+
+     300.361136640 seconds time elapsed                                          ( +-  0.00% )
+
+
+ Performance counter stats for './timeout -t 300 ./shared-all-different-search -f /home/keira/sat/satold/experimentos-plingeling-finales/benchmarks_plingeling/E02F22.cnf -t 3' (5 runs):
+
+   467,256,487,650 L1-dcache-loads                                               ( +-  2.92% ) [71.43%]
+    26,948,886,106 L1-dcache-load-misses     #  [33m  5.77%[m of all L1-dcache hits    ( +-  0.32% ) [71.43%]
+    20,340,675,936 LLC-loads                                                     ( +-  0.40% ) [57.14%]
+     9,906,805,273 LLC-load-misses           #  [31m 48.70%[m of all LL-cache hits     ( +-  3.12% ) [14.29%]
+ 1,552,844,534,024 instructions              #    0.00  insns per cycle          ( +-  2.89% ) [28.58%]
+    21,315,257,925 cache-references                                              ( +-  0.28% ) [42.87%]
+    10,167,188,981 cache-misses              #   47.699 % of all cache refs      ( +-  3.02% ) [57.15%]
+
+     300.419222799 seconds time elapsed                                          ( +-  0.00% )
+
+
+ Performance counter stats for './timeout -t 300 ./shared-all-different-search -f /home/keira/sat/satold/experimentos-plingeling-finales/benchmarks_plingeling/E02F22.cnf -t 4' (5 runs):
+
+   614,541,019,170 L1-dcache-loads                                               ( +-  1.76% ) [71.43%]
+    33,575,879,114 L1-dcache-load-misses     #  [33m  5.46%[m of all L1-dcache hits    ( +-  0.20% ) [71.42%]
+    25,104,904,417 LLC-loads                                                     ( +-  0.28% ) [57.15%]
+    13,248,751,106 LLC-load-misses           #  [31m 52.77%[m of all LL-cache hits     ( +-  1.92% ) [14.29%]
+ 2,044,683,986,564 instructions              #    0.00  insns per cycle          ( +-  1.77% ) [28.58%]
+    26,421,207,915 cache-references                                              ( +-  0.19% ) [42.86%]
+    13,624,032,550 cache-misses              #   51.565 % of all cache refs      ( +-  1.86% ) [57.15%]
+
+     300.401300135 seconds time elapsed                                          ( +-  0.00% )
+
+
+ Performance counter stats for './timeout -t 300 ./shared-all-different-search -f /home/keira/sat/satold/experimentos-plingeling-finales/benchmarks_plingeling/E02F22.cnf -t 5' (5 runs):
+
+   719,583,312,150 L1-dcache-loads                                               ( +-  1.53% ) [71.43%]
+    39,208,376,860 L1-dcache-load-misses     #  [33m  5.45%[m of all L1-dcache hits    ( +-  0.18% ) [71.43%]
+    29,327,142,670 LLC-loads                                                     ( +-  0.35% ) [57.14%]
+    16,815,948,259 LLC-load-misses           #  [31m 57.34%[m of all LL-cache hits     ( +-  1.58% ) [14.29%]
+ 2,396,003,753,905 instructions              #    0.00  insns per cycle          ( +-  1.54% ) [28.58%]
+    30,909,204,175 cache-references                                              ( +-  0.28% ) [42.86%]
+    17,330,426,111 cache-misses              #   56.069 % of all cache refs      ( +-  1.53% ) [57.14%]
+
+     300.365692566 seconds time elapsed                                          ( +-  0.00% )
+
+
+ Performance counter stats for './timeout -t 300 ./shared-all-different-search -f /home/keira/sat/satold/experimentos-plingeling-finales/benchmarks_plingeling/E02F22.cnf -t 6' (5 runs):
+
+   853,535,428,638 L1-dcache-loads                                               ( +-  2.19% ) [71.44%]
+    45,884,934,372 L1-dcache-load-misses     #  [33m  5.38%[m of all L1-dcache hits    ( +-  0.27% ) [71.43%]
+    34,211,540,750 LLC-loads                                                     ( +-  0.35% ) [57.15%]
+    20,662,903,541 LLC-load-misses           #  [31m 60.40%[m of all LL-cache hits     ( +-  2.19% ) [14.29%]
+ 2,839,610,326,323 instructions              #    0.00  insns per cycle          ( +-  2.15% ) [28.60%]
+    36,108,690,949 cache-references                                              ( +-  0.20% ) [42.88%]
+    21,323,631,132 cache-misses              #   59.054 % of all cache refs      ( +-  2.13% ) [57.16%]
+
+     303.190999276 seconds time elapsed                                          ( +-  0.02% )
+
+
+ Performance counter stats for './timeout -t 300 ./shared-all-different-search -f /home/keira/sat/satold/experimentos-plingeling-finales/benchmarks_plingeling/grid-strips-grid-y-3.035-NOTKNOWN.cnf -t 1' (5 runs):
+
+   422,829,407,511 L1-dcache-loads                                               ( +-  0.04% ) [71.44%]
+    24,958,432,098 L1-dcache-load-misses     #  [33m  5.90%[m of all L1-dcache hits    ( +-  0.03% ) [71.43%]
+    13,668,279,108 LLC-loads                                                     ( +-  0.02% ) [57.15%]
+        43,196,260 LLC-load-misses           #    0.32% of all LL-cache hits     ( +-  1.11% ) [14.29%]
+ 1,467,270,671,367 instructions              #    0.00  insns per cycle          ( +-  0.05% ) [28.59%]
+    13,748,836,769 cache-references                                              ( +-  0.01% ) [42.87%]
+        57,565,384 cache-misses              #    0.419 % of all cache refs      ( +-  0.84% ) [57.15%]
+
+     300.287643100 seconds time elapsed                                          ( +-  0.00% )
+
+
+ Performance counter stats for './timeout -t 300 ./shared-all-different-search -f /home/keira/sat/satold/experimentos-plingeling-finales/benchmarks_plingeling/grid-strips-grid-y-3.035-NOTKNOWN.cnf -t 2' (5 runs):
+
+   845,879,263,413 L1-dcache-loads                                               ( +-  0.15% ) [71.43%]
+    46,454,214,155 L1-dcache-load-misses     #  [33m  5.49%[m of all L1-dcache hits    ( +-  0.18% ) [71.43%]
+    25,369,680,714 LLC-loads                                                     ( +-  0.24% ) [57.15%]
+        81,971,195 LLC-load-misses           #    0.32% of all LL-cache hits     ( +-  1.39% ) [14.29%]
+ 2,979,375,233,987 instructions              #    0.00  insns per cycle          ( +-  0.14% ) [28.58%]
+    25,611,280,847 cache-references                                              ( +-  0.25% ) [42.86%]
+       106,752,248 cache-misses              #    0.417 % of all cache refs      ( +-  0.85% ) [57.15%]
+
+     300.320892507 seconds time elapsed                                          ( +-  0.00% )
+
+
+ Performance counter stats for './timeout -t 300 ./shared-all-different-search -f /home/keira/sat/satold/experimentos-plingeling-finales/benchmarks_plingeling/grid-strips-grid-y-3.035-NOTKNOWN.cnf -t 3' (5 runs):
+
+ 1,223,423,419,327 L1-dcache-loads                                               ( +-  0.28% ) [71.43%]
+    63,052,471,189 L1-dcache-load-misses     #  [33m  5.15%[m of all L1-dcache hits    ( +-  0.81% ) [71.43%]
+    34,597,232,699 LLC-loads                                                     ( +-  1.67% ) [57.15%]
+       226,548,231 LLC-load-misses           #    0.65% of all LL-cache hits     ( +-  4.21% ) [14.29%]
+ 4,354,554,200,859 instructions              #    0.00  insns per cycle          ( +-  0.32% ) [28.58%]
+    35,090,914,622 cache-references                                              ( +-  1.61% ) [42.86%]
+       275,491,867 cache-misses              #    0.785 % of all cache refs      ( +-  4.14% ) [57.15%]
+
+     300.380623367 seconds time elapsed                                          ( +-  0.00% )
+
+
+ Performance counter stats for './timeout -t 300 ./shared-all-different-search -f /home/keira/sat/satold/experimentos-plingeling-finales/benchmarks_plingeling/grid-strips-grid-y-3.035-NOTKNOWN.cnf -t 4' (5 runs):
+
+ 1,580,698,121,822 L1-dcache-loads                                               ( +-  0.41% ) [71.43%]
+    83,160,666,575 L1-dcache-load-misses     #  [33m  5.26%[m of all L1-dcache hits    ( +-  0.54% ) [71.43%]
+    44,535,992,672 LLC-loads                                                     ( +-  0.94% ) [57.15%]
+       382,671,832 LLC-load-misses           #    0.86% of all LL-cache hits     ( +-  4.41% ) [14.29%]
+ 5,596,100,316,371 instructions              #    0.00  insns per cycle          ( +-  0.47% ) [28.58%]
+    45,121,883,665 cache-references                                              ( +-  0.93% ) [42.86%]
+       473,990,507 cache-misses              #    1.050 % of all cache refs      ( +-  4.25% ) [57.14%]
+
+     300.360206255 seconds time elapsed                                          ( +-  0.00% )
+
+
+ Performance counter stats for './timeout -t 300 ./shared-all-different-search -f /home/keira/sat/satold/experimentos-plingeling-finales/benchmarks_plingeling/grid-strips-grid-y-3.035-NOTKNOWN.cnf -t 5' (5 runs):
+
+ 1,891,861,937,780 L1-dcache-loads                                               ( +-  0.30% ) [71.43%]
+    98,903,486,369 L1-dcache-load-misses     #  [33m  5.23%[m of all L1-dcache hits    ( +-  0.60% ) [71.43%]
+    51,854,424,848 LLC-loads                                                     ( +-  1.97% ) [57.15%]
+       560,099,559 LLC-load-misses           #    1.08% of all LL-cache hits     ( +-  3.99% ) [14.29%]
+ 6,700,714,318,233 instructions              #    0.00  insns per cycle          ( +-  0.37% ) [28.58%]
+    52,574,396,210 cache-references                                              ( +-  1.90% ) [42.86%]
+       687,847,056 cache-misses              #    1.308 % of all cache refs      ( +-  3.63% ) [57.15%]
+
+     300.310589490 seconds time elapsed                                          ( +-  0.00% )
+
+
+ Performance counter stats for './timeout -t 300 ./shared-all-different-search -f /home/keira/sat/satold/experimentos-plingeling-finales/benchmarks_plingeling/grid-strips-grid-y-3.035-NOTKNOWN.cnf -t 6' (5 runs):
+
+ 2,267,156,735,353 L1-dcache-loads                                               ( +-  0.11% ) [71.44%]
+   117,633,261,062 L1-dcache-load-misses     #  [33m  5.19%[m of all L1-dcache hits    ( +-  0.77% ) [71.43%]
+    61,866,321,499 LLC-loads                                                     ( +-  1.18% ) [57.15%]
+       851,160,003 LLC-load-misses           #    1.38% of all LL-cache hits     ( +- 17.67% ) [14.29%]
+ 8,033,906,621,717 instructions              #    0.00  insns per cycle          ( +-  0.19% ) [28.60%]
+    62,633,520,456 cache-references                                              ( +-  1.17% ) [42.88%]
+     1,003,726,261 cache-misses              #    1.603 % of all cache refs      ( +- 15.33% ) [57.16%]
+
+     303.891800823 seconds time elapsed                                          ( +-  0.02% )
+
+
+ Performance counter stats for './timeout -t 300 ./shared-all-different-search -f /home/keira/sat/satold/experimentos-plingeling-finales/benchmarks_plingeling/hwmcc10-timeframe-expansion-k45-pdtvissoap1-tseitin.cnf -t 1' (5 runs):
+
+   184,086,809,714 L1-dcache-loads                                               ( +-  0.04% ) [71.44%]
+    12,252,527,018 L1-dcache-load-misses     #  [33m  6.66%[m of all L1-dcache hits    ( +-  0.04% ) [71.43%]
+     6,530,094,502 LLC-loads                                                     ( +-  0.04% ) [57.15%]
+     1,641,636,751 LLC-load-misses           #  [31m 25.14%[m of all LL-cache hits     ( +-  0.10% ) [14.29%]
+   665,599,351,325 instructions              #    0.00  insns per cycle          ( +-  0.06% ) [28.58%]
+     8,177,408,398 cache-references                                              ( +-  0.06% ) [42.87%]
+     2,050,748,890 cache-misses              #   25.078 % of all cache refs      ( +-  0.18% ) [57.15%]
+
+     300.325952747 seconds time elapsed                                          ( +-  0.00% )
+
+
+ Performance counter stats for './timeout -t 300 ./shared-all-different-search -f /home/keira/sat/satold/experimentos-plingeling-finales/benchmarks_plingeling/hwmcc10-timeframe-expansion-k45-pdtvissoap1-tseitin.cnf -t 2' (5 runs):
+
+   390,547,973,213 L1-dcache-loads                                               ( +-  0.46% ) [71.43%]
+    23,427,116,407 L1-dcache-load-misses     #  [33m  6.00%[m of all L1-dcache hits    ( +-  0.48% ) [71.43%]
+    10,723,158,080 LLC-loads                                                     ( +-  0.33% ) [57.14%]
+     3,655,159,714 LLC-load-misses           #  [31m 34.09%[m of all LL-cache hits     ( +-  0.57% ) [14.29%]
+ 1,407,692,572,281 instructions              #    0.00  insns per cycle          ( +-  0.44% ) [28.58%]
+    13,438,266,784 cache-references                                              ( +-  0.36% ) [42.87%]
+     4,632,700,419 cache-misses              #   34.474 % of all cache refs      ( +-  0.56% ) [57.15%]
+
+     300.341432776 seconds time elapsed                                          ( +-  0.00% )
+
+
+ Performance counter stats for './timeout -t 300 ./shared-all-different-search -f /home/keira/sat/satold/experimentos-plingeling-finales/benchmarks_plingeling/hwmcc10-timeframe-expansion-k45-pdtvissoap1-tseitin.cnf -t 3' (5 runs):
+
+   544,706,147,127 L1-dcache-loads                                               ( +-  0.37% ) [71.43%]
+    32,398,085,820 L1-dcache-load-misses     #  [33m  5.95%[m of all L1-dcache hits    ( +-  0.45% ) [71.43%]
+    14,634,126,444 LLC-loads                                                     ( +-  0.25% ) [57.15%]
+     6,113,944,883 LLC-load-misses           #  [31m 41.78%[m of all LL-cache hits     ( +-  0.26% ) [14.29%]
+ 1,957,638,477,144 instructions              #    0.00  insns per cycle          ( +-  0.31% ) [28.58%]
+    18,317,336,664 cache-references                                              ( +-  0.31% ) [42.86%]
+     7,753,833,587 cache-misses              #   42.331 % of all cache refs      ( +-  0.28% ) [57.15%]
+
+     300.394754309 seconds time elapsed                                          ( +-  0.00% )
+
+
+ Performance counter stats for './timeout -t 300 ./shared-all-different-search -f /home/keira/sat/satold/experimentos-plingeling-finales/benchmarks_plingeling/hwmcc10-timeframe-expansion-k45-pdtvissoap1-tseitin.cnf -t 4' (5 runs):
+
+   648,913,948,117 L1-dcache-loads                                               ( +-  0.30% ) [71.43%]
+    40,011,310,976 L1-dcache-load-misses     #  [33m  6.17%[m of all L1-dcache hits    ( +-  0.32% ) [71.43%]
+    18,906,291,161 LLC-loads                                                     ( +-  0.10% ) [57.14%]
+     9,131,089,634 LLC-load-misses           #  [31m 48.30%[m of all LL-cache hits     ( +-  0.31% ) [14.29%]
+ 2,338,633,582,677 instructions              #    0.00  insns per cycle          ( +-  0.30% ) [28.58%]
+    23,952,525,650 cache-references                                              ( +-  0.11% ) [42.86%]
+    11,693,182,760 cache-misses              #   48.818 % of all cache refs      ( +-  0.31% ) [57.15%]
+
+     300.369227352 seconds time elapsed                                          ( +-  0.00% )
+
+
+ Performance counter stats for './timeout -t 300 ./shared-all-different-search -f /home/keira/sat/satold/experimentos-plingeling-finales/benchmarks_plingeling/hwmcc10-timeframe-expansion-k45-pdtvissoap1-tseitin.cnf -t 5' (5 runs):
+
+   740,415,293,756 L1-dcache-loads                                               ( +-  0.29% ) [71.43%]
+    46,649,395,326 L1-dcache-load-misses     #  [33m  6.30%[m of all L1-dcache hits    ( +-  0.09% ) [71.43%]
+    22,823,984,114 LLC-loads                                                     ( +-  0.15% ) [57.14%]
+    12,012,629,967 LLC-load-misses           #  [31m 52.63%[m of all LL-cache hits     ( +-  0.23% ) [14.29%]
+ 2,672,745,378,211 instructions              #    0.00  insns per cycle          ( +-  0.32% ) [28.58%]
+    29,001,007,123 cache-references                                              ( +-  0.21% ) [42.86%]
+    15,426,733,269 cache-misses              #   53.194 % of all cache refs      ( +-  0.23% ) [57.15%]
+
+     300.321218780 seconds time elapsed                                          ( +-  0.00% )
+
+
+ Performance counter stats for './timeout -t 300 ./shared-all-different-search -f /home/keira/sat/satold/experimentos-plingeling-finales/benchmarks_plingeling/hwmcc10-timeframe-expansion-k45-pdtvissoap1-tseitin.cnf -t 6' (5 runs):
+
+   859,313,436,610 L1-dcache-loads                                               ( +-  0.31% ) [71.43%]
+    54,842,746,608 L1-dcache-load-misses     #  [33m  6.38%[m of all L1-dcache hits    ( +-  0.13% ) [71.42%]
+    27,206,614,138 LLC-loads                                                     ( +-  0.21% ) [57.15%]
+    15,224,048,767 LLC-load-misses           #  [31m 55.96%[m of all LL-cache hits     ( +-  0.26% ) [14.29%]
+ 3,102,110,913,961 instructions              #    0.00  insns per cycle          ( +-  0.30% ) [28.60%]
+    34,635,486,702 cache-references                                              ( +-  0.22% ) [42.88%]
+    19,586,017,849 cache-misses              #   56.549 % of all cache refs      ( +-  0.27% ) [57.15%]
+
+     304.408403984 seconds time elapsed                                          ( +-  0.01% )
+
+
+ Performance counter stats for './timeout -t 300 ./shared-all-different-search -f /home/keira/sat/satold/experimentos-plingeling-finales/benchmarks_plingeling/hwmcc10-timeframe-expansion-k50-pdtpmsns2-tseitin.cnf -t 1' (5 runs):
+
+   222,232,867,553 L1-dcache-loads                                               ( +-  0.13% ) [71.44%]
+    13,982,332,658 L1-dcache-load-misses     #  [33m  6.29%[m of all L1-dcache hits    ( +-  0.10% ) [71.43%]
+     6,726,614,398 LLC-loads                                                     ( +-  0.14% ) [57.15%]
+     1,011,407,672 LLC-load-misses           #  [35m 15.04%[m of all LL-cache hits     ( +-  0.33% ) [14.29%]
+   790,891,339,657 instructions              #    0.00  insns per cycle          ( +-  0.16% ) [28.59%]
+     8,253,206,353 cache-references                                              ( +-  0.11% ) [42.87%]
+     1,236,512,173 cache-misses              #   14.982 % of all cache refs      ( +-  0.15% ) [57.16%]
+
+     300.326412342 seconds time elapsed                                          ( +-  0.00% )
+
+
+ Performance counter stats for './timeout -t 300 ./shared-all-different-search -f /home/keira/sat/satold/experimentos-plingeling-finales/benchmarks_plingeling/hwmcc10-timeframe-expansion-k50-pdtpmsns2-tseitin.cnf -t 2' (5 runs):
+
+   379,434,367,890 L1-dcache-loads                                               ( +-  0.82% ) [71.43%]
+    24,539,457,002 L1-dcache-load-misses     #  [33m  6.47%[m of all L1-dcache hits    ( +-  0.24% ) [71.43%]
+    12,337,935,496 LLC-loads                                                     ( +-  0.62% ) [57.14%]
+     3,301,262,963 LLC-load-misses           #  [31m 26.76%[m of all LL-cache hits     ( +-  1.29% ) [14.29%]
+ 1,353,300,610,582 instructions              #    0.00  insns per cycle          ( +-  0.80% ) [28.58%]
+    15,381,501,624 cache-references                                              ( +-  0.70% ) [42.87%]
+     4,148,814,621 cache-misses              #   26.973 % of all cache refs      ( +-  1.28% ) [57.15%]
+
+     300.340854272 seconds time elapsed                                          ( +-  0.00% )
+
+
+ Performance counter stats for './timeout -t 300 ./shared-all-different-search -f /home/keira/sat/satold/experimentos-plingeling-finales/benchmarks_plingeling/hwmcc10-timeframe-expansion-k50-pdtpmsns2-tseitin.cnf -t 3' (5 runs):
+
+   496,734,585,303 L1-dcache-loads                                               ( +-  0.38% ) [71.43%]
+    32,933,067,741 L1-dcache-load-misses     #  [33m  6.63%[m of all L1-dcache hits    ( +-  0.11% ) [71.43%]
+    17,052,160,845 LLC-loads                                                     ( +-  0.17% ) [57.15%]
+     6,179,226,681 LLC-load-misses           #  [31m 36.24%[m of all LL-cache hits     ( +-  0.31% ) [14.29%]
+ 1,771,028,658,502 instructions              #    0.00  insns per cycle          ( +-  0.40% ) [28.58%]
+    21,276,082,507 cache-references                                              ( +-  0.24% ) [42.86%]
+     7,818,768,144 cache-misses              #   36.749 % of all cache refs      ( +-  0.25% ) [57.15%]
+
+     300.394239695 seconds time elapsed                                          ( +-  0.00% )
+
+
+ Performance counter stats for './timeout -t 300 ./shared-all-different-search -f /home/keira/sat/satold/experimentos-plingeling-finales/benchmarks_plingeling/hwmcc10-timeframe-expansion-k50-pdtpmsns2-tseitin.cnf -t 4' (5 runs):
+
+   627,809,346,840 L1-dcache-loads                                               ( +-  0.29% ) [71.43%]
+    41,065,168,125 L1-dcache-load-misses     #  [33m  6.54%[m of all L1-dcache hits    ( +-  0.06% ) [71.43%]
+    21,177,232,768 LLC-loads                                                     ( +-  0.11% ) [57.15%]
+     8,869,216,681 LLC-load-misses           #  [31m 41.88%[m of all LL-cache hits     ( +-  0.14% ) [14.29%]
+ 2,239,424,992,382 instructions              #    0.00  insns per cycle          ( +-  0.29% ) [28.57%]
+    26,596,234,178 cache-references                                              ( +-  0.13% ) [42.86%]
+    11,335,052,191 cache-misses              #   42.619 % of all cache refs      ( +-  0.19% ) [57.14%]
+
+     300.368365147 seconds time elapsed                                          ( +-  0.00% )
+
+
+ Performance counter stats for './timeout -t 300 ./shared-all-different-search -f /home/keira/sat/satold/experimentos-plingeling-finales/benchmarks_plingeling/hwmcc10-timeframe-expansion-k50-pdtpmsns2-tseitin.cnf -t 5' (5 runs):
+
+   738,396,247,586 L1-dcache-loads                                               ( +-  0.52% ) [71.43%]
+    48,329,182,156 L1-dcache-load-misses     #  [33m  6.55%[m of all L1-dcache hits    ( +-  0.35% ) [71.43%]
+    24,890,828,729 LLC-loads                                                     ( +-  0.25% ) [57.15%]
+    11,591,243,847 LLC-load-misses           #  [31m 46.57%[m of all LL-cache hits     ( +-  0.42% ) [14.29%]
+ 2,632,023,049,883 instructions              #    0.00  insns per cycle          ( +-  0.50% ) [28.58%]
+    31,285,234,173 cache-references                                              ( +-  0.25% ) [42.86%]
+    14,823,306,976 cache-misses              #   47.381 % of all cache refs      ( +-  0.46% ) [57.14%]
+
+     300.315283806 seconds time elapsed                                          ( +-  0.00% )
+
+
+ Performance counter stats for './timeout -t 300 ./shared-all-different-search -f /home/keira/sat/satold/experimentos-plingeling-finales/benchmarks_plingeling/hwmcc10-timeframe-expansion-k50-pdtpmsns2-tseitin.cnf -t 6' (5 runs):
+
+   875,046,890,439 L1-dcache-loads                                               ( +-  0.35% ) [71.43%]
+    57,138,802,912 L1-dcache-load-misses     #  [33m  6.53%[m of all L1-dcache hits    ( +-  0.20% ) [71.43%]
+    29,198,948,107 LLC-loads                                                     ( +-  0.14% ) [57.15%]
+    14,767,464,096 LLC-load-misses           #  [31m 50.58%[m of all LL-cache hits     ( +-  0.31% ) [14.29%]
+ 3,117,384,752,595 instructions              #    0.00  insns per cycle          ( +-  0.36% ) [28.61%]
+    36,690,247,160 cache-references                                              ( +-  0.15% ) [42.89%]
+    18,901,241,232 cache-misses              #   51.516 % of all cache refs      ( +-  0.32% ) [57.16%]
+
+     304.203897772 seconds time elapsed                                          ( +-  0.01% )
+
+
+ Performance counter stats for './timeout -t 300 ./shared-all-different-search -f /home/keira/sat/satold/experimentos-plingeling-finales/benchmarks_plingeling/md5_48_3.cnf -t 1' (5 runs):
+
+   149,177,969,331 L1-dcache-loads                                               ( +-  0.05% ) [71.44%]
+    14,090,633,015 L1-dcache-load-misses     #  [33m  9.45%[m of all L1-dcache hits    ( +-  0.04% ) [71.43%]
+     8,421,721,014 LLC-loads                                                     ( +-  0.07% ) [57.15%]
+     1,206,483,922 LLC-load-misses           #  [35m 14.33%[m of all LL-cache hits     ( +-  0.20% ) [14.29%]
+   535,561,441,257 instructions              #    0.00  insns per cycle          ( +-  0.05% ) [28.59%]
+     9,827,901,087 cache-references                                              ( +-  0.06% ) [42.87%]
+     1,350,279,441 cache-misses              #   13.739 % of all cache refs      ( +-  0.23% ) [57.16%]
+
+     300.327184635 seconds time elapsed                                          ( +-  0.00% )
+
+
+ Performance counter stats for './timeout -t 300 ./shared-all-different-search -f /home/keira/sat/satold/experimentos-plingeling-finales/benchmarks_plingeling/md5_48_3.cnf -t 2' (5 runs):
+
+   274,947,830,505 L1-dcache-loads                                               ( +-  0.15% ) [71.43%]
+    25,266,612,876 L1-dcache-load-misses     #  [33m  9.19%[m of all L1-dcache hits    ( +-  0.07% ) [71.43%]
+    14,900,648,618 LLC-loads                                                     ( +-  0.06% ) [57.15%]
+     3,497,870,624 LLC-load-misses           #  [31m 23.47%[m of all LL-cache hits     ( +-  0.33% ) [14.29%]
+   989,354,152,504 instructions              #    0.00  insns per cycle          ( +-  0.16% ) [28.58%]
+    17,829,526,202 cache-references                                              ( +-  0.09% ) [42.86%]
+     4,030,059,099 cache-misses              #   22.603 % of all cache refs      ( +-  0.37% ) [57.15%]
+
+     300.344182285 seconds time elapsed                                          ( +-  0.00% )
+
+
+ Performance counter stats for './timeout -t 300 ./shared-all-different-search -f /home/keira/sat/satold/experimentos-plingeling-finales/benchmarks_plingeling/md5_48_3.cnf -t 3' (5 runs):
+
+   360,270,026,060 L1-dcache-loads                                               ( +-  0.23% ) [71.43%]
+    34,109,769,021 L1-dcache-load-misses     #  [33m  9.47%[m of all L1-dcache hits    ( +-  0.08% ) [71.43%]
+    20,310,700,531 LLC-loads                                                     ( +-  0.05% ) [57.15%]
+     6,543,370,497 LLC-load-misses           #  [31m 32.22%[m of all LL-cache hits     ( +-  0.32% ) [14.29%]
+ 1,295,082,421,719 instructions              #    0.00  insns per cycle          ( +-  0.22% ) [28.58%]
+    24,325,378,334 cache-references                                              ( +-  0.03% ) [42.86%]
+     7,597,210,112 cache-misses              #   31.232 % of all cache refs      ( +-  0.29% ) [57.14%]
+
+     300.397822387 seconds time elapsed                                          ( +-  0.00% )
+
+
+ Performance counter stats for './timeout -t 300 ./shared-all-different-search -f /home/keira/sat/satold/experimentos-plingeling-finales/benchmarks_plingeling/md5_48_3.cnf -t 4' (5 runs):
+
+   460,592,697,741 L1-dcache-loads                                               ( +-  0.08% ) [71.43%]
+    42,793,748,691 L1-dcache-load-misses     #  [33m  9.29%[m of all L1-dcache hits    ( +-  0.06% ) [71.43%]
+    25,140,792,324 LLC-loads                                                     ( +-  0.04% ) [57.14%]
+     9,300,574,591 LLC-load-misses           #  [31m 36.99%[m of all LL-cache hits     ( +-  0.12% ) [14.29%]
+ 1,660,879,580,571 instructions              #    0.00  insns per cycle          ( +-  0.07% ) [28.58%]
+    30,470,262,785 cache-references                                              ( +-  0.05% ) [42.86%]
+    10,956,395,372 cache-misses              #   35.958 % of all cache refs      ( +-  0.10% ) [57.15%]
+
+     300.372328503 seconds time elapsed                                          ( +-  0.00% )
+
+
+ Performance counter stats for './timeout -t 300 ./shared-all-different-search -f /home/keira/sat/satold/experimentos-plingeling-finales/benchmarks_plingeling/md5_48_3.cnf -t 5' (5 runs):
+
+   537,608,435,869 L1-dcache-loads                                               ( +-  0.24% ) [71.43%]
+    50,176,747,541 L1-dcache-load-misses     #  [33m  9.33%[m of all L1-dcache hits    ( +-  0.10% ) [71.43%]
+    29,341,244,503 LLC-loads                                                     ( +-  0.11% ) [57.15%]
+    12,267,948,227 LLC-load-misses           #  [31m 41.81%[m of all LL-cache hits     ( +-  0.23% ) [14.29%]
+ 1,939,993,085,458 instructions              #    0.00  insns per cycle          ( +-  0.22% ) [28.58%]
+    35,664,366,247 cache-references                                              ( +-  0.07% ) [42.86%]
+    14,549,443,947 cache-misses              #   40.795 % of all cache refs      ( +-  0.22% ) [57.15%]
+
+     300.325126233 seconds time elapsed                                          ( +-  0.00% )
+
+
+ Performance counter stats for './timeout -t 300 ./shared-all-different-search -f /home/keira/sat/satold/experimentos-plingeling-finales/benchmarks_plingeling/md5_48_3.cnf -t 6' (5 runs):
+
+   628,957,850,560 L1-dcache-loads                                               ( +-  0.10% ) [71.44%]
+    58,873,016,034 L1-dcache-load-misses     #  [33m  9.36%[m of all L1-dcache hits    ( +-  0.05% ) [71.43%]
+    34,291,091,756 LLC-loads                                                     ( +-  0.06% ) [57.15%]
+    15,683,689,098 LLC-load-misses           #  [31m 45.74%[m of all LL-cache hits     ( +-  0.15% ) [14.29%]
+ 2,269,353,297,358 instructions              #    0.00  insns per cycle          ( +-  0.11% ) [28.60%]
+    41,715,669,602 cache-references                                              ( +-  0.06% ) [42.88%]
+    18,683,201,897 cache-misses              #   44.787 % of all cache refs      ( +-  0.09% ) [57.16%]
+
+     304.231867798 seconds time elapsed                                          ( +-  0.01% )
+
+
+ Performance counter stats for './timeout -t 300 ./shared-all-different-search -f /home/keira/sat/satold/experimentos-plingeling-finales/benchmarks_plingeling/q_query_3_L150_coli.sat.cnf -t 1' (5 runs):
+
+   157,835,295,919 L1-dcache-loads                                               ( +-  0.19% ) [71.44%]
+    12,193,873,140 L1-dcache-load-misses     #  [33m  7.73%[m of all L1-dcache hits    ( +-  0.14% ) [71.43%]
+     7,498,280,452 LLC-loads                                                     ( +-  0.14% ) [57.15%]
+     2,589,587,330 LLC-load-misses           #  [31m 34.54%[m of all LL-cache hits     ( +-  0.34% ) [14.29%]
+   568,730,505,844 instructions              #    0.00  insns per cycle          ( +-  0.26% ) [28.59%]
+     9,196,798,714 cache-references                                              ( +-  0.21% ) [42.87%]
+     3,183,841,697 cache-misses              #   34.619 % of all cache refs      ( +-  0.42% ) [57.16%]
+
+     300.344296508 seconds time elapsed                                          ( +-  0.00% )
+
+
+ Performance counter stats for './timeout -t 300 ./shared-all-different-search -f /home/keira/sat/satold/experimentos-plingeling-finales/benchmarks_plingeling/q_query_3_L150_coli.sat.cnf -t 2' (5 runs):
+
+   301,906,714,370 L1-dcache-loads                                               ( +-  1.38% ) [71.43%]
+    23,329,836,503 L1-dcache-load-misses     #  [33m  7.73%[m of all L1-dcache hits    ( +-  0.93% ) [71.43%]
+    14,426,987,484 LLC-loads                                                     ( +-  1.00% ) [57.14%]
+     5,274,845,563 LLC-load-misses           #  [31m 36.56%[m of all LL-cache hits     ( +-  2.85% ) [14.29%]
+ 1,082,752,864,317 instructions              #    0.00  insns per cycle          ( +-  1.33% ) [28.58%]
+    17,742,468,281 cache-references                                              ( +-  0.92% ) [42.87%]
+     6,443,882,428 cache-misses              #   36.319 % of all cache refs      ( +-  3.08% ) [57.15%]
+
+     300.366479925 seconds time elapsed                                          ( +-  0.00% )
+
+
+ Performance counter stats for './timeout -t 300 ./shared-all-different-search -f /home/keira/sat/satold/experimentos-plingeling-finales/benchmarks_plingeling/q_query_3_L150_coli.sat.cnf -t 3' (5 runs):
+
+   384,051,262,746 L1-dcache-loads                                               ( +-  0.62% ) [71.43%]
+    30,423,584,249 L1-dcache-load-misses     #  [33m  7.92%[m of all L1-dcache hits    ( +-  0.43% ) [71.43%]
+    18,814,891,057 LLC-loads                                                     ( +-  0.53% ) [57.15%]
+     9,482,487,458 LLC-load-misses           #  [31m 50.40%[m of all LL-cache hits     ( +-  1.33% ) [14.29%]
+ 1,377,497,650,741 instructions              #    0.00  insns per cycle          ( +-  0.64% ) [28.58%]
+    23,146,682,681 cache-references                                              ( +-  0.46% ) [42.86%]
+    11,714,347,659 cache-misses              #   50.609 % of all cache refs      ( +-  1.14% ) [57.15%]
+
+     300.426321782 seconds time elapsed                                          ( +-  0.00% )
+
+
+ Performance counter stats for './timeout -t 300 ./shared-all-different-search -f /home/keira/sat/satold/experimentos-plingeling-finales/benchmarks_plingeling/q_query_3_L150_coli.sat.cnf -t 4' (5 runs):
+
+   479,925,326,403 L1-dcache-loads                                               ( +-  0.47% ) [71.43%]
+    38,137,514,317 L1-dcache-load-misses     #  [33m  7.95%[m of all L1-dcache hits    ( +-  0.26% ) [71.43%]
+    23,494,000,283 LLC-loads                                                     ( +-  0.39% ) [57.15%]
+    13,149,599,815 LLC-load-misses           #  [31m 55.97%[m of all LL-cache hits     ( +-  0.53% ) [14.29%]
+ 1,723,053,635,563 instructions              #    0.00  insns per cycle          ( +-  0.45% ) [28.58%]
+    28,974,026,540 cache-references                                              ( +-  0.31% ) [42.86%]
+    16,339,049,216 cache-misses              #   56.392 % of all cache refs      ( +-  0.57% ) [57.15%]
+
+     300.408127751 seconds time elapsed                                          ( +-  0.00% )
+
+
+ Performance counter stats for './timeout -t 300 ./shared-all-different-search -f /home/keira/sat/satold/experimentos-plingeling-finales/benchmarks_plingeling/q_query_3_L150_coli.sat.cnf -t 5' (5 runs):
+
+   558,157,398,638 L1-dcache-loads                                               ( +-  0.66% ) [71.43%]
+    44,853,085,991 L1-dcache-load-misses     #  [33m  8.04%[m of all L1-dcache hits    ( +-  0.29% ) [71.43%]
+    27,752,593,686 LLC-loads                                                     ( +-  0.41% ) [57.15%]
+    16,982,006,816 LLC-load-misses           #  [31m 61.19%[m of all LL-cache hits     ( +-  0.70% ) [14.29%]
+ 2,001,149,926,939 instructions              #    0.00  insns per cycle          ( +-  0.61% ) [28.58%]
+    34,142,083,840 cache-references                                              ( +-  0.33% ) [42.86%]
+    21,094,609,542 cache-misses              #   61.785 % of all cache refs      ( +-  0.64% ) [57.15%]
+
+     300.367246957 seconds time elapsed                                          ( +-  0.00% )
+
+
+ Performance counter stats for './timeout -t 300 ./shared-all-different-search -f /home/keira/sat/satold/experimentos-plingeling-finales/benchmarks_plingeling/q_query_3_L150_coli.sat.cnf -t 6' (5 runs):
+
+   656,089,490,165 L1-dcache-loads                                               ( +-  0.33% ) [71.45%]
+    52,782,736,496 L1-dcache-load-misses     #  [33m  8.05%[m of all L1-dcache hits    ( +-  0.35% ) [71.43%]
+    32,638,308,607 LLC-loads                                                     ( +-  0.39% ) [57.13%]
+    20,745,469,858 LLC-load-misses           #  [31m 63.56%[m of all LL-cache hits     ( +-  0.47% ) [14.30%]
+ 2,351,091,721,185 instructions              #    0.00  insns per cycle          ( +-  0.32% ) [28.62%]
+    40,229,500,794 cache-references                                              ( +-  0.38% ) [42.90%]
+    25,806,948,063 cache-misses              #   64.149 % of all cache refs      ( +-  0.38% ) [57.18%]
+
+     304.602957471 seconds time elapsed                                          ( +-  0.01% )
+
+
+ Performance counter stats for './timeout -t 300 ./shared-all-different-search -f /home/keira/sat/satold/experimentos-plingeling-finales/benchmarks_plingeling/slp-synthesis-aes-top30.cnf -t 1' (5 runs):
+
+   186,540,470,309 L1-dcache-loads                                               ( +-  0.09% ) [71.44%]
+    15,214,502,164 L1-dcache-load-misses     #  [33m  8.16%[m of all L1-dcache hits    ( +-  0.08% ) [71.43%]
+     9,307,619,323 LLC-loads                                                     ( +-  0.11% ) [57.15%]
+     1,225,740,756 LLC-load-misses           #  [35m 13.17%[m of all LL-cache hits     ( +-  0.25% ) [14.29%]
+   657,221,301,263 instructions              #    0.00  insns per cycle          ( +-  0.07% ) [28.59%]
+    11,180,960,040 cache-references                                              ( +-  0.10% ) [42.87%]
+     1,470,676,259 cache-misses              #   13.153 % of all cache refs      ( +-  0.24% ) [57.16%]
+
+     300.330756309 seconds time elapsed                                          ( +-  0.00% )
+
+
+ Performance counter stats for './timeout -t 300 ./shared-all-different-search -f /home/keira/sat/satold/experimentos-plingeling-finales/benchmarks_plingeling/slp-synthesis-aes-top30.cnf -t 2' (5 runs):
+
+   346,008,715,590 L1-dcache-loads                                               ( +-  0.22% ) [71.43%]
+    28,183,280,433 L1-dcache-load-misses     #  [33m  8.15%[m of all L1-dcache hits    ( +-  0.24% ) [71.43%]
+    16,966,230,248 LLC-loads                                                     ( +-  0.27% ) [57.15%]
+     3,106,683,176 LLC-load-misses           #  [35m 18.31%[m of all LL-cache hits     ( +-  0.22% ) [14.29%]
+ 1,222,828,782,311 instructions              #    0.00  insns per cycle          ( +-  0.21% ) [28.58%]
+    20,601,686,087 cache-references                                              ( +-  0.31% ) [42.87%]
+     3,790,032,035 cache-misses              #   18.397 % of all cache refs      ( +-  0.31% ) [57.15%]
+
+     300.343518471 seconds time elapsed                                          ( +-  0.00% )
+
+
+ Performance counter stats for './timeout -t 300 ./shared-all-different-search -f /home/keira/sat/satold/experimentos-plingeling-finales/benchmarks_plingeling/slp-synthesis-aes-top30.cnf -t 3' (5 runs):
+
+   454,190,909,272 L1-dcache-loads                                               ( +-  0.20% ) [71.43%]
+    37,809,486,298 L1-dcache-load-misses     #  [33m  8.32%[m of all L1-dcache hits    ( +-  0.04% ) [71.43%]
+    22,938,738,732 LLC-loads                                                     ( +-  0.10% ) [57.14%]
+     6,038,501,360 LLC-load-misses           #  [31m 26.32%[m of all LL-cache hits     ( +-  0.18% ) [14.29%]
+ 1,603,140,067,660 instructions              #    0.00  insns per cycle          ( +-  0.20% ) [28.58%]
+    27,788,732,235 cache-references                                              ( +-  0.07% ) [42.86%]
+     7,341,483,553 cache-misses              #   26.419 % of all cache refs      ( +-  0.19% ) [57.15%]
+
+     300.398087649 seconds time elapsed                                          ( +-  0.00% )
+
+
+ Performance counter stats for './timeout -t 300 ./shared-all-different-search -f /home/keira/sat/satold/experimentos-plingeling-finales/benchmarks_plingeling/slp-synthesis-aes-top30.cnf -t 4' (5 runs):
+
+   570,731,128,333 L1-dcache-loads                                               ( +-  0.36% ) [71.43%]
+    46,980,565,682 L1-dcache-load-misses     #  [33m  8.23%[m of all L1-dcache hits    ( +-  0.18% ) [71.43%]
+    28,213,755,177 LLC-loads                                                     ( +-  0.17% ) [57.15%]
+     8,952,024,167 LLC-load-misses           #  [31m 31.73%[m of all LL-cache hits     ( +-  0.42% ) [14.29%]
+ 2,017,887,974,948 instructions              #    0.00  insns per cycle          ( +-  0.34% ) [28.58%]
+    34,501,594,578 cache-references                                              ( +-  0.15% ) [42.86%]
+    11,036,259,692 cache-misses              #   31.988 % of all cache refs      ( +-  0.53% ) [57.15%]
+
+     300.376859859 seconds time elapsed                                          ( +-  0.00% )
+
+
+ Performance counter stats for './timeout -t 300 ./shared-all-different-search -f /home/keira/sat/satold/experimentos-plingeling-finales/benchmarks_plingeling/slp-synthesis-aes-top30.cnf -t 5' (5 runs):
+
+   654,906,051,629 L1-dcache-loads                                               ( +-  0.30% ) [71.43%]
+    54,500,219,538 L1-dcache-load-misses     #  [33m  8.32%[m of all L1-dcache hits    ( +-  0.17% ) [71.42%]
+    32,719,072,517 LLC-loads                                                     ( +-  0.20% ) [57.14%]
+    12,233,542,315 LLC-load-misses           #  [31m 37.39%[m of all LL-cache hits     ( +-  0.33% ) [14.29%]
+ 2,315,955,998,016 instructions              #    0.00  insns per cycle          ( +-  0.27% ) [28.58%]
+    40,010,920,077 cache-references                                              ( +-  0.14% ) [42.86%]
+    15,103,493,920 cache-misses              #   37.748 % of all cache refs      ( +-  0.48% ) [57.15%]
+
+     300.324062590 seconds time elapsed                                          ( +-  0.00% )
+
+
+ Performance counter stats for './timeout -t 300 ./shared-all-different-search -f /home/keira/sat/satold/experimentos-plingeling-finales/benchmarks_plingeling/slp-synthesis-aes-top30.cnf -t 6' (5 runs):
+
+   753,437,122,224 L1-dcache-loads                                               ( +-  0.18% ) [71.44%]
+    63,068,502,524 L1-dcache-load-misses     #  [33m  8.37%[m of all L1-dcache hits    ( +-  0.08% ) [71.43%]
+    37,913,468,724 LLC-loads                                                     ( +-  0.11% ) [57.15%]
+    15,957,489,877 LLC-load-misses           #  [31m 42.09%[m of all LL-cache hits     ( +-  0.20% ) [14.29%]
+ 2,662,918,367,374 instructions              #    0.00  insns per cycle          ( +-  0.18% ) [28.60%]
+    46,281,099,331 cache-references                                              ( +-  0.06% ) [42.89%]
+    19,703,535,449 cache-misses              #   42.574 % of all cache refs      ( +-  0.24% ) [57.16%]
+
+     304.053659258 seconds time elapsed                                          ( +-  0.01% )
+
+
+ Performance counter stats for './timeout -t 300 ./shared-all-different-search -f /home/keira/sat/satold/experimentos-plingeling-finales/benchmarks_plingeling/traffic_b_unsat.cnf -t 1' (5 runs):
+
+   135,201,680,483 L1-dcache-loads                                               ( +-  0.30% ) [71.44%]
+    17,305,941,760 L1-dcache-load-misses     #  [35m 12.80%[m of all L1-dcache hits    ( +-  0.30% ) [71.43%]
+    11,545,075,147 LLC-loads                                                     ( +-  0.30% ) [57.15%]
+       458,276,223 LLC-load-misses           #    3.97% of all LL-cache hits     ( +-  3.52% ) [14.29%]
+   455,839,987,104 instructions              #    0.00  insns per cycle          ( +-  0.30% ) [28.59%]
+    11,715,694,993 cache-references                                              ( +-  0.31% ) [42.87%]
+       466,653,867 cache-misses              #    3.983 % of all cache refs      ( +-  3.49% ) [57.15%]
+
+     300.325115945 seconds time elapsed                                          ( +-  0.00% )
+
+
+ Performance counter stats for './timeout -t 300 ./shared-all-different-search -f /home/keira/sat/satold/experimentos-plingeling-finales/benchmarks_plingeling/traffic_b_unsat.cnf -t 2' (5 runs):
+
+   242,478,642,117 L1-dcache-loads                                               ( +-  0.13% ) [71.43%]
+    30,131,030,909 L1-dcache-load-misses     #  [35m 12.43%[m of all L1-dcache hits    ( +-  0.21% ) [71.43%]
+    19,867,554,834 LLC-loads                                                     ( +-  0.15% ) [57.15%]
+     2,902,927,881 LLC-load-misses           #  [35m 14.61%[m of all LL-cache hits     ( +-  0.34% ) [14.29%]
+   814,458,354,291 instructions              #    0.00  insns per cycle          ( +-  0.12% ) [28.58%]
+    20,338,398,717 cache-references                                              ( +-  0.15% ) [42.87%]
+     2,938,275,251 cache-misses              #   14.447 % of all cache refs      ( +-  0.39% ) [57.15%]
+
+     300.339873450 seconds time elapsed                                          ( +-  0.00% )
+
+
+ Performance counter stats for './timeout -t 300 ./shared-all-different-search -f /home/keira/sat/satold/experimentos-plingeling-finales/benchmarks_plingeling/traffic_b_unsat.cnf -t 3' (5 runs):
+
+   301,072,669,281 L1-dcache-loads                                               ( +-  0.16% ) [71.43%]
+    38,062,258,535 L1-dcache-load-misses     #  [35m 12.64%[m of all L1-dcache hits    ( +-  0.15% ) [71.43%]
+    24,940,937,725 LLC-loads                                                     ( +-  0.20% ) [57.15%]
+     7,074,586,635 LLC-load-misses           #  [31m 28.37%[m of all LL-cache hits     ( +-  0.50% ) [14.29%]
+ 1,011,197,020,388 instructions              #    0.00  insns per cycle          ( +-  0.19% ) [28.58%]
+    25,603,624,225 cache-references                                              ( +-  0.19% ) [42.86%]
+     7,161,851,401 cache-misses              #   27.972 % of all cache refs      ( +-  0.47% ) [57.15%]
+
+     300.395089443 seconds time elapsed                                          ( +-  0.00% )
+
+
+ Performance counter stats for './timeout -t 300 ./shared-all-different-search -f /home/keira/sat/satold/experimentos-plingeling-finales/benchmarks_plingeling/traffic_b_unsat.cnf -t 4' (5 runs):
+
+   361,239,328,163 L1-dcache-loads                                               ( +-  0.25% ) [71.43%]
+    45,465,273,574 L1-dcache-load-misses     #  [35m 12.59%[m of all L1-dcache hits    ( +-  0.21% ) [71.43%]
+    29,796,149,353 LLC-loads                                                     ( +-  0.22% ) [57.14%]
+    11,170,228,774 LLC-load-misses           #  [31m 37.49%[m of all LL-cache hits     ( +-  0.38% ) [14.29%]
+ 1,213,805,151,898 instructions              #    0.00  insns per cycle          ( +-  0.24% ) [28.58%]
+    30,603,189,160 cache-references                                              ( +-  0.22% ) [42.86%]
+    11,314,815,856 cache-misses              #   36.973 % of all cache refs      ( +-  0.39% ) [57.15%]
+
+     300.367833242 seconds time elapsed                                          ( +-  0.00% )
+
+
+ Performance counter stats for './timeout -t 300 ./shared-all-different-search -f /home/keira/sat/satold/experimentos-plingeling-finales/benchmarks_plingeling/traffic_b_unsat.cnf -t 5' (5 runs):
+
+   404,511,078,308 L1-dcache-loads                                               ( +-  0.13% ) [71.43%]
+    51,216,566,458 L1-dcache-load-misses     #  [35m 12.66%[m of all L1-dcache hits    ( +-  0.12% ) [71.43%]
+    33,539,659,911 LLC-loads                                                     ( +-  0.13% ) [57.15%]
+    15,542,654,622 LLC-load-misses           #  [31m 46.34%[m of all LL-cache hits     ( +-  0.23% ) [14.29%]
+ 1,359,708,019,350 instructions              #    0.00  insns per cycle          ( +-  0.14% ) [28.58%]
+    34,542,987,513 cache-references                                              ( +-  0.15% ) [42.86%]
+    15,749,786,019 cache-misses              #   45.595 % of all cache refs      ( +-  0.23% ) [57.15%]
+
+     300.314386297 seconds time elapsed                                          ( +-  0.00% )
+
+
+ Performance counter stats for './timeout -t 300 ./shared-all-different-search -f /home/keira/sat/satold/experimentos-plingeling-finales/benchmarks_plingeling/traffic_b_unsat.cnf -t 6' (5 runs):
+
+   455,915,059,216 L1-dcache-loads                                               ( +-  0.10% ) [71.42%]
+    58,108,072,276 L1-dcache-load-misses     #  [35m 12.75%[m of all L1-dcache hits    ( +-  0.06% ) [71.42%]
+    37,994,707,937 LLC-loads                                                     ( +-  0.05% ) [57.15%]
+    20,425,678,286 LLC-load-misses           #  [31m 53.76%[m of all LL-cache hits     ( +-  0.12% ) [14.29%]
+ 1,532,407,273,654 instructions              #    0.00  insns per cycle          ( +-  0.10% ) [28.59%]
+    39,149,342,549 cache-references                                              ( +-  0.04% ) [42.87%]
+    20,709,008,275 cache-misses              #   52.897 % of all cache refs      ( +-  0.13% ) [57.14%]
+
+     304.711915325 seconds time elapsed                                          ( +-  0.01% )
+
+
+ Performance counter stats for './timeout -t 300 ./shared-all-different-search -f /home/keira/sat/satold/experimentos-plingeling-finales/benchmarks_plingeling/UCG-15-10p1.cnf -t 1' (5 runs):
+
+   329,448,831,299 L1-dcache-loads                                               ( +-  0.16% ) [71.44%]
+    20,078,718,184 L1-dcache-load-misses     #  [33m  6.09%[m of all L1-dcache hits    ( +-  0.15% ) [71.43%]
+     4,271,123,375 LLC-loads                                                     ( +-  0.34% ) [57.15%]
+       963,137,706 LLC-load-misses           #  [31m 22.55%[m of all LL-cache hits     ( +-  0.62% ) [14.29%]
+ 1,144,692,816,174 instructions              #    0.00  insns per cycle          ( +-  0.11% ) [28.59%]
+     5,479,421,908 cache-references                                              ( +-  0.20% ) [42.87%]
+     1,262,861,413 cache-misses              #   23.047 % of all cache refs      ( +-  0.22% ) [57.16%]
+
+     300.328612832 seconds time elapsed                                          ( +-  0.00% )
+
+
+ Performance counter stats for './timeout -t 300 ./shared-all-different-search -f /home/keira/sat/satold/experimentos-plingeling-finales/benchmarks_plingeling/UCG-15-10p1.cnf -t 2' (5 runs):
+
+   582,243,500,343 L1-dcache-loads                                               ( +-  0.94% ) [71.44%]
+    35,994,262,989 L1-dcache-load-misses     #  [33m  6.18%[m of all L1-dcache hits    ( +-  1.19% ) [71.42%]
+     8,384,248,970 LLC-loads                                                     ( +-  1.74% ) [57.14%]
+     2,920,114,885 LLC-load-misses           #  [31m 34.83%[m of all LL-cache hits     ( +-  1.79% ) [14.29%]
+ 2,030,433,908,840 instructions              #    0.00  insns per cycle          ( +-  0.89% ) [28.58%]
+    10,697,271,868 cache-references                                              ( +-  1.60% ) [42.87%]
+     3,942,556,417 cache-misses              #   36.856 % of all cache refs      ( +-  1.78% ) [57.15%]
+
+     300.346589637 seconds time elapsed                                          ( +-  0.00% )
+
+
+ Performance counter stats for './timeout -t 300 ./shared-all-different-search -f /home/keira/sat/satold/experimentos-plingeling-finales/benchmarks_plingeling/UCG-15-10p1.cnf -t 3' (5 runs):
+
+   804,769,707,607 L1-dcache-loads                                               ( +-  1.36% ) [71.43%]
+    50,379,405,413 L1-dcache-load-misses     #  [33m  6.26%[m of all L1-dcache hits    ( +-  1.89% ) [71.42%]
+    11,727,891,326 LLC-loads                                                     ( +-  0.75% ) [57.14%]
+     5,014,865,189 LLC-load-misses           #  [31m 42.76%[m of all LL-cache hits     ( +-  2.83% ) [14.29%]
+ 2,801,157,142,319 instructions              #    0.00  insns per cycle          ( +-  1.33% ) [28.58%]
+    14,996,525,671 cache-references                                              ( +-  0.71% ) [42.86%]
+     6,749,122,867 cache-misses              #   45.005 % of all cache refs      ( +-  2.93% ) [57.15%]
+
+     300.399468035 seconds time elapsed                                          ( +-  0.00% )
+
+
+ Performance counter stats for './timeout -t 300 ./shared-all-different-search -f /home/keira/sat/satold/experimentos-plingeling-finales/benchmarks_plingeling/UCG-15-10p1.cnf -t 4' (5 runs):
+
+ 1,012,008,949,464 L1-dcache-loads                                               ( +-  1.40% ) [71.43%]
+    62,196,783,117 L1-dcache-load-misses     #  [33m  6.15%[m of all L1-dcache hits    ( +-  1.90% ) [71.43%]
+    14,731,461,718 LLC-loads                                                     ( +-  0.60% ) [57.15%]
+     7,305,689,399 LLC-load-misses           #  [31m 49.59%[m of all LL-cache hits     ( +-  2.14% ) [14.29%]
+ 3,523,967,580,850 instructions              #    0.00  insns per cycle          ( +-  1.40% ) [28.57%]
+    19,099,006,399 cache-references                                              ( +-  0.91% ) [42.86%]
+     9,940,379,187 cache-misses              #   52.047 % of all cache refs      ( +-  2.26% ) [57.14%]
+
+     300.379847410 seconds time elapsed                                          ( +-  0.00% )
+
+
+ Performance counter stats for './timeout -t 300 ./shared-all-different-search -f /home/keira/sat/satold/experimentos-plingeling-finales/benchmarks_plingeling/UCG-15-10p1.cnf -t 5' (5 runs):
+
+ 1,227,024,397,517 L1-dcache-loads                                               ( +-  0.97% ) [71.43%]
+    75,449,120,320 L1-dcache-load-misses     #  [33m  6.15%[m of all L1-dcache hits    ( +-  1.31% ) [71.42%]
+    17,448,447,160 LLC-loads                                                     ( +-  0.61% ) [57.14%]
+     8,996,958,920 LLC-load-misses           #  [31m 51.56%[m of all LL-cache hits     ( +-  1.66% ) [14.29%]
+ 4,272,242,443,397 instructions              #    0.00  insns per cycle          ( +-  0.95% ) [28.58%]
+    22,502,625,624 cache-references                                              ( +-  0.73% ) [42.86%]
+    12,311,930,365 cache-misses              #   54.713 % of all cache refs      ( +-  1.62% ) [57.14%]
+
+     300.332601197 seconds time elapsed                                          ( +-  0.00% )
+
+
+ Performance counter stats for './timeout -t 300 ./shared-all-different-search -f /home/keira/sat/satold/experimentos-plingeling-finales/benchmarks_plingeling/UCG-15-10p1.cnf -t 6' (5 runs):
+
+ 1,426,350,137,298 L1-dcache-loads                                               ( +-  0.49% ) [71.44%]
+    87,044,496,633 L1-dcache-load-misses     #  [33m  6.10%[m of all L1-dcache hits    ( +-  0.72% ) [71.43%]
+    21,058,627,191 LLC-loads                                                     ( +-  0.66% ) [57.14%]
+    11,614,087,040 LLC-load-misses           #  [31m 55.15%[m of all LL-cache hits     ( +-  0.52% ) [14.30%]
+ 4,964,724,601,090 instructions              #    0.00  insns per cycle          ( +-  0.48% ) [28.61%]
+    27,302,221,749 cache-references                                              ( +-  0.56% ) [42.89%]
+    15,920,559,979 cache-misses              #   58.312 % of all cache refs      ( +-  0.66% ) [57.17%]
+
+     303.248339756 seconds time elapsed                                          ( +-  0.01% )
+

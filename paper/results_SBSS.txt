@@ -1,0 +1,391 @@
+
+
+ Performance counter stats for './shared-binaries-same-search -f ../benchmarks_cortos_reducido/manol-pipe-c10b.cnf -t 1' (5 runs):
+
+    58,954,136,897 L1-dcache-loads                                               ( +-  0.01% ) [71.43%]
+     4,550,134,893 L1-dcache-load-misses     #  [33m  7.72%[m of all L1-dcache hits    ( +-  0.02% ) [71.42%]
+     2,725,947,903 LLC-loads                                                     ( +-  0.05% ) [57.14%]
+        95,395,263 LLC-load-misses           #    3.50% of all LL-cache hits     ( +-  1.44% ) [14.29%]
+   214,386,702,077 instructions              #    0.00  insns per cycle          ( +-  0.05% ) [28.58%]
+     3,185,651,647 cache-references                                              ( +-  0.05% ) [42.86%]
+       107,629,591 cache-misses              #    3.379 % of all cache refs      ( +-  1.73% ) [57.14%]
+
+      85.407729690 seconds time elapsed                                          ( +-  0.08% )
+
+
+ Performance counter stats for './shared-binaries-same-search -f ../benchmarks_cortos_reducido/manol-pipe-c10b.cnf -t 2' (5 runs):
+
+   117,971,424,241 L1-dcache-loads                                               ( +-  0.04% ) [71.43%]
+     9,292,969,211 L1-dcache-load-misses     #  [33m  7.88%[m of all L1-dcache hits    ( +-  0.02% ) [71.43%]
+     5,563,860,824 LLC-loads                                                     ( +-  0.01% ) [57.14%]
+       711,263,142 LLC-load-misses           #  [35m 12.78%[m of all LL-cache hits     ( +-  3.12% ) [14.29%]
+   429,093,251,103 instructions              #    0.00  insns per cycle          ( +-  0.05% ) [28.58%]
+     6,540,077,438 cache-references                                              ( +-  0.06% ) [42.86%]
+       821,074,610 cache-misses              #   12.555 % of all cache refs      ( +-  2.84% ) [57.14%]
+
+      95.427329256 seconds time elapsed                                          ( +-  0.25% )
+
+
+ Performance counter stats for './shared-binaries-same-search -f ../benchmarks_cortos_reducido/manol-pipe-c10b.cnf -t 3' (5 runs):
+
+   177,040,161,124 L1-dcache-loads                                               ( +-  0.02% ) [71.43%]
+    14,086,690,363 L1-dcache-load-misses     #  [33m  7.96%[m of all L1-dcache hits    ( +-  0.04% ) [71.43%]
+     8,446,683,137 LLC-loads                                                     ( +-  0.03% ) [57.15%]
+     1,680,275,605 LLC-load-misses           #  [35m 19.89%[m of all LL-cache hits     ( +-  2.22% ) [14.29%]
+   642,989,473,627 instructions              #    0.00  insns per cycle          ( +-  0.05% ) [28.57%]
+     9,956,840,582 cache-references                                              ( +-  0.04% ) [42.86%]
+     1,982,856,293 cache-misses              #   19.915 % of all cache refs      ( +-  2.31% ) [57.14%]
+
+     107.405363764 seconds time elapsed                                          ( +-  0.31% )
+
+
+ Performance counter stats for './shared-binaries-same-search -f ../benchmarks_cortos_reducido/manol-pipe-c10b.cnf -t 4' (5 runs):
+
+   236,033,425,843 L1-dcache-loads                                               ( +-  0.02% ) [71.42%]
+    18,964,417,489 L1-dcache-load-misses     #  [33m  8.03%[m of all L1-dcache hits    ( +-  0.06% ) [71.42%]
+    11,355,532,324 LLC-loads                                                     ( +-  0.05% ) [57.15%]
+     3,130,597,296 LLC-load-misses           #  [31m 27.57%[m of all LL-cache hits     ( +-  2.39% ) [14.29%]
+   858,364,649,641 instructions              #    0.00  insns per cycle          ( +-  0.04% ) [28.57%]
+    13,404,601,146 cache-references                                              ( +-  0.03% ) [42.86%]
+     3,704,096,317 cache-misses              #   27.633 % of all cache refs      ( +-  2.15% ) [57.14%]
+
+     118.399418371 seconds time elapsed                                          ( +-  0.42% )
+
+
+ Performance counter stats for './shared-binaries-same-search -f ../benchmarks_cortos_reducido/manol-pipe-c10b.cnf -t 5' (5 runs):
+
+   295,148,811,000 L1-dcache-loads                                               ( +-  0.01% ) [71.43%]
+    23,610,356,801 L1-dcache-load-misses     #  [33m  8.00%[m of all L1-dcache hits    ( +-  0.07% ) [71.42%]
+    14,155,663,402 LLC-loads                                                     ( +-  0.02% ) [57.14%]
+     4,405,191,213 LLC-load-misses           #  [31m 31.12%[m of all LL-cache hits     ( +-  1.26% ) [14.29%]
+ 1,073,296,856,432 instructions              #    0.00  insns per cycle          ( +-  0.04% ) [28.58%]
+    16,763,051,806 cache-references                                              ( +-  0.02% ) [42.86%]
+     5,275,926,677 cache-misses              #   31.474 % of all cache refs      ( +-  1.10% ) [57.14%]
+
+     126.420340210 seconds time elapsed                                          ( +-  0.13% )
+
+
+ Performance counter stats for './shared-binaries-same-search -f ../benchmarks_cortos_reducido/manol-pipe-c10b.cnf -t 6' (5 runs):
+
+   354,175,378,523 L1-dcache-loads                                               ( +-  0.01% ) [71.43%]
+    28,542,099,647 L1-dcache-load-misses     #  [33m  8.06%[m of all L1-dcache hits    ( +-  0.10% ) [71.43%]
+    17,055,136,632 LLC-loads                                                     ( +-  0.03% ) [57.14%]
+     6,510,166,006 LLC-load-misses           #  [31m 38.17%[m of all LL-cache hits     ( +-  1.32% ) [14.29%]
+ 1,287,442,088,930 instructions              #    0.00  insns per cycle          ( +-  0.03% ) [28.57%]
+    20,200,453,839 cache-references                                              ( +-  0.02% ) [42.86%]
+     7,755,033,188 cache-misses              #   38.390 % of all cache refs      ( +-  1.22% ) [57.15%]
+
+     133.477416348 seconds time elapsed                                          ( +-  0.22% )
+
+
+ Performance counter stats for './shared-binaries-same-search -f ../benchmarks_cortos_reducido/manol-pipe-c6bid_i.cnf.gz -t 1' (5 runs):
+
+   163,119,610,368 L1-dcache-loads                                               ( +-  0.01% ) [71.43%]
+    13,268,381,180 L1-dcache-load-misses     #  [33m  8.13%[m of all L1-dcache hits    ( +-  0.04% ) [71.43%]
+     8,239,356,598 LLC-loads                                                     ( +-  0.05% ) [57.14%]
+     1,066,160,441 LLC-load-misses           #  [35m 12.94%[m of all LL-cache hits     ( +-  0.85% ) [14.29%]
+   588,522,035,345 instructions              #    0.00  insns per cycle          ( +-  0.03% ) [28.57%]
+     9,503,662,413 cache-references                                              ( +-  0.01% ) [42.86%]
+     1,213,501,760 cache-misses              #   12.769 % of all cache refs      ( +-  0.91% ) [57.14%]
+
+     266.977839334 seconds time elapsed                                          ( +-  0.12% )
+
+
+ Performance counter stats for './shared-binaries-same-search -f ../benchmarks_cortos_reducido/manol-pipe-c6bid_i.cnf.gz -t 2' (5 runs):
+
+   326,652,590,425 L1-dcache-loads                                               ( +-  0.02% ) [71.43%]
+    26,528,959,911 L1-dcache-load-misses     #  [33m  8.12%[m of all L1-dcache hits    ( +-  0.02% ) [71.42%]
+    16,475,992,888 LLC-loads                                                     ( +-  0.04% ) [57.14%]
+     3,954,355,182 LLC-load-misses           #  [31m 24.00%[m of all LL-cache hits     ( +-  2.76% ) [14.29%]
+ 1,178,734,664,245 instructions              #    0.00  insns per cycle          ( +-  0.06% ) [28.57%]
+    19,149,336,062 cache-references                                              ( +-  0.04% ) [42.86%]
+     4,575,119,236 cache-misses              #   23.892 % of all cache refs      ( +-  2.64% ) [57.14%]
+
+     301.884682623 seconds time elapsed                                          ( +-  0.35% )
+
+
+ Performance counter stats for './shared-binaries-same-search -f ../benchmarks_cortos_reducido/manol-pipe-c6bid_i.cnf.gz -t 3' (5 runs):
+
+   490,375,545,221 L1-dcache-loads                                               ( +-  0.01% ) [71.43%]
+    40,121,271,263 L1-dcache-load-misses     #  [33m  8.18%[m of all L1-dcache hits    ( +-  0.05% ) [71.43%]
+    24,905,423,046 LLC-loads                                                     ( +-  0.01% ) [57.14%]
+     8,246,977,257 LLC-load-misses           #  [31m 33.11%[m of all LL-cache hits     ( +-  2.63% ) [14.29%]
+ 1,769,930,605,698 instructions              #    0.00  insns per cycle          ( +-  0.03% ) [28.57%]
+    29,050,473,146 cache-references                                              ( +-  0.04% ) [42.86%]
+     9,603,971,066 cache-misses              #   33.060 % of all cache refs      ( +-  2.36% ) [57.14%]
+
+     337.961092557 seconds time elapsed                                          ( +-  0.40% )
+
+
+ Performance counter stats for './shared-binaries-same-search -f ../benchmarks_cortos_reducido/manol-pipe-c6bid_i.cnf.gz -t 4' (5 runs):
+
+   654,192,444,076 L1-dcache-loads                                               ( +-  0.01% ) [71.43%]
+    53,477,566,251 L1-dcache-load-misses     #  [33m  8.17%[m of all L1-dcache hits    ( +-  0.04% ) [71.43%]
+    33,197,329,582 LLC-loads                                                     ( +-  0.03% ) [57.14%]
+    12,501,089,525 LLC-load-misses           #  [31m 37.66%[m of all LL-cache hits     ( +-  2.12% ) [14.29%]
+ 2,361,229,757,521 instructions              #    0.00  insns per cycle          ( +-  0.03% ) [28.57%]
+    38,831,408,197 cache-references                                              ( +-  0.03% ) [42.86%]
+    14,677,804,848 cache-misses              #   37.799 % of all cache refs      ( +-  1.94% ) [57.14%]
+
+     362.544338629 seconds time elapsed                                          ( +-  0.35% )
+
+
+ Performance counter stats for './shared-binaries-same-search -f ../benchmarks_cortos_reducido/manol-pipe-c6bid_i.cnf.gz -t 5' (5 runs):
+
+   817,797,913,276 L1-dcache-loads                                               ( +-  0.00% ) [71.43%]
+    67,093,043,908 L1-dcache-load-misses     #  [33m  8.20%[m of all L1-dcache hits    ( +-  0.05% ) [71.43%]
+    41,669,117,277 LLC-loads                                                     ( +-  0.02% ) [57.14%]
+    17,247,660,716 LLC-load-misses           #  [31m 41.39%[m of all LL-cache hits     ( +-  1.59% ) [14.29%]
+ 2,952,295,393,599 instructions              #    0.00  insns per cycle          ( +-  0.03% ) [28.57%]
+    48,819,553,892 cache-references                                              ( +-  0.03% ) [42.86%]
+    20,346,224,278 cache-misses              #   41.676 % of all cache refs      ( +-  1.41% ) [57.14%]
+
+     387.222804381 seconds time elapsed                                          ( +-  0.32% )
+
+
+ Performance counter stats for './shared-binaries-same-search -f ../benchmarks_cortos_reducido/manol-pipe-c6bid_i.cnf.gz -t 6' (5 runs):
+
+   981,299,094,228 L1-dcache-loads                                               ( +-  0.00% ) [71.43%]
+    80,821,977,882 L1-dcache-load-misses     #  [33m  8.24%[m of all L1-dcache hits    ( +-  0.05% ) [71.42%]
+    50,043,648,055 LLC-loads                                                     ( +-  0.01% ) [57.14%]
+    24,528,045,229 LLC-load-misses           #  [31m 49.01%[m of all LL-cache hits     ( +-  0.84% ) [14.29%]
+ 3,542,114,796,242 instructions              #    0.00  insns per cycle          ( +-  0.01% ) [28.57%]
+    58,633,306,565 cache-references                                              ( +-  0.03% ) [42.86%]
+    28,735,932,105 cache-misses              #   49.010 % of all cache refs      ( +-  0.76% ) [57.14%]
+
+     407.108569907 seconds time elapsed                                          ( +-  0.08% )
+
+
+ Performance counter stats for './shared-binaries-same-search -f ../benchmarks_cortos_reducido/manol-pipe-c6nidw_i.cnf -t 1' (5 runs):
+
+   189,982,630,280 L1-dcache-loads                                               ( +-  0.03% ) [71.43%]
+    15,142,013,894 L1-dcache-load-misses     #  [33m  7.97%[m of all L1-dcache hits    ( +-  0.01% ) [71.43%]
+     9,411,040,385 LLC-loads                                                     ( +-  0.05% ) [57.15%]
+     1,340,711,147 LLC-load-misses           #  [35m 14.25%[m of all LL-cache hits     ( +-  0.45% ) [14.29%]
+   684,288,726,446 instructions              #    0.00  insns per cycle          ( +-  0.07% ) [28.57%]
+    10,879,172,402 cache-references                                              ( +-  0.03% ) [42.86%]
+     1,525,284,722 cache-misses              #   14.020 % of all cache refs      ( +-  0.51% ) [57.14%]
+
+     312.559042621 seconds time elapsed                                          ( +-  0.07% )
+
+
+ Performance counter stats for './shared-binaries-same-search -f ../benchmarks_cortos_reducido/manol-pipe-c6nidw_i.cnf -t 2' (5 runs):
+
+   380,372,630,368 L1-dcache-loads                                               ( +-  0.01% ) [71.43%]
+    30,951,871,533 L1-dcache-load-misses     #  [33m  8.14%[m of all L1-dcache hits    ( +-  0.02% ) [71.43%]
+    19,198,306,704 LLC-loads                                                     ( +-  0.04% ) [57.14%]
+     4,712,959,153 LLC-load-misses           #  [31m 24.55%[m of all LL-cache hits     ( +-  0.13% ) [14.29%]
+ 1,371,219,361,982 instructions              #    0.00  insns per cycle          ( +-  0.05% ) [28.57%]
+    22,307,991,656 cache-references                                              ( +-  0.02% ) [42.86%]
+     5,491,437,964 cache-misses              #   24.616 % of all cache refs      ( +-  0.21% ) [57.14%]
+
+     353.125737130 seconds time elapsed                                          ( +-  0.19% )
+
+
+ Performance counter stats for './shared-binaries-same-search -f ../benchmarks_cortos_reducido/manol-pipe-c6nidw_i.cnf -t 3' (5 runs):
+
+   570,768,820,868 L1-dcache-loads                                               ( +-  0.01% ) [71.43%]
+    46,725,672,640 L1-dcache-load-misses     #  [33m  8.19%[m of all L1-dcache hits    ( +-  0.02% ) [71.43%]
+    29,007,717,299 LLC-loads                                                     ( +-  0.03% ) [57.14%]
+     9,605,399,954 LLC-load-misses           #  [31m 33.11%[m of all LL-cache hits     ( +-  2.64% ) [14.29%]
+ 2,058,765,167,670 instructions              #    0.00  insns per cycle          ( +-  0.04% ) [28.57%]
+    33,811,812,334 cache-references                                              ( +-  0.02% ) [42.86%]
+    11,257,165,464 cache-misses              #   33.294 % of all cache refs      ( +-  2.38% ) [57.14%]
+
+     393.862943335 seconds time elapsed                                          ( +-  0.40% )
+
+
+ Performance counter stats for './shared-binaries-same-search -f ../benchmarks_cortos_reducido/manol-pipe-c6nidw_i.cnf -t 4' (5 runs):
+
+   761,336,609,473 L1-dcache-loads                                               ( +-  0.01% ) [71.43%]
+    62,486,376,817 L1-dcache-load-misses     #  [33m  8.21%[m of all L1-dcache hits    ( +-  0.04% ) [71.43%]
+    38,747,235,941 LLC-loads                                                     ( +-  0.02% ) [57.14%]
+    15,204,633,436 LLC-load-misses           #  [31m 39.24%[m of all LL-cache hits     ( +-  1.96% ) [14.29%]
+ 2,744,812,489,592 instructions              #    0.00  insns per cycle          ( +-  0.03% ) [28.57%]
+    45,258,717,760 cache-references                                              ( +-  0.02% ) [42.86%]
+    17,855,581,676 cache-misses              #   39.452 % of all cache refs      ( +-  1.74% ) [57.14%]
+
+     425.491686668 seconds time elapsed                                          ( +-  0.37% )
+
+
+ Performance counter stats for './shared-binaries-same-search -f ../benchmarks_cortos_reducido/manol-pipe-c6nidw_i.cnf -t 5' (5 runs):
+
+   952,225,928,295 L1-dcache-loads                                               ( +-  0.01% ) [71.43%]
+    78,040,273,827 L1-dcache-load-misses     #  [33m  8.20%[m of all L1-dcache hits    ( +-  0.02% ) [71.43%]
+    48,410,110,621 LLC-loads                                                     ( +-  0.02% ) [57.14%]
+    21,136,353,086 LLC-load-misses           #  [31m 43.66%[m of all LL-cache hits     ( +-  0.27% ) [14.29%]
+ 3,433,448,478,146 instructions              #    0.00  insns per cycle          ( +-  0.03% ) [28.57%]
+    56,686,657,353 cache-references                                              ( +-  0.02% ) [42.86%]
+    24,900,066,131 cache-misses              #   43.926 % of all cache refs      ( +-  0.25% ) [57.14%]
+
+     455.109166000 seconds time elapsed                                          ( +-  0.18% )
+
+
+ Performance counter stats for './shared-binaries-same-search -f ../benchmarks_cortos_reducido/manol-pipe-c6nidw_i.cnf -t 6' (5 runs):
+
+ 1,142,794,962,226 L1-dcache-loads                                               ( +-  0.01% ) [71.43%]
+    94,305,193,991 L1-dcache-load-misses     #  [33m  8.25%[m of all L1-dcache hits    ( +-  0.04% ) [71.43%]
+    58,412,892,777 LLC-loads                                                     ( +-  0.03% ) [57.14%]
+    29,433,127,110 LLC-load-misses           #  [31m 50.39%[m of all LL-cache hits     ( +-  0.57% ) [14.29%]
+ 4,122,952,660,428 instructions              #    0.00  insns per cycle          ( +-  0.02% ) [28.58%]
+    68,339,734,365 cache-references                                              ( +-  0.02% ) [42.86%]
+    34,479,433,196 cache-misses              #   50.453 % of all cache refs      ( +-  0.53% ) [57.14%]
+
+     478.802118258 seconds time elapsed                                          ( +-  0.56% )
+
+
+ Performance counter stats for './shared-binaries-same-search -f ../benchmarks_cortos_reducido/manol-pipe-c7idw.cnf.gz -t 1' (5 runs):
+
+    47,861,181,683 L1-dcache-loads                                               ( +-  0.05% ) [71.43%]
+     3,893,594,930 L1-dcache-load-misses     #  [33m  8.14%[m of all L1-dcache hits    ( +-  0.03% ) [71.43%]
+     2,231,509,722 LLC-loads                                                     ( +-  0.04% ) [57.15%]
+       364,589,444 LLC-load-misses           #  [35m 16.34%[m of all LL-cache hits     ( +-  0.49% ) [14.29%]
+   177,168,249,892 instructions              #    0.00  insns per cycle          ( +-  0.06% ) [28.58%]
+     2,736,644,921 cache-references                                              ( +-  0.05% ) [42.86%]
+       454,245,835 cache-misses              #   16.599 % of all cache refs      ( +-  0.77% ) [57.15%]
+
+      77.749492821 seconds time elapsed                                          ( +-  0.13% )
+
+
+ Performance counter stats for './shared-binaries-same-search -f ../benchmarks_cortos_reducido/manol-pipe-c7idw.cnf.gz -t 2' (5 runs):
+
+    95,695,295,827 L1-dcache-loads                                               ( +-  0.03% ) [71.43%]
+     7,853,972,976 L1-dcache-load-misses     #  [33m  8.21%[m of all L1-dcache hits    ( +-  0.01% ) [71.43%]
+     4,497,222,726 LLC-loads                                                     ( +-  0.02% ) [57.14%]
+     1,165,709,213 LLC-load-misses           #  [31m 25.92%[m of all LL-cache hits     ( +-  3.70% ) [14.29%]
+   353,909,804,630 instructions              #    0.00  insns per cycle          ( +-  0.09% ) [28.58%]
+     5,555,058,747 cache-references                                              ( +-  0.07% ) [42.86%]
+     1,472,956,713 cache-misses              #   26.516 % of all cache refs      ( +-  3.17% ) [57.15%]
+
+      87.300922679 seconds time elapsed                                          ( +-  0.88% )
+
+
+ Performance counter stats for './shared-binaries-same-search -f ../benchmarks_cortos_reducido/manol-pipe-c7idw.cnf.gz -t 3' (5 runs):
+
+   143,479,495,323 L1-dcache-loads                                               ( +-  0.04% ) [71.43%]
+    11,804,405,313 L1-dcache-load-misses     #  [33m  8.23%[m of all L1-dcache hits    ( +-  0.05% ) [71.43%]
+     6,749,404,335 LLC-loads                                                     ( +-  0.05% ) [57.15%]
+     2,009,965,857 LLC-load-misses           #  [31m 29.78%[m of all LL-cache hits     ( +-  2.99% ) [14.29%]
+   531,286,025,655 instructions              #    0.00  insns per cycle          ( +-  0.08% ) [28.58%]
+     8,369,865,055 cache-references                                              ( +-  0.03% ) [42.86%]
+     2,594,582,680 cache-misses              #   30.999 % of all cache refs      ( +-  2.32% ) [57.14%]
+
+      95.148579295 seconds time elapsed                                          ( +-  0.79% )
+
+
+ Performance counter stats for './shared-binaries-same-search -f ../benchmarks_cortos_reducido/manol-pipe-c7idw.cnf.gz -t 4' (5 runs):
+
+   191,334,586,952 L1-dcache-loads                                               ( +-  0.03% ) [71.43%]
+    15,694,359,737 L1-dcache-load-misses     #  [33m  8.20%[m of all L1-dcache hits    ( +-  0.07% ) [71.43%]
+     8,973,789,437 LLC-loads                                                     ( +-  0.04% ) [57.14%]
+     2,984,129,633 LLC-load-misses           #  [31m 33.25%[m of all LL-cache hits     ( +-  2.51% ) [14.29%]
+   709,846,964,160 instructions              #    0.00  insns per cycle          ( +-  0.09% ) [28.57%]
+    11,173,307,486 cache-references                                              ( +-  0.01% ) [42.86%]
+     3,876,385,784 cache-misses              #   34.693 % of all cache refs      ( +-  2.07% ) [57.14%]
+
+     101.212545003 seconds time elapsed                                          ( +-  0.69% )
+
+
+ Performance counter stats for './shared-binaries-same-search -f ../benchmarks_cortos_reducido/manol-pipe-c7idw.cnf.gz -t 5' (5 runs):
+
+   239,354,395,890 L1-dcache-loads                                               ( +-  0.01% ) [71.43%]
+    19,704,522,771 L1-dcache-load-misses     #  [33m  8.23%[m of all L1-dcache hits    ( +-  0.05% ) [71.42%]
+    11,270,929,132 LLC-loads                                                     ( +-  0.03% ) [57.14%]
+     4,008,667,584 LLC-load-misses           #  [31m 35.57%[m of all LL-cache hits     ( +-  0.77% ) [14.29%]
+   886,647,608,152 instructions              #    0.00  insns per cycle          ( +-  0.04% ) [28.58%]
+    14,050,927,019 cache-references                                              ( +-  0.02% ) [42.86%]
+     5,233,562,703 cache-misses              #   37.247 % of all cache refs      ( +-  0.67% ) [57.14%]
+
+     107.123217404 seconds time elapsed                                          ( +-  0.40% )
+
+
+ Performance counter stats for './shared-binaries-same-search -f ../benchmarks_cortos_reducido/manol-pipe-c7idw.cnf.gz -t 6' (5 runs):
+
+   286,973,014,522 L1-dcache-loads                                               ( +-  0.01% ) [71.43%]
+    23,772,342,099 L1-dcache-load-misses     #  [33m  8.28%[m of all L1-dcache hits    ( +-  0.06% ) [71.43%]
+    13,585,094,054 LLC-loads                                                     ( +-  0.01% ) [57.15%]
+     5,584,363,661 LLC-load-misses           #  [31m 41.11%[m of all LL-cache hits     ( +-  0.19% ) [14.29%]
+ 1,062,638,430,581 instructions              #    0.00  insns per cycle          ( +-  0.05% ) [28.57%]
+    16,920,006,678 cache-references                                              ( +-  0.00% ) [42.86%]
+     7,206,539,118 cache-misses              #   42.592 % of all cache refs      ( +-  0.14% ) [57.14%]
+
+     112.583085977 seconds time elapsed                                          ( +-  0.67% )
+
+
+ Performance counter stats for './shared-binaries-same-search -f ../benchmarks_cortos_reducido/manol-pipe-cha05-113.cnf.gz -t 1' (5 runs):
+
+    43,512,567,061 L1-dcache-loads                                               ( +-  0.02% ) [71.43%]
+     3,360,728,915 L1-dcache-load-misses     #  [33m  7.72%[m of all L1-dcache hits    ( +-  0.03% ) [71.42%]
+     1,990,816,839 LLC-loads                                                     ( +-  0.14% ) [57.14%]
+        88,064,167 LLC-load-misses           #    4.42% of all LL-cache hits     ( +-  6.83% ) [14.29%]
+   157,813,415,782 instructions              #    0.00  insns per cycle          ( +-  0.04% ) [28.58%]
+     2,311,250,825 cache-references                                              ( +-  0.10% ) [42.86%]
+       106,606,006 cache-misses              #    4.612 % of all cache refs      ( +-  7.52% ) [57.14%]
+
+      63.418911042 seconds time elapsed                                          ( +-  0.42% )
+
+
+ Performance counter stats for './shared-binaries-same-search -f ../benchmarks_cortos_reducido/manol-pipe-cha05-113.cnf.gz -t 2' (5 runs):
+
+    87,085,596,055 L1-dcache-loads                                               ( +-  0.03% ) [71.43%]
+     6,799,513,997 L1-dcache-load-misses     #  [33m  7.81%[m of all L1-dcache hits    ( +-  0.03% ) [71.43%]
+     4,031,803,611 LLC-loads                                                     ( +-  0.02% ) [57.15%]
+       474,344,299 LLC-load-misses           #  [35m 11.77%[m of all LL-cache hits     ( +-  0.47% ) [14.29%]
+   315,832,661,337 instructions              #    0.00  insns per cycle          ( +-  0.06% ) [28.58%]
+     4,717,833,736 cache-references                                              ( +-  0.03% ) [42.86%]
+       553,643,561 cache-misses              #   11.735 % of all cache refs      ( +-  0.49% ) [57.14%]
+
+      69.151480393 seconds time elapsed                                          ( +-  0.14% )
+
+
+ Performance counter stats for './shared-binaries-same-search -f ../benchmarks_cortos_reducido/manol-pipe-cha05-113.cnf.gz -t 3' (5 runs):
+
+   130,606,718,587 L1-dcache-loads                                               ( +-  0.02% ) [71.42%]
+    10,143,089,379 L1-dcache-load-misses     #  [33m  7.77%[m of all L1-dcache hits    ( +-  0.07% ) [71.42%]
+     6,010,923,140 LLC-loads                                                     ( +-  0.07% ) [57.15%]
+     1,103,806,572 LLC-load-misses           #  [35m 18.36%[m of all LL-cache hits     ( +-  1.80% ) [14.29%]
+   473,891,595,107 instructions              #    0.00  insns per cycle          ( +-  0.03% ) [28.57%]
+     7,074,354,406 cache-references                                              ( +-  0.04% ) [42.86%]
+     1,309,784,832 cache-misses              #   18.515 % of all cache refs      ( +-  2.00% ) [57.14%]
+
+      76.811976570 seconds time elapsed                                          ( +-  0.31% )
+
+
+ Performance counter stats for './shared-binaries-same-search -f ../benchmarks_cortos_reducido/manol-pipe-cha05-113.cnf.gz -t 4' (5 runs):
+
+   174,277,008,038 L1-dcache-loads                                               ( +-  0.01% ) [71.43%]
+    13,588,951,431 L1-dcache-load-misses     #  [33m  7.80%[m of all L1-dcache hits    ( +-  0.06% ) [71.42%]
+     8,045,025,978 LLC-loads                                                     ( +-  0.02% ) [57.14%]
+     1,971,913,225 LLC-load-misses           #  [31m 24.51%[m of all LL-cache hits     ( +-  1.64% ) [14.29%]
+   632,301,578,448 instructions              #    0.00  insns per cycle          ( +-  0.04% ) [28.58%]
+     9,490,969,780 cache-references                                              ( +-  0.03% ) [42.86%]
+     2,338,724,151 cache-misses              #   24.642 % of all cache refs      ( +-  1.51% ) [57.15%]
+
+      83.254474602 seconds time elapsed                                          ( +-  0.17% )
+
+
+ Performance counter stats for './shared-binaries-same-search -f ../benchmarks_cortos_reducido/manol-pipe-cha05-113.cnf.gz -t 5' (5 runs):
+
+   217,786,964,897 L1-dcache-loads                                               ( +-  0.01% ) [71.43%]
+    17,079,173,507 L1-dcache-load-misses     #  [33m  7.84%[m of all L1-dcache hits    ( +-  0.12% ) [71.42%]
+    10,102,479,971 LLC-loads                                                     ( +-  0.02% ) [57.14%]
+     2,970,547,949 LLC-load-misses           #  [31m 29.40%[m of all LL-cache hits     ( +-  2.09% ) [14.29%]
+   790,495,992,249 instructions              #    0.00  insns per cycle          ( +-  0.04% ) [28.58%]
+    11,935,095,200 cache-references                                              ( +-  0.03% ) [42.86%]
+     3,536,695,314 cache-misses              #   29.633 % of all cache refs      ( +-  1.90% ) [57.14%]
+
+      89.592287048 seconds time elapsed                                          ( +-  0.19% )
+
+
+ Performance counter stats for './shared-binaries-same-search -f ../benchmarks_cortos_reducido/manol-pipe-cha05-113.cnf.gz -t 6' (5 runs):
+
+   261,442,251,624 L1-dcache-loads                                               ( +-  0.01% ) [71.43%]
+    20,637,026,176 L1-dcache-load-misses     #  [33m  7.89%[m of all L1-dcache hits    ( +-  0.03% ) [71.43%]
+    12,188,087,595 LLC-loads                                                     ( +-  0.04% ) [57.14%]
+     4,286,231,916 LLC-load-misses           #  [31m 35.17%[m of all LL-cache hits     ( +-  0.56% ) [14.29%]
+   948,077,791,424 instructions              #    0.00  insns per cycle          ( +-  0.04% ) [28.58%]
+    14,402,758,185 cache-references                                              ( +-  0.04% ) [42.86%]
+     5,079,690,773 cache-misses              #   35.269 % of all cache refs      ( +-  0.54% ) [57.15%]
+
+      93.639776638 seconds time elapsed                                          ( +-  0.18% )
+

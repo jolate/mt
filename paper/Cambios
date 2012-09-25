@@ -1,0 +1,47 @@
+*Graficos experimentos plingeling 4 cores
+-Eliminar problemas Naray ## OK ##
+-Cambiar eje Y a performance decay (invertir valores). ## OK ##
+
+*Revisar grafico introduccion. ## OK ##
+
+*Correr experimento Plingeling modificado con perf en Keira para seccion plingeling performance.
+
+*Correr experimentos en MTL
+-40 threads. Correr 2 veces. ## FALTA 1 ##
+-10 threads en 4 chips distintos (3-3-2-2). Correr 2 veces. ## OK ##
+
+*Graficos experimentos largos plingeling
+-Eje Y tiempo total ## OK ##
+-Eje X nr threads ## OK ##
+-Agregar punto de distintos chips threads. ## OK ##
+
+*Actualizar AzuDICI
+-Corregir y subir a dropbox.
+
+*Graficos experimentos azu-dici
+-Same search
+-Different search (Cache)
+-Same Search (Performance decay).
+
+*Primer grafico de introduccion (MTL)
+-Ocupar problemas de al final de la pagina. Correr esos 10 en MTL para ver performance de tiempo ## OK ##
+
+*Same chip y different chip (MTL)
+-Ocupar los problemas de al final de la pagina y cambiar los graficos de same chip y different chip. ## OK ##
+
+*Para azuDICI keira 
+-Same search 2 graficos average.
+-Different search 1 grafico average.
+
+FILES:
+aaai10-planning-ipc5-pathways-13-step17 
+grid-strips-grid-y-3.035-NOTKNOWN 
+hwmcc10-timeframe-expansion-k50-pdtpmsns2-tseitin 
+q_query_3_L150_coli.sat 
+slp-synthesis-aes-top30 
+traffic_b_unsat 
+UCG-15-10p1 
+E02F22 
+hwmcc10-timeframe-expansion-k45-pdtvissoap1-tseitin 
+md5_48_3 
+

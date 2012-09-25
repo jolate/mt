@@ -1,0 +1,16 @@
+\contentsline {section}{\numberline {1}Introduction}{1}
+\contentsline {section}{\numberline {2}Preliminaries}{3}
+\contentsline {subsection}{\numberline {2.1}SAT and SAT solvers}{3}
+\contentsline {subsection}{\numberline {2.2}Parallel SAT solvers}{5}
+\contentsline {subsection}{\numberline {2.3}Symmetric multiprocessing}{6}
+\contentsline {subsubsection}{\numberline {2.3.1}Multicore machines}{6}
+\contentsline {subsubsection}{\numberline {2.3.2}Memory hierarchy}{6}
+\contentsline {section}{\numberline {3}Plingeling performance}{6}
+\contentsline {subsection}{\numberline {3.1}Modified {\tt plingeling}}{6}
+\contentsline {subsection}{\numberline {3.2}{\tt plingeling}\ scalability}{8}
+\contentsline {section}{\numberline {4}AzuDICI}{9}
+\contentsline {section}{\numberline {5}Cache Performance in AzuDICI}{12}
+\contentsline {subsection}{\numberline {5.1}Same search experiments}{12}
+\contentsline {subsection}{\numberline {5.2}Different search experiments}{12}
+\contentsline {section}{\numberline {6}Related Work}{13}
+\contentsline {section}{\numberline {7}Conclusions and Future Work}{13}

@@ -1,0 +1,37 @@
+
+\subsubsection{Memory hierarchy}
+\label{sec:memhier}
+
+For replication purposes, it is important to thoroughly characterize
+the machine we are using to run the tests. All experiments were
+carried out on a dual-processor 6-core Intel Xeon CPU (E5645) running
+at 2.40GHz, for a total of 12 physical cores at
+28.8GHz. Hyperthreading was disabled. Figure \ref{fig:topology} shows
+the memory hierarchy of the testing computer. To save space, we only
+show one of the chips (Socket P\#0), the other is identical.
+
+% \begin{figure}[htp]
+%   \centering
+%   \includegraphics[scale=.5]{topology.pdf}
+%   \caption{The memory hierarchy of the testing computer}
+%   \label{fig:topology}
+% \end{figure}
+
+Each core has one processor unit (PU), with separate L1d (32KB) and L2
+(256KB) caches. (The strange numbers of Cores and PUs have to do with
+how the Linux Kernel sees them logically.) They share a 12MB L3
+cache. Main memory is 6GB. The computer runs Linux 3.0.0-15-server, in
+64-bit mode. The details of the caches are as follows:
+
+\small
+\begin{verbatim}
+  L1 Data:        32K 8-way with 64 byte lines
+  L2 Unified:     256K 8-way with 64 byte lines
+  L3 Unified:     12288K 16-way with 64 byte lines
+\end{verbatim}
+\normalsize
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "sat"
+%%% End: 
