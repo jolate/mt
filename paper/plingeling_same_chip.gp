@@ -45,28 +45,18 @@ unset key
 set border 3 lw 0.5
 set xtics nomirror
 set ytics nomirror
-set ytics 2,-2,-18
 set xtics 0,1,4
-set yrange [-2:18]
-set ytics -2,2,18
-plot "plingeling_same_chip.dat" using 1:2 lt 2 lw 0.5 with lines, \
-"" using 1:3 lt 2 lw 0.5 with lines, \
-"" using 1:4 lt 2 lw 0.5 with lines, \
-"" using 1:5 lt 2 lw 0.5 with lines, \
-"" using 1:6 lt 2 lw 0.5 with lines, \
-"" using 1:7 lt 2 lw 0.5 with lines, \
-"" using 1:8 lt 2 lw 0.5 with lines, \
-"" using 1:9 lt 2 lw 0.5 with lines, \
-"" using 1:10 lt 2 lw 0.5 with lines, \
-"" using 1:11 lt 2 lw 0.5 with lines, \
-"" using 1:12 lt 2 lw 0.5 with lines, \
-"" using 1:13 lt 2 lw 0.5 with lines, \
-"" using 1:14 lt 2 lw 0.5 with lines, \
-"" using 1:15 lt 2 lw 0.5 with lines, \
-"" using 1:16 lt 2 lw 0.5 with lines, \
-"" using 1:17 lt 2 lw 0.5 with lines, \
-"" using 1:18 lt 2 lw 0.5 with lines, \
-"" using 1:19 lt 2 lw 0.5 with lines, \
-"" using 1:20 lt 2 lw 0.5 with lines
+set yrange [-5:50]
+set ytics -5,5,50
+plot "<awk '{print $1,(($2/316.4)-1)*100}' plingeling_same_chip.dat" using 1:2 lt 2 lw 0.5 with lines, \
+"<awk '{print $1,(($3/601.5)-1)*100}' plingeling_same_chip.dat" using 1:2 lt 2 lw 0.5 with lines, \
+"<awk '{print $1,(($4/528.7)-1)*100}' plingeling_same_chip.dat" using 1:2 lt 2 lw 0.5 with lines, \
+"<awk '{print $1,(($5/194.8)-1)*100}' plingeling_same_chip.dat" using 1:2 lt 2 lw 0.5 with lines, \
+"<awk '{print $1,(($6/410.8)-1)*100}' plingeling_same_chip.dat" using 1:2 lt 2 lw 0.5 with lines, \
+"<awk '{print $1,(($7/155.0)-1)*100}' plingeling_same_chip.dat" using 1:2 lt 2 lw 0.5 with lines, \
+"<awk '{print $1,(($8/309.8)-1)*100}' plingeling_same_chip.dat" using 1:2 lt 2 lw 0.5 with lines, \
+"<awk '{print $1,(($9/453.4)-1)*100}' plingeling_same_chip.dat" using 1:2 lt 2 lw 0.5 with lines, \
+"<awk '{print $1,(($10/334.5)-1)*100}' plingeling_same_chip.dat" using 1:2 lt 2 lw 0.5 with lines, \
+"<awk '{print $1,(($11/290.7)-1)*100}' plingeling_same_chip.dat" using 1:2 lt 2 lw 0.5 with lines
 
 #plot "data.txt" using 2:xticlabels(1) title '' with linespoints #labels in 1
