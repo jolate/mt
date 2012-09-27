@@ -1,0 +1,432 @@
+
+
+ Performance counter stats for './shared-binaries-same-search -f ../benchmarks_cortos_reducido/manol-pipe-c10b.cnf -t 1' (5 runs):
+
+   235,029,003,835 cycles                    #    0.000 GHz                      ( +-  0.19% ) [66.67%]
+     2,726,444,941 LLC-loads                                                     ( +-  0.03% ) [66.67%]
+        95,736,908 LLC-load-misses           #    3.51% of all LL-cache hits     ( +-  4.97% ) [33.33%]
+
+      84.374994992 seconds time elapsed                                          ( +-  0.18% )
+
+
+ Performance counter stats for './shared-binaries-same-search -f ../benchmarks_cortos_reducido/manol-pipe-c10b.cnf -t 2' (5 runs):
+
+   529,604,977,997 cycles                    #    0.000 GHz                      ( +-  0.35% ) [66.67%]
+     5,566,849,465 LLC-loads                                                     ( +-  0.04% ) [66.67%]
+       751,524,154 LLC-load-misses           #   13.50% of all LL-cache hits     ( +-  2.86% ) [33.33%]
+
+      96.075979107 seconds time elapsed                                          ( +-  0.47% )
+
+
+ Performance counter stats for './shared-binaries-same-search -f ../benchmarks_cortos_reducido/manol-pipe-c10b.cnf -t 3' (5 runs):
+
+   854,372,047,904 cycles                    #    0.000 GHz                      ( +-  0.21% ) [66.67%]
+     8,448,481,477 LLC-loads                                                     ( +-  0.01% ) [66.67%]
+     1,771,501,865 LLC-load-misses           #   20.97% of all LL-cache hits     ( +-  3.57% ) [33.33%]
+
+     108.068619942 seconds time elapsed                                          ( +-  0.39% )
+
+
+ Performance counter stats for './shared-binaries-same-search -f ../benchmarks_cortos_reducido/manol-pipe-c10b.cnf -t 4' (5 runs):
+
+ 1,232,130,578,093 cycles                    #    0.000 GHz                      ( +-  0.19% ) [66.67%]
+    11,356,308,597 LLC-loads                                                     ( +-  0.03% ) [66.67%]
+     3,118,350,965 LLC-load-misses           #   27.46% of all LL-cache hits     ( +-  2.87% ) [33.33%]
+
+     118.100378269 seconds time elapsed                                          ( +-  0.46% )
+
+
+ Performance counter stats for './shared-binaries-same-search -f ../benchmarks_cortos_reducido/manol-pipe-c10b.cnf -t 5' (5 runs):
+
+ 1,587,435,329,594 cycles                    #    0.000 GHz                      ( +-  0.14% ) [66.67%]
+    14,153,964,155 LLC-loads                                                     ( +-  0.03% ) [66.66%]
+     4,415,059,759 LLC-load-misses           #   31.19% of all LL-cache hits     ( +-  1.70% ) [33.34%]
+
+     126.569492432 seconds time elapsed                                          ( +-  0.28% )
+
+
+ Performance counter stats for './shared-binaries-same-search -f ../benchmarks_cortos_reducido/manol-pipe-c10b.cnf -t 6' (5 runs):
+
+ 1,996,863,351,873 cycles                    #    0.000 GHz                      ( +-  0.09% ) [66.67%]
+    17,055,837,266 LLC-loads                                                     ( +-  0.03% ) [66.67%]
+     6,589,496,997 LLC-load-misses           #   38.63% of all LL-cache hits     ( +-  0.85% ) [33.33%]
+
+     133.329407086 seconds time elapsed                                          ( +-  0.13% )
+
+
+ Performance counter stats for './shared-binaries-same-search -f ../benchmarks_cortos_reducido/manol-pipe-c6bid_i.cnf.gz -t 1' (5 runs):
+
+   732,707,447,390 cycles                    #    0.000 GHz                      ( +-  0.03% ) [66.67%]
+     8,239,656,686 LLC-loads                                                     ( +-  0.06% ) [66.67%]
+     1,029,827,979 LLC-load-misses           #   12.50% of all LL-cache hits     ( +-  0.20% ) [33.33%]
+
+     262.419741599 seconds time elapsed                                          ( +-  0.03% )
+
+
+ Performance counter stats for './shared-binaries-same-search -f ../benchmarks_cortos_reducido/manol-pipe-c6bid_i.cnf.gz -t 2' (5 runs):
+
+ 1,677,828,307,497 cycles                    #    0.000 GHz                      ( +-  0.27% ) [66.67%]
+    16,468,577,332 LLC-loads                                                     ( +-  0.03% ) [66.67%]
+     3,950,932,398 LLC-load-misses           #   23.99% of all LL-cache hits     ( +-  2.59% ) [33.33%]
+
+     301.887996474 seconds time elapsed                                          ( +-  0.37% )
+
+
+ Performance counter stats for './shared-binaries-same-search -f ../benchmarks_cortos_reducido/manol-pipe-c6bid_i.cnf.gz -t 3' (5 runs):
+
+ 2,676,298,407,720 cycles                    #    0.000 GHz                      ( +-  0.21% ) [66.67%]
+    24,884,159,121 LLC-loads                                                     ( +-  0.02% ) [66.67%]
+     8,117,019,280 LLC-load-misses           #   32.62% of all LL-cache hits     ( +-  2.02% ) [33.33%]
+
+     338.125200343 seconds time elapsed                                          ( +-  0.34% )
+
+
+ Performance counter stats for './shared-binaries-same-search -f ../benchmarks_cortos_reducido/manol-pipe-c6bid_i.cnf.gz -t 4' (5 runs):
+
+ 3,805,020,403,687 cycles                    #    0.000 GHz                      ( +-  0.20% ) [66.67%]
+    33,175,324,987 LLC-loads                                                     ( +-  0.02% ) [66.67%]
+    12,811,832,403 LLC-load-misses           #   38.62% of all LL-cache hits     ( +-  1.24% ) [33.33%]
+
+     365.769642041 seconds time elapsed                                          ( +-  0.31% )
+
+
+ Performance counter stats for './shared-binaries-same-search -f ../benchmarks_cortos_reducido/manol-pipe-c6bid_i.cnf.gz -t 5' (5 runs):
+
+ 4,872,971,839,561 cycles                    #    0.000 GHz                      ( +-  0.32% ) [66.67%]
+    41,671,208,706 LLC-loads                                                     ( +-  0.03% ) [66.67%]
+    18,031,057,331 LLC-load-misses           #   43.27% of all LL-cache hits     ( +-  2.73% ) [33.33%]
+
+     389.003131143 seconds time elapsed                                          ( +-  0.47% )
+
+
+ Performance counter stats for './shared-binaries-same-search -f ../benchmarks_cortos_reducido/manol-pipe-c6bid_i.cnf.gz -t 6' (5 runs):
+
+ 6,115,152,297,381 cycles                    #    0.000 GHz                      ( +-  0.05% ) [66.67%]
+    50,018,599,994 LLC-loads                                                     ( +-  0.01% ) [66.67%]
+    24,523,785,959 LLC-load-misses           #   49.03% of all LL-cache hits     ( +-  0.48% ) [33.33%]
+
+     407.395781935 seconds time elapsed                                          ( +-  0.08% )
+
+
+ Performance counter stats for './shared-binaries-same-search -f ../benchmarks_cortos_reducido/manol-pipe-c6nidw_i.cnf -t 1' (5 runs):
+
+   859,438,298,887 cycles                    #    0.000 GHz                      ( +-  0.06% ) [66.67%]
+     9,399,287,733 LLC-loads                                                     ( +-  0.03% ) [66.67%]
+     1,315,827,259 LLC-load-misses           #   14.00% of all LL-cache hits     ( +-  0.59% ) [33.33%]
+
+     307.771781768 seconds time elapsed                                          ( +-  0.06% )
+
+
+ Performance counter stats for './shared-binaries-same-search -f ../benchmarks_cortos_reducido/manol-pipe-c6nidw_i.cnf -t 2' (5 runs):
+
+ 1,978,958,726,542 cycles                    #    0.000 GHz                      ( +-  0.22% ) [66.67%]
+    19,200,973,790 LLC-loads                                                     ( +-  0.03% ) [66.67%]
+     5,031,728,110 LLC-load-misses           #   26.21% of all LL-cache hits     ( +-  2.33% ) [33.33%]
+
+     357.515407305 seconds time elapsed                                          ( +-  0.36% )
+
+
+ Performance counter stats for './shared-binaries-same-search -f ../benchmarks_cortos_reducido/manol-pipe-c6nidw_i.cnf -t 3' (5 runs):
+
+ 3,156,223,028,867 cycles                    #    0.000 GHz                      ( +-  0.19% ) [66.67%]
+    28,987,551,612 LLC-loads                                                     ( +-  0.03% ) [66.67%]
+    10,266,551,227 LLC-load-misses           #   35.42% of all LL-cache hits     ( +-  1.36% ) [33.33%]
+
+     398.721355922 seconds time elapsed                                          ( +-  0.20% )
+
+
+ Performance counter stats for './shared-binaries-same-search -f ../benchmarks_cortos_reducido/manol-pipe-c6nidw_i.cnf -t 4' (5 runs):
+
+ 4,489,957,629,502 cycles                    #    0.000 GHz                      ( +-  0.38% ) [66.67%]
+    38,770,752,878 LLC-loads                                                     ( +-  0.03% ) [66.67%]
+    15,986,388,896 LLC-load-misses           #   41.23% of all LL-cache hits     ( +-  2.45% ) [33.33%]
+
+     428.620147496 seconds time elapsed                                          ( +-  0.46% )
+
+
+ Performance counter stats for './shared-binaries-same-search -f ../benchmarks_cortos_reducido/manol-pipe-c6nidw_i.cnf -t 5' (5 runs):
+
+ 5,692,571,911,661 cycles                    #    0.000 GHz                      ( +-  0.08% ) [66.67%]
+    48,421,157,228 LLC-loads                                                     ( +-  0.01% ) [66.67%]
+    21,369,973,911 LLC-load-misses           #   44.13% of all LL-cache hits     ( +-  0.63% ) [33.33%]
+
+     456.249010360 seconds time elapsed                                          ( +-  0.11% )
+
+
+ Performance counter stats for './shared-binaries-same-search -f ../benchmarks_cortos_reducido/manol-pipe-c6nidw_i.cnf -t 6' (5 runs):
+
+ 7,160,339,216,866 cycles                    #    0.000 GHz                      ( +-  0.09% ) [66.67%]
+    58,366,345,870 LLC-loads                                                     ( +-  0.02% ) [66.67%]
+    29,379,164,471 LLC-load-misses           #   50.34% of all LL-cache hits     ( +-  0.51% ) [33.33%]
+
+     476.908969078 seconds time elapsed                                          ( +-  0.09% )
+
+
+ Performance counter stats for './shared-binaries-same-search -f ../benchmarks_cortos_reducido/manol-pipe-c7idw.cnf.gz -t 1' (5 runs):
+
+   209,149,638,403 cycles                    #    0.000 GHz                      ( +-  0.05% ) [66.67%]
+     2,230,149,927 LLC-loads                                                     ( +-  0.03% ) [66.66%]
+       329,773,743 LLC-load-misses           #   14.79% of all LL-cache hits     ( +-  0.41% ) [33.34%]
+
+      75.116454545 seconds time elapsed                                          ( +-  0.05% )
+
+
+ Performance counter stats for './shared-binaries-same-search -f ../benchmarks_cortos_reducido/manol-pipe-c7idw.cnf.gz -t 2' (5 runs):
+
+   478,071,917,968 cycles                    #    0.000 GHz                      ( +-  0.32% ) [66.67%]
+     4,496,957,900 LLC-loads                                                     ( +-  0.02% ) [66.67%]
+     1,104,845,584 LLC-load-misses           #   24.57% of all LL-cache hits     ( +-  3.70% ) [33.33%]
+
+      86.676682729 seconds time elapsed                                          ( +-  0.61% )
+
+
+ Performance counter stats for './shared-binaries-same-search -f ../benchmarks_cortos_reducido/manol-pipe-c7idw.cnf.gz -t 3' (5 runs):
+
+   747,913,136,204 cycles                    #    0.000 GHz                      ( +-  0.36% ) [66.67%]
+     6,749,554,018 LLC-loads                                                     ( +-  0.01% ) [66.67%]
+     2,078,860,948 LLC-load-misses           #   30.80% of all LL-cache hits     ( +-  3.28% ) [33.33%]
+
+      95.355180099 seconds time elapsed                                          ( +-  0.70% )
+
+
+ Performance counter stats for './shared-binaries-same-search -f ../benchmarks_cortos_reducido/manol-pipe-c7idw.cnf.gz -t 4' (5 runs):
+
+ 1,052,792,607,211 cycles                    #    0.000 GHz                      ( +-  0.28% ) [66.67%]
+     8,979,466,360 LLC-loads                                                     ( +-  0.02% ) [66.67%]
+     3,211,325,470 LLC-load-misses           #   35.76% of all LL-cache hits     ( +-  2.47% ) [33.34%]
+
+     102.528237248 seconds time elapsed                                          ( +-  0.23% )
+
+
+ Performance counter stats for './shared-binaries-same-search -f ../benchmarks_cortos_reducido/manol-pipe-c7idw.cnf.gz -t 5' (5 runs):
+
+ 1,318,751,900,886 cycles                    #    0.000 GHz                      ( +-  0.15% ) [66.67%]
+    11,270,322,932 LLC-loads                                                     ( +-  0.01% ) [66.67%]
+     3,871,387,842 LLC-load-misses           #   34.35% of all LL-cache hits     ( +-  1.64% ) [33.34%]
+
+     105.566426696 seconds time elapsed                                          ( +-  0.63% )
+
+
+ Performance counter stats for './shared-binaries-same-search -f ../benchmarks_cortos_reducido/manol-pipe-c7idw.cnf.gz -t 6' (5 runs):
+
+ 1,661,012,168,675 cycles                    #    0.000 GHz                      ( +-  0.22% ) [66.67%]
+    13,579,570,279 LLC-loads                                                     ( +-  0.01% ) [66.67%]
+     5,700,157,756 LLC-load-misses           #   41.98% of all LL-cache hits     ( +-  1.98% ) [33.33%]
+
+     111.537921827 seconds time elapsed                                          ( +-  0.63% )
+
+
+ Performance counter stats for './shared-binaries-same-search -f ../benchmarks_cortos_reducido/manol-pipe-cha05-113.cnf.gz -t 1' (5 runs):
+
+   169,591,875,197 cycles                    #    0.000 GHz                      ( +-  0.13% ) [66.67%]
+     1,987,516,335 LLC-loads                                                     ( +-  0.02% ) [66.67%]
+        47,554,806 LLC-load-misses           #    2.39% of all LL-cache hits     ( +-  4.24% ) [33.33%]
+
+      60.987146852 seconds time elapsed                                          ( +-  0.13% )
+
+
+ Performance counter stats for './shared-binaries-same-search -f ../benchmarks_cortos_reducido/manol-pipe-cha05-113.cnf.gz -t 2' (5 runs):
+
+   375,134,030,648 cycles                    #    0.000 GHz                      ( +-  0.29% ) [66.67%]
+     4,030,732,781 LLC-loads                                                     ( +-  0.06% ) [66.67%]
+       426,161,163 LLC-load-misses           #   10.57% of all LL-cache hits     ( +-  1.40% ) [33.33%]
+
+      68.389536209 seconds time elapsed                                          ( +-  0.19% )
+
+
+ Performance counter stats for './shared-binaries-same-search -f ../benchmarks_cortos_reducido/manol-pipe-cha05-113.cnf.gz -t 3' (5 runs):
+
+   598,068,078,216 cycles                    #    0.000 GHz                      ( +-  0.09% ) [66.67%]
+     6,008,450,561 LLC-loads                                                     ( +-  0.02% ) [66.67%]
+     1,042,901,918 LLC-load-misses           #   17.36% of all LL-cache hits     ( +-  1.75% ) [33.33%]
+
+      75.827559857 seconds time elapsed                                          ( +-  0.20% )
+
+
+ Performance counter stats for './shared-binaries-same-search -f ../benchmarks_cortos_reducido/manol-pipe-cha05-113.cnf.gz -t 4' (5 runs):
+
+   857,086,753,643 cycles                    #    0.000 GHz                      ( +-  0.06% ) [66.67%]
+     8,041,109,829 LLC-loads                                                     ( +-  0.03% ) [66.67%]
+     1,906,292,610 LLC-load-misses           #   23.71% of all LL-cache hits     ( +-  0.99% ) [33.33%]
+
+      82.360015393 seconds time elapsed                                          ( +-  0.15% )
+
+
+ Performance counter stats for './shared-binaries-same-search -f ../benchmarks_cortos_reducido/manol-pipe-cha05-113.cnf.gz -t 5' (5 runs):
+
+ 1,109,287,686,224 cycles                    #    0.000 GHz                      ( +-  0.08% ) [66.67%]
+    10,096,364,431 LLC-loads                                                     ( +-  0.04% ) [66.66%]
+     2,735,292,531 LLC-load-misses           #   27.09% of all LL-cache hits     ( +-  1.23% ) [33.34%]
+
+      88.246577662 seconds time elapsed                                          ( +-  0.10% )
+
+
+ Performance counter stats for './shared-binaries-same-search -f ../benchmarks_cortos_reducido/manol-pipe-cha05-113.cnf.gz -t 6' (5 runs):
+
+ 1,397,918,337,879 cycles                    #    0.000 GHz                      ( +-  0.03% ) [66.67%]
+    12,177,943,997 LLC-loads                                                     ( +-  0.03% ) [66.66%]
+     4,208,512,322 LLC-load-misses           #   34.56% of all LL-cache hits     ( +-  0.46% ) [33.34%]
+
+      93.246133985 seconds time elapsed                                          ( +-  0.14% )
+
+ Performance counter stats for './shared-binaries-same-search -f ./experimentos_adicionales/anbul-dated-5-15-u.cnf.gz -t 1' (5 runs):
+
+ 3,283,971,906,877 cycles                    #    0.000 GHz                      ( +-  0.10% ) [66.67%]
+    45,445,002,435 LLC-loads                                                     ( +-  0.02% ) [66.67%]
+     4,060,580,516 LLC-load-misses           #    8.94% of all LL-cache hits     ( +-  0.62% ) [33.33%]
+
+    1175.222089060 seconds time elapsed                                          ( +-  0.10% )
+
+
+ Performance counter stats for './shared-binaries-same-search -f ./experimentos_adicionales/anbul-dated-5-15-u.cnf.gz -t 2' (5 runs):
+
+ 8,107,803,635,397 cycles                    #    0.000 GHz                      ( +-  0.04% ) [66.67%]
+    91,576,707,366 LLC-loads                                                     ( +-  0.04% ) [66.67%]
+    25,370,252,716 LLC-load-misses           #   27.70% of all LL-cache hits     ( +-  0.13% ) [33.33%]
+
+    1457.894109202 seconds time elapsed                                          ( +-  0.06% )
+
+
+ Performance counter stats for './shared-binaries-same-search -f ./experimentos_adicionales/anbul-dated-5-15-u.cnf.gz -t 3' (5 runs):
+
+13,506,349,867,525 cycles                    #    0.000 GHz                      ( +-  0.09% ) [66.67%]
+   137,671,575,628 LLC-loads                                                     ( +-  0.00% ) [66.67%]
+    56,594,584,826 LLC-load-misses           #   41.11% of all LL-cache hits     ( +-  0.26% ) [33.33%]
+
+    1704.344009053 seconds time elapsed                                          ( +-  0.03% )
+
+
+ Performance counter stats for './shared-binaries-same-search -f ./experimentos_adicionales/anbul-dated-5-15-u.cnf.gz -t 4' (5 runs):
+
+19,697,875,648,497 cycles                    #    0.000 GHz                      ( +-  0.11% ) [66.67%]
+   184,154,778,200 LLC-loads                                                     ( +-  0.02% ) [66.67%]
+    92,490,693,948 LLC-load-misses           #   50.22% of all LL-cache hits     ( +-  0.10% ) [33.33%]
+
+    1882.296553409 seconds time elapsed                                          ( +-  0.04% )
+
+
+ Performance counter stats for './shared-binaries-same-search -f ./experimentos_adicionales/anbul-dated-5-15-u.cnf.gz -t 5' (5 runs):
+
+25,534,823,940,063 cycles                    #    0.000 GHz                      ( +-  0.09% ) [66.67%]
+   230,593,820,436 LLC-loads                                                     ( +-  0.02% ) [66.67%]
+   128,614,889,149 LLC-load-misses           #   55.78% of all LL-cache hits     ( +-  0.23% ) [33.33%]
+
+    2033.664911123 seconds time elapsed                                          ( +-  0.14% )
+
+
+ Performance counter stats for './shared-binaries-same-search -f ./experimentos_adicionales/anbul-dated-5-15-u.cnf.gz -t 6' (5 runs):
+
+32,014,831,076,927 cycles                    #    0.000 GHz                      ( +-  0.02% ) [66.67%]
+   277,124,875,520 LLC-loads                                                     ( +-  0.01% ) [66.67%]
+   168,951,359,329 LLC-load-misses           #   60.97% of all LL-cache hits     ( +-  0.09% ) [33.33%]
+
+    2124.377662180 seconds time elapsed                                          ( +-  0.02% )
+
+
+ Performance counter stats for './shared-binaries-same-search -f ./experimentos_adicionales/ibm-2002-31_1r3-k30.cnf.gz -t 1' (5 runs):
+
+ 4,418,815,549,269 cycles                    #    0.000 GHz                      ( +-  0.05% ) [66.67%]
+    30,523,991,394 LLC-loads                                                     ( +-  0.04% ) [66.67%]
+     3,972,313,857 LLC-load-misses           #   13.01% of all LL-cache hits     ( +-  0.30% ) [33.33%]
+
+    1581.096249568 seconds time elapsed                                          ( +-  0.05% )
+
+
+ Performance counter stats for './shared-binaries-same-search -f ./experimentos_adicionales/ibm-2002-31_1r3-k30.cnf.gz -t 2' (5 runs):
+
+ 9,658,336,758,057 cycles                    #    0.000 GHz                      ( +-  0.12% ) [66.67%]
+    61,410,776,304 LLC-loads                                                     ( +-  0.02% ) [66.67%]
+    17,345,662,233 LLC-load-misses           #   28.25% of all LL-cache hits     ( +-  0.17% ) [33.33%]
+
+    1737.107004917 seconds time elapsed                                          ( +-  0.14% )
+
+
+ Performance counter stats for './shared-binaries-same-search -f ./experimentos_adicionales/ibm-2002-31_1r3-k30.cnf.gz -t 3' (5 runs):
+
+15,184,472,879,647 cycles                    #    0.000 GHz                      ( +-  0.01% ) [66.67%]
+    92,347,876,213 LLC-loads                                                     ( +-  0.02% ) [66.67%]
+    36,063,108,778 LLC-load-misses           #   39.05% of all LL-cache hits     ( +-  0.08% ) [33.33%]
+
+    1912.939696154 seconds time elapsed                                          ( +-  0.03% )
+
+
+ Performance counter stats for './shared-binaries-same-search -f ./experimentos_adicionales/ibm-2002-31_1r3-k30.cnf.gz -t 4' (5 runs):
+
+21,230,094,174,975 cycles                    #    0.000 GHz                      ( +-  0.06% ) [66.67%]
+   123,428,440,775 LLC-loads                                                     ( +-  0.01% ) [66.67%]
+    58,086,901,575 LLC-load-misses           #   47.06% of all LL-cache hits     ( +-  0.05% ) [33.33%]
+
+    2021.032169685 seconds time elapsed                                          ( +-  0.10% )
+
+
+ Performance counter stats for './shared-binaries-same-search -f ./experimentos_adicionales/ibm-2002-31_1r3-k30.cnf.gz -t 5' (5 runs):
+
+26,901,590,501,394 cycles                    #    0.000 GHz                      ( +-  0.05% ) [66.67%]
+   154,537,941,902 LLC-loads                                                     ( +-  0.01% ) [66.67%]
+    81,007,150,109 LLC-load-misses           #   52.42% of all LL-cache hits     ( +-  0.28% ) [33.33%]
+
+    2138.867878365 seconds time elapsed                                          ( +-  0.06% )
+
+
+ Performance counter stats for './shared-binaries-same-search -f ./experimentos_adicionales/ibm-2002-31_1r3-k30.cnf.gz -t 6' (5 runs):
+
+33,105,455,042,761 cycles                    #    0.000 GHz                      ( +-  0.03% ) [66.67%]
+   185,840,407,453 LLC-loads                                                     ( +-  0.02% ) [66.67%]
+   104,709,494,311 LLC-load-misses           #   56.34% of all LL-cache hits     ( +-  0.25% ) [33.33%]
+
+    2193.286742895 seconds time elapsed                                          ( +-  0.04% )
+
+
+ Performance counter stats for './shared-binaries-same-search -f ./experimentos_adicionales/post-c32s-gcdm16-22.cnf.gz -t 1' (5 runs):
+
+ 2,718,890,740,812 cycles                    #    0.000 GHz                      ( +-  0.01% ) [66.67%]
+    14,846,402,125 LLC-loads                                                     ( +-  0.09% ) [66.67%]
+     2,054,728,834 LLC-load-misses           #   13.84% of all LL-cache hits     ( +-  0.13% ) [33.33%]
+
+     973.002687773 seconds time elapsed                                          ( +-  0.01% )
+
+
+ Performance counter stats for './shared-binaries-same-search -f ./experimentos_adicionales/post-c32s-gcdm16-22.cnf.gz -t 2' (5 runs):
+
+ 5,813,821,272,817 cycles                    #    0.000 GHz                      ( +-  0.21% ) [66.67%]
+    29,845,607,355 LLC-loads                                                     ( +-  0.10% ) [66.67%]
+     7,580,319,794 LLC-load-misses           #   25.40% of all LL-cache hits     ( +-  2.74% ) [33.33%]
+
+    1046.852331232 seconds time elapsed                                          ( +-  0.32% )
+
+
+ Performance counter stats for './shared-binaries-same-search -f ./experimentos_adicionales/post-c32s-gcdm16-22.cnf.gz -t 3' (5 runs):
+
+ 9,015,042,819,522 cycles                    #    0.000 GHz                      ( +-  0.07% ) [66.67%]
+    44,942,654,845 LLC-loads                                                     ( +-  0.04% ) [66.67%]
+    15,452,359,672 LLC-load-misses           #   34.38% of all LL-cache hits     ( +-  0.82% ) [33.33%]
+
+    1134.124215940 seconds time elapsed                                          ( +-  0.12% )
+
+
+ Performance counter stats for './shared-binaries-same-search -f ./experimentos_adicionales/post-c32s-gcdm16-22.cnf.gz -t 4' (5 runs):
+
+12,458,278,514,613 cycles                    #    0.000 GHz                      ( +-  0.04% ) [66.67%]
+    59,761,387,946 LLC-loads                                                     ( +-  0.01% ) [66.67%]
+    24,604,641,379 LLC-load-misses           #   41.17% of all LL-cache hits     ( +-  0.28% ) [33.33%]
+
+    1184.968002667 seconds time elapsed                                          ( +-  0.06% )
+
+
+ Performance counter stats for './shared-binaries-same-search -f ./experimentos_adicionales/post-c32s-gcdm16-22.cnf.gz -t 5' (5 runs):
+
+15,653,850,447,725 cycles                    #    0.000 GHz                      ( +-  0.04% ) [66.67%]
+    74,934,295,875 LLC-loads                                                     ( +-  0.05% ) [66.67%]
+    33,000,161,935 LLC-load-misses           #   44.04% of all LL-cache hits     ( +-  0.98% ) [33.33%]
+
+    1245.316749228 seconds time elapsed                                          ( +-  0.15% )
+
+
+ Performance counter stats for './shared-binaries-same-search -f ./experimentos_adicionales/post-c32s-gcdm16-22.cnf.gz -t 6' (5 runs):
+
+19,142,334,687,464 cycles                    #    0.000 GHz                      ( +-  0.04% ) [66.67%]
+    90,260,083,322 LLC-loads                                                     ( +-  0.05% ) [66.67%]
+    43,005,375,667 LLC-load-misses           #   47.65% of all LL-cache hits     ( +-  0.94% ) [33.33%]
+
+    1267.859782673 seconds time elapsed                                          ( +-  0.09% )
+

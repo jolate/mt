@@ -19,10 +19,9 @@
 -Corregir y subir a dropbox.
 
 *Graficos experimentos azu-dici
-## Faltan gráficos AzuDICI-Same-Seach con cache y los gráficos de average para cache y time ##
--Same search
--Different search (Cache)
--Same Search (Performance decay).
+-Same search # OK #
+-Different search (Cache) # OK #
+-Same Search (Performance decay). # OK #
 
 *Primer grafico de introduccion (MTL)
 -Ocupar problemas de al final de la pagina. Correr esos 10 en MTL para ver performance de tiempo ## OK ##
@@ -31,7 +30,7 @@
 -Ocupar los problemas de al final de la pagina y cambiar los graficos de same chip y different chip. ## OK ##
 
 *Para azuDICI keira 
--Same search 2 graficos average.
+-Same search 2 graficos average.  ## OK ##
 -Different search 1 grafico average. ## OK ##
 
 FILES:
