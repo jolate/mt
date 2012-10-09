@@ -45,3 +45,10 @@ E02F22
 hwmcc10-timeframe-expansion-k45-pdtvissoap1-tseitin 
 md5_48_3 
 
+======================================================
+
+Performance decay % en eje Y de graficos.
+arreglar escala eje Y graficos same/different chip.
+cambiar label eje Y a "LLC miss (%)"
+Arreglar grafico de 207 files. Colocar etiqueta a puntos con numero de problemas resueltos. agregar 40 threads y poner etiqueta "in 4 chips".
+Experimento 

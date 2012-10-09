@@ -1,10 +1,26 @@
+\subsection{AzuDICI}
+\label{sec:azudici}
+
+We already know that the problem with cache-misses is tightly related
+to the way in which BCP is implemented \cite{paper cache misses sat} and,
+therefore, with the way in which clauses and watches are programmed.
+Since \pling keeps a separate clause database for each thread, it is 
+possible that sharing data could improve cache performance, because
+we would have a smaller amount of total data to propagate with.
+Based on other parallel SAT-solvers that share their clause database, 
+mainly {\tt SArTagnan} and {\tt MiraXT}, we decided to implement AzuDICI, 
+a basic CDCL SAT-solver with the purpose of improving the BCP performance
+in portfolio-approach SAT-solvers.
+Three versions of AzuDICI were implemented, one in which each thread keeps
+a separated database clause; another in which, as in MiraXT, shares all
+clauses physically; and an hybrid third one which only shares binary
+implication lists.
+
+\subsubsection{AzuDICI general structure}
+
 AzuDICI\footnote{You can find the latest implementation of AzuDICI at
   \url{https://github.com/leoferres/AzuDICI}} is a standard CDCL
-solver based on \pling, {\tt barcelogic} and {\tt miraXT}, built with
-the aim of finding out whether or not sharing information among
-threads (particularly the clauses database) helps avoid the
-performance degradation that can be seen in Figure \ref{fig:decay}.
-
+solver based on \pling, {\tt barcelogic} and {\tt miraXT}.
 In particular, AzuDICI implements binary implication lists for the
 propagation with binary clauses, and the two-watched literals scheme
 for unit propagation \cite{} with clauses of more than two
@@ -16,27 +32,75 @@ lemmas that have participated in a conflict since the last
 cleanup. Finally, AzuDICI also incorporates the EVSIDS heuristic for
 branching literal decisions \cite{}.
 
+\subsubsection{Shared-none}
+
+This version works as plingeling, it doesn't share any clause physically. 
+Each thread keeps its own independent database of clauses and propagates 
+with it. Note that the fact that we are not sharing data physically 
+doesn't mean threads can't share information. They could very well, for 
+example, share unit clauses through message passing between threads, just 
+as \pling does. We are interested in measuring the impact in cache 
+performance of sharing data physically, and not the benefits of sharing 
+information by it self.
+
+\subsubsection{Shared-bins}
+
 \begin{figure}[tp]
   \centering
-  \includegraphics[scale=0.7]{AzuDICI_database}
-  \caption{Shared clause database among threads.}
-  \label{fig:azu database}
+  \includegraphics[scale=1.0]{implication_list}
+  \caption{Binary clause database}
+  \label{fig:shared bins}
 \end{figure}
 
-In order to allow for comparison, we made several versions of AzuDICI.
-AzuDICI-shared-all is a version which shares all clauses between
-threads. It has a shared clause database which includes unitary
-clauses, binary clauses and n-ary clauses (clauses with more than
-two literals). Figure \ref{fig:azu database}
-shows how threads share the clause database. Each thread has access
-to the same physical clauses and they do not require synchronization
-with each other.
-Because binary implication lists are simple data structures that do
-not keep track of watched literals, it is easy to share binary clauses
-between threads without hindering the performance of propagation
-or any other task each sequential worker thread performs. This is not
-the case for the n-ary clause database. The two-watched-literal
-scheme requires to make changes to the clause in order to identify
+The Shared-bins version shares the binary implication lists. All threads 
+have access to the same physical data, they all can modify and read this 
+structure. Figure \ref{fig:shared bins} is a schematization of our 
+binary implication lists structure. We have an array of \textit{binary 
+lists}, one for each literal. A binary list is basically two pointers, 
+one to a first \textit{binary node} and another to the last binary node 
+associated with that list. A 
+binary node is an array of literals that also has a pointer to another 
+binary node. The amount of literals a binary node can hold will depend 
+on the size of the cache line we are working with; it will have as many 
+literals as a cache line can hold. The literals implied by the literal 
+associated to a binary list will be the ones in the binary node 
+referenced by that binary list pointer and the subsequently referenced 
+binary nodes. 
+
+When a thread wants to add the clause $\{l_i,l_j\}$, it must look for 
+the binary list associated with $\neg l_i$ and go to the last node linked 
+to that binary list. If there is enough space in that node to add 
+another literal, then it adds $l_j$. If the node is full, then it must 
+create a new node with the $l_j$ literal, insert it at the end of the 
+linked list of nodes, 
+updating the binary list last node pointer. It does the same for the 
+binary list of $\neg l_j$.
+
+To ensure consistency of 
+data when multiple threads are inserting, each binary list has a lock. 
+If a thread is inserting a new implicated literal, it first locks the 
+binary list where it's inserting and then proceeds to insert. If by 
+chance another thread wants to insert in the same binary list, it must 
+wait till the lock is freed. Since adding binary clauses is not a 
+frequent event, and even less frequent the event that it would happen 
+in the same binary list, the contention that these locks generate is 
+unnoticeable in our experimental results.
+
+
+\subsubsection{Shared-all}
+
+\begin{figure}[tp]
+  \centering
+  \includegraphics[scale=0.6]{AzuDICI_design}
+  \caption{The thread clause database and n-ary clause database}
+  \label{fig:azu design}
+\end{figure}
+
+In the shared-bins solver we had no need to modify the usual two 
+watched literal scheme used in propagation. This is not
+the case for this version that shares n-ary clauses physically. 
+The two watched literal scheme requires to make changes to the 
+clause in order to identify 
 the literals being watched at one given instant (for example, place
 both literals first in the clause). Since many threads will be
 accessing the same clauses, these changes to the clause are not
@@ -53,40 +117,19 @@ pointers to another thread clause (NW0 and NW1) and a pointer to
 an actual n-ary clause in the n-ary clause database. W0 and W1 keep
 track of the literals being watched by the thread for a given n-ary
 clause. NW0 and NW1 point to the next thread clauses that are also 
-watching WL0 and WL1 respectively.
+watching WL0 and WL1 respectively. The n-clause also has a flag for 
+each worker thread to identify which ones are using that clause 
+for propagation.
 
-\begin{figure}[tp]
-  \centering
-  \includegraphics[scale=0.6]{AzuDICI_design}
-  \caption{The thread clause database and n-ary clause database}
-  \label{fig:azu design}
-\end{figure}
-
-As sharing n-ary clauses requires to make some changes to the
-implementation of the propagation scheme of the two-watched-literals,
-we also made the AzuDICI-shared-binaries version, which only shares
-the binary clause database. With this version we aim to find out
-if the drawbacks of sharing n-ary clauses, because we have to keep
-track of each watched literal in each thread, surpass the benefits.
-The AzuDICI-shared-none version doesn't share any clause and it's
-just a group of independent solvers running in parallel, each with
-its own clause database.
-
-It is important to note that in order to make this comparison of
-different solver versions objective, we have forced them all to make
-the exact same search, so that the differences in performance we
-observe will not be due to the search path each version takes.
-For the same reason, all threads in each version of the solver will
-also make the same search. We would not want an instance of a
-solver performing better just because an additional thread found
-a better search path.
-
-Regarding thread safety of the solver versions which share clauses,
-we added some locks to ensure the correctness of the information
-being shared. The locks are only used to avoid two different threads
-inserting clauses to a same clause database at the same time,
-because the chance that this event occurs is so low, in practice
-there is no significant contention between threads.
+To insert a new n-ary clause, we first make sure that the clause 
+doesn't exist in the database [vale la pena explicar como lo hace?]. If it 
+doesn't exist, we create the n-clause, set the current thread 
+flag to true and add it to the database. 
+On the other hand, if it does exist, we just toggle the 
+corresponding thread flag of the n-clause to true. The inserting 
+procedure is locked so that two different threads can't insert
+at the same time. In our experiments we haven't noticed any 
+considerable overhead caused by this lock.
 
 %%% Local Variables: 
 %%% mode: latex
