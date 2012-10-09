@@ -36,7 +36,7 @@ set bars 1
 set key left # legend to the left (bottom is also an option)
 unset logscale y  #set for logarithmic scale y (add x for log x)
 set xlabel "# of threads" # XAxis title
-set ylabel "LLC miss %" # YAxis title
+set ylabel "LLC miss (%)" # YAxis title
 set key at -2.5,-5
 set key spacing 0.6
 set border 3 lw 0.5

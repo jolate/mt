@@ -1,0 +1,63 @@
+
+%\documentclass{llncs}
+\documentclass{article}
+
+\usepackage{graphicx}
+\usepackage{url}
+\usepackage{subfig}
+\usepackage[ruled, linesnumbered,noend]{algorithm2e}
+\usepackage{amsmath,amssymb}
+\usepackage{layouts}
+
+\begin{document}
+
+%\conferenceinfo{WXYZ '05}{date, City.} 
+%\copyrightyear{2011} 
+%\copyrightdata{[to be supplied]} 
+
+%\titlebanner{DRAFT---Do not distribute}        % These are ignored unless
+%\preprintfooter{short description of paper}   % 'preprint' option specified.
+
+ \newcommand{\assign}{$\,$:=$\;$}
+\newcommand{\barc}{Barelogic$^S$}
+\newcommand{\pling}{{\tt plingeling}}
+
+\title{Performance of Parallel SAT Solvers}
+% \titlerunning{Parallel SAT}
+% \toctitle{Parallel SAT}
+%\subtitle{Subtitle Text, if any, or comment out}
+
+%\author{Roberto As\'in Ach\'a\inst{1} \and Juan Olate \inst{2} \and Leo Ferres \inst{2}}
+
+% \institute{Department of Computer Engineering\\
+%   Faculty of Engineering\\ Universidad Cat\'olica de la Sant\'isima
+%   Concepci\'on, Chile\\ \email{rasin@ucsc.cl} \and Department of
+%   Computer Science\\Faculty of Engineering\\Universidad de
+%   Concepci\'on, Chile\\ \email{\{lferres|juanolate\}@udec.cl}}
+
+
+\maketitle
+\begin{abstract}
+This is the text of the abstract.
+\end{abstract}
+
+\tableofcontents
+
+\section{Introduction}
+
+\begin{center}
+    \begin{tabular}{ p{1.5cm} | p{1.5cm} | p{1.5cm} | p{1.5cm} | p{1.5cm} | p{1.5cm} | p{1.5cm} | }
+    File & 1 & 2 & 3 & 4 & 5 & 6  \\ \hline
+    manol-pipe-c10b & $2.62$ $(\pm 2.35\%)$ & & & & & \\ \hline
+    manol-pipe-c6bid\_i & & & & & & \\ \hline
+    manol-pipe-c6nidw\_i & & & & & & \\ \hline
+    manol-pipe-c7idw & & & & & & \\ \hline
+    manol-pipe-cha05-113 & & & & & & \\ \hline
+    anbul-dated-5-15-u & & & & & & \\ \hline
+    ibm-2002-31\_1r3-k30 & & & & & & \\ \hline
+    post-c32s-gcdm16-22 & & & & & & \\ \hline
+    \end{tabular}
+\end{center}
+textwidth in cm: \printinunitsof{cm}\prntlen{\textwidth} this is a random text to see whether or not it fits in the page or if the table is too large.
+
+\end{document}
