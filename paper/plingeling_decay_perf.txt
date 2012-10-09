@@ -1,0 +1,961 @@
+
+
+ Performance counter stats for '../lingeling-modificado/plingeling ../benchmarks_plingeling/aaai10-planning-ipc5-pathways-13-step17.cnf -t 1':
+
+   767,730,918,138 cycles                    #    0.000 GHz                     [25.00%]
+   974,861,618,767 instructions              #    1.27  insns per cycle         [37.50%]
+     7,675,681,299 cache-references                                             [50.00%]
+       334,816,199 cache-misses              #    4.362 % of all cache refs     [62.50%]
+               309 cs                                                          
+                 8 migrations                                                  
+   172,378,207,772 L1-dcache-loads                                              [75.00%]
+    14,217,706,249 L1-dcache-load-misses     #  [33m  8.25%[m of all L1-dcache hits   [75.00%]
+     7,475,957,080 LLC-loads                                                    [50.00%]
+       319,908,796 LLC-load-misses           #    4.28% of all LL-cache hits    [12.50%]
+
+     275.243818782 seconds time elapsed
+
+
+ Performance counter stats for '../lingeling-modificado/plingeling ../benchmarks_plingeling/aaai10-planning-ipc5-pathways-13-step17.cnf -t 2':
+
+ 1,609,699,177,197 cycles                    #    0.000 GHz                     [25.00%]
+ 1,950,642,196,662 instructions              #    1.21  insns per cycle         [37.50%]
+    15,394,592,242 cache-references                                             [50.00%]
+     1,748,085,195 cache-misses              #   11.355 % of all cache refs     [62.50%]
+               632 cs                                                          
+                 7 migrations                                                  
+   344,772,680,238 L1-dcache-loads                                              [75.00%]
+    28,390,330,259 L1-dcache-load-misses     #  [33m  8.23%[m of all L1-dcache hits   [75.00%]
+    14,983,132,701 LLC-loads                                                    [50.00%]
+     1,711,716,066 LLC-load-misses           #  [35m 11.42%[m of all LL-cache hits    [12.50%]
+
+     290.171126281 seconds time elapsed
+
+
+ Performance counter stats for '../lingeling-modificado/plingeling ../benchmarks_plingeling/aaai10-planning-ipc5-pathways-13-step17.cnf -t 3':
+
+ 2,508,001,384,033 cycles                    #    0.000 GHz                     [25.00%]
+ 2,928,926,991,864 instructions              #    1.17  insns per cycle         [37.50%]
+    23,133,225,718 cache-references                                             [50.00%]
+     4,044,688,482 cache-misses              #   17.484 % of all cache refs     [62.50%]
+             1,109 cs                                                          
+                12 migrations                                                  
+   517,282,835,342 L1-dcache-loads                                              [75.00%]
+    42,702,378,733 L1-dcache-load-misses     #  [33m  8.26%[m of all L1-dcache hits   [75.00%]
+    22,527,598,196 LLC-loads                                                    [50.01%]
+     3,979,140,852 LLC-load-misses           #  [35m 17.66%[m of all LL-cache hits    [12.50%]
+
+     316.052384827 seconds time elapsed
+
+
+ Performance counter stats for '../lingeling-modificado/plingeling ../benchmarks_plingeling/aaai10-planning-ipc5-pathways-13-step17.cnf -t 4':
+
+ 3,489,585,895,775 cycles                    #    0.000 GHz                     [25.00%]
+ 3,901,241,605,020 instructions              #    1.12  insns per cycle         [37.50%]
+    30,892,147,666 cache-references                                             [50.00%]
+     7,047,724,305 cache-misses              #   22.814 % of all cache refs     [62.50%]
+             1,505 cs                                                          
+                12 migrations                                                  
+   689,633,881,103 L1-dcache-loads                                              [75.00%]
+    56,934,664,920 L1-dcache-load-misses     #  [33m  8.26%[m of all L1-dcache hits   [75.00%]
+    30,032,488,416 LLC-loads                                                    [50.00%]
+     6,936,343,913 LLC-load-misses           #  [31m 23.10%[m of all LL-cache hits    [12.50%]
+
+     330.216350680 seconds time elapsed
+
+
+ Performance counter stats for '../lingeling-modificado/plingeling ../benchmarks_plingeling/aaai10-planning-ipc5-pathways-13-step17.cnf -t 5':
+
+ 4,463,201,181,191 cycles                    #    0.000 GHz                     [25.00%]
+ 4,880,686,266,312 instructions              #    1.09  insns per cycle         [37.50%]
+    38,776,714,054 cache-references                                             [50.00%]
+    10,620,956,318 cache-misses              #   27.390 % of all cache refs     [62.50%]
+             2,098 cs                                                          
+                21 migrations                                                  
+   862,131,124,652 L1-dcache-loads                                              [75.00%]
+    71,192,988,311 L1-dcache-load-misses     #  [33m  8.26%[m of all L1-dcache hits   [75.00%]
+    37,670,017,373 LLC-loads                                                    [50.00%]
+    10,456,507,149 LLC-load-misses           #  [31m 27.76%[m of all LL-cache hits    [12.50%]
+
+     355.618322093 seconds time elapsed
+
+
+ Performance counter stats for '../lingeling-modificado/plingeling ../benchmarks_plingeling/aaai10-planning-ipc5-pathways-13-step17.cnf -t 6':
+
+ 5,549,284,676,362 cycles                    #    0.000 GHz                     [25.00%]
+ 5,854,072,579,039 instructions              #    1.05  insns per cycle         [37.50%]
+    46,588,746,587 cache-references                                             [50.00%]
+    14,680,533,614 cache-misses              #   31.511 % of all cache refs     [62.50%]
+             3,309 cs                                                          
+                19 migrations                                                  
+ 1,034,461,203,690 L1-dcache-loads                                              [75.00%]
+    85,541,168,966 L1-dcache-load-misses     #  [33m  8.27%[m of all L1-dcache hits   [75.00%]
+    45,208,788,467 LLC-loads                                                    [50.00%]
+    14,456,383,409 LLC-load-misses           #  [31m 31.98%[m of all LL-cache hits    [12.50%]
+
+     368.447924232 seconds time elapsed
+
+
+ Performance counter stats for '../lingeling-modificado/plingeling ../benchmarks_plingeling/E02F22.cnf -t 1':
+
+ 1,425,454,095,161 cycles                    #    0.000 GHz                     [25.00%]
+ 1,721,113,469,556 instructions              #    1.21  insns per cycle         [37.50%]
+    11,980,175,490 cache-references                                             [50.00%]
+     2,830,533,994 cache-misses              #   23.627 % of all cache refs     [62.50%]
+             2,258 cs                                                          
+                 6 migrations                                                  
+   283,333,860,709 L1-dcache-loads                                              [75.00%]
+    20,470,148,217 L1-dcache-load-misses     #  [33m  7.22%[m of all L1-dcache hits   [75.00%]
+    11,549,267,525 LLC-loads                                                    [50.00%]
+     2,761,461,189 LLC-load-misses           #  [31m 23.91%[m of all LL-cache hits    [12.50%]
+
+     510.992109848 seconds time elapsed
+
+
+ Performance counter stats for '../lingeling-modificado/plingeling ../benchmarks_plingeling/E02F22.cnf -t 2':
+
+ 3,063,013,086,940 cycles                    #    0.000 GHz                     [25.00%]
+ 3,438,013,142,495 instructions              #    1.12  insns per cycle         [37.50%]
+    23,989,694,523 cache-references                                             [50.00%]
+     7,965,492,479 cache-misses              #   33.204 % of all cache refs     [62.51%]
+             2,933 cs                                                          
+                14 migrations                                                  
+   564,952,531,284 L1-dcache-loads                                              [75.00%]
+    41,002,345,994 L1-dcache-load-misses     #  [33m  7.26%[m of all L1-dcache hits   [75.00%]
+    23,122,278,107 LLC-loads                                                    [50.00%]
+     7,779,825,619 LLC-load-misses           #  [31m 33.65%[m of all LL-cache hits    [12.50%]
+
+     550.337844856 seconds time elapsed
+
+
+ Performance counter stats for '../lingeling-modificado/plingeling ../benchmarks_plingeling/E02F22.cnf -t 3':
+
+ 4,706,778,865,823 cycles                    #    0.000 GHz                     [25.00%]
+ 5,154,659,194,774 instructions              #    1.10  insns per cycle         [37.50%]
+    36,080,341,569 cache-references                                             [50.00%]
+    14,113,313,448 cache-misses              #   39.116 % of all cache refs     [62.50%]
+             3,575 cs                                                          
+                10 migrations                                                  
+   846,909,989,334 L1-dcache-loads                                              [75.00%]
+    61,618,652,609 L1-dcache-load-misses     #  [33m  7.28%[m of all L1-dcache hits   [75.00%]
+    34,745,451,545 LLC-loads                                                    [50.00%]
+    13,790,183,083 LLC-load-misses           #  [31m 39.69%[m of all LL-cache hits    [12.50%]
+
+     594.866105469 seconds time elapsed
+
+
+ Performance counter stats for '../lingeling-modificado/plingeling ../benchmarks_plingeling/E02F22.cnf -t 4':
+
+ 6,514,478,886,396 cycles                    #    0.000 GHz                     [25.00%]
+ 6,874,038,197,493 instructions              #    1.06  insns per cycle         [37.50%]
+    48,226,622,957 cache-references                                             [50.00%]
+    21,041,189,077 cache-misses              #   43.630 % of all cache refs     [62.50%]
+             4,316 cs                                                          
+                 9 migrations                                                  
+ 1,128,704,675,253 L1-dcache-loads                                              [75.00%]
+    82,188,590,967 L1-dcache-load-misses     #  [33m  7.28%[m of all L1-dcache hits   [75.00%]
+    46,356,174,560 LLC-loads                                                    [50.00%]
+    20,535,924,088 LLC-load-misses           #  [31m 44.30%[m of all LL-cache hits    [12.50%]
+
+     618.810258313 seconds time elapsed
+
+
+ Performance counter stats for '../lingeling-modificado/plingeling ../benchmarks_plingeling/E02F22.cnf -t 5':
+
+ 8,248,626,153,088 cycles                    #    0.000 GHz                     [25.00%]
+ 8,588,769,429,940 instructions              #    1.04  insns per cycle         [37.50%]
+    60,423,063,340 cache-references                                             [50.00%]
+    28,648,881,603 cache-misses              #   47.414 % of all cache refs     [62.50%]
+             5,216 cs                                                          
+                19 migrations                                                  
+ 1,410,665,078,639 L1-dcache-loads                                              [75.00%]
+   102,771,451,518 L1-dcache-load-misses     #  [33m  7.29%[m of all L1-dcache hits   [75.00%]
+    58,038,975,918 LLC-loads                                                    [50.00%]
+    27,985,782,272 LLC-load-misses           #  [31m 48.22%[m of all LL-cache hits    [12.50%]
+
+     659.658018053 seconds time elapsed
+
+
+ Performance counter stats for '../lingeling-modificado/plingeling ../benchmarks_plingeling/E02F22.cnf -t 6':
+
+10,224,855,652,398 cycles                    #    0.000 GHz                     [25.00%]
+10,311,938,793,174 instructions              #    1.01  insns per cycle         [37.50%]
+    72,928,681,287 cache-references                                             [50.00%]
+    36,802,031,532 cache-misses              #   50.463 % of all cache refs     [62.50%]
+             7,218 cs                                                          
+                19 migrations                                                  
+ 1,692,803,741,874 L1-dcache-loads                                              [75.00%]
+   123,474,483,179 L1-dcache-load-misses     #  [33m  7.29%[m of all L1-dcache hits   [75.00%]
+    69,949,338,187 LLC-loads                                                    [50.00%]
+    35,948,021,364 LLC-load-misses           #  [31m 51.39%[m of all LL-cache hits    [12.50%]
+
+     681.953892899 seconds time elapsed
+
+
+ Performance counter stats for '../lingeling-modificado/plingeling ../benchmarks_plingeling/grid-strips-grid-y-3.035-NOTKNOWN.cnf -t 1':
+
+ 1,381,859,595,516 cycles                    #    0.000 GHz                     [25.00%]
+ 2,059,557,949,267 instructions              #    1.49  insns per cycle         [37.50%]
+    20,503,349,592 cache-references                                             [50.00%]
+     1,804,136,323 cache-misses              #    8.799 % of all cache refs     [62.50%]
+               545 cs                                                          
+                 7 migrations                                                  
+   412,364,446,494 L1-dcache-loads                                              [75.00%]
+    34,948,970,510 L1-dcache-load-misses     #  [33m  8.48%[m of all L1-dcache hits   [75.00%]
+    18,889,407,794 LLC-loads                                                    [50.00%]
+     1,629,056,142 LLC-load-misses           #  [33m  8.62%[m of all LL-cache hits    [12.50%]
+
+     495.289104011 seconds time elapsed
+
+
+ Performance counter stats for '../lingeling-modificado/plingeling ../benchmarks_plingeling/grid-strips-grid-y-3.035-NOTKNOWN.cnf -t 2':
+
+ 3,156,756,014,436 cycles                    #    0.000 GHz                     [25.00%]
+ 4,110,655,734,525 instructions              #    1.30  insns per cycle         [37.50%]
+    41,118,731,882 cache-references                                             [50.00%]
+     9,277,303,886 cache-misses              #   22.562 % of all cache refs     [62.50%]
+             1,220 cs                                                          
+                 9 migrations                                                  
+   823,578,698,313 L1-dcache-loads                                              [75.00%]
+    69,841,983,332 L1-dcache-load-misses     #  [33m  8.48%[m of all L1-dcache hits   [75.00%]
+    37,875,315,337 LLC-loads                                                    [50.00%]
+     8,557,099,093 LLC-load-misses           #  [31m 22.59%[m of all LL-cache hits    [12.50%]
+
+     570.449223310 seconds time elapsed
+
+
+ Performance counter stats for '../lingeling-modificado/plingeling ../benchmarks_plingeling/grid-strips-grid-y-3.035-NOTKNOWN.cnf -t 3':
+
+ 5,152,784,934,724 cycles                    #    0.000 GHz                     [25.00%]
+ 6,172,124,230,330 instructions              #    1.20  insns per cycle         [37.50%]
+    62,169,662,772 cache-references                                             [50.00%]
+    20,330,393,862 cache-misses              #   32.701 % of all cache refs     [62.50%]
+             2,163 cs                                                          
+                14 migrations                                                  
+ 1,235,367,627,092 L1-dcache-loads                                              [75.00%]
+   105,346,527,710 L1-dcache-load-misses     #  [33m  8.53%[m of all L1-dcache hits   [75.00%]
+    57,286,922,274 LLC-loads                                                    [50.00%]
+    18,833,548,592 LLC-load-misses           #  [31m 32.88%[m of all LL-cache hits    [12.50%]
+
+     650.135671424 seconds time elapsed
+
+
+ Performance counter stats for '../lingeling-modificado/plingeling ../benchmarks_plingeling/grid-strips-grid-y-3.035-NOTKNOWN.cnf -t 4':
+
+ 7,397,605,818,424 cycles                    #    0.000 GHz                     [25.00%]
+ 8,230,963,589,599 instructions              #    1.11  insns per cycle         [37.50%]
+    83,093,177,363 cache-references                                             [50.00%]
+    33,154,357,647 cache-misses              #   39.900 % of all cache refs     [62.50%]
+             3,037 cs                                                          
+                10 migrations                                                  
+ 1,646,793,372,987 L1-dcache-loads                                              [75.00%]
+   140,553,653,305 L1-dcache-load-misses     #  [33m  8.53%[m of all L1-dcache hits   [75.00%]
+    76,524,124,634 LLC-loads                                                    [50.00%]
+    30,678,162,529 LLC-load-misses           #  [31m 40.09%[m of all LL-cache hits    [12.50%]
+
+     700.736401261 seconds time elapsed
+
+
+ Performance counter stats for '../lingeling-modificado/plingeling ../benchmarks_plingeling/grid-strips-grid-y-3.035-NOTKNOWN.cnf -t 5':
+
+ 9,529,324,790,402 cycles                    #    0.000 GHz                     [25.00%]
+10,289,293,757,502 instructions              #    1.08  insns per cycle         [37.50%]
+   103,982,824,848 cache-references                                             [50.00%]
+    46,750,705,832 cache-misses              #   44.960 % of all cache refs     [62.50%]
+             4,213 cs                                                          
+                18 migrations                                                  
+ 2,058,698,295,478 L1-dcache-loads                                              [75.00%]
+   175,346,968,691 L1-dcache-load-misses     #  [33m  8.52%[m of all L1-dcache hits   [75.00%]
+    95,684,622,175 LLC-loads                                                    [50.00%]
+    43,281,422,998 LLC-load-misses           #  [31m 45.23%[m of all LL-cache hits    [12.50%]
+
+     761.791964013 seconds time elapsed
+
+
+ Performance counter stats for '../lingeling-modificado/plingeling ../benchmarks_plingeling/grid-strips-grid-y-3.035-NOTKNOWN.cnf -t 6':
+
+12,122,363,807,949 cycles                    #    0.000 GHz                     [25.00%]
+12,346,565,228,679 instructions              #    1.02  insns per cycle         [37.50%]
+   125,467,707,188 cache-references                                             [50.00%]
+    61,655,401,757 cache-misses              #   49.140 % of all cache refs     [62.50%]
+             6,753 cs                                                          
+                20 migrations                                                  
+ 2,469,820,053,140 L1-dcache-loads                                              [75.00%]
+   210,378,575,175 L1-dcache-load-misses     #  [33m  8.52%[m of all L1-dcache hits   [75.00%]
+   115,431,741,829 LLC-loads                                                    [50.00%]
+    57,092,148,575 LLC-load-misses           #  [31m 49.46%[m of all LL-cache hits    [12.50%]
+
+     806.616917112 seconds time elapsed
+
+
+ Performance counter stats for '../lingeling-modificado/plingeling ../benchmarks_plingeling/hwmcc10-timeframe-expansion-k45-pdtvissoap1-tseitin.cnf -t 1':
+
+   450,600,770,744 cycles                    #    0.000 GHz                     [25.01%]
+   576,468,528,734 instructions              #    1.28  insns per cycle         [37.51%]
+     3,556,454,133 cache-references                                             [50.01%]
+        68,878,630 cache-misses              #    1.937 % of all cache refs     [62.51%]
+               187 cs                                                          
+                 6 migrations                                                  
+   107,143,266,565 L1-dcache-loads                                              [75.00%]
+     7,846,943,060 L1-dcache-load-misses     #  [33m  7.32%[m of all L1-dcache hits   [75.00%]
+     3,409,799,025 LLC-loads                                                    [50.00%]
+        57,330,993 LLC-load-misses           #    1.68% of all LL-cache hits    [12.50%]
+
+     161.695720320 seconds time elapsed
+
+
+ Performance counter stats for '../lingeling-modificado/plingeling ../benchmarks_plingeling/hwmcc10-timeframe-expansion-k45-pdtvissoap1-tseitin.cnf -t 2':
+
+   921,290,217,387 cycles                    #    0.000 GHz                     [24.99%]
+ 1,153,199,208,032 instructions              #    1.25  insns per cycle         [37.49%]
+     7,139,246,799 cache-references                                             [50.00%]
+       453,645,444 cache-misses              #    6.354 % of all cache refs     [62.50%]
+               424 cs                                                          
+                10 migrations                                                  
+   214,034,258,973 L1-dcache-loads                                              [75.00%]
+    15,708,592,952 L1-dcache-load-misses     #  [33m  7.34%[m of all L1-dcache hits   [75.01%]
+     6,842,309,851 LLC-loads                                                    [50.00%]
+       416,883,625 LLC-load-misses           #  [33m  6.09%[m of all LL-cache hits    [12.49%]
+
+     165.795075381 seconds time elapsed
+
+
+ Performance counter stats for '../lingeling-modificado/plingeling ../benchmarks_plingeling/hwmcc10-timeframe-expansion-k45-pdtvissoap1-tseitin.cnf -t 3':
+
+ 1,399,366,358,842 cycles                    #    0.000 GHz                     [25.00%]
+ 1,728,982,972,420 instructions              #    1.24  insns per cycle         [37.50%]
+    10,713,861,768 cache-references                                             [50.00%]
+     1,161,271,755 cache-misses              #   10.839 % of all cache refs     [62.50%]
+               676 cs                                                          
+                 8 migrations                                                  
+   320,957,831,265 L1-dcache-loads                                              [75.00%]
+    23,603,520,530 L1-dcache-load-misses     #  [33m  7.35%[m of all L1-dcache hits   [75.00%]
+    10,259,888,608 LLC-loads                                                    [50.00%]
+     1,103,526,959 LLC-load-misses           #  [35m 10.76%[m of all LL-cache hits    [12.50%]
+
+     176.419079323 seconds time elapsed
+
+
+ Performance counter stats for '../lingeling-modificado/plingeling ../benchmarks_plingeling/hwmcc10-timeframe-expansion-k45-pdtvissoap1-tseitin.cnf -t 4':
+
+ 1,907,647,731,915 cycles                    #    0.000 GHz                     [25.00%]
+ 2,306,279,514,472 instructions              #    1.21  insns per cycle         [37.50%]
+    14,302,204,686 cache-references                                             [50.00%]
+     2,135,746,449 cache-misses              #   14.933 % of all cache refs     [62.50%]
+               986 cs                                                          
+                11 migrations                                                  
+   427,888,328,565 L1-dcache-loads                                              [75.00%]
+    31,393,674,109 L1-dcache-load-misses     #  [33m  7.34%[m of all L1-dcache hits   [75.00%]
+    13,711,500,722 LLC-loads                                                    [50.00%]
+     2,038,008,248 LLC-load-misses           #  [35m 14.86%[m of all LL-cache hits    [12.50%]
+
+     180.590702714 seconds time elapsed
+
+
+ Performance counter stats for '../lingeling-modificado/plingeling ../benchmarks_plingeling/hwmcc10-timeframe-expansion-k45-pdtvissoap1-tseitin.cnf -t 5':
+
+ 2,413,878,982,108 cycles                    #    0.000 GHz                     [25.00%]
+ 2,884,693,991,497 instructions              #    1.20  insns per cycle         [37.50%]
+    17,941,109,702 cache-references                                             [50.00%]
+     3,433,155,900 cache-misses              #   19.136 % of all cache refs     [62.50%]
+             1,376 cs                                                          
+                21 migrations                                                  
+   534,883,960,932 L1-dcache-loads                                              [75.00%]
+    39,388,425,888 L1-dcache-load-misses     #  [33m  7.36%[m of all L1-dcache hits   [75.00%]
+    17,188,140,005 LLC-loads                                                    [50.00%]
+     3,292,970,825 LLC-load-misses           #  [35m 19.16%[m of all LL-cache hits    [12.50%]
+
+     192.793452567 seconds time elapsed
+
+
+ Performance counter stats for '../lingeling-modificado/plingeling ../benchmarks_plingeling/hwmcc10-timeframe-expansion-k45-pdtvissoap1-tseitin.cnf -t 6':
+
+ 2,950,022,879,233 cycles                    #    0.000 GHz                     [25.00%]
+ 3,461,123,788,846 instructions              #    1.17  insns per cycle         [37.50%]
+    21,529,350,260 cache-references                                             [50.00%]
+     4,868,511,549 cache-misses              #   22.613 % of all cache refs     [62.50%]
+             1,899 cs                                                          
+                17 migrations                                                  
+   641,779,513,670 L1-dcache-loads                                              [75.00%]
+    47,192,031,188 L1-dcache-load-misses     #  [33m  7.35%[m of all L1-dcache hits   [75.00%]
+    20,622,138,821 LLC-loads                                                    [50.00%]
+     4,664,515,173 LLC-load-misses           #  [31m 22.62%[m of all LL-cache hits    [12.50%]
+
+     196.364490093 seconds time elapsed
+
+
+ Performance counter stats for '../lingeling-modificado/plingeling ../benchmarks_plingeling/hwmcc10-timeframe-expansion-k50-pdtpmsns2-tseitin.cnf -t 1':
+
+   963,411,756,765 cycles                    #    0.000 GHz                     [25.00%]
+ 1,208,752,669,803 instructions              #    1.25  insns per cycle         [37.50%]
+     8,757,254,768 cache-references                                             [50.00%]
+       114,838,744 cache-misses              #    1.311 % of all cache refs     [62.50%]
+               382 cs                                                          
+                 6 migrations                                                  
+   215,701,040,280 L1-dcache-loads                                              [75.00%]
+    17,405,582,282 L1-dcache-load-misses     #  [33m  8.07%[m of all L1-dcache hits   [75.00%]
+     8,405,268,992 LLC-loads                                                    [50.00%]
+        94,290,999 LLC-load-misses           #    1.12% of all LL-cache hits    [12.50%]
+
+     345.305926958 seconds time elapsed
+
+
+ Performance counter stats for '../lingeling-modificado/plingeling ../benchmarks_plingeling/hwmcc10-timeframe-expansion-k50-pdtpmsns2-tseitin.cnf -t 2':
+
+ 1,964,913,084,236 cycles                    #    0.000 GHz                     [25.00%]
+ 2,417,966,138,965 instructions              #    1.23  insns per cycle         [37.50%]
+    17,611,668,808 cache-references                                             [50.00%]
+       972,545,376 cache-misses              #    5.522 % of all cache refs     [62.50%]
+               791 cs                                                          
+                 8 migrations                                                  
+   431,408,444,719 L1-dcache-loads                                              [75.00%]
+    34,929,447,716 L1-dcache-load-misses     #  [33m  8.10%[m of all L1-dcache hits   [75.00%]
+    16,924,994,481 LLC-loads                                                    [50.00%]
+       922,540,878 LLC-load-misses           #  [33m  5.45%[m of all LL-cache hits    [12.50%]
+
+     353.926556094 seconds time elapsed
+
+
+ Performance counter stats for '../lingeling-modificado/plingeling ../benchmarks_plingeling/hwmcc10-timeframe-expansion-k50-pdtpmsns2-tseitin.cnf -t 3':
+
+ 3,014,907,902,718 cycles                    #    0.000 GHz                     [25.00%]
+ 3,626,075,849,664 instructions              #    1.20  insns per cycle         [37.50%]
+    26,436,720,300 cache-references                                             [50.00%]
+     2,800,944,583 cache-misses              #   10.595 % of all cache refs     [62.50%]
+             1,297 cs                                                          
+                 8 migrations                                                  
+   647,033,992,611 L1-dcache-loads                                              [75.00%]
+    52,450,303,117 L1-dcache-load-misses     #  [33m  8.11%[m of all L1-dcache hits   [75.00%]
+    25,366,145,824 LLC-loads                                                    [50.00%]
+     2,666,706,474 LLC-load-misses           #  [35m 10.51%[m of all LL-cache hits    [12.50%]
+
+     379.326069796 seconds time elapsed
+
+
+ Performance counter stats for '../lingeling-modificado/plingeling ../benchmarks_plingeling/hwmcc10-timeframe-expansion-k50-pdtpmsns2-tseitin.cnf -t 4':
+
+ 4,126,733,624,598 cycles                    #    0.000 GHz                     [25.00%]
+ 4,835,231,903,101 instructions              #    1.17  insns per cycle         [37.50%]
+    35,335,294,987 cache-references                                             [50.00%]
+     5,353,342,100 cache-misses              #   15.150 % of all cache refs     [62.50%]
+             1,783 cs                                                          
+                10 migrations                                                  
+   862,849,985,412 L1-dcache-loads                                              [75.00%]
+    69,960,740,724 L1-dcache-load-misses     #  [33m  8.11%[m of all L1-dcache hits   [75.00%]
+    33,915,200,804 LLC-loads                                                    [50.00%]
+     5,132,196,211 LLC-load-misses           #  [35m 15.13%[m of all LL-cache hits    [12.50%]
+
+     390.135709280 seconds time elapsed
+
+
+ Performance counter stats for '../lingeling-modificado/plingeling ../benchmarks_plingeling/hwmcc10-timeframe-expansion-k50-pdtpmsns2-tseitin.cnf -t 5':
+
+ 5,239,664,068,255 cycles                    #    0.000 GHz                     [25.00%]
+ 6,046,093,029,563 instructions              #    1.15  insns per cycle         [37.50%]
+    44,203,393,423 cache-references                                             [50.00%]
+     8,835,170,322 cache-misses              #   19.988 % of all cache refs     [62.50%]
+             2,483 cs                                                          
+                17 migrations                                                  
+ 1,078,633,717,652 L1-dcache-loads                                              [75.00%]
+    87,466,878,382 L1-dcache-load-misses     #  [33m  8.11%[m of all L1-dcache hits   [75.00%]
+    42,385,521,970 LLC-loads                                                    [50.00%]
+     8,520,041,601 LLC-load-misses           #  [31m 20.10%[m of all LL-cache hits    [12.50%]
+
+     416.974520231 seconds time elapsed
+
+
+ Performance counter stats for '../lingeling-modificado/plingeling ../benchmarks_plingeling/hwmcc10-timeframe-expansion-k50-pdtpmsns2-tseitin.cnf -t 6':
+
+ 6,457,110,238,087 cycles                    #    0.000 GHz                     [25.00%]
+ 7,255,981,232,898 instructions              #    1.12  insns per cycle         [37.50%]
+    53,097,830,275 cache-references                                             [50.00%]
+    13,076,715,162 cache-misses              #   24.628 % of all cache refs     [62.50%]
+             3,742 cs                                                          
+                18 migrations                                                  
+ 1,294,480,880,460 L1-dcache-loads                                              [75.00%]
+   104,946,958,238 L1-dcache-load-misses     #  [33m  8.11%[m of all L1-dcache hits   [75.00%]
+    50,855,802,038 LLC-loads                                                    [50.00%]
+    12,620,356,767 LLC-load-misses           #  [31m 24.82%[m of all LL-cache hits    [12.50%]
+
+     428.721242587 seconds time elapsed
+
+
+ Performance counter stats for '../lingeling-modificado/plingeling ../benchmarks_plingeling/md5_48_3.cnf -t 1':
+
+   339,522,065,830 cycles                    #    0.000 GHz                     [25.00%]
+   456,468,595,641 instructions              #    1.34  insns per cycle         [37.50%]
+     2,480,600,612 cache-references                                             [50.00%]
+        23,322,107 cache-misses              #    0.940 % of all cache refs     [62.50%]
+             8,231 cs                                                          
+                 6 migrations                                                  
+    83,002,841,943 L1-dcache-loads                                              [75.01%]
+     4,691,329,167 L1-dcache-load-misses     #  [33m  5.65%[m of all L1-dcache hits   [75.00%]
+     2,345,128,525 LLC-loads                                                    [50.01%]
+        16,520,440 LLC-load-misses           #    0.70% of all LL-cache hits    [12.50%]
+
+     121.975148732 seconds time elapsed
+
+
+ Performance counter stats for '../lingeling-modificado/plingeling ../benchmarks_plingeling/md5_48_3.cnf -t 2':
+
+   689,356,313,778 cycles                    #    0.000 GHz                     [24.99%]
+   912,865,301,163 instructions              #    1.32  insns per cycle         [37.50%]
+     4,968,063,675 cache-references                                             [50.00%]
+       204,734,782 cache-misses              #    4.121 % of all cache refs     [62.50%]
+             8,686 cs                                                          
+                14 migrations                                                  
+   165,908,357,624 L1-dcache-loads                                              [75.00%]
+     9,385,708,983 L1-dcache-load-misses     #  [33m  5.66%[m of all L1-dcache hits   [75.00%]
+     4,706,348,840 LLC-loads                                                    [50.01%]
+       191,790,600 LLC-load-misses           #    4.08% of all LL-cache hits    [12.49%]
+
+     123.994720250 seconds time elapsed
+
+
+ Performance counter stats for '../lingeling-modificado/plingeling ../benchmarks_plingeling/md5_48_3.cnf -t 3':
+
+ 1,052,041,655,005 cycles                    #    0.000 GHz                     [25.00%]
+ 1,367,681,972,814 instructions              #    1.30  insns per cycle         [37.50%]
+     7,451,789,329 cache-references                                             [50.00%]
+       750,792,568 cache-misses              #   10.075 % of all cache refs     [62.50%]
+             8,875 cs                                                          
+                10 migrations                                                  
+   248,855,448,312 L1-dcache-loads                                              [75.00%]
+    14,092,692,797 L1-dcache-load-misses     #  [33m  5.66%[m of all L1-dcache hits   [75.00%]
+     7,044,862,087 LLC-loads                                                    [50.00%]
+       710,964,290 LLC-load-misses           #  [35m 10.09%[m of all LL-cache hits    [12.50%]
+
+     132.710312383 seconds time elapsed
+
+
+ Performance counter stats for '../lingeling-modificado/plingeling ../benchmarks_plingeling/md5_48_3.cnf -t 4':
+
+ 1,450,028,526,042 cycles                    #    0.000 GHz                     [25.00%]
+ 1,824,320,707,189 instructions              #    1.26  insns per cycle         [37.50%]
+     9,958,344,544 cache-references                                             [50.00%]
+     1,673,467,433 cache-misses              #   16.805 % of all cache refs     [62.50%]
+             9,085 cs                                                          
+                12 migrations                                                  
+   331,598,505,626 L1-dcache-loads                                              [75.00%]
+    18,816,021,310 L1-dcache-load-misses     #  [33m  5.67%[m of all L1-dcache hits   [75.00%]
+     9,425,633,481 LLC-loads                                                    [50.00%]
+     1,603,640,461 LLC-load-misses           #  [35m 17.01%[m of all LL-cache hits    [12.50%]
+
+     138.597838332 seconds time elapsed
+
+
+ Performance counter stats for '../lingeling-modificado/plingeling ../benchmarks_plingeling/md5_48_3.cnf -t 5':
+
+ 1,864,200,090,593 cycles                    #    0.000 GHz                     [25.01%]
+ 2,280,576,076,863 instructions              #    1.22  insns per cycle         [37.50%]
+    12,450,941,191 cache-references                                             [50.00%]
+     3,223,551,598 cache-misses              #   25.890 % of all cache refs     [62.50%]
+             9,369 cs                                                          
+                20 migrations                                                  
+   414,635,685,170 L1-dcache-loads                                              [75.00%]
+    23,574,460,854 L1-dcache-load-misses     #  [33m  5.69%[m of all L1-dcache hits   [75.00%]
+    11,773,205,850 LLC-loads                                                    [50.00%]
+     3,106,663,011 LLC-load-misses           #  [31m 26.39%[m of all LL-cache hits    [12.50%]
+
+     148.707970220 seconds time elapsed
+
+
+ Performance counter stats for '../lingeling-modificado/plingeling ../benchmarks_plingeling/md5_48_3.cnf -t 6':
+
+ 2,321,742,929,903 cycles                    #    0.000 GHz                     [25.00%]
+ 2,736,761,964,383 instructions              #    1.18  insns per cycle         [37.50%]
+    15,001,669,644 cache-references                                             [50.00%]
+     5,060,314,404 cache-misses              #   33.732 % of all cache refs     [62.50%]
+             9,876 cs                                                          
+                16 migrations                                                  
+   497,432,150,390 L1-dcache-loads                                              [75.00%]
+    28,275,233,200 L1-dcache-load-misses     #  [33m  5.68%[m of all L1-dcache hits   [75.00%]
+    14,149,284,265 LLC-loads                                                    [50.00%]
+     4,860,037,744 LLC-load-misses           #  [31m 34.35%[m of all LL-cache hits    [12.50%]
+
+     154.940343976 seconds time elapsed
+
+
+ Performance counter stats for '../lingeling-modificado/plingeling ../benchmarks_plingeling/q_query_3_L150_coli.sat.cnf -t 1':
+
+   679,478,053,562 cycles                    #    0.000 GHz                     [25.01%]
+ 1,272,088,817,538 instructions              #    1.87  insns per cycle         [37.51%]
+     6,103,941,873 cache-references                                             [50.01%]
+       332,149,682 cache-misses              #    5.442 % of all cache refs     [62.52%]
+               285 cs                                                          
+                14 migrations                                                  
+   199,650,727,220 L1-dcache-loads                                              [75.00%]
+    11,317,965,382 L1-dcache-load-misses     #  [33m  5.67%[m of all L1-dcache hits   [75.00%]
+     5,800,233,601 LLC-loads                                                    [49.99%]
+       307,351,290 LLC-load-misses           #  [33m  5.30%[m of all LL-cache hits    [12.50%]
+
+     243.875663851 seconds time elapsed
+
+
+ Performance counter stats for '../lingeling-modificado/plingeling ../benchmarks_plingeling/q_query_3_L150_coli.sat.cnf -t 2':
+
+ 1,443,332,198,281 cycles                    #    0.000 GHz                     [25.00%]
+ 2,539,495,867,963 instructions              #    1.76  insns per cycle         [37.50%]
+    12,260,036,614 cache-references                                             [50.00%]
+     2,257,828,994 cache-misses              #   18.416 % of all cache refs     [62.50%]
+               611 cs                                                          
+                 9 migrations                                                  
+   398,183,203,276 L1-dcache-loads                                              [75.00%]
+    22,713,018,575 L1-dcache-load-misses     #  [33m  5.70%[m of all L1-dcache hits   [75.00%]
+    11,659,093,652 LLC-loads                                                    [50.00%]
+     2,184,608,450 LLC-load-misses           #  [35m 18.74%[m of all LL-cache hits    [12.50%]
+
+     261.225203396 seconds time elapsed
+
+
+ Performance counter stats for '../lingeling-modificado/plingeling ../benchmarks_plingeling/q_query_3_L150_coli.sat.cnf -t 3':
+
+ 2,272,396,066,940 cycles                    #    0.000 GHz                     [25.00%]
+ 3,807,738,993,840 instructions              #    1.68  insns per cycle         [37.50%]
+    18,496,190,298 cache-references                                             [50.00%]
+     5,550,063,907 cache-misses              #   30.007 % of all cache refs     [62.50%]
+             1,019 cs                                                          
+                 8 migrations                                                  
+   596,740,113,585 L1-dcache-loads                                              [75.00%]
+    34,045,731,786 L1-dcache-load-misses     #  [33m  5.71%[m of all L1-dcache hits   [75.00%]
+    17,534,315,607 LLC-loads                                                    [50.00%]
+     5,383,212,064 LLC-load-misses           #  [31m 30.70%[m of all LL-cache hits    [12.50%]
+
+     288.715368643 seconds time elapsed
+
+
+ Performance counter stats for '../lingeling-modificado/plingeling ../benchmarks_plingeling/q_query_3_L150_coli.sat.cnf -t 4':
+
+ 3,199,127,292,694 cycles                    #    0.000 GHz                     [25.00%]
+ 5,074,222,726,465 instructions              #    1.59  insns per cycle         [37.50%]
+    24,730,567,013 cache-references                                             [50.00%]
+     9,608,997,973 cache-misses              #   38.855 % of all cache refs     [62.50%]
+             1,488 cs                                                          
+                 9 migrations                                                  
+   795,326,661,069 L1-dcache-loads                                              [75.00%]
+    45,477,660,324 L1-dcache-load-misses     #  [33m  5.72%[m of all L1-dcache hits   [75.00%]
+    23,392,497,060 LLC-loads                                                    [50.00%]
+     9,289,960,127 LLC-load-misses           #  [31m 39.71%[m of all LL-cache hits    [12.50%]
+
+     305.790428393 seconds time elapsed
+
+
+ Performance counter stats for '../lingeling-modificado/plingeling ../benchmarks_plingeling/q_query_3_L150_coli.sat.cnf -t 5':
+
+ 4,123,883,466,294 cycles                    #    0.000 GHz                     [25.00%]
+ 6,344,553,216,439 instructions              #    1.54  insns per cycle         [37.50%]
+    31,009,021,276 cache-references                                             [50.00%]
+    14,512,880,100 cache-misses              #   46.802 % of all cache refs     [62.50%]
+             2,075 cs                                                          
+                21 migrations                                                  
+   993,905,907,340 L1-dcache-loads                                              [75.00%]
+    56,893,846,724 L1-dcache-load-misses     #  [33m  5.72%[m of all L1-dcache hits   [75.00%]
+    29,334,519,319 LLC-loads                                                    [50.00%]
+    14,038,129,360 LLC-load-misses           #  [31m 47.86%[m of all LL-cache hits    [12.50%]
+
+     331.879589669 seconds time elapsed
+
+
+ Performance counter stats for '../lingeling-modificado/plingeling ../benchmarks_plingeling/q_query_3_L150_coli.sat.cnf -t 6':
+
+ 5,177,729,374,374 cycles                    #    0.000 GHz                     [25.00%]
+ 7,611,568,810,210 instructions              #    1.47  insns per cycle         [37.50%]
+    37,512,687,400 cache-references                                             [50.00%]
+    19,639,186,318 cache-misses              #   52.353 % of all cache refs     [62.50%]
+             3,277 cs                                                          
+                21 migrations                                                  
+ 1,192,425,612,935 L1-dcache-loads                                              [75.00%]
+    68,385,561,333 L1-dcache-load-misses     #  [33m  5.73%[m of all L1-dcache hits   [75.00%]
+    35,480,318,244 LLC-loads                                                    [50.00%]
+    18,960,730,712 LLC-load-misses           #  [31m 53.44%[m of all LL-cache hits    [12.50%]
+
+     348.184066121 seconds time elapsed
+
+
+ Performance counter stats for '../lingeling-modificado/plingeling ../benchmarks_plingeling/slp-synthesis-aes-top30.cnf -t 1':
+
+ 1,071,713,573,444 cycles                    #    0.000 GHz                     [25.00%]
+ 1,677,286,761,556 instructions              #    1.57  insns per cycle         [37.50%]
+     8,346,400,995 cache-references                                             [50.00%]
+       103,121,727 cache-misses              #    1.236 % of all cache refs     [62.50%]
+            13,110 cs                                                          
+                 6 migrations                                                  
+   319,610,650,176 L1-dcache-loads                                              [75.00%]
+    18,858,753,097 L1-dcache-load-misses     #  [33m  5.90%[m of all L1-dcache hits   [75.00%]
+     8,082,206,350 LLC-loads                                                    [50.00%]
+        86,385,295 LLC-load-misses           #    1.07% of all LL-cache hits    [12.50%]
+
+     384.178318034 seconds time elapsed
+
+
+ Performance counter stats for '../lingeling-modificado/plingeling ../benchmarks_plingeling/slp-synthesis-aes-top30.cnf -t 2':
+
+ 2,193,734,756,040 cycles                    #    0.000 GHz                     [25.00%]
+ 3,354,980,323,974 instructions              #    1.53  insns per cycle         [37.50%]
+    16,698,920,784 cache-references                                             [50.00%]
+       930,801,651 cache-misses              #    5.574 % of all cache refs     [62.50%]
+            13,541 cs                                                          
+                 8 migrations                                                  
+   639,159,195,785 L1-dcache-loads                                              [75.00%]
+    37,732,879,542 L1-dcache-load-misses     #  [33m  5.90%[m of all L1-dcache hits   [75.00%]
+    16,148,660,644 LLC-loads                                                    [50.00%]
+       878,038,042 LLC-load-misses           #  [33m  5.44%[m of all LL-cache hits    [12.50%]
+
+     393.767913052 seconds time elapsed
+
+
+ Performance counter stats for '../lingeling-modificado/plingeling ../benchmarks_plingeling/slp-synthesis-aes-top30.cnf -t 3':
+
+ 3,334,443,276,166 cycles                    #    0.000 GHz                     [25.00%]
+ 5,033,312,349,088 instructions              #    1.51  insns per cycle         [37.50%]
+    25,016,291,217 cache-references                                             [50.00%]
+     2,412,619,523 cache-misses              #    9.644 % of all cache refs     [62.50%]
+            14,086 cs                                                          
+                 8 migrations                                                  
+   958,786,624,567 L1-dcache-loads                                              [75.00%]
+    56,638,601,583 L1-dcache-load-misses     #  [33m  5.91%[m of all L1-dcache hits   [75.00%]
+    24,201,356,810 LLC-loads                                                    [50.00%]
+     2,333,834,342 LLC-load-misses           #  [33m  9.64%[m of all LL-cache hits    [12.50%]
+
+     419.703597224 seconds time elapsed
+
+
+ Performance counter stats for '../lingeling-modificado/plingeling ../benchmarks_plingeling/slp-synthesis-aes-top30.cnf -t 4':
+
+ 4,554,501,716,300 cycles                    #    0.000 GHz                     [25.00%]
+ 6,711,433,458,259 instructions              #    1.47  insns per cycle         [37.50%]
+    33,478,715,565 cache-references                                             [50.00%]
+     4,597,834,176 cache-misses              #   13.734 % of all cache refs     [62.50%]
+            14,590 cs                                                          
+                11 migrations                                                  
+ 1,278,083,109,733 L1-dcache-loads                                              [75.00%]
+    75,434,891,354 L1-dcache-load-misses     #  [33m  5.90%[m of all L1-dcache hits   [75.00%]
+    32,371,251,651 LLC-loads                                                    [50.00%]
+     4,445,932,880 LLC-load-misses           #  [35m 13.73%[m of all LL-cache hits    [12.50%]
+
+     430.306135779 seconds time elapsed
+
+
+ Performance counter stats for '../lingeling-modificado/plingeling ../benchmarks_plingeling/slp-synthesis-aes-top30.cnf -t 5':
+
+ 5,767,275,746,751 cycles                    #    0.000 GHz                     [25.00%]
+ 8,387,829,616,541 instructions              #    1.45  insns per cycle         [37.50%]
+    41,915,428,576 cache-references                                             [50.00%]
+     7,305,240,421 cache-misses              #   17.429 % of all cache refs     [62.50%]
+            15,294 cs                                                          
+                20 migrations                                                  
+ 1,597,949,166,091 L1-dcache-loads                                              [75.00%]
+    94,454,841,189 L1-dcache-load-misses     #  [33m  5.91%[m of all L1-dcache hits   [75.00%]
+    40,438,420,488 LLC-loads                                                    [50.00%]
+     7,076,902,982 LLC-load-misses           #  [35m 17.50%[m of all LL-cache hits    [12.50%]
+
+     458.803376063 seconds time elapsed
+
+
+ Performance counter stats for '../lingeling-modificado/plingeling ../benchmarks_plingeling/slp-synthesis-aes-top30.cnf -t 6':
+
+ 7,056,968,724,075 cycles                    #    0.000 GHz                     [25.00%]
+10,064,661,371,014 instructions              #    1.43  insns per cycle         [37.50%]
+    50,453,095,664 cache-references                                             [50.00%]
+    10,515,309,750 cache-misses              #   20.842 % of all cache refs     [62.50%]
+            16,616 cs                                                          
+                21 migrations                                                  
+ 1,917,427,322,690 L1-dcache-loads                                              [75.00%]
+   113,401,063,241 L1-dcache-load-misses     #  [33m  5.91%[m of all L1-dcache hits   [74.99%]
+    48,592,528,863 LLC-loads                                                    [50.00%]
+    10,211,199,500 LLC-load-misses           #  [31m 21.01%[m of all LL-cache hits    [12.50%]
+
+     467.896133658 seconds time elapsed
+
+
+ Performance counter stats for '../lingeling-modificado/plingeling ../benchmarks_plingeling/traffic_b_unsat.cnf -t 1':
+
+   797,131,327,092 cycles                    #    0.000 GHz                     [25.00%]
+ 1,199,260,238,105 instructions              #    1.50  insns per cycle         [37.50%]
+     6,927,238,866 cache-references                                             [50.00%]
+       217,794,687 cache-misses              #    3.144 % of all cache refs     [62.50%]
+               320 cs                                                          
+                 6 migrations                                                  
+   198,266,078,403 L1-dcache-loads                                              [75.00%]
+    12,182,916,574 L1-dcache-load-misses     #  [33m  6.14%[m of all L1-dcache hits   [75.00%]
+     6,808,160,638 LLC-loads                                                    [50.00%]
+       199,686,605 LLC-load-misses           #    2.93% of all LL-cache hits    [12.50%]
+
+     285.819295116 seconds time elapsed
+
+
+ Performance counter stats for '../lingeling-modificado/plingeling ../benchmarks_plingeling/traffic_b_unsat.cnf -t 2':
+
+ 1,618,140,717,203 cycles                    #    0.000 GHz                     [25.00%]
+ 2,397,446,166,778 instructions              #    1.48  insns per cycle         [37.50%]
+    13,840,901,045 cache-references                                             [50.00%]
+       895,164,955 cache-misses              #    6.468 % of all cache refs     [62.50%]
+               628 cs                                                          
+                 8 migrations                                                  
+   396,085,231,834 L1-dcache-loads                                              [75.00%]
+    24,314,150,951 L1-dcache-load-misses     #  [33m  6.14%[m of all L1-dcache hits   [75.00%]
+    13,589,526,163 LLC-loads                                                    [50.00%]
+       870,700,309 LLC-load-misses           #  [33m  6.41%[m of all LL-cache hits    [12.50%]
+
+     291.864067656 seconds time elapsed
+
+
+ Performance counter stats for '../lingeling-modificado/plingeling ../benchmarks_plingeling/traffic_b_unsat.cnf -t 3':
+
+ 2,486,155,754,494 cycles                    #    0.000 GHz                     [25.00%]
+ 3,594,330,754,883 instructions              #    1.45  insns per cycle         [37.50%]
+    20,829,159,611 cache-references                                             [50.00%]
+     2,239,119,518 cache-misses              #   10.750 % of all cache refs     [62.51%]
+             1,035 cs                                                          
+                16 migrations                                                  
+   593,966,149,452 L1-dcache-loads                                              [75.01%]
+    36,599,644,137 L1-dcache-load-misses     #  [33m  6.16%[m of all L1-dcache hits   [75.00%]
+    20,434,187,090 LLC-loads                                                    [50.00%]
+     2,200,198,288 LLC-load-misses           #  [35m 10.77%[m of all LL-cache hits    [12.50%]
+
+     314.244472943 seconds time elapsed
+
+
+ Performance counter stats for '../lingeling-modificado/plingeling ../benchmarks_plingeling/traffic_b_unsat.cnf -t 4':
+
+ 3,441,840,968,193 cycles                    #    0.000 GHz                     [25.00%]
+ 4,793,775,953,296 instructions              #    1.39  insns per cycle         [37.50%]
+    27,891,671,129 cache-references                                             [50.00%]
+     4,404,755,859 cache-misses              #   15.792 % of all cache refs     [62.50%]
+             1,420 cs                                                          
+                 9 migrations                                                  
+   791,948,611,213 L1-dcache-loads                                              [75.00%]
+    48,833,854,502 L1-dcache-load-misses     #  [33m  6.17%[m of all L1-dcache hits   [75.00%]
+    27,307,607,291 LLC-loads                                                    [50.00%]
+     4,349,372,581 LLC-load-misses           #  [35m 15.93%[m of all LL-cache hits    [12.50%]
+
+     326.941837340 seconds time elapsed
+
+
+ Performance counter stats for '../lingeling-modificado/plingeling ../benchmarks_plingeling/traffic_b_unsat.cnf -t 5':
+
+ 4,392,325,881,847 cycles                    #    0.000 GHz                     [25.00%]
+ 5,993,062,206,078 instructions              #    1.36  insns per cycle         [37.50%]
+    34,911,356,259 cache-references                                             [50.00%]
+     7,260,813,990 cache-misses              #   20.798 % of all cache refs     [62.50%]
+             1,884 cs                                                          
+                22 migrations                                                  
+   989,779,331,253 L1-dcache-loads                                              [75.00%]
+    61,067,651,101 L1-dcache-load-misses     #  [33m  6.17%[m of all L1-dcache hits   [75.00%]
+    34,165,134,838 LLC-loads                                                    [50.00%]
+     7,167,133,429 LLC-load-misses           #  [31m 20.98%[m of all LL-cache hits    [12.50%]
+
+     350.331639977 seconds time elapsed
+
+
+ Performance counter stats for '../lingeling-modificado/plingeling ../benchmarks_plingeling/traffic_b_unsat.cnf -t 6':
+
+ 5,457,654,519,640 cycles                    #    0.000 GHz                     [25.00%]
+ 7,191,714,772,940 instructions              #    1.32  insns per cycle         [37.50%]
+    41,952,627,912 cache-references                                             [50.00%]
+    10,736,744,079 cache-misses              #   25.593 % of all cache refs     [62.50%]
+             2,994 cs                                                          
+                16 migrations                                                  
+ 1,187,747,717,226 L1-dcache-loads                                              [75.00%]
+    73,295,848,232 L1-dcache-load-misses     #  [33m  6.17%[m of all L1-dcache hits   [75.00%]
+    41,034,678,856 LLC-loads                                                    [50.00%]
+    10,603,244,869 LLC-load-misses           #  [31m 25.84%[m of all LL-cache hits    [12.50%]
+
+     363.334455345 seconds time elapsed
+
+
+ Performance counter stats for '../lingeling-modificado/plingeling ../benchmarks_plingeling/UCG-15-10p1.cnf -t 1':
+
+   695,225,322,003 cycles                    #    0.000 GHz                     [25.01%]
+ 1,004,626,948,340 instructions              #    1.45  insns per cycle         [37.51%]
+     8,929,592,592 cache-references                                             [50.01%]
+       204,919,366 cache-misses              #    2.295 % of all cache refs     [62.51%]
+            25,284 cs                                                          
+                 7 migrations                                                  
+   190,899,223,457 L1-dcache-loads                                              [75.01%]
+    15,151,860,073 L1-dcache-load-misses     #  [33m  7.94%[m of all L1-dcache hits   [75.00%]
+     8,398,430,831 LLC-loads                                                    [50.00%]
+       183,773,457 LLC-load-misses           #    2.19% of all LL-cache hits    [12.50%]
+
+     249.577575830 seconds time elapsed
+
+
+ Performance counter stats for '../lingeling-modificado/plingeling ../benchmarks_plingeling/UCG-15-10p1.cnf -t 2':
+
+ 1,464,878,639,242 cycles                    #    0.000 GHz                     [25.00%]
+ 2,008,356,161,591 instructions              #    1.37  insns per cycle         [37.50%]
+    17,853,365,198 cache-references                                             [50.00%]
+     1,857,710,269 cache-misses              #   10.405 % of all cache refs     [62.50%]
+            25,625 cs                                                          
+                 9 migrations                                                  
+   381,319,597,392 L1-dcache-loads                                              [75.00%]
+    30,327,461,019 L1-dcache-load-misses     #  [33m  7.95%[m of all L1-dcache hits   [75.00%]
+    16,786,496,746 LLC-loads                                                    [50.00%]
+     1,763,520,695 LLC-load-misses           #  [35m 10.51%[m of all LL-cache hits    [12.50%]
+
+     265.373121912 seconds time elapsed
+
+
+ Performance counter stats for '../lingeling-modificado/plingeling ../benchmarks_plingeling/UCG-15-10p1.cnf -t 3':
+
+ 2,334,258,847,932 cycles                    #    0.000 GHz                     [25.00%]
+ 3,011,549,141,106 instructions              #    1.29  insns per cycle         [37.50%]
+    26,852,821,649 cache-references                                             [50.00%]
+     5,459,140,677 cache-misses              #   20.330 % of all cache refs     [62.50%]
+            26,068 cs                                                          
+                15 migrations                                                  
+   572,024,378,177 L1-dcache-loads                                              [75.00%]
+    45,519,134,737 L1-dcache-load-misses     #  [33m  7.96%[m of all L1-dcache hits   [75.00%]
+    25,196,344,712 LLC-loads                                                    [50.00%]
+     5,220,646,252 LLC-load-misses           #  [31m 20.72%[m of all LL-cache hits    [12.50%]
+
+     295.526000876 seconds time elapsed
+
+
+ Performance counter stats for '../lingeling-modificado/plingeling ../benchmarks_plingeling/UCG-15-10p1.cnf -t 4':
+
+ 3,330,306,749,936 cycles                    #    0.000 GHz                     [25.00%]
+ 4,015,445,924,800 instructions              #    1.21  insns per cycle         [37.50%]
+    35,884,302,044 cache-references                                             [50.00%]
+    10,721,464,838 cache-misses              #   29.878 % of all cache refs     [62.50%]
+            26,534 cs                                                          
+                10 migrations                                                  
+   762,226,734,168 L1-dcache-loads                                              [75.00%]
+    60,617,796,237 L1-dcache-load-misses     #  [33m  7.95%[m of all L1-dcache hits   [75.00%]
+    33,652,436,811 LLC-loads                                                    [50.00%]
+    10,227,814,746 LLC-load-misses           #  [31m 30.39%[m of all LL-cache hits    [12.50%]
+
+     316.524691089 seconds time elapsed
+
+
+ Performance counter stats for '../lingeling-modificado/plingeling ../benchmarks_plingeling/UCG-15-10p1.cnf -t 5':
+
+ 4,343,517,634,315 cycles                    #    0.000 GHz                     [25.00%]
+ 5,020,059,094,153 instructions              #    1.16  insns per cycle         [37.50%]
+    44,999,137,257 cache-references                                             [50.00%]
+    16,956,340,096 cache-misses              #   37.681 % of all cache refs     [62.50%]
+            27,099 cs                                                          
+                42 migrations                                                  
+   952,940,511,553 L1-dcache-loads                                              [75.00%]
+    75,834,541,929 L1-dcache-load-misses     #  [33m  7.96%[m of all L1-dcache hits   [75.00%]
+    42,148,625,661 LLC-loads                                                    [50.00%]
+    16,183,916,310 LLC-load-misses           #  [31m 38.40%[m of all LL-cache hits    [12.50%]
+
+     347.870389377 seconds time elapsed
+
+
+ Performance counter stats for '../lingeling-modificado/plingeling ../benchmarks_plingeling/UCG-15-10p1.cnf -t 6':
+
+ 5,475,155,203,477 cycles                    #    0.000 GHz                     [25.00%]
+ 6,023,538,408,583 instructions              #    1.10  insns per cycle         [37.50%]
+    54,202,449,571 cache-references                                             [50.00%]
+    23,681,725,843 cache-misses              #   43.691 % of all cache refs     [62.50%]
+            30,237 cs                                                          
+                74 migrations                                                  
+ 1,143,490,644,199 L1-dcache-loads                                              [75.00%]
+    91,137,695,467 L1-dcache-load-misses     #  [33m  7.97%[m of all L1-dcache hits   [75.00%]
+    50,713,423,391 LLC-loads                                                    [50.00%]
+    22,566,174,497 LLC-load-misses           #  [31m 44.50%[m of all LL-cache hits    [12.50%]
+
+     365.585276475 seconds time elapsed
+
