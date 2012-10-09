@@ -27,6 +27,8 @@
 \usepackage{mathtools}
 \usepackage{caption}
 \usepackage[subrefformat=parens,labelformat=parens]{subfig}
+\theoremstyle{definition}
+\newtheorem{exmp}{Example}[section]
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -108,11 +110,13 @@ One of the most novel approaches to share information between solvers of a portf
 \mainmatter
 \chapter{Introduction}\label{chap:intro}
 
-One of the most well-known problems in computer science is the satisfiability (SAT) problem. SAT was the first problem proved to be NP-complete \cite{cook1971}, proof that derived the Cook-Levin theorem\footnote[1]{Cook and Levin both proved the theorem independently.}. One year later, in 1972, Karp proved in \cite{karp1972} that many common combinatorial problems can be reduced in polynomial time to instances of the SAT problem, thus drawing even more attention to SAT problems by the scientific community. Since many combinatorial problems can be reduced to SAT, it is not strange to find many practical problems with useful applications (such as circuit design and automatic theorem proving) that could be solved if there was an efficient algorithm to solve the SAT problem. Unfortunately, because of the NP-completeness of SAT, such efficient algorithm has not been found yet, but instead, many researchers have improved the current SAT solving algorithms that remain being exponential. Over the years, SAT solvers have shown impressive improvement, the first complete algorithm, the Davis Putnam algorithm \cite{DP1960}, was very limited and could only handle small problems. Today, modern SAT solvers can handle instances with millions of variables, making such solvers suitable even for industrial application. In the next chapter we will point out the main features that have improved SAT solvers significantly in the past.
+One of the most well-known problems in computer science is the satisfiability (SAT) problem. The SAT problem consists in determining whether a logical formula can be evaluated to true or not. For example, the logical formula $(a \vee b \vee c) \wedge (\neg a \vee \neg d) \wedge (c \vee d)$ can be satisfied with the variable assignments $a=$true, $b=$true, $c=$true and $d=$false. So this formula is satisfiable by at least one variable assignment and thus this instance of a SAT problem is solved. SAT was the first problem proved to be NP-complete \cite{cook1971}, proof that derived the Cook-Levin theorem\footnote[1]{Cook and Levin both proved the theorem independently.}. One year later, in 1972, Karp proved in \cite{karp1972} that many common combinatorial problems can be reduced in polynomial time to instances of the SAT problem, thus drawing even more attention to SAT problems by the scientific community. Since many combinatorial problems can be reduced to SAT, it is not strange to find many practical problems with useful applications (such as circuit design and automatic theorem proving) that could be solved if there was an efficient algorithm to solve the SAT problem. Unfortunately, because of the NP-completeness of SAT, such efficient algorithm has not been found yet, but instead, many researchers have improved the current SAT solving algorithms that remain being exponential. Over the years, SAT solvers have shown impressive improvement, the first complete algorithm, the Davis Putnam algorithm \cite{DP1960}, was very limited and could only handle small problems. Today, modern SAT solvers can handle instances with millions of variables, making such solvers suitable even for industrial application. In the next chapter we will point out the main features that have improved SAT solvers significantly in the past.
 
-In the last decade parallel computing has become increasingly popular. As CPU manufacturers have found difficult and expensive to keep increasing the clock speed of processors, they have instead turned to increase the number of cores each chip has. Unfortunately, if the algorithms are not thought to be run in parallel, more cores will bring small improvements. This is the reason why there is a growing concern to parallelize algorithms so that they can take advantage of many-cores architectures of today's computers. In SAT solving it is no different. The annual SAT competition\footnote[2]{www.satcompetition.org}, an event to determine which is the fastest SAT solver, has two main categories: sequential SAT solvers and parallel SAT solvers. In the last years parallel SAT solvers have outperformed sequential solvers in total wall clock time, so the interest in parallel solvers has grown with new designs and approaches explored for this kind of solvers. One of the most successful approaches to implement a parallel SAT solver is the \textit{portfolio approach} with no \textit{physical sharing} of information among cores. This approach basically runs different solvers in parallel, with each core keeping its own copy of the whole problem in memory, and wait for one of them to solve it up. No physical sharing refers to the fact that each core keeps its own copy of the problem's information, they do not access the same memory locations. This is a very simple and straight forward approach of parallelization, but we have also encountered one drawback to it: as we add more solvers to different cores of a single chip, the overall performance of the parallel solver decreases in around 20-40\%. Preliminary experiments strongly suggest that this decrease in performance is caused by an increment in cache misses. Because all cores in a single chip share the same last level cache, and because each thread holds a copy of the original problem in memory, the more threads we add, the bigger the amount of data we have to handle. Since there is only one last level cache shared among all cores, the amount of total accesses from the last level cache to main memory will increase, since now there is a bigger volume of data to handle. 
+In the last decade parallel computing has become increasingly popular. As CPU manufacturers have found difficult and expensive to keep increasing the clock speed of processors, they have instead turned to increase the number of cores each chip has. Unfortunately, if the algorithms are not thought to be run in parallel, more cores will bring small improvements. This is the reason why there is a growing concern to parallelize algorithms so that they can take advantage of many-cores architectures of today's computers. In SAT solving it is no different. The annual SAT competition\footnote[1]{www.satcompetition.org}, an event to determine which is the fastest SAT solver, has two main categories: sequential SAT solvers and parallel SAT solvers. In the last years parallel SAT solvers have outperformed sequential solvers in total wall clock time, so the interest in parallel solvers has grown with new designs and approaches explored for this kind of solvers. One of the most successful approaches to implement a parallel SAT solver is the \textit{portfolio approach} with no \textit{physical sharing} of information among cores. This approach basically runs different solvers in parallel, with each core keeping its own copy of the whole problem in memory, and wait for one of them to solve it up. No physical sharing refers to the fact that each core keeps its own copy of the problem's information, they do not access the same memory locations. This is a very simple and straight forward approach of parallelization, but we have also encountered one drawback to it: as we add more solvers to different cores of a single chip, the overall performance of the parallel solver decreases in around 20-40\%. Preliminary experiments strongly suggest that this decrease in performance is caused by an increment in \textit{cache misses}. A computer's processor keeps a small, but fast, memory hardware, called cache, from where it fetches data to make calculations. If a data requested is already in this cache fetching the data will as a result be a fast process. On the other hand, if the data requested is not in the cache, but in main memory, fetching the data will take a longer time and thus make the whole process expensive, time wise. Because all cores in a single chip share the same cache\footnote[2]{In fact there are different levels of cache, but we will refer to the last level cache which is shared.}, and because each thread holds a copy of the original problem in memory, the more threads we add, the bigger the amount of data we have to handle. Since there is only one cache shared among all cores, the amount of total accesses from the processor to main memory will increase, since now there is a bigger volume of data to handle. 
 
-We plan to research the impact on cache performance of physically sharing clauses. Physical sharing obviously involves a more complex implementation, because you need to ensure data integrity when modifying the same memory locations from different threads, and also ensure that the correctness of the algorithms is kept. The mechanisms to accomplish these requirements add an overhead to the solver which is not present when threads do not share information. On the other hand, as we will demonstrate in our work, it is known that sharing information physically between threads usually increases cache performance, so there is a trade-off between both kind of approaches. The outcome of this trade-off is yet not clear and there are no serious studies about the cache performance of different parallel SAT solver implementations. So the goal of our work will be to study the impact of physically sharing clauses in cache performance of portfolio approach SAT solvers. We also need to stress out that it is already agreed that passing lemmas between worker threads helps improves the overall performance of a parallel SAT solver \cite{overview}, but it is not clear if physical sharing of lemmas is beneficial for a better cache performance.
+We plan to research the impact on cache performance of physically sharing clauses. Physical sharing obviously involves a more complex implementation, because you need to ensure data integrity when modifying the same memory locations from different threads, and also ensure that the correctness of the algorithms is kept. The mechanisms to accomplish these requirements add an overhead to the solver which is not present when threads do not share information. On the other hand, as we will demonstrate in our work, it is known that sharing information physically between threads usually improves cache performance, so there is a trade-off between both kind of approaches. The outcome of this trade-off is yet not clear and there are no serious studies about the cache performance of different parallel SAT solver implementations. So the goal of our work will be to study the impact of physically sharing clauses in cache performance of portfolio approach SAT solvers. 
+
+%We also need to stress out that it is already agreed that passing lemmas between worker threads helps improves the overall performance of a parallel SAT solver \cite{overview}, but it is not clear if physical sharing of lemmas is beneficial for a better cache performance.
 
 
 
@@ -127,11 +131,17 @@ We plan to research the impact on cache performance of physically sharing clause
 
 \subsection{The SAT problem}
 
-Given a set of boolean variables $\Sigma$, a literal $L$ is either a variable or the negation of a variable in $\Sigma$, and a \textit{clause} is a disjunction of literals over distinct variables\footnote[1]{That all literals in a clause have to be over distinct variables is not standard.}. A propositional sentence is in \textit{conjunctive normal form} (\textit{CNF}) if it has the form $\alpha_{1} \wedge \alpha_{2} \wedge ... \wedge \alpha_{n}$, where each $\alpha_{i}$ is a clause. The notation of sentences in CNF we will be using are sets. A clause $l_{1} \vee l_{2} \vee ... \vee l_{m}$, where $l_{i}$ is a literal, can be expressed as the set $\{l_{1},l_{2},...,l_{m}\}$. Furthermore, the CNF $\alpha_{1} \wedge \alpha_{2} \wedge ... \wedge \alpha_{n}$ can be expressed as the set of clauses $\{\alpha_{1},\alpha_{2},...,\alpha_{n}\}$. With these conventions, a CNF $\Delta$ is valid if $\Delta$ is the empty set: $\Delta = \emptyset$. A CNF $\Delta$ will be inconsistent if it contains the empty set: $\emptyset \in \Delta$. 
-Given a CNF $\Delta$, the SAT problem is answering the question: Is there an assignment of values for variables in $\Sigma$, such that $\Delta$ evaluates to true?
+Given a set of boolean variables $\Sigma$, a literal $L$ is either a variable or the negation of a variable in $\Sigma$, and a \textit{clause} is a disjunction of literals over distinct variables\footnote[1]{That all literals in a clause have to be over distinct variables is not standard.} of $\Sigma$. A propositional sentence is in \textit{conjunctive normal form} (\textit{CNF}) if it has the form $\alpha_{1} \wedge \alpha_{2} \wedge ... \wedge \alpha_{n}$, where each $\alpha_{i}$ is a clause. The notation of sentences in CNF we will be using are sets. A clause $l_{1} \vee l_{2} \vee ... \vee l_{m}$, where $l_{i}$ is a literal, can be expressed as the set $\{l_{1},l_{2},...,l_{m}\}$. Furthermore, the CNF $\alpha_{1} \wedge \alpha_{2} \wedge ... \wedge \alpha_{n}$ can be expressed as the set of clauses $\{\alpha_{1},\alpha_{2},...,\alpha_{n}\}$. Given a CNF $\Delta$, the SAT problem is answering the question: Is there an assignment of values for variables in $\Sigma$, such that $\Delta$ evaluates to true? A formula is said to be inconsistent if no such assignment exists. On the contrary, a formula is said to be satisfiable, or valid, if there is an assignment such that it evaluates to true. In particular, a CNF $\Delta$ is valid if $\Delta$ is the empty set: $\Delta = \emptyset$. A CNF $\Delta$ will be inconsistent if it contains the empty set: $\emptyset \in \Delta$. 
+
+\begin{exmp}[A valid CNF]
+\[\Delta=\{\{A,B,\neg C\},\{\neg A,D\},\{B,C,D\}\}\]
+\[\text{if }A=\text{true, }B=\text{true, }C=\text{true and }D=\text{true, then}\]
+\[\Delta=\emptyset\]
+Because a satisfied clause becomes irrelevant in the formula and thus removed.
+\end{exmp}
 
 \subsection{Resolution}
-The \textit{resolution inference rule} \cite{Rob65} is defined as follows. Let $P$ be a Boolean variable, and suppose that $\Delta$ is a CNF which contains clauses $C_{i}$ and $C_{j}$, where $P \in C_{i}$ and $\neg P \in C_{j}$. The resolution inference rule allows us to derive the clause $(C_{i}-\{P\})\cup (C_{j}-\{\neg P\})$, which is called a \textit{resolvent} that is obtained by \textit{resolving} $C_{i}$ and $C_{j}$. A simple example is the CNF $\{\{A,\neg B\},\{B,C\}\}$. Applying resolution to this two clauses would derive the clause $\{A,C\}$, which would be called a B-\textit{resolvent}.
+The \textit{resolution inference rule} \cite{Rob65} is defined as follows. Let $P$ be a Boolean variable, and suppose that $\Delta$ is a CNF which contains clauses $C_{i}$ and $C_{j}$, where $P \in C_{i}$ and $\neg P \in C_{j}$. The resolution inference rule allows us to derive the clause $(C_{i}-\{P\})\cup (C_{j}-\{\neg P\})$, which is called a \textit{resolvent} that is obtained by \textit{resolving} $C_{i}$ and $C_{j}$. A simple example is the CNF $\{\{A,\neg B\},\{B,C\}\}$. Applying resolution to these two clauses would derive the clause $\{A,C\}$, which would be called a B-\textit{resolvent}.
 Resolution is incomplete in the sense that it is not guaranteed to derive every clause that is implied by the CNF, but it is \textit{refutation complete} on CNFs. It is guaranteed that resolution will derive the empty clause if the given CNF is unsatisfiable. 
 
 \textit{Unit resolution} is an important special case of resolution. It is a resolution strategy which requires that at least one of the resolved clauses has only one literal. Such clause is called a \textit{unit clause}. The importance of unit resolution does not rely on its completeness (it is actually not refutation complete, as resolution is), but one can apply all possible unit resolution steps in time linear to the size of a given CNF. Its efficiency makes it a key technique employed by modern solvers.
@@ -145,19 +155,26 @@ The definition of conditioning can be extended to multiple literals. For example
 \[\Delta=\{\{A,B,\neg C\},\{\neg A,D\},\{B,C,D\}\}\]
 can be conditioned as $\Delta |CA\neg D=\{\emptyset \}$ (an inconsistent CNF). Moreover, $\Delta |\neg CD=\emptyset$ (a valid CNF).
 
-\subsection{Satisfiability by search: The DPLL algorithm.}
+\subsection{The Davis-Putnam-Logemann-Loveland (DPLL) algorithm.}
 
-\subsubsection{Search trees}
-One way to picture the search for a possible assignment of variables that satisfies the CNF formula is to use a tree. For example, given $\Sigma =\{A,B,C\}$ and $\Delta =\{\{\neg A,B\},\{\neg B,C\}\}$, Figure ~\ref{fig:searchtree} shows the search tree for this CNF. Each node of the tree represents a variable, for each level we have a different variable. The branches are the different truth values the variable can be assigned. Each $w_{i}$ represents a possible truth assignment of the variables in $\Sigma$. Note that $w_{1}$, $w_{5}$, $w_{7}$ and $w_{8}$ are all assignments that satisfy the CNF, while $w_{2}$, $w_{3}$, $w_{4}$ and $w_{6}$ do not.
+In this section we will discuss the DPLL \cite{dpll} algorithm, which performs a systematic search in the space of truth assignments. The importance of the DPLL algorithm is that it is the foundation of modern SAT solvers.
+\newline
+\newline
+\noindent
+\textbf{Search trees and the depth-first-search algorithm}
+\newline
+\newline
+\noindent
+One way to picture the search for a possible assignment of variables that satisfies the CNF formula is to use a tree. For example, given $\Sigma =\{A,B,C\}$ and $\Delta =\{\{\neg A,B\},\{\neg B,C\}\}$, Figure ~\ref{fig:searchtree} shows the search tree for this CNF. Each node $n_i$ of the tree represents a variable, for each level we have a different variable. The branches are the different truth values the variable can be assigned: a \textbf{t} for true and an \textbf{f} for false. Each $w_{i}$ represents a possible truth assignment of all the variables in $\Sigma$. Note that $w_{1}$, $w_{5}$, $w_{7}$ and $w_{8}$ are all assignments that satisfy the CNF, while $w_{2}$, $w_{3}$, $w_{4}$ and $w_{6}$ do not. We can observe that the leaves of this tree are in one-to-one correspondence with all the possible true assignments of variables involved, so testing satisfiability can be viewed as searching for a leaf node that satisfies the CNF. Another important observation is that the depth of the tree is equal to the number of boolean variables, so performing a depth-first-search would be best to explore the tree. Algorithm ~\ref{dpll} performs a depth-first-search, which is the base of the DPLL algorithm, using the conditioning operator on CNFs to remove clauses or reduce their size.
 
 \begin{figure}[h!]
 	\centering
-		\includegraphics[width=0.6\textwidth]{search_tree}
+		\includegraphics[width=\textwidth]{search_tree}
 	\caption{A search tree for the CNF $\Delta =\{\{\neg A,B\},\{\neg B,C\}\}$.}
 	\label{fig:searchtree}
 \end{figure}
 
-\subsubsection{Depth-first-search algorithm}
+%\subsubsection{Depth-first-search algorithm}
 
 \begin{algorithm}
 \textsc{Depth-first-search}(CNF $\Delta$,depth $d$):\\
@@ -170,22 +187,39 @@ One way to picture the search for a possible assignment of variables that satisf
 \uElseIf{\textsc{\textbf{L}}$=$\textsc{Depth-first-search}$(\Delta |P_{d+1},d+1)\neq$\textsc{unsatisfiable}}{
 	\textbf{return} \textbf{L} $\cup$ $\{P_{d+1}\}$
 }
-\uElseIf{\textsc{\textbf{L}}$=$\textsc{Depth-first-search}$(\neg \Delta |P_{d+1},d+1)\neq$\textsc{unsatisfiable}}{
+\uElseIf{\textsc{\textbf{L}}$=$\textsc{Depth-first-search}$(\Delta |\neg P_{d+1},d+1)\neq$\textsc{unsatisfiable}}{
 	\textbf{return} \textbf{L} $\cup$ $\{\neg P_{d+1}\}$
 }
 \Else{\textbf{return} \textsc{unsatisfiable}}
-\caption{Depth-first-search algorithm\label{dpll}}
+\caption{Depth-first-search algorithm. Variables are named $P_1,P_2,....$. Initial depth is 0.\label{dpll}}
 \end{algorithm}    
 
-The Davis-Putnam-Logemann-Loveland (DPLL) \cite{dpll} algorithm is the base of all modern SAT solvers. Many refinements have been made to this algorithm over the last decade, which have been significant enough to change the behaviour of the algorithm, but it is still important to know it for understanding modern solvers. Figure ~\ref{fig:searchtree} shows a search tree with three variables. We can observe that the leaves of this tree are in one-to-one correspondence with all the possible true assignments of variables involved, so testing satisfiability can be viewed as searching for a leaf node that satisfies the CNF. Another important observation is that the depth of the tree is $n$, where $n$ is the number of boolean variables, so performing a depth-first-search would be best to explore the tree. Algorithm ~\ref{dpll} performs a depth-first-search, which is the base of the DPLL algorithm, using the conditioning operator on CNFs to remove clauses or reduce their size.
+%The Davis-Putnam-Logemann-Loveland (DPLL) \cite{dpll} algorithm is the base of all modern SAT solvers. Many refinements have been made to this algorithm over the last decade, which have been significant enough to change the behaviour of the algorithm, but it is still important to know it for understanding modern solvers. Figure ~\ref{fig:searchtree} shows a search tree with three variables. 
 
-Consider the CNF:
-\[\Delta=\{\{\neg A,B\},\{\neg B,C\}\},\]
-and the search node labelled with \textbf{F} in Figure ~\ref{fig:searchtree}. At this node, Algorithm ~\ref{dpll} will condition $\Delta$ on literals $A,\neg B$, leading to:
+\begin{exmp}[Depth-first-search]$ $
+\newline
+Consider the CNF of Figure \ref{fig:searchtree} and the node labelled $n_5$. At this node, Algorithm ~\ref{dpll} will condition $\Delta$ on literals $A,\neg B$, leading to:
 \[\Delta |A,\neg B=\{ \{\textbf{false},\textbf{false}\},\{\textbf{true},C\}\}=\{\{\}\}.\]
-The algorithm will detect that there is a contradiction at this internal node, hence concluding that neither $w3$ or $w4$ are models of $\Delta$, without having to visit them explicitly. The algorithm can also detect success at internal nodes, implying that all assignments from that particular node are models of the CNF.
+The algorithm will detect that there is a contradiction at this internal node, hence concluding that neither $w_3$ or $w_4$ are models of $\Delta$, without having to visit them explicitly. The algorithm can also detect success at internal nodes, implying that all assignments from that particular node are models of the CNF.
+\end{exmp}
 
-\subsubsection{Unit Resolution}
+%\newline
+%\newline
+\noindent
+\textbf{Unit resolution}
+\newline
+\newline
+\noindent
+One of the downsides of Algorithm \ref{dpll} is that we still have to search deeper into the search-tree than we really need to. The \textit{unit resolution} (also called \textit{unit propagation}) technique allows us to prune the search tree at each decision level. The unit resolution technique is very simple: Before we check tests for success or contradictions, we first collect all unit clauses. Then we assume that the variables which make these clauses unit are set to satisfy the unit clauses. Finally, we simplify the CNF and check for success or failure.
+
+\begin{exmp}[Unit resolution]$ $
+\newline
+Consider the tree of Figure ~\ref{fig:terminationtree} and the CNF:
+\[\Delta=\{\{\neg A,B\},\{\neg B,\neg C\},\{C,\neg D\}\}.\]
+Consider also the node at Level 1, which results from setting variable A to \textbf{true}, and its corresponding CNF:
+\[\Delta |A=\{\{B\},\{\neg B,\neg C\},\{C,\neg D\}\}.\]
+Algorithm ~\ref{dpll} cannot declare early success or early failure, because the CNF is neither empty, nor contains the empty clause, reason why it keeps searching below Level 1 as shown in Figure \ref{fig:terminationtree}. However, by using unit resolution, we can declare success and end the search at Level 1. Because the clause $\{B\}$ has become unit, we can assume that variable $B$ is \textbf{true}. Now the clause $\{\neg B, \neg C\}$ is simplified to $\{\neg C\}$ (because $\neg B$ is \textbf{false} and cannot satisfy the clause) which is a unit clause. This will cause $C$ to be \textbf{false} and clause $\{C,\neg D\}$ to be simplified to $\{\neg D\}$. This clause is also unit now so $D$ must be assigned \textbf{false} and hence all clauses in this CNF have been satisfied through unit resolution. We can then declare that success without having to go any further in the search tree. Remember that the unit resolution process is very fast and does not require to make any decisions.
+\end{exmp}
 
 \begin{figure}[h!]
 	\centering
@@ -194,26 +228,31 @@ The algorithm will detect that there is a contradiction at this internal node, h
 	\label{fig:terminationtree}
 \end{figure}
 
-Consider the tree of Figure ~\ref{fig:terminationtree} and the CNF:
-\[\Delta=\{\{\neg A,B\},\{\neg B,\neg C\},\{C,\neg D\}\}.\]
-Consider also the node at Level 1, which results from setting variable A to \textbf{true}, and its corresponding CNF:
-\[\Delta |A=\{\{B\},\{\neg B,\neg C\},\{C,\neg D\}\}.\]
-Algorithm ~\ref{dpll} cannot declare early success or early failure, because the CNF is neither empty, nor contains the empty clause, reason why it keeps searching below Level 1 as shown in Figure \ref{fig:terminationtree}. However, we will now show that by using unit resolution, we can declare success and end the search at Level 1.
-
-The \textit{unit resolution} technique (also called \textit{unit propagation}) is very simple: Before we check tests for success or contradictions, we first collect all unit clauses. Then we assume that the variables which make these clauses unit are set to satisfy the unit clauses. Finally, we simplify the CNF and check for success or failure.
-
-To incorporate unit resolution into Algorithm \ref{dpll}, we will introduce a function \textsc{unit-resolution}, which applies to a CNF $\Delta$ and returns two results:
+To incorporate the advantages of unit resolution into Algorithm \ref{dpll}, we will introduce a function \textsc{unit-resolution}, which applies to a CNF $\Delta$ and returns two results:
 \begin{itemize}
 	\item \textbf{I}: a set of literals that are either present as unit clauses in $\Delta$, or were derived from $\Delta$ by unit resolution.
 	\item $\Gamma$: a new CNF which results from conditioning $\Delta$ on literals \textbf{I}.
 \end{itemize}
-For example, if the argument of \textsc{unit-resolution} was the CNF
+
+\begin{exmp}[unit-resolution function]$ $
+\newline
+If the argument of \textsc{unit-resolution} was the CNF
 \[\Delta=\{\{\neg A,\neg B\},\{B,C\},\{\neg C,D\},\{A\}\},\]
 then $\textbf{I}=\{A,\neg B,C,D\}$ and $\Gamma=\{\}$. Moreover, if
 \[\Delta=\{\{\neg A,\neg B\},\{B,C\},\{\neg C,D\},\{C\}\},\]
 then $\textbf{I}=\{C,D\}$ and $\Gamma=\{\{\neg A,\neg B\}\}$.
+\end{exmp}
 
-\subsubsection{DPLL algorithm}
+%\newline
+%\newline
+\noindent
+\textbf{DPLL algorithm}
+\newline
+\newline
+\noindent
+The DPLL algorithm (Algorithm \ref{dpllplus}) is a refinement of the depth-first-search algorithm. The first change made is that it adds unit resolution in line 1. Also, we no longer assume that variables are examined in the same order as we go down the search tree and we no longer assume that a variable is set to \textbf{true} and then to \textbf{false}. The choice of a literal $L$ on line 7 can have a dramatic impact on the running time of DPLL. This is where inference comes into play when solving a SAT instance with a DPLL based algorithm, heuristics and random factors are commonly used at this point. 
+
+Note that DPLL algorithm will check, even if not implicitly, all leafs of the search tree until an assignment that satisfies the CNF is found, or until all leafs have been discarded and no assignment that satisfies the CNF is found. Furthermore, it will never visit the same node of the search tree more than once (it will not make the same decision sequence twice). Therefore, algorithm DPLL is complete.
 
 \begin{algorithm}
 $(\textbf{I},\Gamma)=\textsc{unit-resolution}(\Delta)$\\
@@ -237,10 +276,6 @@ $(\textbf{I},\Gamma)=\textsc{unit-resolution}(\Delta)$\\
 }
 \caption{DPLL(CNF $\Delta$): returns a set of literals or \textsc{unsatisfiable}\label{dpllplus}}
 \end{algorithm}    
-
-The DPLL algorithm (Algorithm \ref{dpllplus}) is a refinement of the depth-first-search algorithm. The first change made is that it adds unit resolution in line 1. Also, we no longer assume that variables are examined in the same order as we go down the search tree and we no longer assume that a variable is set to \textbf{true} and then to \textbf{false}. The choice of a literal $L$ on line 7 can have a dramatic impact on the running time of DPLL. This is where inference comes into play when solving a SAT instance with a DPLL based algorithm, heuristics and random factors are commonly used at this point. 
-
-Note that DPLL algorithm will check, even if not implicitly, all leafs of the search tree until an assignment that satisfies the CNF is found, or until all leafs have been discarded and no assignment that satisfies the CNF is found. Furthermore, it will never visit the same node of the search tree more than once (it will not make the same decision sequence twice). Therefore, algorithm DPLL is complete.
 
 \subsubsection{Conflicts}
 
