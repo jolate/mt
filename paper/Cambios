@@ -52,3 +52,6 @@ arreglar escala eje Y graficos same/different chip. ## OK ##
 cambiar label eje Y a "LLC miss (%)" ## OK ##
 Arreglar grafico de 207 files. Colocar etiqueta a puntos con numero de problemas resueltos. agregar 40 threads y poner etiqueta "in 4 chips". ## OK ##
 Experimento 
+Same chip/different chip: Poner leyenda una vez y lineas con esa leyenda en ambos.
+Plingeling_decay: Lineas iguales, solo dejar puntos distintos.
+Graficos SS/DS: cambiar y dejar lineas iguales, pero puntos distintos.
