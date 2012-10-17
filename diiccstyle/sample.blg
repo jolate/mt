@@ -1,5 +1,4 @@
-This is BibTeX, Version 0.99c (TeX Live 2009/Debian)
-The top-level auxiliary file: sample.aux
+This is BibTeX, Version 0.99cThe top-level auxiliary file: C:\Users\Jota\Documents\GitHub\mt\diiccstyle\sample.aux
 The style file: plain.bst
 Database file #1: biblio.bib
 A bad cross reference---entry "DBLP"
@@ -13,45 +12,4 @@ Warning--empty institution in heavytail
 Warning--empty publisher in cdcl2
 Warning--empty year in cdcl2
 Warning--empty journal in vsids
-You've used 28 entries,
-            2118 wiz_defined-function locations,
-            675 strings with 7938 characters,
-and the built_in function-call counts, 9892 in all, are:
-= -- 1004
-> -- 359
-< -- 13
-+ -- 148
-- -- 113
-* -- 631
-:= -- 1546
-add.period$ -- 90
-call.type$ -- 28
-change.case$ -- 139
-chr.to.int$ -- 0
-cite$ -- 33
-duplicate$ -- 408
-empty$ -- 837
-format.name$ -- 113
-if$ -- 2170
-int.to.chr$ -- 0
-int.to.str$ -- 28
-missing$ -- 24
-newline$ -- 144
-num.names$ -- 60
-pop$ -- 161
-preamble$ -- 1
-purify$ -- 111
-quote$ -- 0
-skip$ -- 323
-stack$ -- 0
-substring$ -- 710
-swap$ -- 129
-text.length$ -- 13
-text.prefix$ -- 0
-top$ -- 0
-type$ -- 110
-warning$ -- 5
-while$ -- 100
-width$ -- 30
-write$ -- 311
 (There were 2 error messages)

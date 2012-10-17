@@ -244,7 +244,7 @@ then $\textbf{I}=\{C,D\}$ and $\Gamma=\{\{\neg A,\neg B\}\}$.
 \end{exmp}
 
 %\newline
-%\newline
+$ $\newline
 \noindent
 \textbf{DPLL algorithm}
 \newline
@@ -336,13 +336,21 @@ A refinement to the definition of an asserting clause is the notion of a \textit
 \newline
 \newline
 \noindent
-The problem with chronological backtracking, which is the one used in the DPLL algorithm, is that contradictions that trigger the backtrack often have valuable information. Such information could lead us to learn new clauses and backtrack more levels than just one, thus saving time in the search. For example, let us say that we have a CNF $\Delta$ with variables $A,B,C,D$. Let us also say that, because of the clauses in $\Delta$, the CNF will always be inconsistent when $A$ is set to \textbf{true}. Unfortunately, the DPLL algorithm might not realise this beforehand, because it uses unit resolution which is not refutation complete. So the algorithm might only conclude that $A$ set to \textbf{true} will not satisfy $\Delta$ after assigning all possible values to $B,C,D$. If we could detect that $A$ is not part of any solution, we could avoid going any further in that branch of the search tree and learn that information as a new clause (in our example we would learn the clause $\{\neg A\}$ to enforce $A$ to be \textbf{false}). Learning such clauses is called \textit{conflict-driven clause learning} (CDCL) \cite{cdcl1,cdcl2}.
+The problem with chronological backtracking, which is the one used in the DPLL algorithm, is that contradictions that trigger the backtrack often have valuable information. Such information could lead us to learn new clauses and backtrack more levels than just one, thus saving time in the search. For example, let us say that we have a CNF $\Delta$ with variables $A,B,C,D$. Let us also say that, because of the clauses in $\Delta$, the CNF will always be inconsistent when $A$ is set to \textbf{true}. Unfortunately, the DPLL algorithm might not realise this beforehand, because it uses unit resolution which is not refutation complete. So the algorithm might only conclude that $A$ set to \textbf{true} will not satisfy $\Delta$ after assigning all possible values to $B,C,D$. If we could detect that $A$ is not part of any solution, we could avoid going any further in that branch of the search tree and learn that information as a new clause (in our example we would learn the clause $\{\neg A\}$ to enforce $A$ to be \textbf{false}). Learning such clauses is called \textit{conflict-driven clause-learning} (CDCL) \cite{cdcl1,cdcl2}.
 
-Adding CDCL features to the DPLL algorithm does not affect its completeness. It is not so obvious that completeness is maintained, because now the algorithm, unlike the basic DPLL version, can make the same decisions more than once (visit a node in the search tree various times), since it does not maintain memory of the previous decisions made. However, it does so in a different context, because it has learned clauses since its previous visits to the same node. This guarantees that completeness in this new algorithm is maintained. A completeness proof of the DPPL algorithm with CDCL features can be found in \cite{DBLP,ig}. In the next section we will discuss in detail how such new clauses are found or how can we decide which level to backtrack after a contradiction is found. Now we will discuss in detail how such new clauses are derived and learnt.
+Adding CDCL features to the DPLL algorithm does not affect its completeness. It is not so obvious that completeness is maintained, because now the algorithm, unlike the basic DPLL version, can make the same decisions more than once (visit a node in the search tree various times), since it does not maintain memory of the previous decisions made. However, it does so in a different context, because it has learned clauses since its previous visits to the same node. This guarantees that completeness in this new algorithm is maintained. A completeness proof of the DPPL algorithm with CDCL features can be found in \cite{DBLP,ig}. In the next section we will discuss in detail how such new clauses are found or how can we decide which level to backtrack after a contradiction is found.
 
 \subsection{Modern CDCL solvers}
 
-Most modern solvers today are CDCL SAT solvers. Given a CNF $\varphi$, a partial assignment of variables $\nu$, Algorithm \ref{cdcl} outlines the general structure of a CDCL SAT solver, where $x$ is a variable, $v$ a truth value and $\beta$ a decision level. We will shortly explain the main functions of this algorithm.
+Most modern solvers today are CDCL SAT solvers. They apply the same structure of the DPLL algorithm, but also include clause-learning features in them. In the last years most improvements have been focused on data structures and heuristic refinements. In this section we will explain the main CDCL algorithm and also the main features which make modern CDCL SAT solvers.
+\newline
+\newline
+\noindent
+\textbf{CDCL algorithm}
+\newline
+\newline
+\noindent
+Given a CNF $\varphi$, a partial assignment of variables $\nu$, Algorithm \ref{cdcl} outlines the general structure of a CDCL SAT solver, where $x$ is a variable, $v$ a truth value and $\beta$ a decision level. We will shortly explain the main functions of this algorithm.
 
 \begin{algorithm}
 \KwIn{A CNF $\varphi$ and a variable assignment $\nu$}
@@ -376,11 +384,58 @@ $dl \leftarrow 0$\\
 	\item \textsc{Backtrack} undoes variable assignments and backtracks to a previous decision level as computed by \textsc{ConflictAnalysis}.
 	\item \textsc{AllVariablesAssigned} tests whether all variables have been assigned a truth value.
 \end{itemize}
+%\newline
+%\newline
+\noindent
+\textbf{Search restarts}
+\newline
+\newline
+\noindent
+SAT solvers may exhibit high runtime variability on some problems. This means that some decision heuristics and random factors make the solver take a really long time in solving a problem, but others can help solve the same problem in a very short runtime. This phenomena exhibited by SAT solvers and these kind of problems is known as a \textit{heavy tailed distribution}. A heavy tailed distribution has infinite variance and infinite mean, so a SAT solver might get trapped on a very long run with a problem, while a different instance of the solver with other parameters could solve it fast. To address this problem modern SAT solvers have included search restarts in their solving algorithms. To avoid keeping the solver trapped in a very long search path, search restarts are issued over time and the solver starts the search all over again. In practice this strategy has shown dramatic improvements on problems which exhibit the heavy tailed behaviour \cite{heavytail}. It is also important to mention that learnt clauses can be kept between each restart, technique that can ensure the completeness of the algorithm under such search restarts (only one learnt clause in each iteration suffices to guarantee completeness\cite{LMS07}). 
+\newline
+\newline
+\noindent
+\textbf{Variable decision heuristics}
+\newline
+\newline
+\noindent
+There are several heuristics that can be employed when choosing a decision variable, even making this decision completely random, but the most popular one was introduced by the solver \texttt{Chaff} and it is called Variable State Independent Decaying Sum (VSIDS). This heuristic consists of the following:
+\begin{itemize}
+	\item Each literal has a counter, initialized to 0.
+	\item The counter of a literal is only incremented in 1 when a new clause that contains that literal is learnt.
+	\item When choosing a decision literal, the unassigned literal with the highest counter is chosen.
+	\item Ties are broken by random.
+	\item All counters are periodically divided by a constant.
+\end{itemize}
+\texttt{MiniSAT} \cite{minisat} later made some refinements to this heuristic and instead of keeping counters for each literal, it keeps it for each variable. It also uses a dynamic increment factor (not just by 1) and does not use a periodic decay constant, but just scales all values down when one of them has become too large. This refinement of VSIDS is known as Exponential VSIDS (EVSIDS). 
+\newline
+\newline
+\noindent
+\textbf{Clause cleanup}
+\newline
+\newline
+\noindent
+Adding clauses with no restrictions can be impractical in some cases. We could eventually exhaust all the available memory by learning too many clauses and it is also known that large clauses are not really useful in the search process \cite{grasp}. Large clauses also add some considerable overhead to the search process and it is sometimes better to get rid of them than to keep them. Because of this, there are mainly 3 techniques employed to keep the clause database manageable:
 
+\begin{enumerate}
+	\item Only keep clauses with $n$ or less literals \cite{dec90}.
+	\item Clauses are kept only if they imply variable assignments or are unit clauses. They are discarded if the number of unassigned literals is greater than a number $m$ \cite{bs97}.
+	\item Clauses with a number of literals greater than a threshold $k$ are discarded as soon as the number of unassigned literals is greater than one \cite{grasp}.
+\end{enumerate}
 
-\subsubsection{The two watched literals lazy data structure}
+Lately, some solvers have started using more advanced heuristics as clause deletion policies, such as keeping information about the activity of a clause in conflicts. One of the best performing heuristics is employed in the SAT solver \texttt{gluclose} \cite{gluclose}, which implements a particular metric of clause activity for its deletion heuristics.
 
-Data structures play a fundamental role in the performance of CDCL SAT solvers. Many improvements have been achieved over the last years, but one of the most noticeable ones is use of the so called \textit{lazy data structures} (lazy because they are not accurate) to implement propagation. There are different types of lazy data structures used in modern SAT solvers, they mainly try to address cache performance problems when the solver is performing unit resolution. The two main approaches to implement lazy data structures are the \textit{head/tail lists} used in Sato \cite{sato} and the \textit{two watched literals} used in Chaff \cite{chaff}. We will explain the later in detail, as it is widely implemented in most modern CDCL SAT solvers.
+\subsection{Data structures}
+
+Data structures play a fundamental role in the performance of CDCL SAT solvers. Many improvements have been achieved over the last years, but one of the most noticeable ones is use of the so called \textit{lazy data structures} (lazy because they are not accurate) to implement propagation. There are different types of lazy data structures used in modern SAT solvers, they mainly try to address cache performance problems when the solver is performing unit resolution. In this section we will explain two important data structures that are used by almost all modern SAT solvers.
+\newline
+\newline
+\noindent
+\textbf{The two watched literals lazy data structure}
+\newline
+\newline
+\noindent
+The two main approaches to implement lazy data structures are the \textit{head/tail lists} used in Sato \cite{sato} and the \textit{two watched literals} used in Chaff \cite{chaff}. We will explain the later in detail, as it is widely implemented in most modern CDCL SAT solvers.
 
 \begin{figure}[h!]
 	\centering
@@ -394,45 +449,20 @@ Unit propagation is a key function to the speed of a SAT solver. We need fast wa
 and the variable assignment
 \[A=\textbf{true}, B=\textbf{false}, C=\textbf{false}, E=\textbf{false},\]
 we would need to identify somehow that this clause is unit on variable $D$. The two watched literal data structure addresses this problem and makes backtracking very efficient. Instead of trying to keep precise information on the complete state of the clause, the two watched literal strategy only keeps track of two literals in each clause. Such two literals are the watched literals of a clause. Let's take as an example the previous clause, as shown on Figure \ref{fig:watched literals}. This time we will assume that no variable assignments have been done yet and that the two watched literals are $\neg A$ and $B$. Suppose that on the next decision level variable $A$ is assigned as \textbf{true}. We would check the watched literals and realize that this clause might be unit, because now there is only one watched literal which is unassigned and the other doesn't satisfy the clause. Remember that we are only aware of the watched literals and not the rest of them. To check if the clause is really unit, we will attempt to change the first watched literal to an unassigned variable in the clause. We could search to the right and find that literal $B$ is already being watched (the two watched literals must be different), so we keep searching to the right and find that literal $C$ is unassigned, concluding that the clause is not yet unit. Now our two watched literals for this clause are $B$ and $C$. Let's suppose now that propagation gives the value \textbf{false} to variable $C$, then we would again wonder if the clause is unit or not. Searching to the right for another unassigned literal to watch will find literal $\neg D$, so now our two watched literals will be $B$ and $\neg D$. If the next assigned variable is $B=\textbf{false}$, then the algorithm would have to search the clause and find that literal $E$ is available. Finally, if variable $D$ is assigned to \textbf{true}, then we would search the clause for an available literal, but won't find any (after checking all literals). Only now we can declare that this clause is unit, because there is only one unassigned watched literal and the other can't find any unassigned position. Propagation would assign \textbf{true} to variable $E$, because it's the only way to satisfy that clause. If a conflict is found, while propagating across the different variables, we have to undo all variable assignments after the backtracking point, but the key advantage of the two watched literal structure is that no backtracking has to be done to any watched literal reference of any clause. The clear drawback to this advantage is that, as we saw in the previous example, we have to check all literals in the clause before declaring it unit, since we only keep track of two literals at a time.  
-
-\subsubsection{Binary implication lists}
-
+\newline
+\newline
+\noindent
+\textbf{Binary implication lists}
+\newline
+\newline
+\noindent
 \begin{figure}[h!]
 	\centering
 		\includegraphics[scale=1]{binary_lists}
 	\caption{A group of binary clauses and their corresponding binary list.}
 	\label{fig:binary list}
 \end{figure}
-
 To speed up the propagation of SAT solvers, \textit{binary clauses}, clauses with two literals, are sometimes stored in special data structures called \textit{binary implication lists}. Binary clauses are frequently used in propagation because they can imply other variable values in just one step. There is also no point on distinguishing two watched literals in these clauses for the simple reason that there are only two literals in them, so knowing when a binary clause is unit becomes trivial. Figure \ref{fig:binary list} represents a set of binary clauses stored in a binary implication list. We have a literal index vector to identify each literal (a variable and its negation), each position of this vector points to a list of literals which are implied by the literal corresponding to the origin of the pointer. Hence, if the $\neg A$ position in the index vector points to $\neg B$ and $D$, this means that if $A$ were to be \textbf{false}, it would imply that $B$ must be \textbf{false} and $D$ \textbf{true}.
-
-\subsubsection{Search restarts}
-
-SAT solvers may exhibit high runtime variability on some problems. This means that some decision heuristics and random factors make the solver take a really long time in solving a problem, but others can help solve the same problem in a very short runtime. This phenomena exhibited by SAT solvers and these kind of problems is known as a \textit{heavy tailed distribution}. A heavy tailed distribution has infinite variance and infinite mean, so a SAT solver might get trapped on a very long run with a problem, while a different instance of the solver with other parameters could solve it fast. To address this problem modern SAT solvers have included search restarts in their solving algorithms. To avoid keeping the solver trapped in a very long search path, search restarts are issued over time and the solver starts the search all over again. In practice this strategy has shown dramatic improvements on problems which exhibit the heavy tailed behaviour \cite{heavytail}. It is also important to mention that learnt clauses can be kept between each restart, technique that can ensure the completeness of the algorithm under such search restarts (only one learnt clause in each iteration suffices to guarantee completeness\cite{LMS07}). 
-
-\subsubsection{Variable decision heuristics}
-
-There are several heuristics that can be employed when choosing a decision variable, even making this decision completely random, but the most popular one was introduced by the solver \texttt{Chaff} and it's called Variable State Independent Decaying Sum (VSIDS). This heuristic consists of the following:
-\begin{itemize}
-	\item Each literal has a counter, initialized to 0.
-	\item The counter of a literal is only incremented in 1 when a new clause that contains that literal is learnt.
-	\item When choosing a decision literal, the unassigned literal with the highest counter is chosen.
-	\item Ties are broken by random.
-	\item All counters are periodically divided by a constant.
-\end{itemize}
-\texttt{MiniSAT} \cite{minisat} later made some refinements to this heuristic and instead of keeping counters for each literal, it keeps it for each variable. It also uses a dynamic increment factor (not just by 1) and does not use a periodic decay constant, but just scales all values down when one of them has become too large. This refinement of VSIDS is known as Exponential VSIDS (EVSIDS). 
-
-\subsubsection{Clause cleanup}
-
-Adding clauses with no restrictions can be impractical in some cases. We could eventually exhaust all the available memory by learning too many clauses and it is also known that large clauses are not really useful in the search process \cite{grasp}. Large clauses also add some considerable overhead to the search process and it is sometimes better to get rid of them than to keep them. Because of this, there are mainly 3 techniques employed to keep the clause database manageable:
-
-\begin{enumerate}
-	\item Only keep clauses with $n$ or less literals \cite{dec90}.
-	\item Clauses are kept only if they imply variable assignments or are unit clauses. They are discarded if the number of unassigned literals is greater than a number $m$ \cite{bs97}.
-	\item Clauses with a number of literals greater than a threshold $k$ are discarded as soon as the number of unassigned literals is greater than one \cite{grasp}.
-\end{enumerate}
-
-Lately, some solvers have started using more advanced heuristics as clause deletion policies, such as keeping information about the activity of a clause in conflicts. One of the best performing heuristics is employed in the SAT solver \texttt{gluclose} \cite{gluclose}, which implements a particular metric of clause activity for its deletion heuristics.
 
 \subsection{Parallel SAT solvers}
 
@@ -440,24 +470,27 @@ As mentioned before, some parallel SAT solvers have performed at the top of the 
 
 The main idea behind portfolio approach solvers is the fact that different kinds of sequential solvers will perform differently for different kinds of SAT problems. The portfolio approach is a very straight forward strategy: They run a group of sequential solvers in parallel, each with different heuristic values and/or different search strategies. The time they take to solve the problem will be the time of the fastest solver in the group of solvers running in parallel. Although all portfolio approach solvers share this same principle, they also have quite different kinds of implementations. We identify in this group the solvers that do not share information, the ones that share clauses only logically, and the ones that share clauses physically and logically.
 
-Solvers that do not share information have the most simple design. They run completely independent solvers in parallel and wait for one of them to give an answer. Despite their simplicity, the solver ppfolio \cite{ppfolio}, a pure portfolio approach solver, was the winner of the crafted and random categories of the 2011 SAT competition of parallel solvers, and second place in the application category. 
+Solvers that do not share information have the most simple design. They run completely independent solvers in parallel and wait for one of them to give an answer. Despite their simplicity, the solver \texttt{ppfolio} \cite{ppfolio}, a pure portfolio approach solver, was the winner of the crafted and random categories of the 2011 SAT competition of parallel solvers, and second place in the application category. 
 
 On the other hand, we have more elaborated portfolio approach solvers, which can also share clauses logically between their different solvers. One of the characteristics of CDCL solvers is the fact that they can learn new lemmas as they solve a SAT problem. These new lemmas will provide additional information during the solution search, so that the solver doesn't fall into previous fruitless search paths. The idea is that different solvers running in parallel can share their learned lemmas so that they all benefit from what other solvers have learned and improve their own search. An example of these kind of solvers is \texttt{ManySAT} \cite{manysat}, which won the 2009 SAT competition in the parallel solver application category. \texttt{ManySAT} has its own sequential state-of-the-art SAT solver and runs different instances of it in parallel, using different VSIDS \cite{vsids} heuristics (branching heuristics) and restart policies for each of it. The difference with pure portfolio approach solvers, is that \texttt{ManySAT} also shares learned lemmas between solving threads. It is called logical sharing of clauses, because the lemmas are passed as messages between threads and they never share the same physical information in memory. The advantage of logical sharing is that it is easier to implement message passing between threads, than having threads reading and modifying the same memory locations, which often requires locks that could hinder the overall solver performance. One of the best parallel performing solvers, \texttt{Plingeling} \cite{plingeling}, also shares clauses logically. It is a very weak sharing though, since it only shares unit lemmas and it does so through message passing, using a master thread to coordinate messages between worker threads. 
 
 Portfolio approach solvers that share clauses physically have the same strategy as mentioned before, but they share clauses by allowing threads to access the same memory locations, instead of message passing. One solver in this category is \texttt{SArTagnan} \cite{sartagnan}, which shares clauses logically and physically. 
 
 Divide-and-conquer solvers do not try to run different solvers in parallel, they run one solving instance, but try to parallelize the search and divide it between the different threads. A common strategy to divide the search space is to use \textit{guiding paths}. A guiding path is a partial assignment of variables which restricts the search space of the SAT problem. A solver that divides its search space with guiding paths will assign threads to solve the CNF with the given partial assignment from the guiding path the thread was assigned with. Once a thread finishes searching a guiding path with no success, it can request another to keep searching. \texttt{MiraXT} \cite{miraxt} is a divide-and-conquer SAT solver which uses guiding paths. Moreover, different threads solving different guiding paths also share a common clause database, in which they store their learned lemmas. This is another example of physical clause sharing. 
-
-\subsubsection{MiraXT}
-
+\newline
+\newline
+\noindent
+\textbf{MiraXT}
+\newline
+\newline
+\noindent
 \begin{figure}[h!]
 	\centering
 		\includegraphics[width=\textwidth]{miraxtdesign}
 	\caption{Overview of \texttt{MiraXT} design.}
 	\label{fig:miraxt overview}
 \end{figure}
-
-Figure \ref{fig:miraxt overview} shows the general structure of the \texttt{MiraXT} solver, in which our solver AzuDICI bases its organization. We are not interested in the \textit{Preprocessing Unit} as it will not be implemented in our solver. The \textit{SAT Solving Unit} is of interest for our work though. The key structure in this design is the \textit{Shared Clause Database}, which is a database of clauses shared among all SAT solving threads. We will also be using this design in our solver, so all threads will be using a common pool of clauses called Shared Clause Database. The main difference with our design is that we will not have a \textit{Master Control Object} (MCO) structure, which in \texttt{MiraXT} is responsible for the coordination of different threads. The reason for this is that, as we mentioned earlier, MiraXT is a divide-and-conquer solver, so different threads will contribute to one solution and hence will need to be coordinated between each other in this task. On the other hand, our solver will be a portfolio approach one, so different threads will not need to interact with each other directly and no coordination between them is needed.
+Figure \ref{fig:miraxt overview} shows the general structure of the \texttt{MiraXT} solver, in which our solver AzuDICI bases its multi-threaded organization. We are not interested in the \textit{Preprocessing Unit} as it will not be implemented in our solver. The \textit{SAT Solving Unit} is of interest for our work though. The key structure in this design is the \textit{Shared Clause Database}, which is a database of clauses shared among all SAT solving threads. We will also be using this design in our solver, so all threads will be using a common pool of clauses called Shared Clause Database. The main difference with our design is that we will not have a \textit{Master Control Object} (MCO) structure, which in \texttt{MiraXT} is responsible for the coordination of different threads. The reason for this is that, as we mentioned earlier, MiraXT is a divide-and-conquer solver, so different threads will contribute to one solution and hence will need to be coordinated between each other in this task. On the other hand, our solver will be a portfolio approach one, so different threads will not need to interact with each other directly and no coordination between them is needed.
 
 \begin{figure}[h!]
 	\centering
@@ -623,7 +656,7 @@ Aside from the code itself, the amount of data a program handles is also an impo
 
 The main motivation behind this work is our experimental evidence that when threads in different cores share memory, the cache performance improves compared to having threads using their own memory. This experiment will consist on four threads in four different cores of a same chip performing sums over random elements of a matrix. At first, every thread will have its own copy of the same matrix and perform the operations over it. Then we will repeat the experience, but now with all threads performing operations over the same physical matrix. We will also vary the size of the matrix and only use read operations over the matrix, to keep concurrency problems out of the equation.
 
-To measure cache performance we will use \texttt{Perf}. Table \ref{tab:matrix_share} shows the results of the experiment. Notice that when we share the matrix among threads the cache performance increases significatively. This is because all cores in a single chip share the same LL cache, which has a limited size, so not sharing the matrix means handling a higher volume of data, which hinders cache performance as we saw in the previous section. On the other hand, if we share the matrix, then there is a higher chance that the requested matrix element will be found in cache, thus reducing the number of total main memory accesses. For the 128kB and 512kB sized matrices, we can easily fit the four copies, one for each thread, in the LLC, so that's why we barely notice any time difference. When the size gets to 4MB though, a single copy of the matrix is small enough to fit in the LLC, but four copies will make up to 16MB of memory and won't fit in the LLC. That's why sharing a 4MB matrix keeps a similar time to the smaller matrices, but not sharing it presents a 56\% increase in time for this case, because of all the LLC loads the machine has to perform as 16MB is much bigger than what the LLC can hold. Remember that the LLC of the machine has a size of 8MB.
+To measure cache performance we will use \texttt{Perf}. Table \ref{tab:matrix_share} shows the results of the experiment. Notice that when we share the matrix among threads the cache performance increases significatively. This is because all cores in a single chip share the same LL cache, which has a limited size, so not sharing the matrix means handling a higher volume of data, which hinders cache performance as we saw in the previous section. On the other hand, if we share the matrix, then there is a higher chance that the requested matrix element will be found in cache, thus reducing the number of total main memory accesses. For the 128kB and 512kB sized matrices, we can easily fit the four copies, one for each thread, in the LLC, so that is why we barely notice any time difference. When the size gets to 4MB though, a single copy of the matrix is small enough to fit in the LLC, but four copies will make up to 16MB of memory and would not fit in the LLC. That is why sharing a 4MB matrix keeps a similar time to the smaller matrices, but not sharing it presents a 56\% increase in time for this case, because of all the LLC loads the machine has to perform as 16MB is much bigger than what the LLC can hold. Remember that the LLC of the machine has a size of 8MB.
 
 \begin{table}
 \begin{center}
@@ -640,7 +673,7 @@ To measure cache performance we will use \texttt{Perf}. Table \ref{tab:matrix_sh
   1.12 GB 	& no	& 29.09	& 6045	& 5607 	& 3953	& 2594   \\
   1.12 GB 	& yes	& 19.28	& 3711	& 5371	& 3945	& 1738   
 \end{tabular}
-\caption{Times and memory loads vary depending on size of the matrix and if it's being shared.\label{tab:matrix_share}}
+\caption{Times and memory loads vary depending on size of the matrix and if it is being shared.\label{tab:matrix_share}}
 \end{center}
 \end{table}
 
@@ -655,16 +688,20 @@ The relation of this experiment to our work is that SAT solvers have a clause da
 
 \section{Performance of \texttt{plingeling}}
 
-Our first step will be to measure and identify the performance problems that afflict portfolio parallel SAT solvers. The state-of-the-art portfolio approach parallel SAT solver \texttt{plingeling} is one of the best performing parallel solvers to this day. This solver will not share clauses in any way\footnote{It does share unary clauses through message-passing, but we have deactivated this feature for our experiments.}, so we will measure the performance behaviour as we add more solving threads.
+Our first step will be to measure and identify the performance problems that afflict portfolio-approach parallel SAT solvers. The state-of-the-art portfolio approach parallel SAT solver \texttt{plingeling} is one of the best performing parallel solvers to this day. This solver will not share clauses in any way\footnote{It does share unary clauses through message-passing, but we have deactivated this feature for our experiments.} and we will measure the performance behavior as we add more solving threads.
 
 \begin{figure}[h!]
 	\centering
-		\includegraphics[width=0.7\textwidth]{plingeling_decay}
+		\includegraphics[bb=56 117 298 368,clip,width=0.7\textwidth]{plingeling_decay}
 	\caption{Decay of plingeling solver performance when adding threads.}
 	\label{fig:plingeling decay}
 \end{figure}
 
-Because portfolio approach SAT solvers implement different search strategies among their solving threads, it is hard to measure the real impact in performance of adding an extra thread. The new thread might implement a successful search strategy, which will make the total solving time improve drastically and hide the negative impact in the cache performance when adding a new thread. This is why we have modified \texttt{plingeling} to make the exact same search in all of its threads. In theory, we would expect the solver to finish at the same time with one thread than with $n$ threads, because all threads are performing the exact same search and thus should finish at the same time. But we know that each solver thread also keeps its own clause database, so basing our reasoning on the previous experiment, we should expect that adding threads will hinder the overall solver performance. This modified \texttt{plingeling} solver with $n$ threads should perform worse as $n$ grows, assuming that we have enough cores to run $n$ threads and that all cores belong to a same chip. Figure \ref{fig:plingeling decay} shows how the \texttt{plingeling} solver decreases its performance as we add more threads. Each line represents a different benchmark SAT problem, the X axis is the number of threads being used, and the Y axis is the speedup obtained, which is a percentage of decrease in total solving time. The decrease in performance is very noticeable and it can even reach close to 30\%. Our first hypothesis is that this decrease in performance is mostly due to cache issues.
+Because portfolio approach SAT solvers implement different search strategies among their solving threads, it is hard to measure the real impact in performance of adding an extra thread. The new thread might implement a successful search strategy, which will make the total solving time improve drastically and hide the negative impact in the cache performance when adding a new thread. This is why we have modified \texttt{plingeling} to make the exact same search in all of its threads. In theory, we would expect the solver to finish at the same time with one thread than with $n$ threads, because all threads are performing the exact same search and thus should finish at the same time. Nonetheless, we know that each solver thread also keeps its own clause database, so basing our reasoning on the previous experiment, we should expect that adding threads will hinder the overall solver performance. This modified \texttt{plingeling} solver with $n$ threads should perform worse as $n$ grows, assuming that we have enough cores to run $n$ threads and that all cores belong to a same chip. Figure \ref{fig:plingeling decay} shows how the \texttt{plingeling} solver decreases its performance as we add more threads. Each line represents a different benchmark SAT problem (same problem set as used in Figure \ref{fig:plingeling decay}), the X axis is the number of threads being used, and the Y axis is the performance decay \%, which is calculated as:
+
+\[P_d=\left (\left (\frac{T_1}{T_n}  \right )-1  \right )\cdot 100\]
+
+Where $P_d$ is performance decrease, $T_1$ the solving time with one thread, and $T_n$ the solving time with $n$ threads. The decrease in performance is very noticeable as we add threads and it can even reach up to 200\%! (which intuitively means that it takes three times more than its one threaded version). Our first hypothesis is that this decrease in performance is mostly due to cache issues.
 
 \begin{figure}[h!]
 \begin{center}
@@ -675,7 +712,19 @@ Because portfolio approach SAT solvers implement different search strategies amo
 \end{center}
 \end{figure}
 
-To prove that the problem in scalability lies in cache, we have also performed the experiment on a four chip machine, running each different thread in a different chip. As chips have their own last level cache, we expect the performance decrease to be minimal as we add threads, because different threads will not be sharing cache. Figure ~\subref*{fig:different chip} shows the decrease in performance as we add threads in separate chips. We can observe that the performance decrease in this case is minimal for most problems (only around 1-2\%), contrary to the situation where threads are in different cores of a same chip (where many problems exceed -4\% decrease), as shown in Figure ~\subref*{fig:same chip}. The fundamental difference between the two set ups used is that cores in the same chip share the LLC, while cores in different ships have their own LLC and only share main memory. Each solver has its own database of clauses, so the more LLC memory it has at its disposal, the better it will perform individually. The two problems for which the performance decay is noticeable in Figure \ref{fig:plingeling chips} (the two bottom lines in both graphs), are files which contain an unusual large amount of clauses, so a considerable amount of time is spent parsing the input file and generating the clause database. Because \texttt{plingeling} parses a file and then generates a new clause database for each thread, this operation takes even more time when we have multiple threads, and this is why we see that considerable performance decay on different chips for those two particular files. This particular kind of performance decay is different to the one being studied in this report, we are mostly interested in the decay related to cache behaviour in the propagation process, rather than clause database initialization. On a hard problem, which we are mostly interested in, the time spent initializing the databases should be negligible compared to the time spend solving the problem. On the contrary, on an easy problem with a large amount of initial clauses, the solver will spend a significant amount of total time initializing the thread databases. 
+To prove that the problem in scalability lies in cache, we have also performed the experiment on four different chips, running each different thread in a different chip. As chips have their own last level cache, we expect the performance decrease to be minimal as we add threads, because different threads will not be sharing cache. Figure ~\subref*{fig:different chip} shows the decrease in performance as we add threads in separate chips. We can observe that the performance decrease in this case is minimal for most problems (only around 1-2\%), contrary to the situation where threads are in different cores of a same chip (where many problems exceed a 4\% decrease), as shown in Figure ~\subref*{fig:same chip}. The fundamental difference between the two set ups used is that cores in the same chip share the LLC, while cores in different ships have their own LLC and only share main memory. Each solver has its own database of clauses, so the more LLC memory it has at its disposal, the better it will perform individually. These results are an indirect proof of our initial hypothesis, we have not measured the cache performance directly, but the main hardware resource being shared by cores of a same chip is the LLC.
+
+To take our experimental claims even further, we will also measure the cache performance of the \texttt{plingeling} solver in a machine with a chip of six physical cores. As we can observe in Figure \ref{plingeling decay cache}, the miss rate of the LLC highly increases as we add more threads. This means that there will be an important performance decay caused by cache, which is what we observe in previous performance experiments.
+
+\begin{figure}[h!]
+	\centering
+		\includegraphics[bb=62 120 297 341,clip,width=0.7\textwidth]{plingeling_decay_cache}
+		 %
+	\caption{LLC miss \% when adding threads. Same leyend as Figure \ref{fig:plingeling decay}}
+	\label{fig:plingeling decay cache}
+\end{figure}
+
+%The two problems for which the performance decay is noticeable in Figure \ref{fig:plingeling chips} (the two bottom lines in both graphs), are files which contain an unusual large amount of clauses, so a considerable amount of time is spent parsing the input file and generating the clause database. Because \texttt{plingeling} parses a file and then generates a new clause database for each thread, this operation takes even more time when we have multiple threads, and this is why we see that considerable performance decay on different chips for those two particular files. This particular kind of performance decay is different to the one being studied in this report, we are mostly interested in the decay related to cache behaviour in the propagation process, rather than clause database initialization. On a hard problem, which we are mostly interested in, the time spent initializing the databases should be negligible compared to the time spend solving the problem. On the contrary, on an easy problem with a large amount of initial clauses, the solver will spend a significant amount of total time initializing the thread databases. 
 
 %Table \ref{tab:plingeling cache} shows the cache miss percentages as we add more threads to a solver that runs on a single chip. As suggested by our hypothesis, the LLC miss percentage increases dramatically as we add threads, results that explain the decrease in performance of the solver.
 
@@ -814,7 +863,7 @@ considerable overhead caused by this lock.
 
 Since we are interested in studying the cache performance of parallel SAT solvers, we will use a benchmark set of SAT problems (all used in previous SAT competitions) which we know that any of the AzuDICI versions can not solve in a defined time frame limit. This time limit was set to five minutes for our experiments. We would not want to use problems that can be solved in our time limit frame mostly because the results would be strongly influenced by the different search paths each version takes. A version that solves a problem faster due to finding a better search path will probably have a better cache performance, not because it is more cache-friendly, but because it finished before the amount of data to handle was too big.
 
-The experiment will consist on measuring the cache performance of a solver before the timeout of five minutes. For each problem, we will ran instance of the solver with one to up to $n$ threads, and see how well cache behaves for that particular problem.
+The experiment will consist on measuring the cache performance of a solver before the timeout of five minutes. For each problem, we will ran instances of the solver with one to up to $n$ threads, and see how well cache behaves for that particular problem.
 
 \subsection{AzuDICI-SharedNone results}
 
