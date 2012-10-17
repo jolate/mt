@@ -1,6 +1,20 @@
-Let's hope to say that implementation efforts for programming a
-portfolio approach-based sat-solver with shared clauseDB between
-thread pays off when leading with cache problems.
+We showed that the impact of sharing caches is very significant.
+
+It is not clear whether sharing the clause database in the way we have
+proposed has a significant effect on running time of the solver. On
+the one hand, it should be clear that physically sharing data (in
+general) should be beneficial for parallel programs (if for no other
+reason, just to save space). However, to implement solvers that
+physically share the clause database is non-trivial, and prone to
+increasing complexity and running time. Interestingly, the problems
+are not related, as is usual with these kinds of systems, to for
+instance synchronization among the threads, but rather the problems
+stem from the BCP mechanism. This is so because each thread must keep
+track of its own watches (which, as far as is known, cannot be
+shared).
+
+Our results are a mixed blessing.
+
 
 Future work is to continue with the development of  azudici,
 incorporating in it further enhancements like formula preprocessing,

@@ -250,7 +250,7 @@ then $\textbf{I}=\{C,D\}$ and $\Gamma=\{\{\neg A,\neg B\}\}$.
 \newline
 \newline
 \noindent
-The DPLL algorithm (Algorithm \ref{dpllplus}) is a refinement of the depth-first-search algorithm. The first change made is that it adds unit resolution in line 1. Also, we no longer assume that variables are examined in the same order as we go down the search tree and we no longer assume that a variable is set to \textbf{true} and then to \textbf{false}. The choice of a literal $L$ on line 7 can have a dramatic impact on the running time of DPLL. This is where inference comes into play when solving a SAT instance with a DPLL based algorithm, heuristics and random factors are commonly used at this point. 
+The DPLL algorithm (Algorithm \ref{dpllplus}) is a refinement of Algorithm \ref{dpll}. The first change made is that it adds unit resolution in line 1. Also, we no longer assume that variables are examined in the same order as we go down the search tree and we no longer assume that a variable is set to \textbf{true} and then to \textbf{false}. The choice of a literal $L$ on line 7 can have a dramatic impact on the running time of DPLL. This is where inference comes into play when solving a SAT instance with a DPLL based algorithm, heuristics and random factors are commonly used at this point. 
 
 Note that DPLL algorithm will check, even if not implicitly, all leafs of the search tree until an assignment that satisfies the CNF is found, or until all leafs have been discarded and no assignment that satisfies the CNF is found. Furthermore, it will never visit the same node of the search tree more than once (it will not make the same decision sequence twice). Therefore, algorithm DPLL is complete.
 
@@ -277,23 +277,29 @@ $(\textbf{I},\Gamma)=\textsc{unit-resolution}(\Delta)$\\
 \caption{DPLL(CNF $\Delta$): returns a set of literals or \textsc{unsatisfiable}\label{dpllplus}}
 \end{algorithm}    
 
-\subsubsection{Conflicts}
+\subsection{Conflict-Driven Clause-Learning Solvers}
 
-A \textit{conflict} occurs when a variable value assumption leads to an unsatisfiable CNF. In the DPLL algorithm this happens when we make a literal choice (in line 7 of Algorithm \ref{dpll}) and then the algorithm realizes that the new CNF that includes such assumption is unsatisfiable. In this case the algorithm will \textit{backtrack} the decision (undo the assignment) and try with another value. Because of the recursive nature of the DPLL algorithm, we should notice that the backtracking done is always the exact inverse order as the order in which we made the assignments. For example, if an assignment $\Delta | A,B,C,D$, made in that same particular order, leads to a contradiction, then the algorithm would backtrack the last decision made and undo the $D$ assignment. It will now try the $\neg D$ assignment, but if it also proves to lead to a contradictions, then it will also backtrack this decision. At this point it is implied that $\Delta | A,B,C$ is also a contradiction, but note that the DPLL algorithm did not detect the contradiction here (could only imply it after making the $D$ and $\neg D$ assignments). Now the algorithm will also backtrack the $C$ assignment and try $\neg C$. As we have seen in this brief example, the backtracking is always done in the same order that the assignments were done.
+There are several disadvantages that the DPLL algorithm still suffers from. The most important one has to do with the fact that the DPLL algorithm performs a \textit{chronological backtracking}. In this section we will discuss this limitation and the improvements that have been made to refine the DPLL algorithm into a Conflict-Driven Clause-Learning (CDCL) algorithm.
+\newline
+\newline
+\noindent
+\textbf{Chronological backtracking}
+\newline
+\newline
+\noindent
+To explain chronological backtracking, we will first introduce the concept of \textit{conflicts}. A conflict occurs when a variable value assumption leads to an unsatisfiable CNF. In the DPLL algorithm this happens when we make a literal choice (in line 7 of Algorithm \ref{dpll}) and then the algorithm realizes that the new CNF that includes such assumption is unsatisfiable. In this case the algorithm will \textit{backtrack} the decision (undo the assignment) and try with another value. Because of the recursive nature of the DPLL algorithm, we should notice that the backtracking done is always the exact inverse order as the order in which we made the assignments. For example, if an assignment $\Delta | A,B,C,D$, made in that same particular order, leads to a contradiction, then the algorithm would backtrack the last decision made and undo the $D$ assignment. It will now try the $\neg D$ assignment, but if it also proves to lead to a contradictions, then it will also backtrack this decision. At this point it is implied that $\Delta | A,B,C$ is also a contradiction, but note that the DPLL algorithm did not detect the contradiction here (could only imply it after making the $D$ and $\neg D$ assignments). Now the algorithm will also backtrack the $C$ assignment and try $\neg C$. As we have seen in this brief example, the backtracking is always done in the same order that the assignments were done. In general, when we detect a conflict at level $l$ of the search tree, we have to rewind back to level $l-1$, undoing all assignments made in the process. Then we try another value at level $l-1$, if none remains  to be tried, we then go back further to level $l-2$, and so on. If we ever reach level $0$ and each value there leads to a contradiction, we will know that the CNF is inconsistent. This type of backtracking in the DPLL algorithm is called chronological backtracking, because we move back in the same order we got there: one level at a time. A more efficient way to backtrack conflicts is to use \textit{non-chronological backtracking}, but first we need to introduce a new feature called \textit{clause learning} in order to understand how non-chronological backtracking works.
+\newline
+\newline
+\noindent
+\textbf{Clause learning}
+\newline
+\newline
+\noindent
+When a conflict is detected, a \textit{conflict-analysis} procedure is used. Such procedure consists of analyzing the conflict structure through \textit{implication graphs} and then learning a clause from it. The following example will explain how a new clause can be derived from a conflict. 
 
-\subsubsection{Chronological backtracking}
-
-As it was shown earlier, when we detect a conflict at level $l$ of the search tree, we have to rewind back to level $l-1$, undoing all assignments made in the process. Then we try another value at level $l-1$, if none remains  to be tried, we then go back further to level $l-2$, and so on. If we ever reach level $0$ and each value there leads to a contradiction, we will know that the CNF is inconsistent. This type of backtracking in the DPLL algorithm is called \textit{chronological backtracking}, because we move back in the same order we got there; one level at a time. 
-
-\subsubsection{Non-Chronological backtracking}
-
-The problem with chronological backtracking, which is the one used in the DPLL algorithm, is that contradictions that trigger the backtrack often have valuable information. Such information could lead us to learn new clauses and backtrack more levels than just one, thus saving time in the search. For example, let us say that we have a CNF $\Delta$ with variables $A,B,C,D$. Let us also say that, because of the clauses in $\Delta$, the CNF will always be inconsistent when $A$ is set to \textbf{true}. Unfortunately, the DPLL algorithm might not realise this beforehand, because it uses unit resolution which is not refutation complete. So the algorithm might only conclude that $A$ set to \textbf{true} will not satisfy $\Delta$ after assigning all possible values to $B,C,D$. If we could detect that $A$ is not part of any solution, we could avoid going any further in that branch of the search tree and learn that information as a new clause (in our example we would learn the clause $\{\neg A\}$ to enforce $A$ to be \textbf{false}). Learning such clauses is called \textit{conflict-driven clause learning} (CDCL) \cite{cdcl1,cdcl2}.
-
-This new version of the DPLL algorithm is also complete. It is not so obvious that completeness is maintained, because now the algorithm, unlike the basic DPLL version, can make the same decisions more than once (visit a node in the search tree various times), since it does not maintain memory of the previous decisions made. However, it does so in a different context, because it has learned clauses since its previous visits to the same node. This guarantees that completeness in this new algorithm is maintained. A completeness proof of the DPPL algorithm with CDCL features can be found in \cite{DBLP,ig}. In the next section we will discuss in detail how such new clauses are found or how can we decide which level to backtrack after a contradiction is found.
-
-\subsubsection{Clause learning}
-
-When a conflict is detected, the conflict-analysis procedure is used. Such procedure consists of analyzing the conflict structure through \textit{implication graphs} and then learning a clause from it. Let's consider the following CNF:
+\begin{exmp}[Clause learning]$ $
+\newline
+Let's consider the following CNF:
 
 \begin{equation}\label{row sum}
 \Delta = \begin{matrix*}[l]
@@ -320,7 +326,19 @@ A \textit{cut} in an implication graph (dashed lines in Figure \ref{fig:uip}) is
 
 Since there are many possible cuts, and thus conflict sets, we are only interested in choosing the most useful ones. An \textit{asserting clause} \cite{cdcl1} is a clause derived from a conflict set (containing the negation of the assignments in the conflict set) which contains exactly one variable assigned at the level of the conflict. From the previous conflict sets, $\{\neg A,\neg X\}$ and $\{\neg A,\neg Y\}$ are asserting clauses, because only $X$ and $Y$ were decided at the conflict level. 
 
-A refinement to the definition of an asserting clause is the notion of a \textit{unique implication point} (\textit{UIP}) \cite{grasp,cdcl1}. A UIP of a decision level is a variable which was set at that level and that lies in every path from the decision variable at that level to the conflict. For example, the assignments $3/Y=\textbf{true}$ and $3/X=\textbf{true}$ are both UIPs of level 3, and $0/A=\textbf{true}$ is a UIP of level 0. UIPs of a decision level can also be given an order, the first UIP is the one closest to the contradiction. In Figure \ref{fig:uip} the first UIP of level 3 is $3/Y=\textbf{true}$. The \textit{1UIP scheme}, used in modern solvers, learns asserting conflict-driven clauses which have the first UIP of the decision level of the conflict. 
+A refinement to the definition of an asserting clause is the notion of a \textit{unique implication point} (\textit{UIP}) \cite{grasp,cdcl1}. A UIP of a decision level is a variable which was set at that level and that lies in every path from the decision variable at that level to the conflict. For example, the assignments $3/Y=\textbf{true}$ and $3/X=\textbf{true}$ are both UIPs of level 3, and $0/A=\textbf{true}$ is a UIP of level 0. UIPs of a decision level can also be given an order, the first UIP is the one closest to the contradiction. In Figure \ref{fig:uip} the first UIP of level 3 is $3/Y=\textbf{true}$. The \textit{1UIP scheme}, used in modern solvers, learns asserting conflict-driven clauses which have the first UIP of the decision level of the conflict.
+\end{exmp}
+
+%\newline
+%\newline
+\noindent
+\textbf{Non-chronological backtracking}
+\newline
+\newline
+\noindent
+The problem with chronological backtracking, which is the one used in the DPLL algorithm, is that contradictions that trigger the backtrack often have valuable information. Such information could lead us to learn new clauses and backtrack more levels than just one, thus saving time in the search. For example, let us say that we have a CNF $\Delta$ with variables $A,B,C,D$. Let us also say that, because of the clauses in $\Delta$, the CNF will always be inconsistent when $A$ is set to \textbf{true}. Unfortunately, the DPLL algorithm might not realise this beforehand, because it uses unit resolution which is not refutation complete. So the algorithm might only conclude that $A$ set to \textbf{true} will not satisfy $\Delta$ after assigning all possible values to $B,C,D$. If we could detect that $A$ is not part of any solution, we could avoid going any further in that branch of the search tree and learn that information as a new clause (in our example we would learn the clause $\{\neg A\}$ to enforce $A$ to be \textbf{false}). Learning such clauses is called \textit{conflict-driven clause learning} (CDCL) \cite{cdcl1,cdcl2}.
+
+Adding CDCL features to the DPLL algorithm does not affect its completeness. It is not so obvious that completeness is maintained, because now the algorithm, unlike the basic DPLL version, can make the same decisions more than once (visit a node in the search tree various times), since it does not maintain memory of the previous decisions made. However, it does so in a different context, because it has learned clauses since its previous visits to the same node. This guarantees that completeness in this new algorithm is maintained. A completeness proof of the DPPL algorithm with CDCL features can be found in \cite{DBLP,ig}. In the next section we will discuss in detail how such new clauses are found or how can we decide which level to backtrack after a contradiction is found. Now we will discuss in detail how such new clauses are derived and learnt.
 
 \subsection{Modern CDCL solvers}
 

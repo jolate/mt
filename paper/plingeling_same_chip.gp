@@ -48,15 +48,15 @@ set ytics nomirror
 set xtics 0,1,4
 set yrange [0:50]
 set ytics 0,5,50
-plot "<awk '{print $1,(($2/316.4)-1)*100}' plingeling_same_chip.dat" using 1:2 lt 2 lw 0.5 with lines, \
-"<awk '{print $1,(($3/601.5)-1)*100}' plingeling_same_chip.dat" using 1:2 lt 2 lw 0.5 with lines, \
-"<awk '{print $1,(($4/528.7)-1)*100}' plingeling_same_chip.dat" using 1:2 lt 2 lw 0.5 with lines, \
-"<awk '{print $1,(($5/194.8)-1)*100}' plingeling_same_chip.dat" using 1:2 lt 2 lw 0.5 with lines, \
-"<awk '{print $1,(($6/410.8)-1)*100}' plingeling_same_chip.dat" using 1:2 lt 2 lw 0.5 with lines, \
-"<awk '{print $1,(($7/155.0)-1)*100}' plingeling_same_chip.dat" using 1:2 lt 2 lw 0.5 with lines, \
-"<awk '{print $1,(($8/309.8)-1)*100}' plingeling_same_chip.dat" using 1:2 lt 2 lw 0.5 with lines, \
-"<awk '{print $1,(($9/453.4)-1)*100}' plingeling_same_chip.dat" using 1:2 lt 2 lw 0.5 with lines, \
-"<awk '{print $1,(($10/334.5)-1)*100}' plingeling_same_chip.dat" using 1:2 lt 2 lw 0.5 with lines, \
-"<awk '{print $1,(($11/290.7)-1)*100}' plingeling_same_chip.dat" using 1:2 lt 2 lw 0.5 with lines
+plot "<awk '{print $1,(($2/316.4)-1)*100}' plingeling_same_chip.dat" using 1:2 lt 2 lw 0.5 pt 1 ps 0.5 with linespoint, \
+"<awk '{print $1,(($3/601.5)-1)*100}' plingeling_same_chip.dat" using 1:2 lt 2 lw 0.5 pt 2 ps 0.5 with linespoint, \
+"<awk '{print $1,(($4/528.7)-1)*100}' plingeling_same_chip.dat" using 1:2 lt 2 lw 0.5 pt 3 ps 0.5 with linespoint, \
+"<awk '{print $1,(($5/194.8)-1)*100}' plingeling_same_chip.dat" using 1:2 lt 2 lw 0.5 pt 4 ps 0.5 with linespoint, \
+"<awk '{print $1,(($6/410.8)-1)*100}' plingeling_same_chip.dat" using 1:2 lt 2 lw 0.5 pt 5 ps 0.5 with lines, \
+"<awk '{print $1,(($7/155.0)-1)*100}' plingeling_same_chip.dat" using 1:2 lt 2 lw 0.5 pt 6 ps 0.5 with lines, \
+"<awk '{print $1,(($8/309.8)-1)*100}' plingeling_same_chip.dat" using 1:2 lt 2 lw 0.5 pt 7 ps 0.5 with lines, \
+"<awk '{print $1,(($9/453.4)-1)*100}' plingeling_same_chip.dat" using 1:2 lt 2 lw 0.5 pt 8 ps 0.5 with lines, \
+"<awk '{print $1,(($10/334.5)-1)*100}' plingeling_same_chip.dat" using 1:2 lt 2 lw 0.5 pt 9 ps 0.5 with lines, \
+"<awk '{print $1,(($11/290.7)-1)*100}' plingeling_same_chip.dat" using 1:2 lt 2 lw 0.5 pt 10 ps 0.5 with lines
 
 #plot "data.txt" using 2:xticlabels(1) title '' with linespoints #labels in 1

@@ -48,7 +48,7 @@ set ytics nomirror
 set xtics 0,1,4
 set ytics 0,5,50
 set yrange [0:50]
-plot "plingeling_different_chip.dat" using 1:2 lt 2 lw 0.5 with lines, \
+plot "plingeling_different_chip.dat" using 1:2 lt 2 lw 0.5 pt 1 ps 0.5 with linespoint, \
 "" using 1:3 lt 2 lw 0.5 with lines, \
 "" using 1:4 lt 2 lw 0.5 with lines, \
 "" using 1:5 lt 2 lw 0.5 with lines, \

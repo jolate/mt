@@ -2,12 +2,12 @@
 %\documentclass{llncs}
 \documentclass{article}
 
-\usepackage[english]{babel}
 \usepackage{graphicx}
 \usepackage{url}
 \usepackage{subfig}
 \usepackage[ruled, linesnumbered,noend]{algorithm2e}
 \usepackage{amsmath,amssymb}
+\usepackage{multirow}
 
 \begin{document}
 
@@ -22,7 +22,7 @@
 \newcommand{\barc}{Barelogic$^S$}
 \newcommand{\pling}{{\tt plingeling}}
 
-\title{Performance of Parallel SAT Solvers}
+\title{Cache Performance of Portfolio-Approach-Based Parallel CDCL SAT Solvers}
 % \titlerunning{Parallel SAT}
 % \toctitle{Parallel SAT}
 %\subtitle{Subtitle Text, if any, or comment out}
@@ -143,18 +143,19 @@ This is the text of the abstract.
 % MORE ABOUT MIRAXT]
 
 
-\section{Plingeling performance}
+\section{Cache performance without physical clause sharing}
 
 \input{plingeling.tex}
 
-\section{AzuDICI}
-\label{sec:azudici}
+\section{Cache Performance varying levels of physical clause sharing}
 
 \input{azudici.tex}
 
-\section{Cache Performance in AzuDICI}
-
 \input{azudicicacheperf.tex}
+
+\section{Conclusions and Future Work}
+
+\input{conclusions.tex}
 
 \section{Related Work}
 
@@ -162,9 +163,6 @@ This is the text of the abstract.
 
 Talk about miraXT and the other paper found by Leo.
 
-\section{Conclusions and Future Work}
-
-\input{conclusions.tex}
 
 \section*{Acknowledgments}
 

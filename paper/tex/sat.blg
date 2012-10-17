@@ -2,46 +2,44 @@ This is BibTeX, Version 0.99c (TeX Live 2009/Debian)
 The top-level auxiliary file: sat.aux
 The style file: splncs.bst
 Database file #1: bibfile.bib
-Warning--I didn't find a database entry for ""
-You've used 25 entries,
+You've used 26 entries,
             2043 wiz_defined-function locations,
-            652 strings with 7979 characters,
-and the built_in function-call counts, 8221 in all, are:
-= -- 889
-> -- 241
-< -- 25
-+ -- 88
-- -- 63
-* -- 528
-:= -- 1064
-add.period$ -- 38
-call.type$ -- 25
-change.case$ -- 27
+            659 strings with 8112 characters,
+and the built_in function-call counts, 8524 in all, are:
+= -- 919
+> -- 252
+< -- 26
++ -- 92
+- -- 66
+* -- 550
+:= -- 1105
+add.period$ -- 39
+call.type$ -- 26
+change.case$ -- 28
 chr.to.int$ -- 0
-cite$ -- 25
-duplicate$ -- 449
-empty$ -- 781
-format.name$ -- 63
-if$ -- 2060
+cite$ -- 26
+duplicate$ -- 466
+empty$ -- 806
+format.name$ -- 66
+if$ -- 2134
 int.to.chr$ -- 0
-int.to.str$ -- 25
-missing$ -- 21
-newline$ -- 128
-num.names$ -- 35
-pop$ -- 81
+int.to.str$ -- 26
+missing$ -- 22
+newline$ -- 133
+num.names$ -- 36
+pop$ -- 82
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 330
+skip$ -- 342
 stack$ -- 0
-substring$ -- 564
-swap$ -- 244
-text.length$ -- 25
+substring$ -- 584
+swap$ -- 254
+text.length$ -- 26
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 0
-while$ -- 78
-width$ -- 27
-write$ -- 296
-(There was 1 warning)
+while$ -- 81
+width$ -- 28
+write$ -- 308

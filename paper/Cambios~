@@ -27,7 +27,7 @@
 -Ocupar problemas de al final de la pagina. Correr esos 10 en MTL para ver performance de tiempo ## OK ##
 
 *Same chip y different chip (MTL)
--Ocupar los problemas de al final de la pagina y cambiar los graficos de same chip y different chip. ## OK ##
+-Ocupar los problemas de al final de la pagina y cambiar los graficos de same chip y different chip. ## FALTA! ##
 
 *Para azuDICI keira 
 -Same search 2 graficos average.  ## OK ##
@@ -47,10 +47,17 @@ md5_48_3
 
 ======================================================
 
-Performance decay % en eje Y de graficos.
+Performance decay % en eje Y de graficos. ## OK ##
 arreglar escala eje Y graficos same/different chip. ## OK ##
-cambiar label eje Y a "LLC miss (%)" ## OK ##
+cambiar label eje Y a "LLC miss %" ## OK ##
 Arreglar grafico de 207 files. Colocar etiqueta a puntos con numero de problemas resueltos. agregar 40 threads y poner etiqueta "in 4 chips". ## OK ##
-Experimento 
-Same chip/different chip: Poner leyenda una vez y lineas con esa leyenda en ambos.
-Plingeling_decay: Lineas iguales, solo dejar puntos distintos.
+Experimento 4 threads 4 chips 207 files ## OK ##
+Same chip/different chip: Poner leyenda una vez y lineas con esa leyenda en ambos. ## FALTA ##
+Plingeling_decay: Lineas iguales, solo dejar puntos distintos. ## OK ##
+Graficos SS/DS: cambiar y dejar lineas iguales, pero puntos distintos. ## FALTA ##
+
+=======================================================
+
+Different chips faltan datos de los 10 problemas estandar
+Donde colocar leyenda de same/different chip
+

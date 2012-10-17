@@ -148,4 +148,9 @@ Schubert, T., Lewis, M.D.T., Becker, B.:
 \newblock Pamiraxt: Parallel sat solving with threads and message passing.
 \newblock JSAT \textbf{6} (2009)  203--222
 
+\bibitem{survey-psolvers}
+Martins, R., Manquinho, V.M., Lynce, I.:
+\newblock Parallel search for maximum satisfiability.
+\newblock AI Commun. \textbf{25} (2012)  75--95
+
 \end{thebibliography}
