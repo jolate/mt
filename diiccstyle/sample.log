@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=latex 2012.6.14)  18 OCT 2012 09:02
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=latex 2012.4.10)  16 NOV 2012 14:46
 entering extended mode
  %&-line parsing enabled.
 **sample
@@ -320,87 +320,61 @@ LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
 ]
 Dalthesis preface pages completed.
 Chapter 1.
-[1
-
-
-] [2] [3]
-Chapter 2.
-
-Underfull \vbox (badness 1354) has occurred while \output is active []
-
- [4
-
-]
-[5]
-Underfull \hbox (badness 10000) in paragraph at lines 160--169
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 160--169
-
- []
-
-File: search_tree.eps Graphic file (type eps)
-<search_tree.eps>
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-LaTeX Font Info:    Font shape `OMS/cmr/bx/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/b/n' tried instead on input line 183.
-
-LaTeX Font Warning: Font shape `OT1/cmr/bx/sc' undefined
-(Font)              using `OT1/cmr/bx/n' instead on input line 189.
-
-
-Underfull \hbox (badness 10000) detected at line 195
-[][]
- []
-
-[6]
-Underfull \hbox (badness 10000) in paragraph at lines 208--214
-
- []
-
-[7]
-File: termination_trees.eps Graphic file (type eps)
- <termination_trees.eps>
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [8]
-Underfull \vbox (badness 3579) has occurred while \output is active []
+ [1
 
- [9]
-Underfull \hbox (badness 10000) in paragraph at lines 247--254
+
+]
+[2] [3]
+Chapter 2.
+[4
+
+] [5]
+File: search_tree.eps Graphic file (type eps)
+ <search_tree.eps> [6]
+LaTeX Font Info:    Font shape `OMS/cmr/bx/n' in size <12> not available
+(Font)              Font shape `OMS/cmsy/b/n' tried instead on input line 177.
+
+
+LaTeX Font Warning: Font shape `OT1/cmr/bx/sc' undefined
+(Font)              using `OT1/cmr/bx/n' instead on input line 183.
+
+
+Underfull \hbox (badness 10000) detected at line 189
+[][]
+ []
+
+[7] [8]
+File: termination_trees.eps Graphic file (type eps)
+ <termination_trees.eps> [9]
+Underfull \hbox (badness 10000) in paragraph at lines 238--245
 
  []
 
 
-Underfull \hbox (badness 10000) detected at line 278
+Underfull \hbox (badness 10000) detected at line 269
 [][]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 282--299
+Underfull \hbox (badness 10000) in paragraph at lines 273--290
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 282--299
+Underfull \hbox (badness 10000) in paragraph at lines 273--290
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 282--299
+Underfull \hbox (badness 10000) in paragraph at lines 273--290
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 282--299
+Underfull \hbox (badness 10000) in paragraph at lines 273--290
 
  []
 
@@ -411,57 +385,57 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 [12]
 File: uip.eps Graphic file (type eps)
  <uip.eps> [13]
-Underfull \hbox (badness 10000) in paragraph at lines 334--340
+Underfull \hbox (badness 10000) in paragraph at lines 325--331
 
  []
 
 [14]
-Underfull \hbox (badness 10000) in paragraph at lines 345--354
+Underfull \hbox (badness 10000) in paragraph at lines 336--345
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 345--354
+Underfull \hbox (badness 10000) in paragraph at lines 336--345
 
  []
 
 
-Underfull \hbox (badness 10000) detected at line 378
+Underfull \hbox (badness 10000) detected at line 369
 [][]
  []
 
 [15]
-Underfull \hbox (badness 10000) in paragraph at lines 389--403
+Underfull \hbox (badness 10000) in paragraph at lines 380--394
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 389--403
+Underfull \hbox (badness 10000) in paragraph at lines 380--394
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 389--403
+Underfull \hbox (badness 10000) in paragraph at lines 380--394
 
  []
 
 [16]
-Underfull \hbox (badness 10000) in paragraph at lines 410--419
+Underfull \hbox (badness 10000) in paragraph at lines 401--410
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 410--419
+Underfull \hbox (badness 10000) in paragraph at lines 401--410
 
  []
 
 [17]
-Underfull \hbox (badness 10000) in paragraph at lines 430--439
+Underfull \hbox (badness 10000) in paragraph at lines 421--430
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 430--439
+Underfull \hbox (badness 10000) in paragraph at lines 421--430
 
  []
 
@@ -473,7 +447,7 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 [18] [19]
 File: binary_lists.eps Graphic file (type eps)
  <binary_lists.eps>
-Underfull \hbox (badness 10000) in paragraph at lines 458--470
+Underfull \hbox (badness 10000) in paragraph at lines 449--461
 
  []
 
@@ -483,12 +457,12 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 [20] [21]
 File: miraxtdesign.eps Graphic file (type eps)
  <miraxtdesign.eps>
-Underfull \hbox (badness 10000) in paragraph at lines 483--498
+Underfull \hbox (badness 10000) in paragraph at lines 474--489
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 483--498
+Underfull \hbox (badness 10000) in paragraph at lines 474--489
 
  []
 
@@ -501,12 +475,12 @@ File: miraxtdatabase.eps Graphic file (type eps)
  <miraxtdatabase.eps> [24]
 File: cache.eps Graphic file (type eps)
  <cache.eps> [25]
-Underfull \hbox (badness 10000) detected at line 545
+Underfull \hbox (badness 10000) detected at line 536
 [][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 557
+Underfull \hbox (badness 10000) detected at line 548
 [][]
  []
 
@@ -517,7 +491,7 @@ Underfull \vbox (badness 7099) has occurred while \output is active []
 
  [28]
 LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <12> not available
-(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 601.
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 592.
 
 [29] [30]
 Underfull \vbox (badness 2970) has occurred while \output is active []
@@ -535,7 +509,7 @@ File: plingeling_decay.eps Graphic file (type eps)
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-Overfull \hbox (6.24219pt too wide) in paragraph at lines 704--705
+Overfull \hbox (6.24219pt too wide) in paragraph at lines 695--696
 []\OT1/cmr/m/n/12 Because port-fo-lio ap-proach SAT solvers im-ple-ment dif-fer
 -ent search strate-gies among
  []
@@ -561,7 +535,7 @@ File: plingeling_decay_cache.eps Graphic file (type eps)
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-Overfull \hbox (0.22566pt too wide) in paragraph at lines 735--735
+Overfull \hbox (0.22566pt too wide) in paragraph at lines 726--726
 []\OT1/cmr/bx/sc/12 A par-al-lel port-fo-lio ap-proach SAT solver with phys-i-c
 ally shared clause
  []
@@ -657,4 +631,4 @@ Here is how much of TeX's memory you used:
  28 hyphenation exceptions out of 8191
  36i,18n,45p,2771b,434s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on sample.dvi (62 pages, 145616 bytes).
+Output written on sample.dvi (62 pages, 146444 bytes).
