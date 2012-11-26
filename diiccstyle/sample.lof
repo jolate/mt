@@ -1,28 +1,28 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {2.1}{\ignorespaces A search tree for the CNF $\Delta =\{\{\neg A,B\},\{\neg B,C\}\}$.\relax }}{6}
-\contentsline {figure}{\numberline {2.2}{\ignorespaces A termination tree, where each node is labelled by the corresponding CNF. The last node visited during the search is labelled with \{\}. The black crosses indicate the existence of a contradiction at that node.\relax }}{9}
-\contentsline {figure}{\numberline {2.3}{\ignorespaces An implication graph of a conflict\relax }}{13}
-\contentsline {figure}{\numberline {2.4}{\ignorespaces Operation of the two watched literal data structure.\relax }}{19}
-\contentsline {figure}{\numberline {2.5}{\ignorespaces A group of binary clauses and their corresponding binary list.\relax }}{21}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces A search tree which only shows the nodes visited by the depth-first search algorithm. Note that this algorithm can declare success at level 4, after visiting the leafs of node $n_4$. On the other hand, DPLL algorithm can declare success at node $n_2$ at level 1.\relax }}{9}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces An implication graph of a conflict.\relax }}{13}
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Operation of the two watched literal data structure.\relax }}{18}
+\contentsline {figure}{\numberline {2.5}{\ignorespaces A group of binary clauses and their corresponding binary list.\relax }}{20}
 \contentsline {figure}{\numberline {2.6}{\ignorespaces Overview of \texttt {MiraXT} design.\relax }}{23}
 \contentsline {figure}{\numberline {2.7}{\ignorespaces \texttt {MiraXT} shared clause database.\relax }}{24}
 \contentsline {figure}{\numberline {2.8}{\ignorespaces Typical memory hierarchy of modern computers.\relax }}{25}
-\contentsline {figure}{\numberline {2.9}{\ignorespaces A representation of matrix $M$ in main memory.\relax }}{28}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Decay of plingeling solver performance when adding threads.\relax }}{36}
-\contentsline {figure}{\numberline {3.2}{\ignorespaces \texttt {plingeling} performance on different machine set ups.\relax }}{37}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces A representation of matrix $M$ in main memory.\relax }}{29}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Decay of plingeling solver performance when adding threads.\relax }}{35}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces \texttt {plingeling} performance on different machine set ups.\relax }}{37}
 \contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Same Chip}}}{37}
 \contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Different Chips}}}{37}
-\contentsline {figure}{\numberline {3.3}{\ignorespaces LLC miss \% when adding threads. Same leyend as Figure 3.1\hbox {}\relax }}{38}
-\contentsline {figure}{\numberline {3.4}{\ignorespaces Three threads in an AzuDICI-SharedNone solver.\relax }}{39}
-\contentsline {figure}{\numberline {3.5}{\ignorespaces Three threads in an AzuDICI-SharedBinaries solver.\relax }}{40}
-\contentsline {figure}{\numberline {3.6}{\ignorespaces Binary clause database\relax }}{41}
-\contentsline {figure}{\numberline {3.7}{\ignorespaces Three threads in an AzuDICI-SharedAll solver.\relax }}{42}
-\contentsline {figure}{\numberline {3.8}{\ignorespaces The thread clause database and n-ary clause database\relax }}{43}
-\contentsline {figure}{\numberline {3.9}{\ignorespaces SharedNone experiment\relax }}{45}
-\contentsline {figure}{\numberline {3.10}{\ignorespaces SharedBinaries experiment\relax }}{46}
-\contentsline {figure}{\numberline {3.11}{\ignorespaces SharedAll experiment\relax }}{47}
-\contentsline {figure}{\numberline {3.12}{\ignorespaces SharedAllLimited experiment\relax }}{48}
-\contentsline {figure}{\numberline {3.13}{\ignorespaces Average graph\relax }}{49}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces LLC miss \% when adding threads. Same leyend as Figure 3.2\hbox {}\relax }}{38}
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Three threads in an AzuDICI-SharedNone solver.\relax }}{39}
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Three threads in an AzuDICI-SharedBinaries solver.\relax }}{40}
+\contentsline {figure}{\numberline {3.7}{\ignorespaces Binary clause database\relax }}{41}
+\contentsline {figure}{\numberline {3.8}{\ignorespaces Three threads in an AzuDICI-SharedAll solver.\relax }}{42}
+\contentsline {figure}{\numberline {3.9}{\ignorespaces The thread clause database and n-ary clause database\relax }}{43}
+\contentsline {figure}{\numberline {3.10}{\ignorespaces SharedNone experiment\relax }}{44}
+\contentsline {figure}{\numberline {3.11}{\ignorespaces SharedBinaries experiment\relax }}{46}
+\contentsline {figure}{\numberline {3.12}{\ignorespaces SharedAll experiment\relax }}{47}
+\contentsline {figure}{\numberline {3.13}{\ignorespaces SharedAllLimited experiment\relax }}{48}
+\contentsline {figure}{\numberline {3.14}{\ignorespaces Average graph\relax }}{49}
 \addvspace {10\p@ }

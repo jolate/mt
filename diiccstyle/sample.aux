@@ -25,25 +25,25 @@
 \@writefile{loa}{\contentsline {algocf}{\numberline {1}{\ignorespaces Depth-first-search algorithm. Variables are named $P_1,P_2,....$. Initial depth is 0.\relax }}{7}}
 \citation{dpll}
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.2.3}The Davis-Putnam-Logemann-Loveland (DPLL) algorithm.}{8}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.2}{\ignorespaces A termination tree, where each node is labelled by the corresponding CNF. The last node visited during the search is labelled with \{\}. The black crosses indicate the existence of a contradiction at that node.\relax }}{9}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.2}{\ignorespaces A search tree which only shows the nodes visited by the depth-first search algorithm. Note that this algorithm can declare success at level 4, after visiting the leafs of node $n_4$. On the other hand, DPLL algorithm can declare success at node $n_2$ at level 1.\relax }}{9}}
 \newlabel{fig:terminationtree}{{2.2}{9}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.2.4}Conflict-Driven Clause-Learning Solvers}{10}}
-\newlabel{dpllplus}{{2}{11}}
-\@writefile{loa}{\contentsline {algocf}{\numberline {2}{\ignorespaces DPLL(CNF $\Delta $): returns a set of literals or \textsc  {unsatisfiable}\relax }}{11}}
-\newlabel{row sum}{{2.1}{12}}
+\newlabel{dpllplus}{{2}{10}}
+\@writefile{loa}{\contentsline {algocf}{\numberline {2}{\ignorespaces DPLL(CNF $\Delta $): returns a set of literals or \textsc  {unsatisfiable}\relax }}{10}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2.4}Conflict-Driven Clause-Learning Solvers}{11}}
 \citation{grasp}
 \citation{cdcl1}
 \citation{ig}
+\newlabel{cnf}{{2.1}{12}}
 \citation{cdcl1}
 \citation{grasp}
 \citation{cdcl1}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.3}{\ignorespaces An implication graph of a conflict\relax }}{13}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.3}{\ignorespaces An implication graph of a conflict.\relax }}{13}}
 \newlabel{fig:uip}{{2.3}{13}}
 \citation{cdcl1}
 \citation{cdcl2}
 \citation{DBLP}
 \citation{ig}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.2.5}Modern CDCL solvers}{15}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2.5}Modern CDCL solvers}{14}}
 \newlabel{cdcl}{{3}{15}}
 \@writefile{loa}{\contentsline {algocf}{\numberline {3}{\ignorespaces Typical CDCL algorithm\relax }}{15}}
 \citation{heavytail}
@@ -56,91 +56,89 @@
 \citation{gluclose}
 \citation{sato}
 \citation{chaff}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.2.6}Data structures}{18}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.4}{\ignorespaces Operation of the two watched literal data structure.\relax }}{19}}
-\newlabel{fig:watched literals}{{2.4}{19}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2.6}Data structures}{17}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.4}{\ignorespaces Operation of the two watched literal data structure.\relax }}{18}}
+\newlabel{fig:watched literals}{{2.4}{18}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.5}{\ignorespaces A group of binary clauses and their corresponding binary list.\relax }}{20}}
+\newlabel{fig:binary list}{{2.5}{20}}
 \citation{ppfolio}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.5}{\ignorespaces A group of binary clauses and their corresponding binary list.\relax }}{21}}
-\newlabel{fig:binary list}{{2.5}{21}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.2.7}Parallel SAT solvers}{21}}
 \citation{manysat}
 \citation{vsids}
 \citation{plingeling}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2.7}Parallel SAT solvers}{21}}
 \citation{sartagnan}
 \citation{miraxt}
 \@writefile{lof}{\contentsline {figure}{\numberline {2.6}{\ignorespaces Overview of \texttt  {MiraXT} design.\relax }}{23}}
 \newlabel{fig:miraxt overview}{{2.6}{23}}
 \@writefile{lof}{\contentsline {figure}{\numberline {2.7}{\ignorespaces \texttt  {MiraXT} shared clause database.\relax }}{24}}
 \newlabel{fig:miraxt database}{{2.7}{24}}
-\@writefile{toc}{\contentsline {section}{\numberline {2.3}Cache}{25}}
+\@writefile{toc}{\contentsline {section}{\numberline {2.3}Cache}{24}}
 \@writefile{lof}{\contentsline {figure}{\numberline {2.8}{\ignorespaces Typical memory hierarchy of modern computers.\relax }}{25}}
 \newlabel{fig:cache}{{2.8}{25}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.3.1}Cache and algorithms}{26}}
-\newlabel{matrix row}{{4}{27}}
-\@writefile{loa}{\contentsline {algocf}{\numberline {4}{\ignorespaces Row sum of elements\relax }}{27}}
-\newlabel{matrix column}{{5}{27}}
-\@writefile{loa}{\contentsline {algocf}{\numberline {5}{\ignorespaces Column sum of elements\relax }}{27}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.9}{\ignorespaces A representation of matrix $M$ in main memory.\relax }}{28}}
-\newlabel{fig:matrixmemory}{{2.9}{28}}
-\citation{perf}
-\citation{valgrind}
-\newlabel{row sum}{{2.2}{29}}
-\newlabel{column sum}{{2.3}{29}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.3.2}\texttt  {Perf}: A cache performance tool}{29}}
-\@writefile{lot}{\contentsline {table}{\numberline {2.1}{\ignorespaces Different times and number of memory loads for different size of matrices. The number of loads are in millions of loads.\relax }}{32}}
-\newlabel{tab:matrix_size}{{2.1}{32}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.3.3}Size does matter}{32}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.3.4}Cache performance in simple parallel-shared-memory programs}{32}}
-\@writefile{lot}{\contentsline {table}{\numberline {2.2}{\ignorespaces Times and memory loads vary depending on size of the matrix and if it is being shared.\relax }}{34}}
-\newlabel{tab:matrix_share}{{2.2}{34}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {Chapter 3}Cache performance of portfolio-approach SAT solvers}{35}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {Chapter 3}Experiments and results}{27}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{chap:contributions}{{3}{35}}
-\@writefile{toc}{\contentsline {section}{\numberline {3.1}Performance of \texttt  {plingeling}}{35}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.1}{\ignorespaces Decay of plingeling solver performance when adding threads.\relax }}{36}}
-\newlabel{fig:plingeling decay}{{3.1}{36}}
-\newlabel{fig:same chip}{{3.2a}{37}}
-\newlabel{sub@fig:same chip}{{(a)}{3.2(a)}}
-\newlabel{fig:different chip}{{3.2b}{37}}
-\newlabel{sub@fig:different chip}{{(b)}{3.2(b)}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.2}{\ignorespaces \texttt  {plingeling} performance on different machine set ups.\relax }}{37}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.1}Cache and algorithms}{27}}
+\newlabel{matrix row}{{4}{27}}
+\@writefile{loa}{\contentsline {algocf}{\numberline {4}{\ignorespaces Row sum of elements\relax }}{27}}
+\newlabel{matrix column}{{5}{28}}
+\@writefile{loa}{\contentsline {algocf}{\numberline {5}{\ignorespaces Column sum of elements\relax }}{28}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.1}{\ignorespaces A representation of matrix $M$ in main memory.\relax }}{29}}
+\newlabel{fig:matrixmemory}{{3.1}{29}}
+\newlabel{row sum}{{3.1}{29}}
+\citation{perf}
+\citation{valgrind}
+\newlabel{column sum}{{3.2}{30}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1.1}\texttt  {Perf}: A cache performance tool}{30}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1.2}Size does matter}{32}}
+\@writefile{lot}{\contentsline {table}{\numberline {3.1}{\ignorespaces Different times and number of memory loads for different size of matrices. The number of loads are in millions of loads.\relax }}{33}}
+\newlabel{tab:matrix_size}{{3.1}{33}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1.3}Cache performance in simple parallel-shared-memory programs}{33}}
+\@writefile{lot}{\contentsline {table}{\numberline {3.2}{\ignorespaces Times and memory loads vary depending on size of the matrix and if it is being shared.\relax }}{34}}
+\newlabel{tab:matrix_share}{{3.2}{34}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.2}Cache performance of the portfolio-approach SAT solver \texttt  {plingeling}}{35}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.2}{\ignorespaces Decay of plingeling solver performance when adding threads.\relax }}{35}}
+\newlabel{fig:plingeling decay}{{3.2}{35}}
+\newlabel{fig:same chip}{{3.3a}{37}}
+\newlabel{sub@fig:same chip}{{(a)}{3.3(a)}}
+\newlabel{fig:different chip}{{3.3b}{37}}
+\newlabel{sub@fig:different chip}{{(b)}{3.3(b)}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.3}{\ignorespaces \texttt  {plingeling} performance on different machine set ups.\relax }}{37}}
 \@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Same Chip}}}{37}}
 \@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Different Chips}}}{37}}
-\newlabel{fig:plingeling chips}{{3.2}{37}}
+\newlabel{fig:plingeling chips}{{3.3}{37}}
 \citation{Luby}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.3}{\ignorespaces LLC miss \% when adding threads. Same leyend as Figure 3.1\hbox {}\relax }}{38}}
-\newlabel{fig:plingeling decay cache}{{3.3}{38}}
-\@writefile{toc}{\contentsline {section}{\numberline {3.2}A parallel portfolio approach SAT solver with physically shared clause database: AzuDICI}{38}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.1}General outline}{39}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.2}AzuDICI-SharedNone}{39}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.4}{\ignorespaces Three threads in an AzuDICI-SharedNone solver.\relax }}{39}}
-\newlabel{fig:azu sharednone}{{3.4}{39}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.3}AzuDICI-SharedBinaries}{40}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.5}{\ignorespaces Three threads in an AzuDICI-SharedBinaries solver.\relax }}{40}}
-\newlabel{fig:azu sharedbinaries}{{3.5}{40}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.6}{\ignorespaces Binary clause database\relax }}{41}}
-\newlabel{fig:shared bins}{{3.6}{41}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.4}AzuDICI-SharedAll}{42}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.7}{\ignorespaces Three threads in an AzuDICI-SharedAll solver.\relax }}{42}}
-\newlabel{fig:azu sharedall}{{3.7}{42}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.8}{\ignorespaces The thread clause database and n-ary clause database\relax }}{43}}
-\newlabel{fig:azu design}{{3.8}{43}}
-\@writefile{toc}{\contentsline {section}{\numberline {3.3}Experimental results}{43}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.3.1}AzuDICI-SharedNone results}{44}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.3.2}AzuDICI-SharedBinaries results}{44}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.9}{\ignorespaces SharedNone experiment\relax }}{45}}
-\newlabel{fig:shared-none}{{3.9}{45}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.10}{\ignorespaces SharedBinaries experiment\relax }}{46}}
-\newlabel{fig:shared-binaries}{{3.10}{46}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.3.3}AzuDICI-SharedAll results}{46}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.11}{\ignorespaces SharedAll experiment\relax }}{47}}
-\newlabel{fig:shared-all}{{3.11}{47}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.12}{\ignorespaces SharedAllLimited experiment\relax }}{48}}
-\newlabel{fig:shared-all-start}{{3.12}{48}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.3.4}Summing it all up}{49}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.13}{\ignorespaces Average graph\relax }}{49}}
-\newlabel{fig:average}{{3.13}{49}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.4}{\ignorespaces LLC miss \% when adding threads. Same leyend as Figure 3.2\hbox {}\relax }}{38}}
+\newlabel{fig:plingeling decay cache}{{3.4}{38}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.3}AzuDICI: A parallel portfolio approach SAT solver with physically shared clause database}{38}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3.1}AzuDICI-SharedNone}{39}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.5}{\ignorespaces Three threads in an AzuDICI-SharedNone solver.\relax }}{39}}
+\newlabel{fig:azu sharednone}{{3.5}{39}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3.2}AzuDICI-SharedBinaries}{40}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.6}{\ignorespaces Three threads in an AzuDICI-SharedBinaries solver.\relax }}{40}}
+\newlabel{fig:azu sharedbinaries}{{3.6}{40}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.7}{\ignorespaces Binary clause database\relax }}{41}}
+\newlabel{fig:shared bins}{{3.7}{41}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3.3}AzuDICI-SharedAll}{42}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.8}{\ignorespaces Three threads in an AzuDICI-SharedAll solver.\relax }}{42}}
+\newlabel{fig:azu sharedall}{{3.8}{42}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.9}{\ignorespaces The thread clause database and n-ary clause database\relax }}{43}}
+\newlabel{fig:azu design}{{3.9}{43}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.4}AzuDICI performance}{43}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.4.1}AzuDICI-SharedNone results}{44}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.10}{\ignorespaces SharedNone experiment\relax }}{44}}
+\newlabel{fig:shared-none}{{3.10}{44}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.4.2}AzuDICI-SharedBinaries results}{45}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.4.3}AzuDICI-SharedAll results}{45}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.11}{\ignorespaces SharedBinaries experiment\relax }}{46}}
+\newlabel{fig:shared-binaries}{{3.11}{46}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.12}{\ignorespaces SharedAll experiment\relax }}{47}}
+\newlabel{fig:shared-all}{{3.12}{47}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.13}{\ignorespaces SharedAllLimited experiment\relax }}{48}}
+\newlabel{fig:shared-all-start}{{3.13}{48}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.14}{\ignorespaces Average graph\relax }}{49}}
+\newlabel{fig:average}{{3.14}{49}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.4.4}Summing it all up}{49}}
 \citation{chaff}
 \@writefile{toc}{\contentsline {chapter}{\numberline {Chapter 4}Conclusions}{51}}
 \@writefile{lof}{\addvspace {10\p@ }}

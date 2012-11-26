@@ -69,8 +69,8 @@
 % Notice that these are not typeset. But they do serve a purpose for
 % future references.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\submitdate{September, 2012} % date you submitted to the committee
-\defensedate{September, 2012}  % date the defense was set
+\submitdate{Diciembre, 2012} % date you submitted to the committee
+\defensedate{Diciembre, 2012}  % date the defense was set
 \copyrightyear{2012}         % document for final archiving
 
 \begin{document}
@@ -195,7 +195,7 @@ Consider the CNF of Figure \ref{fig:searchtree} and the node labelled $n_5$. At 
 \[\Delta |A,\neg B=\{\{\}\}.\]
 and would be the same as writing:
 \[\{ \{\textbf{false},\textbf{false}\},\{\textbf{true},C\}\}\]
-The algorithm will detect that there is a contradiction at this internal node, hence concluding that neither $w_3$ or $w_4$ are models of $\Delta$, without having to visit them explicitly. The algorithm can also detect success at internal nodes, implying that all assignments from that particular node are models of the CNF.$\Box$
+The algorithm will detect that there is a contradiction at this internal node, hence concluding that neither $w_3$ or $w_4$ are models of $\Delta$, without having to visit them explicitly. The algorithm can also detect success at internal nodes, implying that all assignments from that particular node are models of the CNF. Node $n_7$, for example, is already a valid CNF, so we do not have to check $w_7$ and $w_8$. $\Box$
 \end{exmp}
 
 \subsection{The Davis-Putnam-Logemann-Loveland (DPLL) algorithm.}
@@ -207,15 +207,15 @@ One of the downsides of Algorithm \ref{dpll} is that we cannot perform any kind 
 \begin{exmp}
 Consider the tree of Figure ~\ref{fig:terminationtree} and the CNF:
 \[\Delta=\{\{\neg A,B\},\{\neg B,\neg C\},\{C,\neg D\}\}.\]
-Consider also the node at Level 1, which results from setting variable A to \textbf{true}, and its corresponding CNF:
+Consider also the node $n_2$, which results from setting variable A to \textbf{true}, and its corresponding CNF:
 \[\Delta |A=\{\{B\},\{\neg B,\neg C\},\{C,\neg D\}\}.\]
-Algorithm ~\ref{dpll} cannot declare early success or early failure, because the CNF is neither empty, nor contains the empty clause, reason why it keeps searching below Level 1 as shown in Figure \ref{fig:terminationtree}. However, by using unit resolution, we can declare success and end the search at Level 1. Because the clause $\{B\}$ has become unit, we can assume that variable $B$ is \textbf{true}. Now the clause $\{\neg B, \neg C\}$ is simplified to $\{\neg C\}$ (because $\neg B$ is \textbf{false} and cannot satisfy the clause) which is a unit clause. This will cause $C$ to be \textbf{false} and clause $\{C,\neg D\}$ to be simplified to $\{\neg D\}$. This clause is also unit now so $D$ must be assigned \textbf{false} and hence all clauses in this CNF have been satisfied through unit resolution. We can then declare that success without having to go any further in the search tree. Remember that the unit resolution process is very fast and does not require to make any decisions.$\Box$
+Algorithm ~\ref{dpll} cannot declare early success or early failure, because the CNF is neither empty, nor contains the empty clause, reason why it keeps searching below Level 1 as shown in Figure \ref{fig:terminationtree}. However, by using unit resolution, we can declare success and end the search at Level 1. Because the clause $\{B\}$ has become unit, we can assume that variable $B$ is \textbf{true}. Now the clause $\{\neg B, \neg C\}$ is simplified to $\{\neg C\}$ (because $\neg B$ is \textbf{false} and cannot satisfy the clause) which is a unit clause. This will cause $C$ to be \textbf{false} and clause $\{C,\neg D\}$ to be simplified to $\{\neg D\}$. This clause is also unit now so $D$ must be assigned \textbf{false} and hence all clauses in this CNF have been satisfied through unit resolution. We can then declare success without having to go any further in the search tree. Remember that the unit resolution process is very fast and does not require to make any decisions. $\Box$
 \end{exmp}
 
 \begin{figure}[h!]
 	\centering
 		\includegraphics[width=0.7\textwidth]{termination_trees}
-	\caption{A termination tree, where each node is labelled by the corresponding CNF. The last node visited during the search is labelled with \{\}. The black crosses indicate the existence of a contradiction at that node.}
+	\caption{A search tree which only shows the nodes visited by the depth-first search algorithm. Note that this algorithm can declare success at level 4, after visiting the leafs of node $n_4$. On the other hand, DPLL algorithm can declare success at node $n_2$ at level 1.}
 	\label{fig:terminationtree}
 \end{figure}
 
@@ -230,7 +230,7 @@ If the argument of \textsc{unit-resolution} was the CNF
 \[\Delta=\{\{\neg A,\neg B\},\{B,C\},\{\neg C,D\},\{A\}\},\]
 then $\textbf{I}=\{A,\neg B,C,D\}$ and $\Gamma=\{\}$. Moreover, if
 \[\Delta=\{\{\neg A,\neg B\},\{B,C\},\{\neg C,D\},\{C\}\},\]
-then $\textbf{I}=\{C,D\}$ and $\Gamma=\{\{\neg A,\neg B\}\}$.$\Box$
+then $\textbf{I}=\{C,D\}$ and $\Gamma=\{\{\neg A,\neg B\}\}$. $\Box$
 \end{exmp}
 
 The DPLL algorithm (Algorithm \ref{dpllplus}) is a refinement of Algorithm \ref{dpll}. The first change made is that it adds unit resolution in line 1. Also, it does not longer assume that variables are examined in a strict order as we go down the search tree and it does not longer assume that a variable is set to \textbf{true} and then to \textbf{false}. The choice of a literal $L$ on line 7 can have a dramatic impact on the running time of DPLL. This is where inference comes into play when solving a SAT instance with a DPLL based algorithm, heuristics and random factors are commonly used at this point. 
@@ -266,34 +266,24 @@ There are several disadvantages that the DPLL algorithm still suffers from. The 
 \newline
 \newline
 \noindent
-\textbf{Chronological backtracking}
+\textbf{Chronological backtracking}. To explain chronological backtracking, we will first introduce the concept of \textit{conflicts}. A conflict occurs when the assumption of a variable value leads to an unsatisfiable CNF. In the DPLL algorithm this happens when we make a literal choice (in line 7 of Algorithm \ref{dpll}) and then the algorithm realizes that the new CNF that includes such assumption is unsatisfiable. In this case the algorithm will \textit{backtrack} the decision (undo the assignment) and try with another value. Because of the recursive nature of the DPLL algorithm, we should notice that the backtracking done is always the exact inverse order as the order in which we made the assignments. For example, if an assignment $\Delta | A,B,C,D$, made in that same particular order, leads to a contradiction, then the algorithm would backtrack the last decision made and undo the $D$ assignment. It will now try the $\neg D$ assignment, but if it also proves to lead to a contradictions, then it will also backtrack this decision. At this point it is implied that $\Delta | A,B,C$ is also a contradiction, but note that the DPLL algorithm did not detect the contradiction here (could only imply it after making the $D$ and $\neg D$ assignments). Now the algorithm will also backtrack the $C$ assignment and try $\neg C$. As we have seen in this brief example, the backtracking is always done in the same order that the assignments were done. In general, when we detect a conflict at level $l$ of the search tree, we have to rewind back to level $l-1$, undoing all assignments made in the process. Then we try another value at level $l-1$, if none remains  to be tried, we then go back further to level $l-2$, and so on. If we ever reach level $0$ and each value there leads to a contradiction, we will know that the CNF is inconsistent. This type of backtracking in the DPLL algorithm is called chronological backtracking, because we move back in the same order we got there: one level at a time. A more efficient way to backtrack conflicts is to use \textit{non-chronological backtracking}, but first we need to introduce a new feature called \textit{clause learning} in order to understand how non-chronological backtracking works.
 \newline
 \newline
 \noindent
-To explain chronological backtracking, we will first introduce the concept of \textit{conflicts}. A conflict occurs when a variable value assumption leads to an unsatisfiable CNF. In the DPLL algorithm this happens when we make a literal choice (in line 7 of Algorithm \ref{dpll}) and then the algorithm realizes that the new CNF that includes such assumption is unsatisfiable. In this case the algorithm will \textit{backtrack} the decision (undo the assignment) and try with another value. Because of the recursive nature of the DPLL algorithm, we should notice that the backtracking done is always the exact inverse order as the order in which we made the assignments. For example, if an assignment $\Delta | A,B,C,D$, made in that same particular order, leads to a contradiction, then the algorithm would backtrack the last decision made and undo the $D$ assignment. It will now try the $\neg D$ assignment, but if it also proves to lead to a contradictions, then it will also backtrack this decision. At this point it is implied that $\Delta | A,B,C$ is also a contradiction, but note that the DPLL algorithm did not detect the contradiction here (could only imply it after making the $D$ and $\neg D$ assignments). Now the algorithm will also backtrack the $C$ assignment and try $\neg C$. As we have seen in this brief example, the backtracking is always done in the same order that the assignments were done. In general, when we detect a conflict at level $l$ of the search tree, we have to rewind back to level $l-1$, undoing all assignments made in the process. Then we try another value at level $l-1$, if none remains  to be tried, we then go back further to level $l-2$, and so on. If we ever reach level $0$ and each value there leads to a contradiction, we will know that the CNF is inconsistent. This type of backtracking in the DPLL algorithm is called chronological backtracking, because we move back in the same order we got there: one level at a time. A more efficient way to backtrack conflicts is to use \textit{non-chronological backtracking}, but first we need to introduce a new feature called \textit{clause learning} in order to understand how non-chronological backtracking works.
-\newline
-\newline
-\noindent
-\textbf{Clause learning}
-\newline
-\newline
-\noindent
-When a conflict is detected, a \textit{conflict-analysis} procedure is used. Such procedure consists of analyzing the conflict structure through \textit{implication graphs} and then learning a clause from it. The following example will explain how a new clause can be derived from a conflict. 
+\textbf{Clause learning}. When a conflict is detected, a \textit{conflict-analysis} procedure is used. Such procedure consists of analyzing the conflict structure through \textit{implication graphs} and then learning a clause from it. The following example will explain how a new clause can be derived from a conflict. 
 
-\begin{exmp}[Clause learning]$ $
-\newline
-Let's consider the following CNF:
+\begin{exmp}Let's consider the following CNF:
 
-\begin{equation}\label{row sum}
-\Delta = \begin{matrix*}[l]
-			1.\{A,B\}\\
-		 	2.\{B,C\}\\
-		 	3.\{\neg A,\neg X,Y\}\\
-		 	4.\{\neg A,X,Z\}\\
-		 	5.\{\neg A,\neg Y,Z\}\\
-		 	6.\{\neg A,X,\neg Z\}\\
-		 	7.\{\neg A,\neg Y,\neg Z\}
-		 \end{matrix*}
+\begin{equation}\label{cnf}
+\Delta =\left\lbrace \begin{matrix*}[l]
+			$ $1.\{A,B\}\\
+		 	$ $2.\{B,C\}\\
+		 	$ $3.\{\neg A,\neg X,Y\}\\
+		 	$ $4.\{\neg A,X,Z\}\\
+		 	$ $5.\{\neg A,\neg Y,Z\}\\
+		 	$ $6.\{\neg A,X,\neg Z\}\\
+		 	$ $7.\{\neg A,\neg Y,\neg Z\}
+		 \end{matrix*}\right.
 \end{equation}
 
 The implication graph on Figure \ref{fig:uip} shows a possible search path of a CDCL solver. The nodes of this graph are variable assignments made, with the notation $l/V=v$, where $l$ is a decision level, $V$ a variable and $v$ a truth value. Remember that a variable might be assigned a value in two cases: by a branching decision or by an implication as a result of the propagation process. The directed edges in the graph indicate which assignments implicated other assignments, so an edge from node $\alpha$ to node $\beta$ would mean that the variable assignment in node $\alpha$ implies the assignment shown in node $\beta$. Nodes that do not have any incident edge are decision assignments, because they weren't implied by other assignments. The numeric label on the arcs correspond to the number of the clause that was used for implying that assignment. 
@@ -301,27 +291,23 @@ The implication graph on Figure \ref{fig:uip} shows a possible search path of a 
 \begin{figure}[h!]
 	\centering
 		\includegraphics[width=0.7\textwidth]{uip}
-	\caption{An implication graph of a conflict}
+	\caption{An implication graph of a conflict.}
 	\label{fig:uip}
 \end{figure}
 
-A \textit{cut} in an implication graph (dashed lines in Figure \ref{fig:uip}) is a set of edges that separate the decision assignments (root nodes) from the contradiction (the leaf node containing $\{\}$). A \textit{conflict set} is a set of variable assignments such that each has an outgoing edge belonging to the same cut, in other words, a conflict set contains enough variable assignments to cause the conflict \cite{grasp,cdcl1,ig}. Figure \ref{fig:uip} shows three possible cuts for that implication graph, they lead to the conflict sets $\{A=\textbf{true},X=\textbf{true}\}$, $\{A=\textbf{true},Y=\textbf{true}\}$ and $\{A=\textbf{true},Y=\textbf{true},Z=\textbf{true}\}$.
+A \textit{cut} in an implication graph (dashed lines in Figure \ref{fig:uip}) is a set of edges that separate the decision assignments (root nodes) from the contradiction (the leaf node containing $\{\}$). A \textit{conflict set} is a set of variable assignments such that each has an outgoing edge belonging to the same cut, in other words, a conflict set contains enough variable assignments to cause the conflict \cite{grasp,cdcl1,ig}. Figure \ref{fig:uip} shows three possible cuts for that implication graph, they lead to the conflict sets $\{A=\textbf{true},X=\textbf{true}\}$, $\{A=\textbf{true},Y=\textbf{true}\}$ and $\{A=\textbf{true},Y=\textbf{true},Z=\textbf{true}\}$. The UIP label of some nodes will be explained later in this section.
 
 Since there are many possible cuts, and thus conflict sets, we are only interested in choosing the most useful ones. An \textit{asserting clause} \cite{cdcl1} is a clause derived from a conflict set (containing the negation of the assignments in the conflict set) which contains exactly one variable assigned at the level of the conflict. From the previous conflict sets, $\{\neg A,\neg X\}$ and $\{\neg A,\neg Y\}$ are asserting clauses, because only $X$ and $Y$ were decided at the conflict level. 
 
-A refinement to the definition of an asserting clause is the notion of a \textit{unique implication point} (\textit{UIP}) \cite{grasp,cdcl1}. A UIP of a decision level is a variable which was set at that level and that lies in every path from the decision variable at that level to the conflict. For example, the assignments $3/Y=\textbf{true}$ and $3/X=\textbf{true}$ are both UIPs of level 3, and $0/A=\textbf{true}$ is a UIP of level 0. UIPs of a decision level can also be given an order, the first UIP is the one closest to the contradiction. In Figure \ref{fig:uip} the first UIP of level 3 is $3/Y=\textbf{true}$. The \textit{1UIP scheme}, used in modern solvers, learns asserting conflict-driven clauses which have the first UIP of the decision level of the conflict.
+A refinement to the definition of an asserting clause is the notion of a \textit{unique implication point} (\textit{UIP}) \cite{grasp,cdcl1}. A UIP of a decision level is a variable which was set at that level and that lies in every path from the decision variable at that level to the conflict. For example, the assignments $3/Y=\textbf{true}$ and $3/X=\textbf{true}$ are both UIPs of level 3, and $0/A=\textbf{true}$ is a UIP of level 0. UIPs of a decision level can also be given an order, the first UIP is the one closest to the contradiction. In Figure \ref{fig:uip} the first UIP of level 3 is $3/Y=\textbf{true}$. The \textit{1UIP scheme}, used in modern solvers, learns asserting conflict-driven clauses which have the first UIP of the decision level of the conflict. $\Box$
 \end{exmp}
 
 %\newline
 %\newline
 \noindent
-\textbf{Non-chronological backtracking}
-\newline
-\newline
-\noindent
-The problem with chronological backtracking, which is the one used in the DPLL algorithm, is that contradictions that trigger the backtrack often have valuable information. Such information could lead us to learn new clauses and backtrack more levels than just one, thus saving time in the search. For example, let us say that we have a CNF $\Delta$ with variables $A,B,C,D$. Let us also say that, because of the clauses in $\Delta$, the CNF will always be inconsistent when $A$ is set to \textbf{true}. Unfortunately, the DPLL algorithm might not realise this beforehand, because it uses unit resolution which is not refutation complete. So the algorithm might only conclude that $A$ set to \textbf{true} will not satisfy $\Delta$ after assigning all possible values to $B,C,D$. If we could detect that $A$ is not part of any solution, we could avoid going any further in that branch of the search tree and learn that information as a new clause (in our example we would learn the clause $\{\neg A\}$ to enforce $A$ to be \textbf{false}). Learning such clauses is called \textit{conflict-driven clause-learning} (CDCL) \cite{cdcl1,cdcl2}.
+\textbf{Non-chronological backtracking}. The problem with chronological backtracking, which is the one used in the DPLL algorithm, is that contradictions that trigger the backtrack often have valuable information. Such information could lead us to learn new clauses and backtrack more levels than just one, thus saving time in the search. For example, let us say that we have a CNF $\Delta$ with variables $A,B,C,D$, such that $\Delta$ will always be inconsistent when $A=$\textbf{true}. Unfortunately, the DPLL algorithm might not realise this beforehand, because it uses unit resolution which is not refutation complete. So the algorithm might only conclude that $A=$\textbf{true} will not satisfy $\Delta$ after assigning all possible values to $B,C,D$. If we could detect that $A$ is not part of any solution, we could avoid going any further in that branch of the search tree and learn that information as a new clause (in our example we would learn the clause $\{\neg A\}$ to enforce $A$ to be \textbf{false}). Learning such clauses is called \textit{conflict-driven clause-learning} (CDCL) \cite{cdcl1,cdcl2}.
 
-Adding CDCL features to the DPLL algorithm does not affect its completeness. It is not so obvious that completeness is maintained, because now the algorithm, unlike the basic DPLL version, can make the same decisions more than once (visit a node in the search tree various times), since it does not maintain memory of the previous decisions made. However, it does so in a different context, because it has learned clauses since its previous visits to the same node. This guarantees that completeness in this new algorithm is maintained. A completeness proof of the DPPL algorithm with CDCL features can be found in \cite{DBLP,ig}. In the next section we will discuss in detail how such new clauses are found or how can we decide which level to backtrack after a contradiction is found.
+Adding CDCL features to the DPLL algorithm does not affect its completeness. It is not so obvious that completeness is maintained, because now the algorithm, unlike the basic DPLL version, can make the same decisions more than once (visit a node in the search tree various times), since it does not maintain memory of the previous decisions made. However, it does so in a different context, because it has learned clauses since its previous visits to the same node. This guarantees the completeness of this new algorithm. A completeness proof of the DPPL algorithm with CDCL features can be found in \cite{DBLP,ig}. In the next section we will discuss in detail how such new clauses are found or how can we decide which level to backtrack after a contradiction is found.
 
 \subsection{Modern CDCL solvers}
 
@@ -329,11 +315,7 @@ Most modern solvers today are CDCL SAT solvers. They apply the same structure of
 \newline
 \newline
 \noindent
-\textbf{CDCL algorithm}
-\newline
-\newline
-\noindent
-Given a CNF $\varphi$, a partial assignment of variables $\nu$, Algorithm \ref{cdcl} outlines the general structure of a CDCL SAT solver, where $x$ is a variable, $v$ a truth value and $\beta$ a decision level. We will shortly explain the main functions of this algorithm.
+\textbf{CDCL algorithm}. Given a CNF $\varphi$, a partial assignment of variables $\nu$, Algorithm \ref{cdcl} outlines the general structure of a CDCL SAT solver, where $x$ is a variable, $v$ a truth value and $\beta$ a decision level. We will shortly explain the main functions of this algorithm.
 
 \begin{algorithm}
 \KwIn{A CNF $\varphi$ and a variable assignment $\nu$}
@@ -370,19 +352,11 @@ $dl \leftarrow 0$\\
 %\newline
 %\newline
 \noindent
-\textbf{Search restarts}
+\textbf{Search restarts}. SAT solvers may exhibit high runtime variability on some problems. This means that some decision heuristics and random factors make the solver take a really long time in solving a problem, but others can help solve the same problem in a very short runtime. This phenomena exhibited by SAT solvers and these kind of problems is known as a \textit{heavy tailed distribution}. A heavy tailed distribution has infinite variance and infinite mean, so a SAT solver might get trapped on a very long run with a problem, while a different instance of the solver with other parameters could solve it fast. To address this problem modern SAT solvers have included search restarts in their solving algorithms. To avoid keeping the solver trapped in a very long search path, search restarts are issued over time and the solver starts the search all over again. In practice this strategy has shown dramatic improvements on problems which exhibit the heavy tailed behaviour \cite{heavytail}. It is also important to mention that learnt clauses can be kept between each restart, technique that still ensures the completeness of the algorithm (only one learnt clause in each iteration suffices to guarantee completeness\cite{LMS07}). 
 \newline
 \newline
 \noindent
-SAT solvers may exhibit high runtime variability on some problems. This means that some decision heuristics and random factors make the solver take a really long time in solving a problem, but others can help solve the same problem in a very short runtime. This phenomena exhibited by SAT solvers and these kind of problems is known as a \textit{heavy tailed distribution}. A heavy tailed distribution has infinite variance and infinite mean, so a SAT solver might get trapped on a very long run with a problem, while a different instance of the solver with other parameters could solve it fast. To address this problem modern SAT solvers have included search restarts in their solving algorithms. To avoid keeping the solver trapped in a very long search path, search restarts are issued over time and the solver starts the search all over again. In practice this strategy has shown dramatic improvements on problems which exhibit the heavy tailed behaviour \cite{heavytail}. It is also important to mention that learnt clauses can be kept between each restart, technique that can ensure the completeness of the algorithm under such search restarts (only one learnt clause in each iteration suffices to guarantee completeness\cite{LMS07}). 
-\newline
-\newline
-\noindent
-\textbf{Variable decision heuristics}
-\newline
-\newline
-\noindent
-There are several heuristics that can be employed when choosing a decision variable, even making this decision completely random, but the most popular one was introduced by the solver \texttt{Chaff} and it is called Variable State Independent Decaying Sum (VSIDS). This heuristic consists of the following:
+\textbf{Variable decision heuristics}. There are several heuristics that can be employed when choosing a decision variable, even making this decision completely random, but the most popular one was introduced by the solver \texttt{Chaff} and it is called Variable State Independent Decaying Sum (VSIDS). This heuristic consists of the following:
 \begin{itemize}
 	\item Each literal has a counter, initialized to 0.
 	\item The counter of a literal is only incremented in 1 when a new clause that contains that literal is learnt.
@@ -394,11 +368,7 @@ There are several heuristics that can be employed when choosing a decision varia
 \newline
 \newline
 \noindent
-\textbf{Clause cleanup}
-\newline
-\newline
-\noindent
-Adding clauses with no restrictions can be impractical in some cases. We could eventually exhaust all the available memory by learning too many clauses and it is also known that large clauses are not really useful in the search process \cite{grasp}. Large clauses also add some considerable overhead to the search process and it is sometimes better to get rid of them than to keep them. Because of this, there are mainly 3 techniques employed to keep the clause database manageable:
+\textbf{Clause cleanup}. Adding clauses with no restrictions can be impractical in some cases. We could eventually exhaust all the available memory by learning too many clauses and it is also known that large clauses are not really useful in the search process \cite{grasp}. Large clauses also add some considerable overhead to the search process and it is sometimes better to get rid of them than to keep them. Because of this, there are mainly 3 techniques employed to keep the clause database manageable:
 
 \begin{enumerate}
 	\item Only keep clauses with $n$ or less literals \cite{dec90}.
@@ -410,15 +380,11 @@ Lately, some solvers have started using more advanced heuristics as clause delet
 
 \subsection{Data structures}
 
-Data structures play a fundamental role in the performance of CDCL SAT solvers. Many improvements have been achieved over the last years, but one of the most noticeable ones is use of the so called \textit{lazy data structures} (lazy because they are not accurate) to implement propagation. There are different types of lazy data structures used in modern SAT solvers, they mainly try to address cache performance problems when the solver is performing unit resolution. In this section we will explain two important data structures that are used by almost all modern SAT solvers.
+Data structures play a fundamental role in the performance of CDCL SAT solvers. Many improvements have been achieved over the last years, but one of the most noticeable ones is use of the so called \textit{lazy data structures} to implement propagation. There are different types of lazy data structures used in modern SAT solvers, they mainly try to address cache performance problems when the solver is performing unit resolution. In this section we will explain two important data structures that are used by almost all modern SAT solvers: One is the two watched literals and the other are the binary implication lists.
 \newline
 \newline
 \noindent
-\textbf{The two watched literals lazy data structure}
-\newline
-\newline
-\noindent
-The two main approaches to implement lazy data structures are the \textit{head/tail lists} used in Sato \cite{sato} and the \textit{two watched literals} used in Chaff \cite{chaff}. We will explain the later in detail, as it is widely implemented in most modern CDCL SAT solvers.
+\textbf{The two watched literals lazy data structure}. The two main approaches to implement lazy data structures are the \textit{head/tail lists} used in Sato \cite{sato} and the \textit{two watched literals} used in Chaff \cite{chaff}. We will explain the later in detail, as it is the one implemented in most modern CDCL SAT solvers.
 
 \begin{figure}[h!]
 	\centering
@@ -427,57 +393,47 @@ The two main approaches to implement lazy data structures are the \textit{head/t
 	\label{fig:watched literals}
 \end{figure}
 
-Unit propagation is a key function to the speed of a SAT solver. We need fast ways of identifying which clauses become unit when assigning variables. For example, if we have the clause
+As we have seen, unit propagation is a key function to speed up SAT solvers. We need fast ways of identifying which clauses become unit when assigning variables. For example, if we have the clause
 \[\{\neg A,B,C,\neg D,E\}\]
 and the variable assignment
 \[A=\textbf{true}, E=\textbf{false}, B=\textbf{false}, D=\textbf{true},\]
 we would need to identify somehow that this clause is unit on variable $C$. The two watched literal data structure addresses this problem and makes backtracking very efficient. Instead of trying to keep precise information on the complete state of the clause, the two watched literal strategy only keeps track of two literals in each clause. Such two literals are the watched literals of a clause. 
-\begin{exmp}[The two watched literals scheme]$ $
-\newline
-Let's take as an example the previous clause, as shown on Figure \ref{fig:watched literals}. This time we will assume that no variable assignments have been done yet and that the two watched literals are $\neg A$ and $B$. Suppose that on the next decision level variable $A$ is assigned as \textbf{true}. We would check the watched literals and realize that this clause might be unit, because now there is only one watched literal which is unassigned and the other does not satisfy the clause. Remember that we are only aware of the watched literals and not the rest of them. To check if the clause is really unit, we will attempt to change the first watched literal to an unassigned variable in the clause. We could search to the right and find that literal $B$ is already being watched (the two watched literals must be different), so we keep searching to the right and find that literal $C$ is unassigned, concluding that the clause is not yet unit. Now our two watched literals for this clause are $B$ and $C$. Let us suppose now that propagation gives the value \textbf{false} to variable $E$ and then \textbf{false} to $B$, then we would again wonder if the clause is unit or not. Searching to the right for another unassigned literal to watch will find literal $\neg D$, so now our two watched literals will be $C$ and $\neg D$. Finally, if variable $D$ is assigned to \textbf{true}, then we would search the clause for an available literal, but will not find any (after checking all literals). Only now we can declare that this clause is unit, because there is only one unassigned watched literal and the other can not find any unassigned position. Propagation would assign \textbf{true} to variable $C$, because it is the only way to satisfy that clause. If a conflict is found, while propagating across the different variables, we have to undo all variable assignments after the backtracking point, but the key advantage of the two watched literal structure is that no backtracking has to be done to any watched literal reference of any clause. The clear drawback to this advantage is that, as we saw in the previous example, we have to check all literals in the clause before declaring it unit, since we only keep track of two literals at a time.
+\begin{exmp} The following example considers the clause $\{\neg A,B,C,\neg D,E\}$. Figure \ref{fig:watched literals} shows how the two watched literal scheme would work on such a clause. This time we will assume that no variable assignments have been done yet and that the two watched literals are $\neg A$ and $B$. Suppose that on the next decision level variable $A$ is assigned as \textbf{true}. We would check the watched literals and realize that this clause might be unit, because now there is only one watched literal which is unassigned and the other does not satisfy the clause. Remember that we are only aware of the watched literals and not the rest of them. To check if the clause is really unit, we will attempt to change the first watched literal to an unassigned variable in the clause. We could search to the right and find that literal $B$ is already being watched (the two watched literals must be different), so we keep searching to the right and find that literal $C$ is unassigned, concluding that the clause is not yet unit. Now our two watched literals for this clause are $B$ and $C$. Let us suppose now that propagation gives the value \textbf{false} to variable $E$ and then \textbf{false} to $B$, then we would again wonder if the clause is unit or not. Searching to the right for another unassigned literal to watch will find literal $\neg D$, so now our two watched literals will be $C$ and $\neg D$. Finally, if variable $D$ is assigned to \textbf{true}, then we would search the clause for an available literal, but will not find any (after checking all literals). Only now we can declare that this clause is unit, because there is only one unassigned watched literal and the other can not find any unassigned position. Propagation would assign \textbf{true} to variable $C$, because it is the only way to satisfy that clause. $\Box$
+
+If a conflict is found, while propagating across the different variables, we have to undo all variable assignments after the backtracking point, but the key advantage of the two watched literal structure is that no backtracking has to be done to any watched literal reference of any clause. The clear drawback to this advantage is that, as we saw in the previous example, we have to check all literals in the clause before declaring it unit, since we only keep track of two literals at a time.
 \end{exmp}  
 %\newline
 %\newline
 \noindent
-\textbf{Binary implication lists}
-\newline
-\newline
-\noindent
+\textbf{Binary implication lists}. To speed up the propagation of SAT solvers, \textit{binary clauses}, clauses with two literals, are sometimes stored in special data structures called \textit{binary implication lists}. Binary clauses are frequently used in propagation because they can imply other variable values in just one step. There is also no point on distinguishing two watched literals in these clauses for the simple reason that there are only two literals in them, so knowing when a binary clause is unit becomes trivial. Figure \ref{fig:binary list} represents a set of binary clauses stored in a binary implication list. We have a literal index vector to identify each literal (a variable and its negation), each position of this vector points to a list of literals which are implied by the literal corresponding to the origin of the pointer. Hence, if the $\neg A$ position in the index vector points to $\neg B$ and $D$, this means that if $A$ were to be \textbf{false}, it would imply that $B$ must be \textbf{false} and $D$ \textbf{true}.
+
 \begin{figure}[h!]
 	\centering
 		\includegraphics[scale=1]{binary_lists}
 	\caption{A group of binary clauses and their corresponding binary list.}
 	\label{fig:binary list}
 \end{figure}
-To speed up the propagation of SAT solvers, \textit{binary clauses}, clauses with two literals, are sometimes stored in special data structures called \textit{binary implication lists}. Binary clauses are frequently used in propagation because they can imply other variable values in just one step. There is also no point on distinguishing two watched literals in these clauses for the simple reason that there are only two literals in them, so knowing when a binary clause is unit becomes trivial. Figure \ref{fig:binary list} represents a set of binary clauses stored in a binary implication list. We have a literal index vector to identify each literal (a variable and its negation), each position of this vector points to a list of literals which are implied by the literal corresponding to the origin of the pointer. Hence, if the $\neg A$ position in the index vector points to $\neg B$ and $D$, this means that if $A$ were to be \textbf{false}, it would imply that $B$ must be \textbf{false} and $D$ \textbf{true}.
 
 \subsection{Parallel SAT solvers}
 
-As mentioned before, some parallel SAT solvers have performed at the top of the last SAT competitions, but even though they all fall into the parallel solvers category, their parallel strategies and implementations vastly differ from each other. We mainly classify parallel SAT solvers into two categories: Portfolio approach solvers and divide-and-conquer ones.
+As mentioned before, some parallel SAT solvers have performed at the top of the last SAT competitions, but even though they all fall into the parallel solvers category, their parallel strategies and implementations vastly differ from each other. We mainly classify parallel SAT solvers into two categories: portfolio approach solvers and divide-and-conquer ones.
 
-The main idea behind portfolio approach solvers is the fact that different kinds of sequential solvers will perform differently for different kinds of SAT problems. The portfolio approach is a very straight forward strategy: They run a group of sequential solvers in parallel, each with different heuristic values and/or different search strategies. The time they take to solve the problem will be the time of the fastest solver in the group of solvers running in parallel. Although all portfolio approach solvers share this same principle, they also have quite different kinds of implementations. We identify in this group the solvers that do not share information, the ones that share clauses only logically, and the ones that share clauses physically and logically.
+The main idea behind portfolio approach solvers is that different kinds of sequential solvers will perform differently for different kinds of SAT problems. The portfolio approach is a very straight forward strategy: They run a group of sequential solvers in parallel, each with different heuristic values and/or different search strategies. The time they take to solve the problem will be the time of the fastest sequential solver in the group of solvers running in parallel. Although all portfolio approach solvers share this same principle, they also have quite different kinds of implementations. We identify in this group the solvers that do not share information, the ones that share clauses only logically, and the ones that share clauses physically and logically.
 
 Solvers that do not share information have the most simple design. They run completely independent solvers in parallel and wait for one of them to give an answer. Despite their simplicity, the solver \texttt{ppfolio} \cite{ppfolio}, a portfolio approach solver that does not share any information among its parallel solvers, was the winner of the crafted and random categories of the 2011 SAT competition of parallel solvers, and second place in the application category. 
 
 On the other hand, we have more elaborated portfolio approach solvers, which can also share clauses logically between their different solvers. One of the characteristics of CDCL solvers is the fact that they can learn new lemmas as they solve a SAT problem. These new lemmas will provide additional information during the solution search, so that the solver doesn't fall into previous fruitless search paths. The idea is that different solvers running in parallel can share their learned lemmas so that they all benefit from what other solvers have learned and improve their own search. An example of these kind of solvers is \texttt{ManySAT} \cite{manysat}, which won the 2009 SAT competition in the parallel solver application category. \texttt{ManySAT} has its own sequential state-of-the-art SAT solver and runs different instances of it in parallel, using different VSIDS \cite{vsids} heuristics (branching heuristics) and restart policies for each of it. The difference with pure portfolio approach solvers, is that \texttt{ManySAT} also shares learned lemmas between solving threads. It is called logical sharing of clauses, because the lemmas are passed as messages between threads and they never share the same physical information in memory. The advantage of logical sharing is that it is easier to implement message passing between threads, than having threads reading and modifying the same memory locations, which often requires locks that could hinder the overall solver performance. One of the best parallel performing solvers, \texttt{Plingeling} \cite{plingeling}, also shares clauses logically. It is a very weak sharing though, since it only shares unit lemmas and it does so through message passing, using a master thread to coordinate messages between worker threads. 
 
-Portfolio approach solvers that share clauses physically have the same strategy as mentioned before, but they share clauses by allowing threads to access the same memory locations, instead of message passing. One solver in this category is \texttt{SArTagnan} \cite{sartagnan}, which shares clauses logically and physically. 
+Portfolio approach solvers that share clauses physically have the same strategy as mentioned before, but they share clauses by allowing threads to access the same memory locations, instead of message passing. One solver in this category is \texttt{SArTagnan} \cite{sartagnan}, which shares clauses logically and physically. This solver did not perform as well as as \texttt{ppfolio}, it only achieved he 39th place in the last SAT solving competition of 2011, in the application category. 
 
 Divide-and-conquer solvers do not try to run different solvers in parallel, they run one solving instance, but try to parallelize the search and divide it between the different threads. A common strategy to divide the search space is to use \textit{guiding paths}. A guiding path is a partial assignment of variables which restricts the search space of the SAT problem. A solver that divides its search space with guiding paths will assign threads to solve the CNF with the given partial assignment from the guiding path the thread was assigned with. Once a thread finishes searching a guiding path with no success, it can request another to keep searching. \texttt{MiraXT} \cite{miraxt} is a divide-and-conquer SAT solver which uses guiding paths. Moreover, different threads solving different guiding paths also share a common clause database, in which they store their learned lemmas. This is another example of physical clause sharing. 
-\newline
-\newline
-\noindent
-\textbf{MiraXT}
-\newline
-\newline
-\noindent
 \begin{figure}[h!]
 	\centering
 		\includegraphics[width=\textwidth]{miraxtdesign}
 	\caption{Overview of \texttt{MiraXT} design.}
 	\label{fig:miraxt overview}
 \end{figure}
-Figure \ref{fig:miraxt overview} shows the general structure of the \texttt{MiraXT} solver, in which our solver AzuDICI bases its multi-threaded organization. We are not interested in the \textit{Preprocessing Unit} as it will not be implemented in our solver. The \textit{SAT Solving Unit} is of interest for our work though. The key structure in this design is the \textit{Shared Clause Database}, which is a database of clauses shared among all SAT solving threads. We will also be using this design in our solver, so all threads will be using a common pool of clauses called Shared Clause Database. The main difference with our design is that we will not have a \textit{Master Control Object} (MCO) structure, which in \texttt{MiraXT} is responsible for the coordination of different threads. The reason for this is that, as we mentioned earlier, MiraXT is a divide-and-conquer solver, so different threads will contribute to one solution and hence will need to be coordinated between each other in this task. On the other hand, our solver will be a portfolio approach one, so different threads will not need to interact with each other directly and no coordination between them is needed.
+Figure \ref{fig:miraxt overview} shows the general structure of the \texttt{MiraXT} solver and its multi-threaded organization. The \textit{Preprocessing Unit} simplifies the initial CNF, a common process in all modern SAT solvers, but which is not relevant for this work. The \textit{SAT Solving Unit} will be of high interest for our work though. The key structure in this design is the \textit{Shared Clause Database}, which is a database of clauses shared among all SAT solving threads. Notice in this design that all threads are using a common pool of clauses called Shared Clause Database. There is also a \textit{Master Control Object} (MCO) structure, which is responsible for the coordination of different threads. The reason for this is that, as we mentioned earlier, MiraXT is a divide-and-conquer solver, so different threads will contribute to one solution and hence will need to be coordinated between each other in this task. On the other hand, portfolio approach solvers do not need such component, because different threads will not need to interact with each other directly and no coordination between them is needed.
 
 \begin{figure}[h!]
 	\centering
@@ -492,6 +448,8 @@ To solve a problem \texttt{MiraXT} will start an initial thread solving the enti
 
 \section{Cache}
 
+Computers today usually have three levels of memory cache and a main memory. The processor can have multiple cores in it and cores can run multiple threads in them. The difference between a core and a thread is that cores have separate copies of almost all the hardware resources. The cores can run independently unless they are using the same resource (for example the connection to the outside) at the same time. Threads, on the other hand, share almost all of the processor resources. 
+
 \begin{figure}[h!]
 	\centering
 		\includegraphics[scale=1]{cache}
@@ -499,7 +457,7 @@ To solve a problem \texttt{MiraXT} will start an initial thread solving the enti
 	\label{fig:cache}
 \end{figure}
 
-Computers today usually have three levels of memory cache and a main memory. The processor can have multiple cores in it and cores can run multiple threads in them. The difference between a core and a thread is that cores have separate copies of almost all the hardware resources. The cores can run independently unless they are using the same resource (for example the connection to the outside) at the same time. Threads, on the other hand, share almost all of the processor resources. When a thread, which is running on a core, needs to fetch data, it first tries to look for it in the first level cache (the L1 cache\footnote{There is L1 data cache and also L1 instruction cache, we will be referring to L1 data cache}), if the data is not there, then it tries to find it in the level 2 cache (L2 cache). If the data is still not there, it then tries to fetch it from the level 3 cache (L3 cache) and if that fails too, it goes up to main memory to get the data. If it still isn't in main memory, then it has to retrieve it from the hard disk. We should notice that this hierarchy involves increasing fetch times as we go up. Getting data from the L1 cache is much faster than getting it from L2, and getting data from L2 is much faster than getting it from main memory. The problem with lower level memory is that, because of the technology and costs involved, they are much smaller. So the big picture is that at lower levels we have faster and smaller memories, and at higher levels we have massive and slower memory storages. Figure \ref{fig:cache} is a schematic of today's computer memory hierarchy. To get an idea of the times involved in accessing data from different memory storages, we present the following table of costs associated with hits and misses, for an Intel Pentium M:
+When a thread, which is running on a core, needs to fetch data, it first tries to look for it in the first level cache (the L1 cache\footnote{There is L1 data cache and also L1 instruction cache, we will be referring to L1 data cache}), if the data is not there, then it tries to find it in the level 2 cache (L2 cache). If the data is still not there, it then tries to fetch it from the level 3 cache (L3 cache) and if that fails too, it goes up to main memory to get the data. If it still isn't in main memory, then it has to retrieve it from the hard disk. We should notice that this hierarchy involves increasing fetch times as we go up. Getting data from the L1 cache is much faster than getting it from L2, and getting data from L2 is much faster than getting it from main memory. The problem with lower level memory is that, because of the technology and costs involved, they are much smaller. So the big picture is that at lower levels we have faster and smaller memories, and at higher levels we have massive and slower memory storages. Figure \ref{fig:cache} is a schematic of today's computer memory hierarchy. To get an idea of the times involved in accessing data from different memory storages, we present the following table of costs associated with hits and misses, for an Intel Pentium M:
 \begin{center}
 \begin{tabular}{ c | c }
   To where & Cycles \\ \hline
@@ -510,9 +468,13 @@ Computers today usually have three levels of memory cache and a main memory. The
 \end{tabular}
 \end{center}
  
-\subsection{Cache and algorithms} 
+\chapter{Experiments and results}  
+
+First we will present some simple experiments about cache behaviour, so we can have a better understanding of how cache can change its behaviour depending on the algorithms. Then we will run experiments with existing state-of-the-art SAT solvers and study their cache performance. Finally we will introduce our own proposed SAT solver, explain its components and features, and show the results we obtained from experimenting with it. 
  
-Another important topic to discuss is how these memory caches operate. When data is requested and it is not found in any of the three caches, it has to be loaded from main memory. Data is not transferred individually, instead, a fixed amount of bytes containing the data (or part of it if it's large) is fetched. This fixed amount of bytes is called a \textit{word} or \textit{cache line}. Intel uses an \textit{inclusive} memory cache protocol, which loads a requested word from main memory into all cache levels. 
+\section{Cache and algorithms} 
+ 
+When an algorithm requests data which is not found in any of the three caches, it has to be loaded from main memory. Data is not transferred individually, instead, a fixed amount of bytes containing the data (or part of it if it's large) is fetched. This fixed amount of bytes is called a \textit{word} or \textit{cache line}. Intel uses an \textit{inclusive} memory cache protocol, which loads a requested word from main memory into all cache levels. 
 Because transferring data from main memory is so costly (compared to any cache level), we would like to transfer the highest amount of useful data from main memory to cache every time. Since the access times to any cache are so little compared to main memory, we will assume the bottleneck of data-fetching performance is main memory. 
 
 \begin{algorithm}
@@ -592,7 +554,7 @@ So Algorithm \ref{matrix row} will perform better for this problem and that is t
 \item \textbf{LLC-load-misses}: The amount of load misses from the LLC.
 \end{itemize}
 
-With all the previous information we can draw important results of the cache performance of any program. As an example of the use of \texttt{Perf}, we will make a small cache performance analysis of our C program of Algorithm \ref{matrix row} and Algorithm \ref{matrix column}. The \texttt{Perf} statistics of cache events for Algorithm \ref{matrix row} will yield the following output:
+We will be using the terms cache misses and load misses indistinctively throughout this work. We will also assume that when we talk about cache we are referring to the last level cache (LLC). With all the previous information we can draw important results of the cache performance of any program. As an example of the use of \texttt{Perf}, we will make a small cache performance analysis of our C program of Algorithm \ref{matrix row} and Algorithm \ref{matrix column}. The \texttt{Perf} statistics of cache events for Algorithm \ref{matrix row} will yield the following output:
 
 \begin{verbatim}
 Performance counter stats for './row_sum':
@@ -671,9 +633,7 @@ The relation of this experiment to our work is that SAT solvers have a clause da
 % you what to write here... that's your job.
 %  
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\chapter{Cache performance of portfolio-approach SAT solvers}\label{chap:contributions}
-
-\section{Performance of \texttt{plingeling}}
+\section{Cache performance of the portfolio-approach SAT solver \texttt{plingeling}}
 
 Our first step will be to measure and identify the performance problems that afflict portfolio-approach parallel SAT solvers. The state-of-the-art portfolio approach parallel SAT solver \texttt{plingeling} is one of the best performing parallel solvers to this day. This solver will not share clauses in any way\footnote{It does share unary clauses through message-passing, but we have deactivated this feature for our experiments.} and we will measure the performance behavior as we add more solving threads.
 
@@ -715,11 +675,9 @@ To take our experimental claims even further, we will also measure the cache per
 
 %Table \ref{tab:plingeling cache} shows the cache miss percentages as we add more threads to a solver that runs on a single chip. As suggested by our hypothesis, the LLC miss percentage increases dramatically as we add threads, results that explain the decrease in performance of the solver.
 
-\section{A parallel portfolio approach SAT solver with physically shared clause database: AzuDICI}
+\section{AzuDICI: A parallel portfolio approach SAT solver with physically shared clause database}
 
 It is now clear that as we add more data to a SAT solver clause database, we make its performance decrease because of the cache misses involved in handling a bigger volume of data. We will now perform an analysis on how well does sharing data in SAT solvers help reduce the cache misses as we add threads. To be able to do such analysis, we implemented AzuDICI: a portfolio-approach SAT solver that shares clauses physically. As we mentioned earlier, there are other solvers which implement physically shared clause databases, but they do not make a detailed analysis of the cache performance of such solvers, which will be the contribution of our experiments with AzuDICI.
-
-\subsection{General outline}
 
 AzuDICI\footnote{You can find the latest implementation of AzuDICI at
   \url{https://github.com/leoferres/AzuDICI}} is a standard CDCL
@@ -846,7 +804,7 @@ at the same time. In our experiments we have not noticed any
 considerable overhead caused by this lock.
 
 
-\section{Experimental results} 
+\section{AzuDICI performance} 
 
 Since we are interested in studying the cache performance of parallel SAT solvers, we will use a benchmark set of SAT problems (all used in previous SAT competitions) which we know that any of the AzuDICI versions can not solve in a defined time frame limit. This time limit was set to five minutes for our experiments. We would not want to use problems that can be solved in our time limit frame mostly because the results would be strongly influenced by the different search paths each version takes. A version that solves a problem faster due to finding a better search path will probably have a better cache performance, not because it is more cache-friendly, but because it finished before the amount of data to handle was too big.
 
