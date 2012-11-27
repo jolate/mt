@@ -1,39 +1,39 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=latex 2012.4.10)  27 NOV 2012 10:58
+This is pdfTeX, Version 3.1415926-1.40.10 (MiKTeX 2.8) (preloaded format=latex 2011.1.22)  27 NOV 2012 17:11
 entering extended mode
- %&-line parsing enabled.
-**sample
-(./sample.tex
+**sample.tex
+(C:\Users\Jota\Documents\GitHub\mt\diiccstyle\sample.tex
 LaTeX2e <2009/09/24>
-Babel <v3.8l> and hyphenation patterns for english, usenglishmax, dumylang, noh
-yphenation, loaded.
-(./diicc.cls (/usr/share/texmf-texlive/tex/latex/graphics/graphicx.sty
+Babel <v3.8l> and hyphenation patterns for english, dumylang, nohyphenation, german, ngerman, german-x-2009-06-19, ngerm
+an-x-2009-06-19, french, loaded.
+(C:\Users\Jota\Documents\GitHub\mt\diiccstyle\diicc.cls
+("C:\Program Files (x86)\MiKTeX 2.8\tex\latex\graphics\graphicx.sty"
 Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
 
-(/usr/share/texmf-texlive/tex/latex/graphics/keyval.sty
+("C:\Program Files (x86)\MiKTeX 2.8\tex\latex\graphics\keyval.sty"
 Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
 \KV@toks@=\toks14
 )
-(/usr/share/texmf-texlive/tex/latex/graphics/graphics.sty
+("C:\Program Files (x86)\MiKTeX 2.8\tex\latex\graphics\graphics.sty"
 Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
 
-(/usr/share/texmf-texlive/tex/latex/graphics/trig.sty
+("C:\Program Files (x86)\MiKTeX 2.8\tex\latex\graphics\trig.sty"
 Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
 )
-(/etc/texmf/tex/latex/config/graphics.cfg
-File: graphics.cfg 2009/08/28 v1.8 graphics configuration of TeX Live
+("C:\Program Files (x86)\MiKTeX 2.8\tex\latex\00miktex\graphics.cfg"
+File: graphics.cfg 2007/01/18 v1.5 graphics configuration of teTeX/TeXLive
 )
 Package graphics Info: Driver file: dvips.def on input line 91.
 
-(/usr/share/texmf-texlive/tex/latex/graphics/dvips.def
+("C:\Program Files (x86)\MiKTeX 2.8\tex\latex\graphics\dvips.def"
 File: dvips.def 1999/02/16 v3.0i Driver-dependant file (DPC,SPQR)
 ))
 \Gin@req@height=\dimen102
 \Gin@req@width=\dimen103
 )
 Document Class: diicc 
-(/usr/share/texmf-texlive/tex/latex/base/report.cls
+("C:\Program Files (x86)\MiKTeX 2.8\tex\latex\base\report.cls"
 Document Class: report 2007/10/19 v1.4h Standard LaTeX document class
-(/usr/share/texmf-texlive/tex/latex/base/size12.clo
+("C:\Program Files (x86)\MiKTeX 2.8\tex\latex\base\size12.clo"
 File: size12.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
 )
 \c@part=\count79
@@ -49,7 +49,7 @@ File: size12.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
 \belowcaptionskip=\skip42
 \bibindent=\dimen104
 )
-(/usr/share/texmf-texlive/tex/latex/tools/afterpage.sty
+("C:\Program Files (x86)\MiKTeX 2.8\tex\latex\tools\afterpage.sty"
 Package: afterpage 1995/10/27 v1.08 After-Page Package (DPC)
 \AP@output=\toks15
 \AP@partial=\box26
@@ -60,187 +60,200 @@ Package: afterpage 1995/10/27 v1.08 After-Page Package (DPC)
 \dal@tempdima=\dimen105
 \dal@tempdimb=\dimen106
 )
-(/usr/share/texmf-texlive/tex/latex/setspace/setspace.sty
+("C:\Program Files (x86)\MiKTeX 2.8\tex\latex\setspace\setspace.sty"
 Package: setspace 2000/12/01 6.7 Contributed and Supported LaTeX2e package
 
 Package: `setspace' 6.7 <2000/12/01>
-) (/usr/share/texmf-texlive/tex/latex/algorithm2e/algorithm2e.sty
-Package: algorithm2e 2005/10/04 v3.9 algorithms environments
+) ("C:\Program Files (x86)\MiKTeX 2.8\tex\latex\algorithm2e\algorithm2e.sty"
+Package: algorithm2e 2008/00/00 v3.10 algorithms environments
 \c@AlgoLine=\count88
 
-(/usr/share/texmf-texlive/tex/latex/base/ifthen.sty
+("C:\Program Files (x86)\MiKTeX 2.8\tex\latex\base\ifthen.sty"
 Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
 )
-(/usr/share/texmf-texlive/tex/latex/tools/xspace.sty
+("C:\Program Files (x86)\MiKTeX 2.8\tex\latex\tools\xspace.sty"
 Package: xspace 2006/05/08 v1.12 Space after command names (DPC,MH)
 )
+("C:\Program Files (x86)\MiKTeX 2.8\tex\latex\ltxmisc\relsize.sty"
+Package: relsize 2003/07/04 ver 3.1
+)
 ********************************************************
-Package `algorithm2e' Release 3.9 -- october 04 2005 --
+Package `algorithm2e' Release 4.01 -- december 14 2009 --
 - algorithm2e-announce@lirmm.fr mailing list for announcement about releases
 - algorithm2e-discussion@lirmm.fr mailing list for discussion about package
 subscribe by emailing sympa@lirmm.fr with 'subscribe <list> <firstname name>'
 - Author: Christophe Fiorio (fiorio@lirmm.fr)
 ********************************************************
 \skiptotal=\skip45
-\skiprule=\skip46
-\skiphlne=\skip47
-\skiptext=\skip48
-\skiplength=\skip49
-\algomargin=\skip50
-\skipalgocfslide=\skip51
+\skiplinenumber=\skip46
+\skiprule=\skip47
+\skiphlne=\skip48
+\skiptext=\skip49
+\skiplength=\skip50
+\algomargin=\skip51
+\skipalgocfslide=\skip52
 \algowidth=\dimen107
 \inoutsize=\dimen108
 \inoutline=\dimen109
+\interspacetitleruled=\dimen110
+\interspacealgoruled=\dimen111
+\interspacetitleboxruled=\dimen112
 \algocf@inoutbox=\box28
 \algocf@inputbox=\box29
-\AlCapSkip=\skip52
-\AlCapHSkip=\skip53
-\algocf@capbox=\box30
+\AlCapSkip=\skip53
+\AlCapHSkip=\skip54
+\algocf@nlbox=\box30
+\algocf@hangingbox=\box31
+\algocf@capbox=\box32
+\algoheightruledefault=\skip55
+\algoheightrule=\skip56
+\algotitleheightruledefault=\skip57
+\algotitleheightrule=\skip58
 \c@algocfline=\count89
-\c@algocf=\count90
-\algocf@algoframe=\box31
-\algocf@algobox=\box32
-) (/usr/share/texmf-texlive/tex/latex/ltxmisc/url.sty
+\c@algocfproc=\count90
+\c@algocf=\count91
+\algocf@algoframe=\box33
+\algocf@algobox=\box34
+) ("C:\Program Files (x86)\MiKTeX 2.8\tex\latex\ltxmisc\url.sty"
 \Urlmuskip=\muskip10
 Package: url 2006/04/12  ver 3.3  Verb mode for urls, etc.
 )
-(/usr/share/texmf-texlive/tex/latex/amsmath/amsmath.sty
+("C:\Program Files (x86)\MiKTeX 2.8\tex\latex\ams\math\amsmath.sty"
 Package: amsmath 2000/07/18 v2.13 AMS math features
-\@mathmargin=\skip54
+\@mathmargin=\skip59
 
 For additional information on amsmath, use the `?' option.
-(/usr/share/texmf-texlive/tex/latex/amsmath/amstext.sty
+("C:\Program Files (x86)\MiKTeX 2.8\tex\latex\ams\math\amstext.sty"
 Package: amstext 2000/06/29 v2.01
 
-(/usr/share/texmf-texlive/tex/latex/amsmath/amsgen.sty
+("C:\Program Files (x86)\MiKTeX 2.8\tex\latex\ams\math\amsgen.sty"
 File: amsgen.sty 1999/11/30 v2.0
 \@emptytoks=\toks16
-\ex@=\dimen110
+\ex@=\dimen113
 ))
-(/usr/share/texmf-texlive/tex/latex/amsmath/amsbsy.sty
+("C:\Program Files (x86)\MiKTeX 2.8\tex\latex\ams\math\amsbsy.sty"
 Package: amsbsy 1999/11/29 v1.2d
-\pmbraise@=\dimen111
+\pmbraise@=\dimen114
 )
-(/usr/share/texmf-texlive/tex/latex/amsmath/amsopn.sty
+("C:\Program Files (x86)\MiKTeX 2.8\tex\latex\ams\math\amsopn.sty"
 Package: amsopn 1999/12/14 v2.01 operator names
 )
-\inf@bad=\count91
+\inf@bad=\count92
 LaTeX Info: Redefining \frac on input line 211.
-\uproot@=\count92
-\leftroot@=\count93
+\uproot@=\count93
+\leftroot@=\count94
 LaTeX Info: Redefining \overline on input line 307.
-\classnum@=\count94
-\DOTSCASE@=\count95
+\classnum@=\count95
+\DOTSCASE@=\count96
 LaTeX Info: Redefining \ldots on input line 379.
 LaTeX Info: Redefining \dots on input line 382.
 LaTeX Info: Redefining \cdots on input line 467.
-\Mathstrutbox@=\box33
-\strutbox@=\box34
-\big@size=\dimen112
+\Mathstrutbox@=\box35
+\strutbox@=\box36
+\big@size=\dimen115
 LaTeX Font Info:    Redeclaring font encoding OML on input line 567.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 568.
-\macc@depth=\count96
-\c@MaxMatrixCols=\count97
+\macc@depth=\count97
+\c@MaxMatrixCols=\count98
 \dotsspace@=\muskip11
-\c@parentequation=\count98
-\dspbrk@lvl=\count99
+\c@parentequation=\count99
+\dspbrk@lvl=\count100
 \tag@help=\toks17
-\row@=\count100
-\column@=\count101
-\maxfields@=\count102
+\row@=\count101
+\column@=\count102
+\maxfields@=\count103
 \andhelp@=\toks18
-\eqnshift@=\dimen113
-\alignsep@=\dimen114
-\tagshift@=\dimen115
-\tagwidth@=\dimen116
-\totwidth@=\dimen117
-\lineht@=\dimen118
+\eqnshift@=\dimen116
+\alignsep@=\dimen117
+\tagshift@=\dimen118
+\tagwidth@=\dimen119
+\totwidth@=\dimen120
+\lineht@=\dimen121
 \@envbody=\toks19
-\multlinegap=\skip55
-\multlinetaggap=\skip56
+\multlinegap=\skip60
+\multlinetaggap=\skip61
 \mathdisplay@stack=\toks20
 LaTeX Info: Redefining \[ on input line 2666.
 LaTeX Info: Redefining \] on input line 2667.
 )
-(/usr/share/texmf-texlive/tex/latex/amscls/amsthm.sty
+("C:\Program Files (x86)\MiKTeX 2.8\tex\latex\ams\classes\amsthm.sty"
 Package: amsthm 2004/08/06 v2.20
 \thm@style=\toks21
 \thm@bodyfont=\toks22
 \thm@headfont=\toks23
 \thm@notefont=\toks24
 \thm@headpunct=\toks25
-\thm@preskip=\skip57
-\thm@postskip=\skip58
-\thm@headsep=\skip59
+\thm@preskip=\skip62
+\thm@postskip=\skip63
+\thm@headsep=\skip64
 \dth@everypar=\toks26
 )
-(/usr/share/texmf-texlive/tex/latex/amsfonts/amssymb.sty
+("C:\Program Files (x86)\MiKTeX 2.8\tex\latex\amsfonts\amssymb.sty"
 Package: amssymb 2009/06/22 v3.00
 
-(/usr/share/texmf-texlive/tex/latex/amsfonts/amsfonts.sty
+("C:\Program Files (x86)\MiKTeX 2.8\tex\latex\amsfonts\amsfonts.sty"
 Package: amsfonts 2009/06/22 v3.00 Basic AMSFonts support
 \symAMSa=\mathgroup4
 \symAMSb=\mathgroup5
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 96.
-)) (./mathtools.sty
+))
+(C:\Users\Jota\Documents\GitHub\mt\diiccstyle\mathtools.sty
 Package: mathtools 2011/02/12 v1.10 mathematical typesetting tools
-
-(/usr/share/texmf-texlive/tex/latex/tools/calc.sty
+ ("C:\Program Files (x86)\MiKTeX 2.8\tex\latex\tools\calc.sty"
 Package: calc 2007/08/22 v4.3 Infix arithmetic (KKT,FJ)
-\calc@Acount=\count103
-\calc@Bcount=\count104
-\calc@Adimen=\dimen119
-\calc@Bdimen=\dimen120
-\calc@Askip=\skip60
-\calc@Bskip=\skip61
+\calc@Acount=\count104
+\calc@Bcount=\count105
+\calc@Adimen=\dimen122
+\calc@Bdimen=\dimen123
+\calc@Askip=\skip65
+\calc@Bskip=\skip66
 LaTeX Info: Redefining \setlength on input line 76.
 LaTeX Info: Redefining \addtolength on input line 77.
-\calc@Ccount=\count105
-\calc@Cskip=\skip62
-) (./mhsetup.sty
+\calc@Ccount=\count106
+\calc@Cskip=\skip67
+) (C:\Users\Jota\Documents\GitHub\mt\diiccstyle\mhsetup.sty
 Package: mhsetup 2010/01/21 v1.2a programming setup (MH)
 )
-\g_MT_multlinerow_int=\count106
-\l_MT_multwidth_dim=\dimen121
-\origjot=\skip63
-\l_MT_shortvdotswithinadjustabove_dim=\dimen122
-\l_MT_shortvdotswithinadjustbelow_dim=\dimen123
+\g_MT_multlinerow_int=\count107
+\l_MT_multwidth_dim=\dimen124
+\origjot=\skip68
+\l_MT_shortvdotswithinadjustabove_dim=\dimen125
+\l_MT_shortvdotswithinadjustbelow_dim=\dimen126
 )
-(/usr/share/texmf-texlive/tex/latex/caption/caption.sty
-Package: caption 2009/10/09 v3.1k Customizing captions (AR)
+("C:\Program Files (x86)\MiKTeX 2.8\tex\latex\caption\caption.sty"
+Package: caption 2010/01/09 v3.1m Customizing captions (AR)
 
-(/usr/share/texmf-texlive/tex/latex/caption/caption3.sty
-Package: caption3 2009/10/09 v3.1k caption3 kernel (AR)
-\captionmargin=\dimen124
-\captionmargin@=\dimen125
-\captionwidth=\dimen126
-\caption@indent=\dimen127
-\caption@parindent=\dimen128
-\caption@hangindent=\dimen129
+("C:\Program Files (x86)\MiKTeX 2.8\tex\latex\caption\caption3.sty"
+Package: caption3 2010/01/14 v3.1m caption3 kernel (AR)
+\captionmargin=\dimen127
+\captionmargin@=\dimen128
+\captionwidth=\dimen129
+\caption@indent=\dimen130
+\caption@parindent=\dimen131
+\caption@hangindent=\dimen132
 )
-\c@ContinuedFloat=\count107
+\c@ContinuedFloat=\count108
 )
-(/usr/share/texmf-texlive/tex/latex/subfig/subfig.sty
+("C:\Program Files (x86)\MiKTeX 2.8\tex\latex\subfig\subfig.sty"
 Package: subfig 2005/06/28 ver: 1.3 subfig package
-\c@KVtest=\count108
-\sf@farskip=\skip64
-\sf@captopadj=\dimen130
-\sf@capskip=\skip65
-\sf@nearskip=\skip66
-\c@subfigure=\count109
-\c@subfigure@save=\count110
-\c@lofdepth=\count111
-\c@subtable=\count112
-\c@subtable@save=\count113
-\c@lotdepth=\count114
-\sf@top=\skip67
-\sf@bottom=\skip68
+\c@KVtest=\count109
+\sf@farskip=\skip69
+\sf@captopadj=\dimen133
+\sf@capskip=\skip70
+\sf@nearskip=\skip71
+\c@subfigure=\count110
+\c@subfigure@save=\count111
+\c@lofdepth=\count112
+\c@subtable=\count113
+\c@subtable@save=\count114
+\c@lotdepth=\count115
+\sf@top=\skip72
+\sf@bottom=\skip73
 )
-\c@exmp=\count115
- (./sample.aux)
-\openout1 = `sample.aux'.
+\c@exmp=\count116
 
+(C:\Users\Jota\Documents\GitHub\mt\diiccstyle\sample.aux)
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 76.
 LaTeX Font Info:    ... okay on input line 76.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 76.
@@ -268,42 +281,42 @@ File: udeclogobw.eps Graphic file (type eps)
 <udeclogobw.eps> [1
 
 ]
-\ab@page=\count116
+Missing character: There is no í in font cmr12!
  [2
 
+
+] [3]
+\ab@page=\count117
+ [4
 
 ]
 
 Class dalthesis Warning: Abstract longer than one page.
 
-[3] (./sample.toc
-LaTeX Font Info:    Try loading font information for U+msa on input line 6.
- (/usr/share/texmf-texlive/tex/latex/amsfonts/umsa.fd
+[5] (C:\Users\Jota\Documents\GitHub\mt\diiccstyle\sample.toc
+LaTeX Font Info:    Try loading font information for U+msa on input line 7.
+
+("C:\Program Files (x86)\MiKTeX 2.8\tex\latex\amsfonts\umsa.fd"
 File: umsa.fd 2009/06/22 v3.00 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 6.
+LaTeX Font Info:    Try loading font information for U+msb on input line 7.
 
-(/usr/share/texmf-texlive/tex/latex/amsfonts/umsb.fd
+("C:\Program Files (x86)\MiKTeX 2.8\tex\latex\amsfonts\umsb.fd"
 File: umsb.fd 2009/06/22 v3.00 AMS symbols B
-) [4
+) [6
 
 ])
 \tf@toc=\write3
-\openout3 = `sample.toc'.
-
- [5] (./sample.lot)
+ [7]
+(C:\Users\Jota\Documents\GitHub\mt\diiccstyle\sample.lot)
 \tf@lot=\write4
-\openout4 = `sample.lot'.
+ [8
 
 
-[6
-
-
-] (./sample.lof)
+] (C:\Users\Jota\Documents\GitHub\mt\diiccstyle\sample.lof)
 \tf@lof=\write5
-\openout5 = `sample.lof'.
 
- [7
+[9
 
 
 ]
@@ -315,62 +328,48 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
  [1
 
 
-]
-[2] [3]
+] [2] [3]
 Chapter 2.
 [4
 
 ] [5]
 File: search_tree.eps Graphic file (type eps)
  <search_tree.eps> [6]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 179.
-
-
-(/usr/share/texmf-texlive/tex/latex/base/omscmr.fd
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 181.
+ ("C:\Program Files (x86)\MiKTeX 2.8\tex\latex\base\omscmr.fd"
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/bx/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/b/n' tried instead on input line 179.
+(Font)              Font shape `OMS/cmsy/b/n' tried instead on input line 181.
 
 
 LaTeX Font Warning: Font shape `OT1/cmr/bx/sc' undefined
-(Font)              using `OT1/cmr/bx/n' instead on input line 185.
-
-
-Underfull \hbox (badness 10000) detected at line 191
-[][]
- []
+(Font)              using `OT1/cmr/bx/n' instead on input line 187.
 
 [7] [8]
 File: termination_trees.eps Graphic file (type eps)
  <termination_trees.eps>
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 226.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 228.
  [9]
-Underfull \hbox (badness 10000) detected at line 263
-[][]
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 267--276
+Underfull \hbox (badness 10000) in paragraph at lines 269--278
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 267--276
+Underfull \hbox (badness 10000) in paragraph at lines 269--278
 
  []
 
 
-Underfull \vbox (badness 7256) has occurred while \output is active []
+Underfull \vbox (badness 7099) has occurred while \output is active []
 
  [10]
 Underfull \vbox (badness 6625) has occurred while \output is active []
 
  [11]
 File: uip.eps Graphic file (type eps)
-
-<uip.eps>
+ <uip.eps>
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
@@ -378,27 +377,22 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 Underfull \vbox (badness 4556) has occurred while \output is active []
 
  [13]
-Underfull \hbox (badness 10000) in paragraph at lines 316--321
+Underfull \hbox (badness 10000) in paragraph at lines 318--323
 
  []
 
-[14]
-Underfull \hbox (badness 10000) detected at line 345
-[][]
- []
-
-[15]
-Underfull \hbox (badness 10000) in paragraph at lines 356--362
+[14] [15]
+Underfull \hbox (badness 10000) in paragraph at lines 358--364
 
  []
 
 [16]
-Underfull \hbox (badness 10000) in paragraph at lines 369--374
+Underfull \hbox (badness 10000) in paragraph at lines 371--376
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 385--390
+Underfull \hbox (badness 10000) in paragraph at lines 387--392
 
  []
 
@@ -415,14 +409,12 @@ Underfull \vbox (badness 2173) has occurred while \output is active []
 
  [21]
 File: miraxtdesign.eps Graphic file (type eps)
-
-<miraxtdesign.eps>
+ <miraxtdesign.eps>
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [22]
 File: miraxtdatabase.eps Graphic file (type eps)
-
-<miraxtdatabase.eps>
+ <miraxtdatabase.eps>
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
@@ -430,30 +422,18 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 File: cache.eps Graphic file (type eps)
  <cache.eps> [24] [25] [26]
 Chapter 3.
-
-Underfull \hbox (badness 10000) detected at line 492
-[][]
- []
-
-
-Underfull \hbox (badness 10000) detected at line 504
-[][]
- []
-
 [27
 
 ] [28]
 File: matrixmemory.eps Graphic file (type eps)
  <matrixmemory.eps> [29]
 LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <12> not available
-(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 548.
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 550.
  [30] [31] [32] [33] [34]
 File: plingeling_decay.eps Graphic file (type eps)
-
-<plingeling_decay.eps>
-Overfull \hbox (6.24219pt too wide) in paragraph at lines 649--650
-[]\OT1/cmr/m/n/12 Because port-fo-lio ap-proach SAT solvers im-ple-ment dif-fer
--ent search strate-gies among
+ <plingeling_decay.eps>
+Overfull \hbox (6.24219pt too wide) in paragraph at lines 651--652
+[][]\OT1/cmr/m/n/12 Because port-fo-lio ap-proach SAT solvers im-ple-ment dif-fer-ent search strate-gies among
  []
 
 [35]
@@ -469,61 +449,63 @@ Underfull \vbox (badness 1308) has occurred while \output is active []
 
  [36]
 File: plingeling_decay_cache.eps Graphic file (type eps)
-
-<plingeling_decay_cache.eps>
+ <plingeling_decay_cache.eps>
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [37]
-[38]
+ [37] [38]
 File: sharednone.eps Graphic file (type eps)
- <sharednone.eps> [39]
+ <sharednone.eps>
 File: sharedbinaries.eps Graphic file (type eps)
  <sharedbinaries.eps>
+[39]
 File: implication_list.eps Graphic file (type eps)
  <implication_list.eps> [40]
-Underfull \vbox (badness 1424) has occurred while \output is active []
+File: sharedall.eps Graphic file (type eps)
+ <sharedall.eps>
+Underfull \vbox (badness 2781) has occurred while \output is active []
 
  [41]
-File: sharedall.eps Graphic file (type eps)
-
-<sharedall.eps> [42]
 File: AzuDICI_design.eps Graphic file (type eps)
- <AzuDICI_design.eps> [43]
+ <AzuDICI_design.eps> [42] [43]
 File: shared-none.eps Graphic file (type eps)
- <shared-none.eps>
-Underfull \vbox (badness 2521) has occurred while \output is active []
 
- [44]
+<shared-none.eps> [44]
 File: shared-binaries.eps Graphic file (type eps)
-
-<shared-binaries.eps>
+ <shared-binaries.eps>
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 File: shared-all.eps Graphic file (type eps)
 <shared-all.eps>
-Underfull \vbox (badness 5475) has occurred while \output is active []
 
- [45]
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[45]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [46]
+File: shared-all-start.eps Graphic file (type eps)
+ <shared-all-start.eps>
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [46]
+ [47]
+File: average.eps Graphic file (type eps)
+ <average.eps>
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [47]
-File: shared-all-start.eps Graphic file (type eps)
-
-<shared-all-start.eps> [48]
-File: average.eps Graphic file (type eps)
- <average.eps> [49] [50]
+ [48] [49] [50]
 Chapter 4.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -534,7 +516,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [52]
-(./sample.bbl [53]
+(C:\Users\Jota\Documents\GitHub\mt\diiccstyle\sample.bbl [53]
 Missing character: There is no Ã in font cmr12!
 Missing character: There is no © in font cmr12!
 Missing character: There is no Ã in font cmr12!
@@ -545,18 +527,19 @@ Missing character: There is no ¶ in font cmr12!
 ]
 Missing character: There is no Ã in font cmr12!
 Missing character: There is no ¤ in font cmr12!
-) [55] (./sample.aux)
+) [55]
+(C:\Users\Jota\Documents\GitHub\mt\diiccstyle\sample.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 4535 strings out of 495062
- 62705 string characters out of 1182644
- 159358 words of memory out of 3000000
- 7634 multiletter control sequences out of 15000+50000
- 15789 words of font info for 59 fonts, out of 3000000 for 9000
- 28 hyphenation exceptions out of 8191
- 36i,18n,45p,2772b,436s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 4677 strings out of 495286
+ 66775 string characters out of 3179853
+ 157055 words of memory out of 3000000
+ 7797 multiletter control sequences out of 15000+200000
+ 16136 words of font info for 60 fonts, out of 3000000 for 9000
+ 14 hyphenation exceptions out of 8191
+ 36i,17n,45p,2776b,478s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on sample.dvi (62 pages, 148828 bytes).
+Output written on sample.dvi (64 pages, 170368 bytes).

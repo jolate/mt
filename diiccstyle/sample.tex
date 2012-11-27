@@ -81,13 +81,15 @@
 %
 % Uncomment this in the final version
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% \begin{acknowledgements}
-% .....
-% \end{acknowledgements}
+\begin{acknowledgements}
+Special thanks to Dr. Leo Ferres, my research supervisor, for including me in his research group and for his guidance and contributions throughout this work. My thanks are also extended to Dr. Roberto Asín, for all the guidance and teaching, and whose contribution was essential for the development of the project. I would also like to express my gratitude to Dr. Loreto Bravo and Dr. Andrea Rodriguez, for all the extensive revision on the work. I also wish to thank the following; the staff of the DIICC, for contributing in my education; the Azu group, for all the previous work on parallelism and providing hardware; the Barcelogic group, for providing the \texttt{Barcelogic} SAT solver; Intel, for providing hardware to run experiments; Armin Biere, for making his \texttt{plingeling} solver code available.
 
-% \begin{dedication}
-% To my parents, my family, and whomever it may concern...  
-% \end{dedication}
+Finally, I would like to thank my parents for their support and encouragement through all my years of study.
+\end{acknowledgements}
+
+\begin{dedication}
+To my parents, Leo and Roberto.
+\end{dedication}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Step 9: Add abstract
@@ -677,7 +679,7 @@ To take our experimental claims even further, we will also measure the cache per
 
 %Table \ref{tab:plingeling cache} shows the cache miss percentages as we add more threads to a solver that runs on a single chip. As suggested by our hypothesis, the LLC miss percentage increases dramatically as we add threads, results that explain the decrease in performance of the solver.
 
-\section{AzuDICI: A parallel portfolio approach SAT solver with physically shared clause database}
+\section{AzuDICI: A parallel portfolio approach SAT solver}
 
 It is now clear that as we add more data to a SAT solver clause database, we make its performance decrease because of the cache misses involved in handling a bigger volume of data. We will now perform an analysis on how well does sharing data in SAT solvers help reduce the cache misses as we add threads. To be able to do such analysis, we implemented AzuDICI: a portfolio-approach SAT solver that shares clauses physically. As we mentioned earlier, there are other solvers which implement physically shared clause databases, but they do not make a detailed analysis of the cache performance of such solvers, which will be the contribution of our experiments with AzuDICI.
 
