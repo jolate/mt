@@ -11,7 +11,7 @@
 \contentsline {subsection}{\numberline {2.2.4}Conflict-Driven Clause-Learning Solvers}{11}
 \contentsline {subsection}{\numberline {2.2.5}Modern CDCL solvers}{14}
 \contentsline {subsection}{\numberline {2.2.6}Data structures}{17}
-\contentsline {subsection}{\numberline {2.2.7}Parallel SAT solvers}{21}
+\contentsline {subsection}{\numberline {2.2.7}Parallel SAT solvers}{20}
 \contentsline {section}{\numberline {2.3}Cache}{24}
 \contentsline {chapter}{\numberline {Chapter 3}Experiments and results}{27}
 \contentsline {section}{\numberline {3.1}Cache and algorithms}{27}
@@ -26,7 +26,7 @@
 \contentsline {section}{\numberline {3.4}AzuDICI performance}{43}
 \contentsline {subsection}{\numberline {3.4.1}AzuDICI-SharedNone results}{44}
 \contentsline {subsection}{\numberline {3.4.2}AzuDICI-SharedBinaries results}{45}
-\contentsline {subsection}{\numberline {3.4.3}AzuDICI-SharedAll results}{45}
+\contentsline {subsection}{\numberline {3.4.3}AzuDICI-SharedAll results}{46}
 \contentsline {subsection}{\numberline {3.4.4}Summing it all up}{49}
 \contentsline {chapter}{\numberline {Chapter 4}Conclusions}{51}
 \contentsline {chapter}{Bibliography}{54}

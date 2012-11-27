@@ -4,7 +4,7 @@
 \contentsline {figure}{\numberline {2.2}{\ignorespaces A search tree which only shows the nodes visited by the depth-first search algorithm. Note that this algorithm can declare success at level 4, after visiting the leafs of node $n_4$. On the other hand, DPLL algorithm can declare success at node $n_2$ at level 1.\relax }}{9}
 \contentsline {figure}{\numberline {2.3}{\ignorespaces An implication graph of a conflict.\relax }}{13}
 \contentsline {figure}{\numberline {2.4}{\ignorespaces Operation of the two watched literal data structure.\relax }}{18}
-\contentsline {figure}{\numberline {2.5}{\ignorespaces A group of binary clauses and their corresponding binary list.\relax }}{20}
+\contentsline {figure}{\numberline {2.5}{\ignorespaces A group of binary clauses and their corresponding binary list.\relax }}{21}
 \contentsline {figure}{\numberline {2.6}{\ignorespaces Overview of \texttt {MiraXT} design.\relax }}{23}
 \contentsline {figure}{\numberline {2.7}{\ignorespaces \texttt {MiraXT} shared clause database.\relax }}{24}
 \contentsline {figure}{\numberline {2.8}{\ignorespaces Typical memory hierarchy of modern computers.\relax }}{25}
